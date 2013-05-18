@@ -9,7 +9,7 @@
     <item
             android:id="@+id/action_provincias"
             android:orderInCategory="100"
-            android:showAsAction="never"
+            android:showAsAction="ifRoom"
             android:title="@string/provincias"/>
 
 

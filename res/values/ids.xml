@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="icon">false</item>
+    <item type="id" name="road">false</item>
+    <item type="id" name="pk">false</item>
+    <item type="id" name="cause">false</item>
+    <item type="id" name="time_ago">false</item>
+    <item type="id" name="maplayout">false</item>
+    <item type="id" name="mapview">false</item>
+    <item type="id" name="text">false</item>
+    <item type="id" name="update">false</item>
+    <item type="id" name="list_view">false</item>
+    <item type="id" name="provinces">false</item>
+    <item type="id" name="preferences">false</item>
+    <item type="id" name="map_view">false</item>
+</resources>

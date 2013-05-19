@@ -2,7 +2,7 @@
 
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="10"
         android:showAsAction="never"
         android:title="@string/action_settings"/>
 
@@ -12,10 +12,16 @@
             android:showAsAction="ifRoom"
             android:title="@string/provincias"/>
 
+    <item
+            android:id="@+id/actualizar"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:title="Actualizar" />
+
 
     <item
             android:id="@+id/action_acerca"
-            android:orderInCategory="100"
+            android:orderInCategory="101"
             android:showAsAction="never"
             android:title="@string/acerca_de"/>
 

@@ -13,6 +13,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import android.view.MenuItem;
+import android.widget.Toast;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -87,6 +88,11 @@ public class MainActivity extends Activity {
             case R.id.action_settings:
                 startActivity(new Intent(this, Ajustes.class));
                 return true;
+            case R.id.actualizar:
+                actualizar();
+                Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
+                return true;
+
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -139,6 +145,27 @@ public class MainActivity extends Activity {
             }
             return df;
         }
+    }
+
+    public void actualizar() {
+        IncidenciaList.clear();
+        lv1 = (ListView) findViewById(R.id.listView1);
+
+        ShowProgress = ProgressDialog.show(MainActivity.this, "",
+                "Cargando. Espere por favor...", true);
+        new loadingTask().execute("http://dgt.es/incidencias.xml");
+
+        lv1.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri
+                        .parse(IncidenciaList.get(position).getFechahora())); // AQUI IBA GETURL, PERO NO SE QUE HACE!
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     class RSSHandler extends DefaultHandler {

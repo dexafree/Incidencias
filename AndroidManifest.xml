@@ -23,6 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.dexafree.incidencias.Ajustes"
+                  android:label="Ajustes">
+        </activity>
+
+        <activity android:name="com.dexafree.incidencias.Provincias"
+                  android:label="@string/provincias">
+        </activity>
+
     </application>
 
 </manifest>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+            android:title="Grupo 1"
+            android:key="pref_key_storage_settings">
+
+        <Preference
+                android:key="pref_key_sms_delete_limit"
+                android:summary="Aqui iran las provincias"
+                android:title="Preferencia 3" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

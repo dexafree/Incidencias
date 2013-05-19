@@ -12,6 +12,7 @@ import java.util.HashMap;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import android.view.MenuItem;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -71,6 +72,27 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
+
+
+    //GESTIONANDO EL CLICK DE LA ACTIONBAR
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_provincias:
+                startActivity(new Intent(this, Provincias.class));
+                return true;
+            case R.id.action_settings:
+                startActivity(new Intent(this, Ajustes.class));
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
 
     class loadingTask extends AsyncTask<String, Void, String> {

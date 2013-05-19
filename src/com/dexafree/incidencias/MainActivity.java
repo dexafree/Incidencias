@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+ 
   /*      SharedPreferences pref =
                 PreferenceManager.getDefaultSharedPreferences(
                         MainActivity.this);
@@ -181,7 +181,7 @@ public class MainActivity extends Activity {
 
     public void prueba() {
 
-                SharedPreferences pref =
+        SharedPreferences pref =
                 PreferenceManager.getDefaultSharedPreferences(
                         MainActivity.this);
         Log.i("", "Badajoz: " + pref.getBoolean("BADAJOZ", false));
@@ -228,54 +228,54 @@ public class MainActivity extends Activity {
 
             if (localName.equalsIgnoreCase("tipo")
                     && currentIncidencia.getTipo() == null) {
-                currentIncidencia.setTipo(chars.toString());
+                currentIncidencia.setTipo(chars.toString().trim());
 
             }
             if (localName.equalsIgnoreCase("autonomia")
                     && currentIncidencia.getAutonomia() == null) {
-                currentIncidencia.setAutonomia(chars.toString());
+                currentIncidencia.setAutonomia(chars.toString().trim());
 
             }
             if (localName.equalsIgnoreCase("provincia")
                     && currentIncidencia.getProvincia() == null) {
-                currentIncidencia.setProvincia(chars.toString());
+                currentIncidencia.setProvincia(chars.toString().trim());
 
             }
             if (localName.equalsIgnoreCase("causa")
                     && currentIncidencia.getCausa() == null) {
-                currentIncidencia.setCausa(chars.toString());
+                currentIncidencia.setCausa(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("poblacion")
                     && currentIncidencia.getPoblacion() == null) {
-                currentIncidencia.setPoblacion(chars.toString());
+                currentIncidencia.setPoblacion(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("fechahora_ini")
                     && currentIncidencia.getFechahora() == null) {
-                currentIncidencia.setFechahora(chars.toString());
+                currentIncidencia.setFechahora(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("nivel")
                     && currentIncidencia.getNivel() == null) {
-                currentIncidencia.setNivel(chars.toString());
+                currentIncidencia.setNivel(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("carretera")
                     && currentIncidencia.getCarretera() == null) {
-                currentIncidencia.setCarretera(chars.toString());
+                currentIncidencia.setCarretera(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("pk_inicial")
                     && currentIncidencia.getPkInicio() == null) {
-                currentIncidencia.setPkInicio(chars.toString());
+                currentIncidencia.setPkInicio(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("pk_final")
                     && currentIncidencia.getPkFin() == null) {
-                currentIncidencia.setPkFin(chars.toString());
+                currentIncidencia.setPkFin(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("sentido")
                     && currentIncidencia.getSentido() == null) {
-                currentIncidencia.setSentido(chars.toString());
+                currentIncidencia.setSentido(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("hacia")
                     && currentIncidencia.getHacia() == null) {
-                currentIncidencia.setHacia(chars.toString());
+                currentIncidencia.setHacia(chars.toString().trim());
             }
 
             if (localName.equalsIgnoreCase("incidencia")) {
@@ -284,8 +284,8 @@ public class MainActivity extends Activity {
                 {
                     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
                     IncidenciaList.add(currentIncidencia);
-                    currentIncidencia = new Incidencia();
                 }
+                currentIncidencia = new Incidencia();
             }
         }
 
@@ -297,7 +297,3 @@ public class MainActivity extends Activity {
     }
 
 }
-
-
-
-

@@ -1,82 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@+id/widget30"
-	android:layout_width="fill_parent" android:layout_height="wrap_content"
-	android:padding="4dip" xmlns:android="http://schemas.android.com/apk/res/android" android:background="#222222">
+<LinearLayout android:id="@+id/widget30"
+              android:layout_width="fill_parent" android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="4dip" xmlns:android="http://schemas.android.com/apk/res/android" android:background="#222222">
 
-
-    <TextView android:id="@+id/autonomia" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="TextView"
-		android:textColor="#e8e8e8" android:layout_toRightOf="@+id/icon"
-		android:layout_alignLeft="@+id/tipo" android:layout_alignRight="@+id/tipo"
-		android:layout_below="@+id/tipo" android:layout_marginRight="5px">
-	</TextView>
 
     <TextView android:id="@+id/tipo" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="TextView"
-		android:textStyle="bold" android:textColor="#e8e8e8"
-		android:layout_marginTop="5px" android:layout_toRightOf="@+id/icon"
-		android:layout_marginRight="5px">
-	</TextView>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/provincia" android:layout_below="@+id/autonomia" android:layout_alignLeft="@+id/autonomia"
-            android:textColor="#e8e8e8"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/causa" android:layout_below="@+id/provincia" android:layout_alignParentLeft="true"
-            android:textColor="#e8e8e8"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/poblacion" android:layout_below="@+id/causa" android:layout_alignParentLeft="true"
-            android:textColor="#e8e8e8"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/fechahora" android:layout_below="@+id/poblacion" android:layout_alignLeft="@+id/poblacion"
-            android:textColor="#e8e8e8"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/nivel" android:layout_below="@+id/fechahora" android:layout_alignParentLeft="true"
-            android:textColor="#e8e8e8"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/carretera" android:layout_below="@+id/nivel" android:layout_alignLeft="@+id/nivel"
-            android:textColor="#e8e8e8"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/pkinicio" android:layout_below="@+id/carretera" android:layout_alignLeft="@+id/carretera"
-            android:textColor="#e8e8e8"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/pkfin"
-            android:textColor="#e8e8e8"
-            android:layout_below="@+id/carretera" android:layout_centerHorizontal="true"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/sentido" android:layout_below="@+id/pkfin" android:layout_alignParentLeft="true"
-            android:textColor="#e8e8e8"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/hacia"
-            android:textColor="#e8e8e8" android:layout_below="@+id/pkfin" android:layout_alignLeft="@+id/pkfin"/>
+              android:layout_height="wrap_content" android:text="TextView"
+              android:textStyle="bold" android:textColor="#e8e8e8"
+              android:layout_marginTop="5px"
+              android:layout_marginRight="5px">
+    </TextView>
 
-</RelativeLayout>
+    <TextView android:id="@+id/autonomia" android:layout_width="fill_parent"
+              android:layout_height="wrap_content" android:text="TextView"
+              android:textColor="#e8e8e8" android:layout_marginRight="5px">
+    </TextView>
+
+
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/provincia"
+            android:textColor="#e8e8e8"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/causa"
+            android:textColor="#e8e8e8"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/poblacion"
+            android:textColor="#e8e8e8"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/fechahora"
+            android:textColor="#e8e8e8"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/nivel"
+            android:textColor="#e8e8e8"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/carretera"
+            android:textColor="#e8e8e8"/>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:weightSum="1"
+            >
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/pkinicio"
+                android:textColor="#e8e8e8"
+                android:layout_weight="0.5"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/pkfin"
+                android:textColor="#e8e8e8"
+                android:layout_weight="0.5"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:weightSum="1"
+            >
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/sentido"
+                android:textColor="#e8e8e8"
+                android:layout_weight="0.5"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/hacia"
+                android:textColor="#e8e8e8"
+                android:layout_weight="0.5" />
+    </LinearLayout>
+
+</LinearLayout>

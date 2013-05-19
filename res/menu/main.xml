@@ -16,7 +16,8 @@
             android:id="@+id/actualizar"
             android:orderInCategory="100"
             android:showAsAction="always"
-            android:title="Actualizar" />
+            android:title="Actualizar"
+            android:icon="@drawable/refresh"/>
 
 
     <item

@@ -8,8 +8,7 @@
             android:summary="Selecciona las provincias"
             android:dialogTitle="@string/provincias"
             android:entries="@array/lista_provincias"
-            android:entryValues="@array/lista_provincias"
-             />
+            android:entryValues="@array/lista_provincias" />
 
 
 

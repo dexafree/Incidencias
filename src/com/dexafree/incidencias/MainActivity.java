@@ -1,8 +1,11 @@
 package com.dexafree.incidencias;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Activity;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 
 import java.net.MalformedURLException;
@@ -39,6 +42,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+  /*      SharedPreferences pref =
+                PreferenceManager.getDefaultSharedPreferences(
+                        MainActivity.this);
+        Log.i("", "Opcion: " + pref.getBoolean("provincias_sel", false));*/
 
 
 
@@ -92,7 +100,10 @@ public class MainActivity extends Activity {
                 actualizar();
                 Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
                 return true;
-
+            case R.id.probando:
+                prueba();
+                Toast.makeText(getApplicationContext(), "Hecho", Toast.LENGTH_LONG).show();
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -167,6 +178,16 @@ public class MainActivity extends Activity {
         });
 
     }
+
+    public void prueba() {
+
+                SharedPreferences pref =
+                PreferenceManager.getDefaultSharedPreferences(
+                        MainActivity.this);
+        Log.i("", "Zamora: " + pref.getBoolean("ZAMORA", false));
+
+    }
+
 
     class RSSHandler extends DefaultHandler {
 

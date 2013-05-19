@@ -184,8 +184,26 @@ public class MainActivity extends Activity {
                 SharedPreferences pref =
                 PreferenceManager.getDefaultSharedPreferences(
                         MainActivity.this);
-        Log.i("", "Zamora: " + pref.getBoolean("ZAMORA", false));
+        Log.i("", "Badajoz: " + pref.getBoolean("BADAJOZ", false));
 
+    }
+
+    public boolean checkProvincia(String provincia) {
+
+        SharedPreferences pref =
+                PreferenceManager.getDefaultSharedPreferences(
+                        MainActivity.this);
+
+        Log.i("", provincia + ": " + pref.getBoolean(provincia, false));
+
+        if ( pref.getBoolean(provincia, false) == true) {
+            Log.i("", "Es true");
+            return true;
+        }
+        else {
+            Log.i("", "Es false");
+            return false;
+        }
     }
 
 
@@ -261,10 +279,14 @@ public class MainActivity extends Activity {
             }
 
             if (localName.equalsIgnoreCase("incidencia")) {
-                IncidenciaList.add(currentIncidencia);
-                currentIncidencia = new Incidencia();
+                Log.i("", "Funciona: " + currentIncidencia.getProvincia());
+                if (checkProvincia(currentIncidencia.getProvincia()) == true)
+                {
+                    Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                    IncidenciaList.add(currentIncidencia);
+                    currentIncidencia = new Incidencia();
+                }
             }
-
         }
 
         @Override

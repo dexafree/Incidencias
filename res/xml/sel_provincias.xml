@@ -5,257 +5,257 @@
     <CheckBoxPreference
         android:key="ALAVA/GUIPUZCOA/VIZCAYA"
         android:title="Álava"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="ALBACETE"
             android:title="Albacete"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="ALICANTE/ALACANT"
             android:title="Alicante"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="ALMERIA"
             android:title="Almería"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="ASTURIAS"
             android:title="Asturias"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="AVILA"
             android:title="Ávila"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="BADAJOZ"
             android:title="Badajoz"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="BARCELONA"
             android:title="Barcelona"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="BURGOS"
             android:title="Burgos"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="CACERES"
             android:title="Cáceres"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="CADIZ"
             android:title="Cádiz"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="CANTABRIA"
             android:title="Cantabria"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="CASTELLON/CASTELLO"
             android:title="Castellón"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="CIUDAD REAL"
             android:title="Ciudad Real"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="CORDOBA"
             android:title="Córdoba"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="A CORUÑA"
             android:title="A Coruña"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="CUENCA"
             android:title="Cuenca"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="GERONA"
             android:title="Gerona"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="GRANADA"
             android:title="Granada"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
     <CheckBoxPreference
             android:key="GUADALAJARA"
             android:title="Guadalajara"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="HUELVA"
             android:title="Huelva"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="HUESCA"
             android:title="Huesca"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="ILLES BALEARS"
             android:title="Illes Balears"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="JAEN"
             android:title="Jaén"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="LA RIOJA"
             android:title="La Rioja"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="LAS PALMAS"
             android:title="Las Palmas"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="LEON"
             android:title="Leon"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="LLEIDA"
             android:title="Lleida"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="LUGO"
             android:title="Lugo"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="MADRID"
             android:title="Madrid"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="MALAGA"
             android:title="Malaga"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="MURCIA"
             android:title="Murcia"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="NAVARRA"
             android:title="Navarra"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="OURENSE"
             android:title="Ourense"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="PALENCIA"
             android:title="Palencia"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="PONTEVEDRA"
             android:title="Pontevedra"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="SALAMANCA"
             android:title="Salamanca"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="SANTA CRUZ DE TENERIFE"
             android:title="Sta. Cruz de Tenerife"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="SEGOVIA"
             android:title="Segovia"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="SEVILLA"
             android:title="Sevilla"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="SORIA"
             android:title="Soria"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="TARRAGONA"
             android:title="Navarra"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="TERUEL"
             android:title="Teruel"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="TOLEDO"
             android:title="Toledo"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="VALENCIA"
             android:title="Valencia"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="VALLADOLID"
             android:title="Valladolid"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="ZAMORA"
             android:title="Zamora"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     <CheckBoxPreference
             android:key="ZARAGOZA"
             android:title="Zaragoza"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
 
 

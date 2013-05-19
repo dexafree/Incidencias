@@ -100,10 +100,10 @@ public class EfficientAdapter extends BaseAdapter {
             holder = (ViewHolder) vi.getTag();
 
         holder.tipo.setText("TIPO: " + data.get(position).getTipo());
-        holder.autonomia.setText("AUTONOMÍA: " + data.get(position).getAutonomia());
+        holder.autonomia.setText("AUTONOMIA: " + data.get(position).getAutonomia());
         holder.provincia.setText("PROVINCIA: " + data.get(position).getProvincia());
         holder.causa.setText("CAUSA: " + data.get(position).getCausa());
-        holder.poblacion.setText("POBLACIÓN: " + data.get(position).getPoblacion());
+        holder.poblacion.setText("POBLACION: " + data.get(position).getPoblacion());
         holder.fechahora.setText("FECHA/HORA: " + data.get(position).getFechahora());
         holder.nivel.setText("NIVEL: " + data.get(position).getNivel());
         holder.carretera.setText("CARRETERA: " + data.get(position).getCarretera());

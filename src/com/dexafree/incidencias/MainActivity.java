@@ -10,7 +10,9 @@ import android.view.Menu;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -181,10 +183,64 @@ public class MainActivity extends Activity {
 
     public void prueba() {
 
-        SharedPreferences pref =
-                PreferenceManager.getDefaultSharedPreferences(
-                        MainActivity.this);
-        Log.i("", "Badajoz: " + pref.getBoolean("BADAJOZ", false));
+        Date cDate = new Date();
+        String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
+
+        Toast.makeText(getApplicationContext(), fDate, Toast.LENGTH_LONG).show();
+
+    }
+
+
+    public boolean comparaFecha(String fechahora){
+
+        Date cDate = new Date();
+        String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
+
+        //CREAMOS EL STRING YEAR, MONTH... PARA SACAR SOLO LOS PRIMEROS DIGITOS PARA INICIAR LA COMPARACION
+        String year = new SimpleDateFormat("yyyy").format(cDate);
+        String month = new SimpleDateFormat("MM").format(cDate);
+        String day = new SimpleDateFormat("dd").format(cDate);
+
+        Log.i("", "year month day: " + year + " " + month + " " + day);
+
+        String yearpas = fechahora.substring(0,4);
+        String monthpas = fechahora.substring(5,7);
+        String daypas = fechahora.substring(8,10);
+
+        Log.i("", "yearpas monthpas daypas: " + yearpas + " " + monthpas + " " + daypas);
+
+        if (year == yearpas)
+         {
+
+            if (month == monthpas)
+                {
+
+                    if (day == daypas)
+                     {
+                        return true;
+                     }
+                    else
+                     {
+                        return false;
+                     }
+                }
+            else
+                {
+                    return false;
+                }
+         }
+        else
+         {
+          return false;
+         }
+
+
+
+
+
+
+
+
 
     }
 
@@ -279,12 +335,20 @@ public class MainActivity extends Activity {
             }
 
             if (localName.equalsIgnoreCase("incidencia")) {
-                Log.i("", "Funciona: " + currentIncidencia.getProvincia());
+               // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
                 if (checkProvincia(currentIncidencia.getProvincia()) == true)
                 {
-                    Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
-                    IncidenciaList.add(currentIncidencia);
+                 //   Log.i("", "Pasado el primer if");
+                    if (comparaFecha(currentIncidencia.getFechahora().trim()) == true)
+
+                    {
+                   //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                        IncidenciaList.add(currentIncidencia);
+                    }
+
                 }
+
+
                 currentIncidencia = new Incidencia();
             }
         }

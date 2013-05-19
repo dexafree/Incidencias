@@ -16,12 +16,12 @@ public class Ajustes extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
 
-        ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+      //  ActionBar actionBar = getActionBar();
+      //  actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    /*@Override
+   public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 // app icon in action bar clicked; go home
@@ -33,5 +33,5 @@ public class Ajustes extends PreferenceActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
+*/
 }

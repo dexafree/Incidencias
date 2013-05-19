@@ -20,11 +20,11 @@ public class Provincias extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.sel_provincias);
 
-        ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+     //   ActionBar actionBar = getActionBar();
+     //   actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -36,6 +36,6 @@ public class Provincias extends PreferenceActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
 }

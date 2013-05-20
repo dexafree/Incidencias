@@ -106,6 +106,9 @@ public class MainActivity extends Activity {
                 prueba();
                 Toast.makeText(getApplicationContext(), "Hecho", Toast.LENGTH_LONG).show();
                 return true;
+            case R.id.action_acerca:
+                startActivity(new Intent(this, About.class));
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);

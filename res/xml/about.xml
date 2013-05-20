@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <Preference android:title="Copyright" android:summary="Dexafree"/>
+
+
+
+    <PreferenceCategory android:title="Version:">
+        <Preference android:title="App version" android:summary="0.2"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

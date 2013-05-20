@@ -32,6 +32,10 @@
                   android:label="@string/provincias">
         </activity>
 
+        <activity android:name="com.dexafree.incidencias.About"
+                  android:label="Acerca de">
+        </activity>
+
     </application>
 
 </manifest>

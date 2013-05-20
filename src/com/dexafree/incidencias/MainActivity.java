@@ -110,6 +110,9 @@ public class MainActivity extends Activity {
             case R.id.action_acerca:
                 startActivity(new Intent(this, About.class));
                 return true;
+            case R.id.vista_cartas:
+                startActivity(new Intent(this, CardsMainActivity.class));
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);

@@ -24,7 +24,7 @@ import com.nineoldandroids.view.ViewHelper;
  * (i.e. you're using
  * {@link android.widget.ListView#setOnItemClickListener(android.widget.AdapterView.OnItemClickListener)}
  * or an equivalent listener on {@link android.app.ListActivity} or
- * {@link android.app.ListFragment}, use {@link SwipeDismissListViewTouchListener} instead.</em>
+ *
  * </p>
  * 
  * <p>
@@ -47,7 +47,7 @@ import com.nineoldandroids.view.ViewHelper;
  * {@link android.view.ViewPropertyAnimator}.
  * </p>
  * 
- * @see SwipeDismissListViewTouchListener
+ *
  */
 public class SwipeDismissTouchListener implements View.OnTouchListener {
 	// Cached ViewConfiguration and system-wide constant values

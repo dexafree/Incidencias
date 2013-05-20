@@ -240,14 +240,17 @@ public class MainActivity extends Activity {
 
         Log.i("", "yearpas monthpas daypas: " + yearpas + " " + monthpas + " " + daypas);
 
-        if (year == yearpas)
+        if (year.equals(yearpas))
          {
 
-            if (month == monthpas)
-                {
+             Log.i("", "COINCIDE YEAR");
 
-                    if (day == daypas)
+            if (month.equals(monthpas))
+                {
+                    Log.i("", "COINCIDE MONTH");
+                    if (day.equals(daypas))
                      {
+                         Log.i("", "COINCIDE DAY");
                         return true;
                      }
                     else
@@ -262,6 +265,7 @@ public class MainActivity extends Activity {
          }
         else
          {
+             Log.i("", "No coincide year");
           return false;
          }
 

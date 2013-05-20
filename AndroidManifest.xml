@@ -36,6 +36,10 @@
                   android:label="Acerca de">
         </activity>
 
+        <activity android:name="com.dexafree.incidencias.CardsMainActivity"
+                  android:label="Cards">
+        </activity>
+
     </application>
 
 </manifest>

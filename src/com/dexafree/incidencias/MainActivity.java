@@ -12,6 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import javax.xml.parsers.SAXParser;
@@ -108,6 +109,9 @@ public class MainActivity extends Activity {
                 return true;
             case R.id.action_acerca:
                 startActivity(new Intent(this, About.class));
+                return true;
+            case R.id.vista_cartas:
+                startActivity(new Intent(this, CardsMainActivity.class));
                 return true;
 
             default:
@@ -273,13 +277,21 @@ public class MainActivity extends Activity {
          }
 
 
+    }
+
+    public boolean checkHora(String hora){
+
+        Calendar c = Calendar.getInstance();
+        int minutes = c.get(Calendar.MINUTE);
+        int hours = c.get(Calendar.HOUR);
+
+
+        String minutepas = hora.substring(0,4);
+        String hourpas = hora.substring(5,7);
 
 
 
-
-
-
-
+        return true;
     }
 
     public boolean checkProvincia(String provincia) {

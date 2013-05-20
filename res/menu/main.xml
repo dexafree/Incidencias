@@ -4,7 +4,7 @@
         android:id="@+id/action_settings"
         android:orderInCategory="10"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:title="Ajustes"/>
 
     <item
             android:id="@+id/action_provincias"
@@ -31,6 +31,12 @@
             android:orderInCategory="1"
             android:showAsAction="always"
             android:title="PRUEBA" />
+
+    <item
+            android:id="@+id/vista_cartas"
+            android:orderInCategory="1"
+            android:showAsAction="always"
+            android:title="CARDS" />
 
 
 </menu>

@@ -11,11 +11,11 @@ import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.fima.cardsui.R;
-import com.fima.cardsui.StackAdapter;
-import com.fima.cardsui.SwipeDismissTouchListener;
-import com.fima.cardsui.SwipeDismissTouchListener.OnDismissCallback;
-import com.fima.cardsui.Utils;
+import com.dexafree.incidencias.R;
+import com.dexafree.incidencias.StackAdapter;
+import com.dexafree.incidencias.SwipeDismissTouchListener;
+import com.dexafree.incidencias.SwipeDismissTouchListener.OnDismissCallback;
+import com.dexafree.incidencias.Utils;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.Animator.AnimatorListener;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -299,7 +299,7 @@ public class CardStack extends AbstractCard {
 
 				} else {
 					clickedCard
-							.setBackgroundResource(com.fima.cardsui.R.drawable.card_background);
+							.setBackgroundResource(com.dexafree.incidencias.R.drawable.card_background);
 				}
 				frameLayout.removeView(clickedCard);
 				frameLayout.addView(clickedCard);
@@ -308,7 +308,7 @@ public class CardStack extends AbstractCard {
 
 			private void handleFirstCard(View newFirstCard) {
 				newFirstCard
-						.setBackgroundResource(com.fima.cardsui.R.drawable.card_background);
+						.setBackgroundResource(com.dexafree.incidencias.R.drawable.card_background);
 				RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
 						RelativeLayout.LayoutParams.MATCH_PARENT,
 						RelativeLayout.LayoutParams.WRAP_CONTENT);

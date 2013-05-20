@@ -7,8 +7,8 @@ import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.fima.cardsui.R;
-import com.fima.cardsui.Utils;
+import com.dexafree.incidencias.R;
+import com.dexafree.incidencias.Utils;
 
 public abstract class Card extends AbstractCard {
 

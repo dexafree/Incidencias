@@ -183,6 +183,18 @@ public class MainActivity extends Activity {
 
     public void prueba() {
 
+        SharedPreferences pref =
+                PreferenceManager.getDefaultSharedPreferences(
+                        MainActivity.this);
+        if ( pref.getBoolean("testeo", false)) {
+            Log.i("", "Es true");
+
+        }
+        else {
+            Log.i("", "Es false");
+
+        }
+
         Date cDate = new Date();
         String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
 
@@ -190,8 +202,27 @@ public class MainActivity extends Activity {
 
     }
 
+    public boolean checkTesteo() {
+        SharedPreferences pref =
+                PreferenceManager.getDefaultSharedPreferences(
+                        MainActivity.this);
+
+        if ( pref.getBoolean("testeo", false)) {
+            Log.i("", "Es true");
+            return true;
+        }
+        else {
+            Log.i("", "Es false");
+            return false;
+        }
+
+
+    }
+
 
     public boolean comparaFecha(String fechahora){
+
+
 
         Date cDate = new Date();
         String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
@@ -335,14 +366,27 @@ public class MainActivity extends Activity {
             }
 
             if (localName.equalsIgnoreCase("incidencia")) {
+
+
+
+
                // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
                 if (checkProvincia(currentIncidencia.getProvincia()) == true)
                 {
-                 //   Log.i("", "Pasado el primer if");
-                    if (comparaFecha(currentIncidencia.getFechahora().trim()) == true)
 
+                    if (checkTesteo() == false)
                     {
-                   //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                         //   Log.i("", "Pasado el primer if");
+                       if (comparaFecha(currentIncidencia.getFechahora().trim()) == true)
+
+                         {
+                             //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                             IncidenciaList.add(currentIncidencia);
+                         }
+
+                    }
+                    else
+                    {
                         IncidenciaList.add(currentIncidencia);
                     }
 
@@ -350,6 +394,7 @@ public class MainActivity extends Activity {
 
 
                 currentIncidencia = new Incidencia();
+
             }
         }
 

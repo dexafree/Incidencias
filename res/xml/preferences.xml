@@ -18,6 +18,13 @@
                 android:key="pref_key_mms_delete_limit"
                 android:summary="Blabla 4"
                 android:title="Preferencia 4" />
+
+
+        <SwitchPreference
+                android:key="testeo"
+                android:summary="Para que de igual si son de hoy"
+                android:title="TESTING" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

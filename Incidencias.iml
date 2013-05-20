@@ -21,6 +21,7 @@
     <orderEntry type="jdk" jdkName="Android 4.2.2" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="CardsUILib" level="project" />
+    <orderEntry type="library" name="nineoldandroids-2.4.0" level="project" />
   </component>
 </module>
 

@@ -29,9 +29,15 @@ public abstract class Card extends AbstractCard {
 	}
 
 
-    public Card(String title, String desc){
+    public Card(String title, String desc1){
         this.title = title;
-        this.desc = desc;
+        this.desc1 = desc1;
+    }
+
+    public Card(String title, String desc1, String desc2){
+        this.title = title;
+        this.desc1 = desc1;
+        this.desc2 = desc2;
     }
 
 
@@ -43,7 +49,7 @@ public abstract class Card extends AbstractCard {
 
 	public Card(String title, String desc, int image) {
 		this.title = title;
-		this.desc = desc;
+		this.desc1 = desc1;
 		this.image = image;
 	}
 

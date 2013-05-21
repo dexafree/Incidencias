@@ -9,7 +9,9 @@ public abstract class AbstractCard {
 	
 	protected int image;
 	
-	protected String desc;
+	protected String desc1;
+
+    protected String desc2;
 	
 	public abstract View getView(Context context);
 	
@@ -20,9 +22,13 @@ public abstract class AbstractCard {
 		return title;
 	}
 	
-	public String getDesc() {
-		return desc;
+	public String getDesc1() {
+		return desc1;
 	}
+
+    public String getDesc2() {
+        return desc2;
+    }
 	
 	public int getImage() {
 		return image;

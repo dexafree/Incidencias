@@ -393,14 +393,14 @@ public class MainActivityProceso extends Activity {
                         {
                             //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
                             IncidenciaList.add(currentIncidencia);
-                            mCardView.addCard(new MyCard(currentIncidencia.getProvincia(), currentIncidencia.getPkFin()));
+                            mCardView.addCard(new MyCard(currentIncidencia.getProvincia(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
                         }
 
                     }
                     else
                     {
                         IncidenciaList.add(currentIncidencia);
-                        mCardView.addCard(new MyCard(currentIncidencia.getProvincia(), currentIncidencia.getPkFin()));
+                        mCardView.addCard(new MyCard(currentIncidencia.getProvincia(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
 
                     }
 

@@ -406,14 +406,14 @@ public class MainActivityProceso extends Activity {
                         {
                             //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
                             IncidenciaList.add(currentIncidencia);
-                            mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                            mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
                         }
 
                     }
                     else
                     {
                         IncidenciaList.add(currentIncidencia);
-                        mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                        mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
 
                     }
 

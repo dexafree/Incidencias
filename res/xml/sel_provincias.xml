@@ -224,7 +224,7 @@
 
     <CheckBoxPreference
             android:key="TARRAGONA"
-            android:title="Navarra"
+            android:title="Tarragona"
             android:defaultValue="false" />
 
     <CheckBoxPreference

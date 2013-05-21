@@ -13,18 +13,14 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="BETA 1">
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\src\com\dexafree\incidencias\MainActivityProceso.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/about.xml" afterPath="$PROJECT_DIR$/res/xml/about.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/main.xml" afterPath="$PROJECT_DIR$/res/menu/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/preferences.xml" afterPath="$PROJECT_DIR$/res/xml/preferences.xml" />
+    <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incidencias.apk" afterPath="$PROJECT_DIR$/Incidencias.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/sel_provincias.xml" afterPath="$PROJECT_DIR$/res/xml/sel_provincias.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369178816368" ignored="false" />
+    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369178908927" ignored="false" />
     <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369178876104" ignored="false" />
     <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369143728165" ignored="false" />
     <file path="/fragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369085101793" ignored="false" />
@@ -43,6 +39,7 @@
     <file path="/MainActivityProceso.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369177731560" ignored="false" />
     <file path="/AbstractCard.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369151741881" ignored="false" />
     <file path="/Incidencia.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369170401521" ignored="false" />
+    <file path="/sel_provincias.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369179190928" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,10 +121,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preferences.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="preferences.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/xml/preferences.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="25" selection-start="259" selection-end="259" vertical-scroll-proportion="0.3489736">
+            <state line="7" column="25" selection-start="259" selection-end="259" vertical-scroll-proportion="-4.76">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sel_provincias.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/xml/sel_provincias.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="226" column="36" selection-start="5997" selection-end="5997" vertical-scroll-proportion="0.33333334">
               <folding />
             </state>
           </provider>
@@ -198,12 +204,12 @@
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Card.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MyCard.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Incidencia.java" />
-        <option value="$PROJECT_DIR$/res/xml/sel_provincias.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
         <option value="$PROJECT_DIR$/res/menu/main.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java" />
         <option value="$PROJECT_DIR$/res/xml/about.xml" />
         <option value="$PROJECT_DIR$/res/xml/preferences.xml" />
+        <option value="$PROJECT_DIR$/res/xml/sel_provincias.xml" />
       </list>
     </option>
   </component>
@@ -590,7 +596,7 @@
       <workItem from="1369091675337" duration="1000000" />
       <workItem from="1369092703594" duration="40000" />
       <workItem from="1369093854501" duration="9432000" />
-      <workItem from="1369166212720" duration="7439000" />
+      <workItem from="1369166212720" duration="7726000" />
     </task>
     <task id="LOCAL-00001" summary="Añadido modo TEST">
       <created>1369011585262</created>
@@ -680,11 +686,15 @@
       <created>1369178036348</created>
       <updated>1369178036348</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="BETA 1">
+      <created>1369178915591</created>
+      <updated>1369178915591</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29056000" />
+    <option name="totallyTimeSpent" value="29343000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -848,13 +858,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/xml/sel_provincias.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="39" selection-start="6874" selection-end="6874" vertical-scroll-proportion="-13.96">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="63" selection-start="1457" selection-end="1457" vertical-scroll-proportion="-13.6">
@@ -902,7 +905,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/preferences.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="25" selection-start="259" selection-end="259" vertical-scroll-proportion="0.3489736">
+        <state line="7" column="25" selection-start="259" selection-end="259" vertical-scroll-proportion="-4.76">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/xml/sel_provincias.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="226" column="36" selection-start="5997" selection-end="5997" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>

@@ -59,16 +59,19 @@ public class MainActivityProceso extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cards);
 
+
+
         // init CardView
         mCardView = (CardUI) findViewById(R.id.cardsview);
         mCardView.setSwipeable(true);
+
 
         //TAREA DE CARGA DE XML Y PARSEO
 
         ShowProgress = ProgressDialog.show(MainActivityProceso.this, "",
                 "Cargando. Espere por favor...", true);
         new loadingTask().execute("http://dgt.es/incidencias.xml");
-
+        firstTime();
 
     }
 
@@ -115,6 +118,29 @@ public class MainActivityProceso extends Activity {
         }
     }
 
+
+    public void firstTime() {
+         final String PREFS_NAME = "MyPrefsFile";
+
+         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+     if (settings.getBoolean("my_first_time", true)) {
+        //the app is being launched for first time, do something
+             Log.d("Comments", "First time");
+
+         mCardView.addCard(new MyCard("No tienes ninguna provincia seleccionada", "Entra al menu de Provincias y selecciona la/s que te interese/n"));
+         mCardView.addCard(new MyCard("Puedes deslizar las tarjetas hacia los laterales", "Adelante, pruebalo!"));
+         mCardView.refresh();
+
+
+
+        // first time task
+
+        // record the fact that the app has been started at least once
+        settings.edit().putBoolean("my_first_time", false).commit();
+     }
+
+    }
 
 
     //LOADINGTASK Y PARSEO

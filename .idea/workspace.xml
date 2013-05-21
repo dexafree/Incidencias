@@ -14,12 +14,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incidencias.apk" afterPath="$PROJECT_DIR$/Incidencias.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369176228133" ignored="false" />
+    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369176441700" ignored="false" />
     <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369011182956" ignored="false" />
     <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369143728165" ignored="false" />
     <file path="/fragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369085101793" ignored="false" />
@@ -35,7 +36,7 @@
     <file path="/activity_main_cards.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369086320597" ignored="false" />
     <file path="/cards_view.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369086616825" ignored="false" />
     <file path="/card_ex.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369150150766" ignored="false" />
-    <file path="/MainActivityProceso.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369171538732" ignored="false" />
+    <file path="/MainActivityProceso.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369177731560" ignored="false" />
     <file path="/AbstractCard.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369151741881" ignored="false" />
     <file path="/Incidencia.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369170401521" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -101,10 +102,10 @@
       <file leaf-file-name="MainActivityProceso.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="181" column="89" selection-start="5399" selection-end="5399" vertical-scroll-proportion="5.5070424">
+            <state line="71" column="21" selection-start="1948" selection-end="1948" vertical-scroll-proportion="0.6972477">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4163#4179#0" expanded="true" />
+                <element signature="e#4992#5008#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -522,7 +523,7 @@
       <workItem from="1369091675337" duration="1000000" />
       <workItem from="1369092703594" duration="40000" />
       <workItem from="1369093854501" duration="9432000" />
-      <workItem from="1369166212720" duration="4963000" />
+      <workItem from="1369166212720" duration="6557000" />
     </task>
     <task id="LOCAL-00001" summary="Añadido modo TEST">
       <created>1369011585262</created>
@@ -604,11 +605,15 @@
       <created>1369176245103</created>
       <updated>1369176245103</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Arreglado el Toast de &quot;Actualizado&quot; antes de tiempo">
+      <created>1369176446593</created>
+      <updated>1369176446593</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26580000" />
+    <option name="totallyTimeSpent" value="28174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -630,8 +635,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24924242" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24924242" sideWeight="0.6678024" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3321976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -682,7 +687,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="CARDS UI 0.2. Muestra incidencias en forma de tarjetas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglado el Toast de &quot;Actualizado&quot; antes de tiempo" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -704,6 +709,7 @@
     <MESSAGE value="Preparando Cards UI para mostrar mas info" />
     <MESSAGE value="CARDS UI 0.1" />
     <MESSAGE value="CARDS UI 0.2. Muestra incidencias en forma de tarjetas" />
+    <MESSAGE value="Arreglado el Toast de &quot;Actualizado&quot; antes de tiempo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -829,10 +835,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="89" selection-start="5399" selection-end="5399" vertical-scroll-proportion="5.5070424">
+        <state line="71" column="21" selection-start="1948" selection-end="1948" vertical-scroll-proportion="0.6972477">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4163#4179#0" expanded="true" />
+            <element signature="e#4992#5008#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -2,23 +2,8 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory
-            android:title="Grupo 1"
+            android:title="TEST MODE"
             android:key="pref_key_storage_settings">
-        <CheckBoxPreference
-                android:key="pref_key_auto_delete"
-                android:summary="Descripcion 2"
-                android:title="Checkbox 2"
-                android:defaultValue="false" />
-        <Preference
-                android:key="pref_key_sms_delete_limit"
-                android:dependency="pref_key_auto_delete"
-                android:summary="Descripcion 3"
-                android:title="Preferencia 3" />
-        <Preference
-                android:key="pref_key_mms_delete_limit"
-                android:summary="Blabla 4"
-                android:title="Preferencia 4" />
-
 
         <SwitchPreference
                 android:key="testeo"

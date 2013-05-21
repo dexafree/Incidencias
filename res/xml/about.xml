@@ -8,7 +8,7 @@
 
 
     <PreferenceCategory android:title="Version:">
-        <Preference android:title="App version" android:summary="0.3"/>
+        <Preference android:title="App version" android:summary="BETA 1"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

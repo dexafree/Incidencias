@@ -26,17 +26,5 @@
             android:showAsAction="never"
             android:title="@string/acerca_de"/>
 
-    <item
-            android:id="@+id/probando"
-            android:orderInCategory="1"
-            android:showAsAction="always"
-            android:title="PRUEBA" />
-
-    <item
-            android:id="@+id/vista_cartas"
-            android:orderInCategory="1"
-            android:showAsAction="always"
-            android:title="CARDS" />
-
 
 </menu>

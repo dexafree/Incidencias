@@ -286,6 +286,19 @@ public class MainActivityProceso extends Activity {
         return true;
     }
 
+    public String getHora(String fechaHora) {
+
+        Log.i("", "FechaHora: " + fechaHora);
+        String fhs = fechaHora.trim();
+        Log.i("", "fhs: " + fhs);
+        String hora = fhs.substring(11,13);
+        Log.i("", "hora: " + hora);
+        String minutos = fhs.substring(14,16);
+        Log.i("", "minutos: " + minutos);
+        return hora + ":" + minutos + "  ";
+
+    }
+
     public boolean checkProvincia(String provincia) {
 
         SharedPreferences pref =
@@ -393,14 +406,14 @@ public class MainActivityProceso extends Activity {
                         {
                             //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
                             IncidenciaList.add(currentIncidencia);
-                            mCardView.addCard(new MyCard(currentIncidencia.getProvincia(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                            mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
                         }
 
                     }
                     else
                     {
                         IncidenciaList.add(currentIncidencia);
-                        mCardView.addCard(new MyCard(currentIncidencia.getProvincia(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                        mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
 
                     }
 

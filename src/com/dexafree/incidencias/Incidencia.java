@@ -11,6 +11,7 @@ public class Incidencia {
     private String causa;
     private String poblacion;
     private String fechahora;
+    private String hora;
     private String nivel;
     private String carretera;
     private String pkInicio;
@@ -63,6 +64,16 @@ public class Incidencia {
 
     public String getFechahora() {
         return fechahora;
+    }
+
+
+
+    public String getHora() {
+        String fh = this.fechahora;
+        String fhs = fh.trim();
+        String hora = fhs.substring(10,12);
+        return hora;
+
     }
 
     public String getNivel() {

@@ -14,63 +14,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\CardStack$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\CardStack$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\CardStack$3.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\CardUI$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\CardUI$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\CardsMainActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\MainActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\MainActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\R$array.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\R$color.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\R$menu.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\R$xml.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\SwipeDismissTouchListener$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\SwipeDismissTouchListener$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\bin\classes\com\dexafree\incidencias\SwipeDismissTouchListener$3.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/About.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/About.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/AbstractCard.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/AbstractCard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Ajustes.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Ajustes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/BuildConfig.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/BuildConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Card$OnCardSwiped.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Card$OnCardSwiped.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Card.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Card.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/CardStack.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/CardStack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/CardUI$OnRenderedListener.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/CardUI$OnRenderedListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/CardUI.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/CardUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/CardsMainActivity.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/CardsMainActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/EfficientAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/EfficientAdapter$ViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/EfficientAdapter.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/EfficientAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Incidencia.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Incidencia.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incidencias.apk" afterPath="$PROJECT_DIR$/Incidencias.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MainActivity$RSSHandler.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MainActivity$RSSHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MainActivity$SAXHelper.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MainActivity$SAXHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MainActivity$loadingTask.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MainActivity$loadingTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MainActivity.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MainActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MyCard.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MyCard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MyImageCard.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/MyImageCard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Provincias.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Provincias.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/QuickReturnListView.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/QuickReturnListView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/R.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/StackAdapter.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/StackAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/SwipeDismissTouchListener$OnDismissCallback.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/SwipeDismissTouchListener$OnDismissCallback.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/SwipeDismissTouchListener.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/SwipeDismissTouchListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Utils.class" afterPath="$PROJECT_DIR$/bin/classes/com/dexafree/incidencias/Utils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/about.xml" afterPath="$PROJECT_DIR$/res/xml/about.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/jarlist.cache" afterPath="$PROJECT_DIR$/bin/jarlist.cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369171226884" ignored="false" />
+    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369176228133" ignored="false" />
     <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369011182956" ignored="false" />
     <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369143728165" ignored="false" />
     <file path="/fragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369085101793" ignored="false" />
@@ -149,89 +98,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivityProceso.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivityProceso.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="408" column="310" selection-start="12982" selection-end="12982" vertical-scroll-proportion="0.0">
+            <state line="181" column="89" selection-start="5399" selection-end="5399" vertical-scroll-proportion="5.5070424">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4260#4276#0" expanded="true" />
+                <element signature="e#4163#4179#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.3469388">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Incidencia.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Incidencia.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="0" selection-start="1440" selection-end="1536" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="card_ex.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/card_ex.xml">
-          <provider editor-type-id="text-editor">
-            <state line="75" column="45" selection-start="2595" selection-end="2595" vertical-scroll-proportion="-31.76">
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sel_provincias.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/xml/sel_provincias.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="39" selection-start="6874" selection-end="6874" vertical-scroll-proportion="-13.96">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="63" selection-start="1457" selection-end="1457" vertical-scroll-proportion="-13.6">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyCard.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MyCard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="55" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Card.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Card.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="5" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractCard.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AbstractCard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="20" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -278,8 +152,8 @@
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MyCard.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Incidencia.java" />
         <option value="$PROJECT_DIR$/res/xml/sel_provincias.xml" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java" />
         <option value="$PROJECT_DIR$/res/xml/about.xml" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java" />
       </list>
     </option>
   </component>
@@ -648,7 +522,7 @@
       <workItem from="1369091675337" duration="1000000" />
       <workItem from="1369092703594" duration="40000" />
       <workItem from="1369093854501" duration="9432000" />
-      <workItem from="1369166212720" duration="4762000" />
+      <workItem from="1369166212720" duration="4963000" />
     </task>
     <task id="LOCAL-00001" summary="Añadido modo TEST">
       <created>1369011585262</created>
@@ -726,11 +600,15 @@
       <created>1369171243120</created>
       <updated>1369171243120</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="CARDS UI 0.2. Muestra incidencias en forma de tarjetas">
+      <created>1369176245103</created>
+      <updated>1369176245103</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26379000" />
+    <option name="totallyTimeSpent" value="26580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -942,20 +820,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="408" column="310" selection-start="12982" selection-end="12982" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4260#4276#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.3469388">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivityProceso.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="181" column="89" selection-start="5399" selection-end="5399" vertical-scroll-proportion="5.5070424">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4163#4179#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

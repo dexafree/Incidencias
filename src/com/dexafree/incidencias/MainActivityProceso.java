@@ -97,7 +97,7 @@ public class MainActivityProceso extends Activity {
                 return true;
             case R.id.actualizar:
                 actualizar();
-                Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
+
                 return true;
             case R.id.probando:
                 prueba();
@@ -179,6 +179,7 @@ public class MainActivityProceso extends Activity {
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView.refresh();
+        Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
 
     }
 

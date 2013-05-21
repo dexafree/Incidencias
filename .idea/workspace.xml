@@ -14,19 +14,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incidencias.apk" afterPath="$PROJECT_DIR$/Incidencias.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/sel_provincias.xml" afterPath="$PROJECT_DIR$/res/xml/sel_provincias.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369178908927" ignored="false" />
+    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369179865696" ignored="false" />
     <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369178876104" ignored="false" />
     <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369143728165" ignored="false" />
     <file path="/fragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369085101793" ignored="false" />
     <file path="/about.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369178834721" ignored="false" />
     <file path="/About.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369012279042" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369143698082" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369180161906" ignored="false" />
     <file path="/CardUI.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369084301390" ignored="false" />
     <file path="/CardsMainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369090238841" ignored="false" />
     <file path="/MyCard.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369151771939" ignored="false" />
@@ -112,6 +111,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="card_ex.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/card_ex.xml">
+          <provider editor-type-id="text-editor">
+            <state line="75" column="45" selection-start="2645" selection-end="2645" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="64" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.58196723">
+              <folding>
+                <element signature="e#489#507#0" expanded="true" />
+                <element signature="e#718#736#0" expanded="true" />
+                <element signature="e#1127#1136#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="about.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -130,10 +154,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sel_provincias.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sel_provincias.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/xml/sel_provincias.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="226" column="36" selection-start="5997" selection-end="5997" vertical-scroll-proportion="0.33333334">
+            <state line="226" column="36" selection-start="5997" selection-end="5997" vertical-scroll-proportion="-2.0588236">
               <folding />
             </state>
           </provider>
@@ -198,8 +222,6 @@
         <option value="$PROJECT_DIR$/res/layout/cards_view.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/CardsMainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/CardStack.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/res/layout/card_ex.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/AbstractCard.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Card.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MyCard.java" />
@@ -210,6 +232,8 @@
         <option value="$PROJECT_DIR$/res/xml/about.xml" />
         <option value="$PROJECT_DIR$/res/xml/preferences.xml" />
         <option value="$PROJECT_DIR$/res/xml/sel_provincias.xml" />
+        <option value="$PROJECT_DIR$/res/layout/card_ex.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -596,7 +620,7 @@
       <workItem from="1369091675337" duration="1000000" />
       <workItem from="1369092703594" duration="40000" />
       <workItem from="1369093854501" duration="9432000" />
-      <workItem from="1369166212720" duration="7726000" />
+      <workItem from="1369166212720" duration="8871000" />
     </task>
     <task id="LOCAL-00001" summary="Añadido modo TEST">
       <created>1369011585262</created>
@@ -690,18 +714,26 @@
       <created>1369178915591</created>
       <updated>1369178915591</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="BETA 1 - Corregido Tarragona">
+      <created>1369179208891</created>
+      <updated>1369179208891</updated>
+    </task>
+    <task id="LOCAL-00025" summary="BETA 1 - Color azul en titulo">
+      <created>1369179868335</created>
+      <updated>1369179868335</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29343000" />
+    <option name="totallyTimeSpent" value="30488000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6712095" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6712095" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6678024" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6678024" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6712095" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -768,7 +800,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="BETA 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="BETA 1 - Color azul en titulo" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -793,23 +825,13 @@
     <MESSAGE value="Arreglado el Toast de &quot;Actualizado&quot; antes de tiempo" />
     <MESSAGE value="Commit pre-beta" />
     <MESSAGE value="BETA 1" />
+    <MESSAGE value="BETA 1 - Corregido Tarragona" />
+    <MESSAGE value="BETA 1 - Color azul en titulo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="19" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.6929348">
-          <folding>
-            <element signature="e#489#507#0" expanded="true" />
-            <element signature="e#659#677#0" expanded="true" />
-            <element signature="e#1003#1012#0" expanded="true" />
-            <element signature="e#1275#1286#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AbstractCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="20" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0">
@@ -845,16 +867,6 @@
         </state>
       </provider>
       <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/card_ex.xml">
-      <provider editor-type-id="text-editor">
-        <state line="75" column="45" selection-start="2595" selection-end="2595" vertical-scroll-proportion="-31.76">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
@@ -912,8 +924,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/sel_provincias.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="36" selection-start="5997" selection-end="5997" vertical-scroll-proportion="0.33333334">
+        <state line="226" column="36" selection-start="5997" selection-end="5997" vertical-scroll-proportion="-2.0588236">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/card_ex.xml">
+      <provider editor-type-id="text-editor">
+        <state line="75" column="45" selection-start="2645" selection-end="2645" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="64" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.58196723">
+          <folding>
+            <element signature="e#489#507#0" expanded="true" />
+            <element signature="e#718#736#0" expanded="true" />
+            <element signature="e#1127#1136#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

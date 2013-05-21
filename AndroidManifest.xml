@@ -40,6 +40,10 @@
                   android:label="Cards">
         </activity>
 
+        <activity android:name="com.dexafree.incidencias.MainActivityProceso"
+                  android:label="MAP">
+        </activity>
+
     </application>
 
 </manifest>

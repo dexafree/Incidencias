@@ -1,5 +1,8 @@
 package com.dexafree.incidencias;
 
+/**
+ * Created by Carlos on 21/05/13.
+ */
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -35,49 +38,42 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-public class MainActivity extends Activity {
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.dexafree.incidencias.CardStack;
+import com.dexafree.incidencias.CardUI;
 
-    ListView lv1;
+public class MainActivityProceso extends Activity {
+
     ProgressDialog ShowProgress;
     public ArrayList<Incidencia> IncidenciaList = new ArrayList<Incidencia>();
+    private CardUI mCardView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
- 
-  /*      SharedPreferences pref =
-                PreferenceManager.getDefaultSharedPreferences(
-                        MainActivity.this);
-        Log.i("", "Opcion: " + pref.getBoolean("provincias_sel", false));*/
+        setContentView(R.layout.activity_main_cards);
 
+        // init CardView
+        mCardView = (CardUI) findViewById(R.id.cardsview);
+        mCardView.setSwipeable(true);
 
+        //TAREA DE CARGA DE XML Y PARSEO
 
-
-        lv1 = (ListView) findViewById(R.id.listView1);
-
-        ShowProgress = ProgressDialog.show(MainActivity.this, "",
+        ShowProgress = ProgressDialog.show(MainActivityProceso.this, "",
                 "Cargando. Espere por favor...", true);
         new loadingTask().execute("http://dgt.es/incidencias.xml");
-
-        lv1.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-
-                Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri
-                        .parse(IncidenciaList.get(position).getFechahora())); // AQUI IBA GETURL, PERO NO SE QUE HACE!
-                startActivity(intent);
-
-            }
-        });
-
-
-
 
 
     }
 
 
+    //MENU ACTIONBAR
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -86,7 +82,7 @@ public class MainActivity extends Activity {
     }
 
 
-
+    //GESTIONAR CLICK ACTIONBAR
     //GESTIONANDO EL CLICK DE LA ACTIONBAR
 
     @Override
@@ -104,9 +100,8 @@ public class MainActivity extends Activity {
                 Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.probando:
-                //prueba();
-                //Toast.makeText(getApplicationContext(), "Hecho", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(this, MainActivityProceso.class));
+                prueba();
+                Toast.makeText(getApplicationContext(), "Hecho", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.action_acerca:
                 startActivity(new Intent(this, About.class));
@@ -122,6 +117,7 @@ public class MainActivity extends Activity {
 
 
 
+    //LOADINGTASK Y PARSEO
     class loadingTask extends AsyncTask<String, Void, String> {
 
         protected String doInBackground(String... urls) {
@@ -138,11 +134,14 @@ public class MainActivity extends Activity {
         }
 
         protected void onPostExecute(String s) {
-            lv1.setAdapter(new EfficientAdapter(MainActivity.this, IncidenciaList));
+         //   lv1.setAdapter(new EfficientAdapter(MainActivityProceso.this, IncidenciaList));
             ShowProgress.dismiss();
+            mCardView.refresh();
 
         }
     }
+
+
 
     class SAXHelper {
         public HashMap<String, String> userList = new HashMap<String, String>();
@@ -169,23 +168,17 @@ public class MainActivity extends Activity {
     }
 
     public void actualizar() {
+        //ELIMINAMOS LAS INCIDENCIAS EXISTENTES
         IncidenciaList.clear();
-        lv1 = (ListView) findViewById(R.id.listView1);
+        mCardView.clearCards();
 
-        ShowProgress = ProgressDialog.show(MainActivity.this, "",
+        //CARGAMOS NUEVAS INCIDENCIAS
+        ShowProgress = ProgressDialog.show(MainActivityProceso.this, "",
                 "Cargando. Espere por favor...", true);
         new loadingTask().execute("http://dgt.es/incidencias.xml");
 
-        lv1.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-
-                Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri
-                        .parse(IncidenciaList.get(position).getFechahora())); // AQUI IBA GETURL, PERO NO SE QUE HACE!
-                startActivity(intent);
-
-            }
-        });
+        //REFRESCAR LA VISTA DE LAS CARDS
+        mCardView.refresh();
 
     }
 
@@ -193,15 +186,15 @@ public class MainActivity extends Activity {
 
         SharedPreferences pref =
                 PreferenceManager.getDefaultSharedPreferences(
-                        MainActivity.this);
-        if ( pref.getBoolean("testeo", false)) {
+                        MainActivityProceso.this);
+      /*  if ( pref.getBoolean("testeo", false)) {
             Log.i("", "Es true");
 
         }
         else {
             Log.i("", "Es false");
 
-        }
+        }*/
 
         Date cDate = new Date();
         String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
@@ -213,14 +206,14 @@ public class MainActivity extends Activity {
     public boolean checkTesteo() {
         SharedPreferences pref =
                 PreferenceManager.getDefaultSharedPreferences(
-                        MainActivity.this);
+                        MainActivityProceso.this);
 
         if ( pref.getBoolean("testeo", false)) {
-            Log.i("", "Es true");
+           // Log.i("", "Es true");
             return true;
         }
         else {
-            Log.i("", "Es false");
+            //Log.i("", "Es false");
             return false;
         }
 
@@ -230,8 +223,6 @@ public class MainActivity extends Activity {
 
     public boolean comparaFecha(String fechahora){
 
-
-
         Date cDate = new Date();
         String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
 
@@ -240,42 +231,42 @@ public class MainActivity extends Activity {
         String month = new SimpleDateFormat("MM").format(cDate);
         String day = new SimpleDateFormat("dd").format(cDate);
 
-        Log.i("", "year month day: " + year + " " + month + " " + day);
+     //   Log.i("", "year month day: " + year + " " + month + " " + day);
 
         String yearpas = fechahora.substring(0,4);
         String monthpas = fechahora.substring(5,7);
         String daypas = fechahora.substring(8,10);
 
-        Log.i("", "yearpas monthpas daypas: " + yearpas + " " + monthpas + " " + daypas);
+      //  Log.i("", "yearpas monthpas daypas: " + yearpas + " " + monthpas + " " + daypas);
 
         if (year.equals(yearpas))
-         {
+        {
 
-             Log.i("", "COINCIDE YEAR");
+          //  Log.i("", "COINCIDE YEAR");
 
             if (month.equals(monthpas))
+            {
+              //  Log.i("", "COINCIDE MONTH");
+                if (day.equals(daypas))
                 {
-                    Log.i("", "COINCIDE MONTH");
-                    if (day.equals(daypas))
-                     {
-                         Log.i("", "COINCIDE DAY");
-                        return true;
-                     }
-                    else
-                     {
-                        return false;
-                     }
+                //    Log.i("", "COINCIDE DAY");
+                    return true;
                 }
-            else
+                else
                 {
                     return false;
                 }
-         }
+            }
+            else
+            {
+                return false;
+            }
+        }
         else
-         {
-             Log.i("", "No coincide year");
-          return false;
-         }
+        {
+         //   Log.i("", "No coincide year");
+            return false;
+        }
 
 
     }
@@ -299,16 +290,16 @@ public class MainActivity extends Activity {
 
         SharedPreferences pref =
                 PreferenceManager.getDefaultSharedPreferences(
-                        MainActivity.this);
+                        MainActivityProceso.this);
 
-        Log.i("", provincia + ": " + pref.getBoolean(provincia, false));
+     //   Log.i("", provincia + ": " + pref.getBoolean(provincia, false));
 
         if ( pref.getBoolean(provincia, false) == true) {
-            Log.i("", "Es true");
+         //   Log.i("", "Es true");
             return true;
         }
         else {
-            Log.i("", "Es false");
+           // Log.i("", "Es false");
             return false;
         }
     }
@@ -390,24 +381,27 @@ public class MainActivity extends Activity {
 
 
 
-               // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
+                // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
                 if (checkProvincia(currentIncidencia.getProvincia()) == true)
                 {
 
                     if (checkTesteo() == false)
                     {
-                         //   Log.i("", "Pasado el primer if");
-                       if (comparaFecha(currentIncidencia.getFechahora().trim()) == true)
+                        //   Log.i("", "Pasado el primer if");
+                        if (comparaFecha(currentIncidencia.getFechahora().trim()) == true)
 
-                         {
-                             //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
-                             IncidenciaList.add(currentIncidencia);
-                         }
+                        {
+                            //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                            IncidenciaList.add(currentIncidencia);
+                            mCardView.addCard(new MyCard(currentIncidencia.getProvincia(), currentIncidencia.getPkFin()));
+                        }
 
                     }
                     else
                     {
                         IncidenciaList.add(currentIncidencia);
+                        mCardView.addCard(new MyCard(currentIncidencia.getProvincia(), currentIncidencia.getPkFin()));
+
                     }
 
                 }
@@ -424,5 +418,6 @@ public class MainActivity extends Activity {
         }
 
     }
+
 
 }

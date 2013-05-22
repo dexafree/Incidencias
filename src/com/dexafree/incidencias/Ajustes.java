@@ -3,6 +3,8 @@ package com.dexafree.incidencias;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.ListPreference;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.view.MenuItem;
 
@@ -18,6 +20,23 @@ public class Ajustes extends PreferenceActivity {
 
       //  ActionBar actionBar = getActionBar();
       //  actionBar.setDisplayHomeAsUpEnabled(true);
+
+        ListPreference splashList = (ListPreference) findPreference("hora_selecc");
+        splashList.setSummary(splashList.getEntry());
+
+        splashList.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                String nv = (String) newValue;
+
+                if (preference.getKey().equals("hora_selecc")) {
+                    ListPreference splashList = (ListPreference) preference;
+                    splashList.setSummary(splashList.getEntries()[splashList.findIndexOfValue(nv)]);
+                }
+                return true;
+            }
+
+        });
+
     }
 
     /*@Override

@@ -2,8 +2,29 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory
-            android:title="TEST MODE"
+            android:title="Preferencias"
             android:key="pref_key_storage_settings">
+
+        <CheckBoxPreference
+                android:key="filtrado_horario"
+                android:summary="Mostrar solo las incidencias más actuales"
+                android:title="Filtrado horario"
+                android:defaultValue="false" />
+
+        <ListPreference
+                android:key="hora_selecc"
+                android:dependency="filtrado_horario"
+                android:summary="Selecciona el intervalo de horas máximo a mostrar"
+                android:title="Intervalo máx."
+                android:entries="@array/Horas"
+                android:entryValues="@array/Horas_val"
+                />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="Modo testeo"
+            android:key="modo_testeo">
 
         <SwitchPreference
                 android:key="testeo"

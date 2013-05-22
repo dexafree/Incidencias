@@ -128,8 +128,8 @@ public class MainActivity extends Activity {
             //the app is being launched for first time, do something
             Log.d("Comments", "First time");
 
-            mCardView.addCard(new MyCard("No tienes ninguna provincia seleccionada", "Entra al menu de Provincias y selecciona la/s que te interese/n\n \nLuego pulsa Actualizar"));
-            mCardView.addCard(new MyCard("Puedes deslizar las tarjetas hacia los laterales", "Adelante, pruebalo!"));
+            mCardView.addCard(new MyCard("No tienes ninguna provincia seleccionada", "Entra al menú de Provincias y selecciona las que te interesen\n \nLuego pulsa Actualizar"));
+            mCardView.addCard(new MyCard( "Deslízame!", "Puedes deslizar las tarjetas hacia los laterales para descartarlas"));
             mCardView.refresh();
 
 
@@ -163,6 +163,7 @@ public class MainActivity extends Activity {
             //   lv1.setAdapter(new EfficientAdapter(MainActivity.this, IncidenciaList));
             ShowProgress.dismiss();
             mCardView.refresh();
+            Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
 
         }
     }
@@ -205,7 +206,6 @@ public class MainActivity extends Activity {
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView.refresh();
-        Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
 
     }
 

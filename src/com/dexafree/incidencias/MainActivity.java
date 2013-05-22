@@ -466,7 +466,9 @@ public class MainActivity extends Activity {
                                 if (checkHora(currentIncidencia.getFechahora())) {
                                      //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
                                     IncidenciaList.add(currentIncidencia);
+
                                     mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                                    mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo(),R.drawable.conos_amarillo));
                                 }
 
                             }
@@ -474,6 +476,7 @@ public class MainActivity extends Activity {
                             else {
                                 IncidenciaList.add(currentIncidencia);
                                 mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                                mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo(),R.drawable.conos_amarillo));
                             }
 
                         }
@@ -482,6 +485,7 @@ public class MainActivity extends Activity {
                     else {
                         IncidenciaList.add(currentIncidencia);
                         mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                        mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo(),R.drawable.conos_amarillo));
 
                     }
 

@@ -14,12 +14,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext-lib/nineoldandroids-2.4.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incidencias.apk" afterPath="$PROJECT_DIR$/Incidencias.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369231766014" ignored="false" />
+    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369237015628" ignored="false" />
     <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369231039234" ignored="false" />
     <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369236765366" ignored="false" />
     <file path="/fragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369085101793" ignored="false" />
@@ -100,10 +101,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="520" column="0" selection-start="16628" selection-end="16628" vertical-scroll-proportion="0.9036827">
+            <state line="520" column="0" selection-start="16628" selection-end="16628" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -157,10 +158,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ajustes.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Ajustes.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Ajustes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="59" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0">
+            <state line="30" column="59" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.55737704">
               <folding>
                 <element signature="e#830#1326#0" expanded="true" />
                 <element signature="e#1314#1315#0" expanded="true" />
@@ -600,7 +601,7 @@
       <workItem from="1369092703594" duration="40000" />
       <workItem from="1369093854501" duration="9432000" />
       <workItem from="1369166212720" duration="9058000" />
-      <workItem from="1369230080735" duration="6900000" />
+      <workItem from="1369230080735" duration="7591000" />
     </task>
     <task id="LOCAL-00001" summary="Añadido modo TEST">
       <created>1369011585262</created>
@@ -714,15 +715,19 @@
       <created>1369231770074</created>
       <updated>1369231770074</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="BETA 2 - Filtrado horario implementado">
+      <created>1369237022169</created>
+      <updated>1369237022169</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37575000" />
+    <option name="totallyTimeSpent" value="38266000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6678024" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6678024" order="3" side_tool="false" content_ui="tabs" />
@@ -739,7 +744,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.6678024" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24924242" sideWeight="0.6678024" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3321976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6712095" order="3" side_tool="false" content_ui="tabs" />
@@ -792,7 +797,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="BETA 1 - Summary intervalo max" />
+    <option name="LAST_COMMIT_MESSAGE" value="BETA 2 - Filtrado horario implementado" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -822,6 +827,7 @@
     <MESSAGE value="BETA 1 - Arreglado Reload en cambio de orientacion" />
     <MESSAGE value="BETA 1 - Preparando filtrado horario" />
     <MESSAGE value="BETA 1 - Summary intervalo max" />
+    <MESSAGE value="BETA 2 - Filtrado horario implementado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -914,16 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Ajustes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="59" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#830#1326#0" expanded="true" />
-            <element signature="e#1314#1315#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/card_ex.xml">
       <provider editor-type-id="text-editor">
         <state line="75" column="45" selection-start="2645" selection-end="2645" vertical-scroll-proportion="0.0">
@@ -943,8 +939,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="520" column="0" selection-start="16628" selection-end="16628" vertical-scroll-proportion="0.9036827">
+        <state line="520" column="0" selection-start="16628" selection-end="16628" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Ajustes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="59" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.55737704">
+          <folding>
+            <element signature="e#830#1326#0" expanded="true" />
+            <element signature="e#1314#1315#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

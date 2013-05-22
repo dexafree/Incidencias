@@ -14,28 +14,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\METEO_AMAR.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\CONOS_AMARILLO.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\CONOS_NEGRO.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\CONOS_ROJO.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\CONOS_VERDE.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\METEO_NEGRO.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\METEO_ROJO.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\METEO_VERDE.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\OBRAS_AMARILLO.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\OBRAS_NEGRO.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\OBRAS_ROJO.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\OBRAS_VERDE.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\RETENCION_AMARILLO.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\RETENCION_NEGRO.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\RETENCION_ROJO.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\RETENCION_VERDE.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/conos_amarillo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/conos_negro.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/conos_rojo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/conos_verde.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/meteo_negro.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/meteo_rojo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/meteo_verde.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/obras_amarillo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/obras_negro.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/obras_rojo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/obras_verde.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/retencion_amarillo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/retencion_negro.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/retencion_rojo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/retencion_verde.png" />
+      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\METEO_AMAR.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369263643040" ignored="false" />
+    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369264691095" ignored="false" />
     <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369231039234" ignored="false" />
     <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369264574872" ignored="false" />
     <file path="/fragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369085101793" ignored="false" />
@@ -627,7 +626,7 @@
       <workItem from="1369093854501" duration="9432000" />
       <workItem from="1369166212720" duration="9058000" />
       <workItem from="1369230080735" duration="8674000" />
-      <workItem from="1369262815844" duration="1855000" />
+      <workItem from="1369262815844" duration="1937000" />
     </task>
     <task id="LOCAL-00001" summary="Añadido modo TEST">
       <created>1369011585262</created>
@@ -757,11 +756,15 @@
       <created>1369263651348</created>
       <updated>1369263651348</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="BETA 2 - Implementando iconos">
+      <created>1369264703416</created>
+      <updated>1369264703416</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41204000" />
+    <option name="totallyTimeSpent" value="41286000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -835,7 +838,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="BETA 2 - Intentando implementar iconos" />
+    <option name="LAST_COMMIT_MESSAGE" value="BETA 2 - Implementando iconos" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -868,6 +871,7 @@
     <MESSAGE value="BETA 2 - Filtrado horario implementado" />
     <MESSAGE value="BETA 2 - Filtrado horario implementado y añadida libreria a ext-lib" />
     <MESSAGE value="BETA 2 - Intentando implementar iconos" />
+    <MESSAGE value="BETA 2 - Implementando iconos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

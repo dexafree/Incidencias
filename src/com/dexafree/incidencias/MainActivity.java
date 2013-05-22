@@ -7,6 +7,7 @@ package com.dexafree.incidencias;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Activity;
+import android.preference.ListPreference;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
@@ -266,31 +267,25 @@ public class MainActivity extends Activity {
 
         //  Log.i("", "yearpas monthpas daypas: " + yearpas + " " + monthpas + " " + daypas);
 
-        if (year.equals(yearpas))
-        {
+        if (year.equals(yearpas)) {
 
             //  Log.i("", "COINCIDE YEAR");
 
-            if (month.equals(monthpas))
-            {
+            if (month.equals(monthpas)) {
                 //  Log.i("", "COINCIDE MONTH");
-                if (day.equals(daypas))
-                {
+                if (day.equals(daypas)) {
                     //    Log.i("", "COINCIDE DAY");
                     return true;
                 }
-                else
-                {
+                else {
                     return false;
                 }
             }
-            else
-            {
+            else {
                 return false;
             }
         }
-        else
-        {
+        else {
             //   Log.i("", "No coincide year");
             return false;
         }
@@ -300,18 +295,72 @@ public class MainActivity extends Activity {
 
     public boolean checkHora(String hora){
 
+        Log.i("", "Hora: " + hora);
+
         Calendar c = Calendar.getInstance();
         int minutes = c.get(Calendar.MINUTE);
-        int hours = c.get(Calendar.HOUR);
+        int hours = c.get(Calendar.HOUR_OF_DAY);
+
+        Log.i("", "hora minuto: " + hours + "  " + minutes);
+
+        String horatr = hora.trim();
+        String hourpas = horatr.substring(11,13);
+        String minutepas = horatr.substring(14,16);
+        Log.i("", "hp: " + hourpas);
+        Log.i("", "mp: " + minutepas);
+
+        int hourInc = Integer.parseInt(hourpas);
+        int minuteInc= Integer.parseInt(minutepas);
+
+        if (hours >= hourInc) {
+            SharedPreferences sphora = PreferenceManager.getDefaultSharedPreferences(this);
+            String interv = sphora.getString("hora_selecc", "-1");
+
+            Log.i("", "interv: " + interv);
+
+            int intervInt = Integer.parseInt(interv);
+            int dif = hours-hourInc;
+            Log.i("", "dif: " + dif);
+
+            if (dif <= intervInt ) {
+
+                if ((dif == intervInt ) && ((minutes - minuteInc) >= 0)) {
+                    // Log.i("", "Es true");
+                    return true;
+                }
+
+                else if (dif != intervInt ) {
+                    return true;
+                }
+
+                else {
+                    return false;
+                }
+
+            }
+
+            else {
+                return false;
+            }
 
 
-        String minutepas = hora.substring(0,4);
-        String hourpas = hora.substring(5,7);
 
+        }
 
-
-        return true;
+        else {
+            return false;
+        }
     }
+
+    public boolean checkFiltrado(){
+        SharedPreferences cFilt = PreferenceManager.getDefaultSharedPreferences(this);
+        if (cFilt.getBoolean("filtrado_horario", false)) {
+            return true;
+        }
+        return false;
+    }
+
+
 
     public String getHora(String fechaHora) {
 
@@ -422,23 +471,31 @@ public class MainActivity extends Activity {
 
 
                 // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
-                if (checkProvincia(currentIncidencia.getProvincia()) == true)
-                {
+                if (checkProvincia(currentIncidencia.getProvincia()) == true) {
 
-                    if (checkTesteo() == false)
-                    {
+                    if (checkTesteo() == false) {
                         //   Log.i("", "Pasado el primer if");
-                        if (comparaFecha(currentIncidencia.getFechahora().trim()) == true)
+                        if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
 
-                        {
-                            //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
-                            IncidenciaList.add(currentIncidencia);
-                            mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                            if (checkFiltrado()) {
+
+                                if (checkHora(currentIncidencia.getFechahora())) {
+                                     //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                                    IncidenciaList.add(currentIncidencia);
+                                    mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                                }
+
+                            }
+
+                            else {
+                                IncidenciaList.add(currentIncidencia);
+                                mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                            }
+
                         }
 
                     }
-                    else
-                    {
+                    else {
                         IncidenciaList.add(currentIncidencia);
                         mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
 

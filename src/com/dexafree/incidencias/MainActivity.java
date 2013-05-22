@@ -49,6 +49,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import com.dexafree.incidencias.CardStack;
 import com.dexafree.incidencias.CardUI;
+import com.dexafree.incidencias.MyImageCard;
 
 public class MainActivity extends Activity {
 
@@ -66,6 +67,8 @@ public class MainActivity extends Activity {
         // init CardView
         mCardView = (CardUI) findViewById(R.id.cardsview);
         mCardView.setSwipeable(true);
+
+
 
 
         //TAREA DE CARGA DE XML Y PARSEO
@@ -211,26 +214,6 @@ public class MainActivity extends Activity {
 
     }
 
-    public void prueba() {
-
-        SharedPreferences pref =
-                PreferenceManager.getDefaultSharedPreferences(
-                        MainActivity.this);
-      /*  if ( pref.getBoolean("testeo", false)) {
-            Log.i("", "Es true");
-
-        }
-        else {
-            Log.i("", "Es false");
-
-        }*/
-
-        Date cDate = new Date();
-        String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
-
-        Toast.makeText(getApplicationContext(), fDate, Toast.LENGTH_LONG).show();
-
-    }
 
     public boolean checkTesteo() {
         SharedPreferences pref =

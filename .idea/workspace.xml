@@ -13,30 +13,16 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/conos_amarillo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/conos_negro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/conos_rojo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/conos_verde.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/meteo_negro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/meteo_rojo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/meteo_verde.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/obras_amarillo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/obras_negro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/obras_rojo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/obras_verde.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/retencion_amarillo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/retencion_negro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/retencion_rojo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/retencion_verde.png" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\icons\METEO_AMAR.png" afterPath="" />
+    <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="BETA 2 - Implementando iconos">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incidencias.apk" afterPath="$PROJECT_DIR$/Incidencias.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369264691095" ignored="false" />
+    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369298187365" ignored="false" />
     <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369231039234" ignored="false" />
-    <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369264574872" ignored="false" />
+    <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369299836258" ignored="false" />
     <file path="/fragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369085101793" ignored="false" />
     <file path="/about.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369178834721" ignored="false" />
     <file path="/About.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369012279042" ignored="false" />
@@ -69,7 +55,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -106,6 +91,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -118,7 +104,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="487" column="125" selection-start="16295" selection-end="16295" vertical-scroll-proportion="0.9036827">
+            <state line="628" column="181" selection-start="17810" selection-end="17810" vertical-scroll-proportion="-0.56657225">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1598#1610#0" expanded="true" />
@@ -139,20 +125,20 @@
       </file>
       <file leaf-file-name="card_ex.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/card_ex.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="45" selection-start="2645" selection-end="2645" vertical-scroll-proportion="-25.5">
-              <folding />
-            </state>
-          </provider>
           <provider editor-type-id="android-designer">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="75" column="45" selection-start="2645" selection-end="2645" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="sel_provincias.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/xml/sel_provincias.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="226" column="36" selection-start="5997" selection-end="5997" vertical-scroll-proportion="-0.68">
+            <state line="226" column="36" selection-start="5997" selection-end="5997" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -237,6 +223,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -437,8 +425,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,8 +441,8 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="AndroidRunProguardForReleaseBuild" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
   </component>
   <component name="RecentsManager">
@@ -626,7 +612,8 @@
       <workItem from="1369093854501" duration="9432000" />
       <workItem from="1369166212720" duration="9058000" />
       <workItem from="1369230080735" duration="8674000" />
-      <workItem from="1369262815844" duration="1937000" />
+      <workItem from="1369262815844" duration="3189000" />
+      <workItem from="1369298171454" duration="1785000" />
     </task>
     <task id="LOCAL-00001" summary="Añadido modo TEST">
       <created>1369011585262</created>
@@ -760,20 +747,21 @@
       <created>1369264703416</created>
       <updated>1369264703416</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="BETA 2 - Implementando iconos">
+      <created>1369264769567</created>
+      <updated>1369264769567</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41286000" />
+    <option name="totallyTimeSpent" value="44323000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6678024" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6678024" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6712095" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -789,6 +777,9 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24848485" sideWeight="0.6678024" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3321976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6678024" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6678024" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6712095" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -877,20 +868,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="71" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="64" selection-start="1496" selection-end="1496" vertical-scroll-proportion="1.1474245">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/preferences.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="34" selection-start="544" selection-end="544" vertical-scroll-proportion="0.0">
@@ -934,33 +911,33 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/cards_view.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/cards_view_multicolumn.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/card_picture.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/card_picture.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.1164658">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/arrays.xml">
@@ -972,19 +949,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/sel_provincias.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="36" selection-start="5997" selection-end="5997" vertical-scroll-proportion="-0.68">
+        <state line="226" column="36" selection-start="5997" selection-end="5997" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/card_ex.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="45" selection-start="2645" selection-end="2645" vertical-scroll-proportion="-25.5">
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="45" selection-start="2645" selection-end="2645" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MyImageCard.java">
@@ -994,9 +971,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable/conos_verde.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable/meteo_amarillo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="487" column="125" selection-start="16295" selection-end="16295" vertical-scroll-proportion="0.9036827">
+        <state line="628" column="181" selection-start="17810" selection-end="17810" vertical-scroll-proportion="-0.56657225">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1598#1610#0" expanded="true" />

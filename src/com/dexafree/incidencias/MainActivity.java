@@ -346,6 +346,8 @@ public class MainActivity extends Activity {
 
 
 
+
+
     public String getHora(String fechaHora) {
 
         Log.i("", "FechaHora: " + fechaHora);
@@ -356,6 +358,162 @@ public class MainActivity extends Activity {
         String minutos = fhs.substring(14,16);
         Log.i("", "minutos: " + minutos);
         return hora + ":" + minutos + "  ";
+
+    }
+
+    public int incIcono(String tipo, String nivel){
+
+        if (tipo.equalsIgnoreCase("METEOROLOGICA")){
+
+            if (nivel.equals("VERDE")){
+
+                return R.drawable.meteo_verde;
+
+            }
+
+            if (nivel.equalsIgnoreCase("ROJO")){
+
+                return R.drawable.meteo_rojo;
+
+            }
+
+            if (nivel.equalsIgnoreCase("AMARILLO")){
+
+                return R.drawable.meteo_amarillo;
+
+            }
+
+            if (nivel.equalsIgnoreCase("NEGRO")){
+
+                return R.drawable.meteo_negro;
+
+            }
+
+
+
+        }
+
+        else if (tipo.equalsIgnoreCase("CONOS")){
+
+            if (nivel.equals("VERDE")){
+
+                return R.drawable.conos_verde;
+
+            }
+
+            if (nivel.equalsIgnoreCase("ROJO")){
+
+                return R.drawable.conos_rojo;
+
+            }
+
+            if (nivel.equalsIgnoreCase("AMARILLO")){
+
+                return R.drawable.conos_amarillo;
+
+            }
+
+            if (nivel.equalsIgnoreCase("NEGRO")){
+
+                return R.drawable.conos_negro;
+
+            }
+
+
+
+        }
+
+        else if (tipo.equalsIgnoreCase("RETENCION")){
+
+            if (nivel.equals("VERDE")){
+
+                return R.drawable.retencion_verde;
+
+            }
+
+            if (nivel.equalsIgnoreCase("ROJO")){
+
+                return R.drawable.retencion_rojo;
+
+            }
+
+            if (nivel.equalsIgnoreCase("AMARILLO")){
+
+                return R.drawable.retencion_amarillo;
+
+            }
+
+            if (nivel.equalsIgnoreCase("NEGRO")){
+
+                return R.drawable.retencion_negro;
+
+            }
+
+
+
+        }
+
+        else if (tipo.equalsIgnoreCase("CONOS")){
+
+            if (nivel.equals("VERDE")){
+
+                return R.drawable.conos_verde;
+
+            }
+
+            if (nivel.equalsIgnoreCase("ROJO")){
+
+                return R.drawable.conos_rojo;
+
+            }
+
+            if (nivel.equalsIgnoreCase("AMARILLO")){
+
+                return R.drawable.conos_amarillo;
+
+            }
+
+            if (nivel.equalsIgnoreCase("NEGRO")){
+
+                return R.drawable.conos_negro;
+
+            }
+
+
+
+        }
+
+        else if (tipo.equalsIgnoreCase("OBRAS")){
+
+            if (nivel.equals("VERDE")){
+
+                return R.drawable.obras_verde;
+
+            }
+
+            if (nivel.equalsIgnoreCase("ROJO")){
+
+                return R.drawable.obras_rojo;
+
+            }
+
+            if (nivel.equalsIgnoreCase("AMARILLO")){
+
+                return R.drawable.obras_amarillo;
+
+            }
+
+            if (nivel.equalsIgnoreCase("NEGRO")){
+
+                return R.drawable.obras_negro;
+
+            }
+
+
+
+        }
+
+        return R.drawable.conos_verde;
 
     }
 
@@ -468,7 +626,7 @@ public class MainActivity extends Activity {
                                     IncidenciaList.add(currentIncidencia);
 
                                     mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
-                                    mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo(),R.drawable.conos_amarillo));
+                                    mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
                                 }
 
                             }
@@ -476,7 +634,7 @@ public class MainActivity extends Activity {
                             else {
                                 IncidenciaList.add(currentIncidencia);
                                 mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
-                                mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo(),R.drawable.conos_amarillo));
+                                mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
                             }
 
                         }
@@ -485,7 +643,7 @@ public class MainActivity extends Activity {
                     else {
                         IncidenciaList.add(currentIncidencia);
                         mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
-                        mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo(),R.drawable.conos_amarillo));
+                        mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
 
                     }
 

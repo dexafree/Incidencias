@@ -134,7 +134,8 @@ public class MainActivity extends Activity {
             Log.d("Comments", "First time");
 
             mCardView.addCard(new MyCard("No tienes ninguna provincia seleccionada", "Entra al menú de Provincias y selecciona las que te interesen\n \nLuego pulsa Actualizar"));
-            mCardView.addCard(new MyCard( "Deslízame!", "Puedes deslizar las tarjetas hacia los laterales para descartarlas"));
+            mCardView.addCard(new MyCard("Para acceder a más detalles...", "Y entonces pasarás a ver todos los detalles de la incidencia"));
+            mCardView.addCardToLastStack(new MyCard( "Deslízame!", "Puedes deslizar las tarjetas hacia los laterales para descartarlas"));
             mCardView.refresh();
 
 
@@ -625,7 +626,7 @@ public class MainActivity extends Activity {
                                      //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
                                     IncidenciaList.add(currentIncidencia);
 
-                                    mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                                    mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
                                     mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
                                 }
 
@@ -633,7 +634,7 @@ public class MainActivity extends Activity {
 
                             else {
                                 IncidenciaList.add(currentIncidencia);
-                                mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                                mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
                                 mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
                             }
 
@@ -642,7 +643,7 @@ public class MainActivity extends Activity {
                     }
                     else {
                         IncidenciaList.add(currentIncidencia);
-                        mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), currentIncidencia.getPoblacion(), "PK INICIAL: " + currentIncidencia.getPkInicio(), "PK FINAL: " + currentIncidencia.getPkFin()));
+                        mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
                         mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
 
                     }

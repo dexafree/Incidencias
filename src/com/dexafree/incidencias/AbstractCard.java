@@ -14,6 +14,10 @@ public abstract class AbstractCard {
     protected String desc2;
 
     protected String desc3;
+
+    protected String desc4;
+
+    protected String desc5;
 	
 	public abstract View getView(Context context);
 	
@@ -34,6 +38,14 @@ public abstract class AbstractCard {
 
     public String getDesc3() {
         return desc3;
+    }
+
+    public String getDesc4() {
+        return desc4;
+    }
+
+    public String getDesc5() {
+        return desc5;
     }
 
 

@@ -79,10 +79,12 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
 
         /** Getting an instance of shared preferences, that is being used in this context */
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        final SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
         /** Get the value stored in the share preferences corresponding to the key "lp_android_choice" */
         carretera = sp.getString("carretera_seleccionada", "None Selected");
+        pkFinal = 0;
+        pkInicial = 0;
 
         /** Getting an instance of the textview object corresponds to the layout in main.xml */
         TextView tv = (TextView) findViewById(R.id.selec_carr);
@@ -110,6 +112,8 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
 //                    Favoritos currentFavorito = new Favoritos();
 
+                carretera = sp.getString("carretera_seleccionada", "None Selected");
+
                     String pkInicialString = Edit1.getText().toString();
                     String pkFinString = Edit2.getText().toString();
 
@@ -130,34 +134,64 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
                 try
                 {
-
+                    try{
                     BufferedReader fin =
                             new BufferedReader(
                                     new InputStreamReader(
                                             openFileInput("Favoritos.xml")));
 
+                    Log.d("","Archivo abierto");
 
-                    previo = fin.readLine();
+                    int lines = load();
 
-                    fin.close();
+                    for(int i=0; i<lines; i++){
+                        previo = previo + "\n" + fin.readLine();
+                        Log.d("","previo: " + previo);
+                        }
 
+                        fin.close();
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        Log.e("XmlTips", "No existe el xml. Creando uno");
+                        OutputStreamWriter fcrear =
+                                new OutputStreamWriter(
+                                        openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
+                        fcrear.close();
+
+                    }
 
                     //Creamos un fichero en la memoria interna
+                    Log.d("","Sale del primer try");
                     OutputStreamWriter fout =
                             new OutputStreamWriter(
                                     openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
 
                     StringBuilder sb = new StringBuilder();
 
-                    char arr[] = previo.toCharArray();
+                    Log.d("","Consigue crear el sb");
 
+
+                    Log.d("", "Previo antes del if de previo: " + previo);
                     //Construimos el XML
-                    sb.append(arr);
+                    if (previo != null){
+
+                       // char ar[] = previo.toCharArray();
+                        sb.append(previo + "\n");
+                    }
+
+                    Log.d("","Pasa el if");
+                    Log.d("","Datos: " + carretera + "  " + pkInicial + "  " + pkFinal);
                     sb.append("<favorito>");
                     sb.append("<carretera>" + carretera + "</carretera>");
                     sb.append("<pkInicial>" + pkInicial + "</pkInicial>");
                     sb.append("<pkFinal>" + pkFinal + "</pkFinal>");
                     sb.append("</favorito>");
+
+                    Log.d("", "sb antes de append: " + sb.toString());
 
 
 
@@ -206,6 +240,9 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
 
 
+
+
+
     }
 
 
@@ -247,6 +284,35 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
                 }
             }
         }*/
+
+    public int load() throws IOException
+    {
+
+        StringBuilder text = new StringBuilder();
+
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("Favoritos.xml")));
+            String line;
+
+
+            int lineCount = 0;
+            while ((line = br.readLine()) != null) {
+                text.append(line);
+                text.append('\n');
+
+                lineCount++;
+            }
+            Log.d("", "Lines: " + lineCount);
+
+            return lineCount;
+
+        }
+        catch (IOException e) {
+            Log.d("", "Ha saltado la excepcion de load");
+            return 0;
+        }
+
+    }
 
 
         public void save(){

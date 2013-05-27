@@ -98,17 +98,36 @@ public class ManageFavoritos extends Activity {
                             new InputStreamReader(
                                     openFileInput("Favoritos.xml")));
 
-            ins = openFileInput("Favoritos.xml");
+            //ins = openFileInput("Favoritos.xml");
+
+            int lines = load();
+
+            for(int i=0; i<lines; i++){
+
             texto = fin.readLine();
             Log.d("", "XML: " + texto);
             AndroidParseXMLActivity axa = new AndroidParseXMLActivity();
             Log.d("","Vamos a parsear");
             axa.parseXML(texto);
+            }
             fin.close();
         }
         catch (Exception ex)
         {
             Log.e("Ficheros", "Error al leer fichero desde memoria interna");
+            Log.e("Ficheros", "Creando uno");
+
+            try{
+            OutputStreamWriter fcrear =
+                    new OutputStreamWriter(
+                            openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
+            fcrear.close();
+             Log.e("", "Creado XML");
+            }
+            catch (Exception exc)
+            {
+                Log.e("","Ni siquiera se puede crear");
+            }
         }
 
         mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
@@ -121,6 +140,35 @@ public class ManageFavoritos extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.favs_menu, menu);
         return true;
+    }
+
+    public int load() throws IOException
+    {
+
+        StringBuilder text = new StringBuilder();
+
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("Favoritos.xml")));
+            String line;
+
+
+            int lineCount = 0;
+            while ((line = br.readLine()) != null) {
+                text.append(line);
+                text.append('\n');
+
+                lineCount++;
+            }
+           Log.d("", "Lines: " + lineCount);
+
+            return lineCount;
+
+        }
+        catch (IOException e) {
+            Log.d("", "Ha saltado la excepcion de load");
+            return 0;
+        }
+
     }
 
 

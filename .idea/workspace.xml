@@ -17,34 +17,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/FavoritosAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/ItemXMLHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MyPreferenceFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/ObjectSerializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/RssParserDom.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/xml/carreteras.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/crea_favoritos.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/creador_favs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/favoritos.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/menu/favs_menu.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/manage_favoritos.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/row_favs.xml" />
-      <change type="DELETED" beforePath="C:\Users\Carlos\workspace\Incidencias\src\com\dexafree\incidencias\AbstractFavorito.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/arrays.xml" afterPath="$PROJECT_DIR$/res/values/arrays.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/dimens.xml" afterPath="$PROJECT_DIR$/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/main.xml" afterPath="$PROJECT_DIR$/res/menu/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369605792838" ignored="false" />
+    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369660834932" ignored="false" />
     <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369231039234" ignored="false" />
     <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369531465240" ignored="false" />
     <file path="/fragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369535856066" ignored="false" />
@@ -74,9 +53,9 @@
     <file path="/favoritos.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369484459778" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/dexafree/incidencias/BuildConfig.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369491989533" ignored="false" />
     <file path="/MainFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369494083683" ignored="false" />
-    <file path="/AddFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369650272662" ignored="false" />
+    <file path="/AddFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369666531897" ignored="false" />
     <file path="/manage_favoritos.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369650039759" ignored="false" />
-    <file path="/ManageFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369660545452" ignored="false" />
+    <file path="/ManageFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369666211823" ignored="false" />
     <file path="/add_fav.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369532613637" ignored="false" />
     <file path="/carreteras.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369536053204" ignored="false" />
     <file path="/MyPreferenceFragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369535048358" ignored="false" />
@@ -156,10 +135,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ManageFavoritos.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ManageFavoritos.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="40" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.0">
+            <state line="144" column="4" selection-start="3890" selection-end="4546" vertical-scroll-proportion="-4.82263">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -190,11 +169,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddFavoritos.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AddFavoritos.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="154" column="35" selection-start="4417" selection-end="4417" vertical-scroll-proportion="1.8685015">
-              <folding />
+            <state line="151" column="28" selection-start="4362" selection-end="4362" vertical-scroll-proportion="-1.7692307">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2835#6846#0" expanded="true" />
+                <element signature="e#6831#6832#0" expanded="true" />
+                <element signature="e#6889#7007#0" expanded="true" />
+                <element signature="e#6996#6997#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -269,10 +254,10 @@
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java" />
         <option value="$PROJECT_DIR$/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/ItemXMLHandler.java" />
         <option value="$PROJECT_DIR$/res/layout/manage_favoritos.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" />
       </list>
     </option>
   </component>
@@ -709,7 +694,7 @@
       <workItem from="1369481698204" duration="11342000" />
       <workItem from="1369527483977" duration="26191000" />
       <workItem from="1369598865288" duration="5828000" />
-      <workItem from="1369605780014" duration="17503000" />
+      <workItem from="1369605780014" duration="23280000" />
     </task>
     <task id="LOCAL-00001" summary="Añadido modo TEST">
       <created>1369011585262</created>
@@ -859,11 +844,15 @@
       <created>1369408010048</created>
       <updated>1369408010048</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="BETA 4 - Intentando implementar favoritos. Parsea xml, pero no lo escribe bien">
+      <created>1369660852808</created>
+      <updated>1369660852808</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120049000" />
+    <option name="totallyTimeSpent" value="125826000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -957,7 +946,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="BETA 4 - Intentando implementar favoritos" />
+    <option name="LAST_COMMIT_MESSAGE" value="BETA 4 - Intentando implementar favoritos. Parsea xml, pero no lo escribe bien" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -994,6 +983,7 @@
     <MESSAGE value="BETA 3 - Iconos implementados" />
     <MESSAGE value="BETA 4 - Funciona todo" />
     <MESSAGE value="BETA 4 - Intentando implementar favoritos" />
+    <MESSAGE value="BETA 4 - Intentando implementar favoritos. Parsea xml, pero no lo escribe bien" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1064,15 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/ItemXMLHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="56" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/row_favs.xml">
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1090,6 +1071,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="17" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/manage_favoritos.xml">
       <provider editor-type-id="text-editor">
         <state line="24" column="0" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0">
@@ -1100,26 +1088,34 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/ItemXMLHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="40" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.0">
+        <state line="49" column="56" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="17" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="151" column="28" selection-start="4362" selection-end="4362" vertical-scroll-proportion="-1.7692307">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2835#6846#0" expanded="true" />
+            <element signature="e#6831#6832#0" expanded="true" />
+            <element signature="e#6889#7007#0" expanded="true" />
+            <element signature="e#6996#6997#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="35" selection-start="4417" selection-end="4417" vertical-scroll-proportion="1.8685015">
-          <folding />
+        <state line="144" column="4" selection-start="3890" selection-end="4546" vertical-scroll-proportion="-4.82263">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

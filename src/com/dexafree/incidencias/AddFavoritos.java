@@ -92,20 +92,11 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
         /** Set the value to the textview object */
         tv.setText(carretera);
 
-
-
-
-
         btnGuardar = (Button)findViewById(R.id.btnGuardar);
         btnCancelar = (Button)findViewById(R.id.btnCancelar);
 
         Edit1   = (EditText)findViewById(R.id.pkIn);
         Edit2   = (EditText)findViewById(R.id.pkFin);
-
-
-
-
-
 
         btnGuardar.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0){
@@ -202,7 +193,6 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
                     Log.i("XmlTips", "Fichero XML creado correctamente.");
 
-
                     Context context = getApplicationContext();
                     CharSequence text = "Favorito añadido con la carretera " + carretera + ", PkI " + pkInicial + ", pkF " +pkFinal;
                     int duration = Toast.LENGTH_SHORT;
@@ -216,15 +206,6 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
                 {
                     Log.e("XmlTips", "Error al escribir fichero XML.");
                 }
-
-
-
-
-
-
-
-
-
             }
             });
 
@@ -234,56 +215,7 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
             }
         });
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /* public void AddFav(String carretera, int pkInicial, int pkFinal){
-            if (fav1[0] == null){
-
-                fav1[0]  = carretera;
-                fav1[1] = pkInicial;
-                fav1[2] = pkFinal;
-            }
-
-            else if (fav1[0] != null){
-
-                if (fav2[0] == null){
-
-                    fav2[0] = carretera;
-                    fav2[1] = pkInicial;
-                    fav2[2] = pkFinal;
-                }
-                else if (fav2[0] != null){
-
-                    if (fav3[0] == null){
-
-                        fav3[0] = carretera;
-                        fav3[1] = pkInicial;
-                        fav3[2] = pkFinal;
-                    }
-                }
-            }
-        }*/
 
     public int load() throws IOException
     {

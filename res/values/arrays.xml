@@ -404,6 +404,11 @@
         <item>TF-11</item>
     </string-array>
 
+    <string-array name="ManageFavoritos">
+        <item>Añadir</item>
+        <item>Eliminar</item>
+    </string-array>
+
 
 
 </resources>

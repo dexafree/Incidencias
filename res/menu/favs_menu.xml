@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/fav_add"
+            android:orderInCategory="10"
+            android:showAsAction="always"
+            android:title="Añadir"/>
+
+    <item
+            android:id="@+id/fav_del"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:title="Eliminar"/>
+
+    <item
+            android:id="@+id/pruebafa"
+            android:orderInCategory="2"
+            android:showAsAction="always"
+            android:title="PRUEBA"/>
+
+</menu>

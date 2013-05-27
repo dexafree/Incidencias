@@ -1,5 +1,7 @@
 package com.dexafree.incidencias;
 
+import org.xml.sax.helpers.DefaultHandler;
+
 import java.util.ArrayList;
 
 /**
@@ -8,20 +10,37 @@ import java.util.ArrayList;
 
 public class Favoritos {
 
-    public ArrayList<String[]> FavoritosList;
-
-    protected String carretera;
-
-    protected int pkInicial;
-
-    protected int pkFinal;
-
-        public Favoritos(String carretera, int pkInicial, int pkFinal){
-            this.carretera = carretera;
-            this.pkInicial = pkInicial;
-            this.pkFinal = pkFinal;
-        }
+    public static ArrayList<Favoritos> FavoritosList = new ArrayList<Favoritos>();
 
 
+    private String carretera;
+
+    public int pkInicial;
+
+    public int pkFinal;
+
+    public void setCarretera(String carretera) {
+        this.carretera = carretera;
+    }
+
+    public String getCarretera() {
+        return carretera;
+    }
+
+    public void setPkInicial(int pkInicial) {
+        this.pkInicial = pkInicial;
+    }
+
+    public int getPkInicial() {
+        return pkInicial;
+    }
+
+    public void setPkFinal(int pkFinal) {
+        this.pkFinal = pkFinal;
+    }
+
+    public int getPkFinal() {
+        return pkFinal;
+    }
 
 }

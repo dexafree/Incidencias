@@ -105,12 +105,10 @@ public class MainActivity extends Activity {
                 return true;
             case R.id.actualizar:
                 actualizar();
-
                 return true;
-          /*  case R.id.probando:
-                prueba();
-                Toast.makeText(getApplicationContext(), "Hecho", Toast.LENGTH_LONG).show();
-                return true; */
+            case R.id.prueba:
+                startActivity(new Intent(this, ManageFavoritos.class));
+                return true;
             case R.id.action_acerca:
                 startActivity(new Intent(this, About.class));
                 return true;
@@ -175,7 +173,6 @@ public class MainActivity extends Activity {
     }
 
 
-
     class SAXHelper {
         public HashMap<String, String> userList = new HashMap<String, String>();
         private URL url2;
@@ -199,6 +196,10 @@ public class MainActivity extends Activity {
             return df;
         }
     }
+
+
+
+
 
     public void actualizar() {
         //ELIMINAMOS LAS INCIDENCIAS EXISTENTES
@@ -537,6 +538,9 @@ public class MainActivity extends Activity {
     }
 
 
+
+
+
     class RSSHandler extends DefaultHandler {
 
         private Incidencia currentIncidencia = new Incidencia();
@@ -623,7 +627,7 @@ public class MainActivity extends Activity {
                             if (checkFiltrado()) {
 
                                 if (checkHora(currentIncidencia.getFechahora())) {
-                                     //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                                    //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
                                     IncidenciaList.add(currentIncidencia);
 
                                     mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
@@ -662,6 +666,7 @@ public class MainActivity extends Activity {
         }
 
     }
+
 
 
 }

@@ -4,6 +4,7 @@ package com.dexafree.incidencias;
  * Created by Carlos on 21/05/13.
  */
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Activity;
@@ -12,6 +13,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -57,6 +59,8 @@ public class MainActivity extends Activity {
     public ArrayList<Incidencia> IncidenciaList = new ArrayList<Incidencia>();
     private CardUI mCardView;
 
+    String texto;
+
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -78,6 +82,51 @@ public class MainActivity extends Activity {
         new loadingTask().execute("http://dgt.es/incidencias.xml");
         firstTime();
 
+        Favoritos.FavoritosList.clear();
+
+        try
+        {
+            BufferedReader fin =
+                    new BufferedReader(
+                            new InputStreamReader(
+                                    openFileInput("Favoritos.xml")));
+
+            //ins = openFileInput("Favoritos.xml");
+
+            int lines = load();
+
+            for(int i=0; i<lines; i++){
+
+                texto = fin.readLine();
+                Log.d("", "XML: " + texto);
+                AndroidParseXMLActivity axa = new AndroidParseXMLActivity();
+                Log.d("","Vamos a parsear");
+                axa.parseXML(texto);
+            }
+            fin.close();
+        }
+        catch (Exception ex)
+        {
+            Log.e("Ficheros", "Error al leer fichero desde memoria interna");
+            Log.e("Ficheros", "Creando uno");
+
+            try{
+                OutputStreamWriter fcrear =
+                        new OutputStreamWriter(
+                                openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
+                fcrear.close();
+                Log.e("", "Creado XML");
+            }
+            catch (Exception exc)
+            {
+                Log.e("","Ni siquiera se puede crear");
+            }
+        }
+
+
+
+
+
     }
 
 
@@ -88,6 +137,39 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
+
+    public int load() throws IOException
+    {
+
+        StringBuilder text = new StringBuilder();
+
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("Favoritos.xml")));
+            String line;
+
+
+            int lineCount = 0;
+            while ((line = br.readLine()) != null) {
+                text.append(line);
+                text.append('\n');
+
+                lineCount++;
+            }
+            Log.d("", "Lines: " + lineCount);
+
+            return lineCount;
+
+        }
+        catch (IOException e) {
+            Log.d("", "Ha saltado la excepcion de load");
+            return 0;
+        }
+
+    }
+
+
+
 
 
     //GESTIONAR CLICK ACTIONBAR
@@ -105,9 +187,11 @@ public class MainActivity extends Activity {
                 return true;
             case R.id.actualizar:
                 actualizar();
+
                 return true;
             case R.id.prueba:
                 startActivity(new Intent(this, ManageFavoritos.class));
+                Toast.makeText(getApplicationContext(), "Hecho", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.action_acerca:
                 startActivity(new Intent(this, About.class));
@@ -173,6 +257,7 @@ public class MainActivity extends Activity {
     }
 
 
+
     class SAXHelper {
         public HashMap<String, String> userList = new HashMap<String, String>();
         private URL url2;
@@ -196,10 +281,6 @@ public class MainActivity extends Activity {
             return df;
         }
     }
-
-
-
-
 
     public void actualizar() {
         //ELIMINAMOS LAS INCIDENCIAS EXISTENTES
@@ -538,9 +619,6 @@ public class MainActivity extends Activity {
     }
 
 
-
-
-
     class RSSHandler extends DefaultHandler {
 
         private Incidencia currentIncidencia = new Incidencia();
@@ -667,6 +745,50 @@ public class MainActivity extends Activity {
 
     }
 
+
+
+
+    public class AndroidParseXMLActivity {
+
+        private void parseXML(String contenido) {
+
+            String carretera;
+            int pkI;
+            int pkF;
+
+
+
+            try {
+
+                Log.w("AndroidParseXMLActivity", "Start");
+                /** Handling XML */
+                SAXParserFactory spf = SAXParserFactory.newInstance();
+                SAXParser sp = spf.newSAXParser();
+                XMLReader xr = sp.getXMLReader();
+
+                ItemXMLHandler myXMLHandler = new ItemXMLHandler();
+                xr.setContentHandler(myXMLHandler);
+                InputSource inStream = new InputSource();
+                Log.w("AndroidParseXMLActivity", "Parse1");
+
+
+                inStream.setCharacterStream(new StringReader(contenido.toString()));
+                Log.w("AndroidParseXMLActivity", "Parse2");
+
+                xr.parse(inStream);
+                Log.w("AndroidParseXMLActivity", "Parse3");
+
+
+                Log.w("AndroidParseXMLActivity", "Done");
+            }
+            catch (Exception e) {
+                Log.w("AndroidParseXMLActivity",e );
+            }
+
+
+        }
+
+    }
 
 
 }

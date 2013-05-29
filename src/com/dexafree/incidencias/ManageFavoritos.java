@@ -94,6 +94,17 @@ public class ManageFavoritos extends Activity {
         mf_lv = (ListView) findViewById(R.id.mf_lv);
         mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
 
+        mf_lv.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                Favoritos.FavoritosList.remove(position);
+                mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
+
+
+            }
+        });
+
         try
         {
             BufferedReader fin =

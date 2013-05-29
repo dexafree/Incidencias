@@ -22,26 +22,20 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Kilometro inicial"
-            android:id="@+id/textView" android:layout_gravity="left|center_vertical"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/pkIn" android:layout_gravity="left|center_vertical"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" "
-            android:id="@+id/textView3" android:layout_gravity="left|center_vertical"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:textAppearance="?android:attr/textAppearanceMedium" android:text="Kilometro final"
-              android:id="@+id/textView2" android:layout_gravity="left|center_vertical"/>
-    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:inputType="number"
-              android:ems="10" android:id="@+id/pkFin" android:layout_gravity="left|center_vertical"/>
+            android:text="Ninguna provincia seleccionada"
+            android:id="@+id/selec_prov"
+            android:layout_gravity="left|center_vertical"/>
+
+    <fragment
+            android:id="@+id/list_preference2"
+            android:name="com.dexafree.incidencias.MyPreferenceFragment2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+
     <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="60dp" android:layout_gravity="left|center_vertical">

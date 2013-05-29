@@ -54,8 +54,9 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
     //public static ArrayList<Favoritos> FavoritosList;
     public String carretera;
-    public int pkInicial;
-    public int pkFinal;
+    //public int pkInicial;
+    //public int pkFinal;
+    public String provincia;
 
     private Favoritos currentFavorito = new Favoritos();
 
@@ -66,8 +67,6 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
     private Button btnGuardar;
     private Button btnCancelar;
 
-    public EditText Edit1;
-    public EditText Edit2;
 
 
 
@@ -83,8 +82,9 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
         /** Get the value stored in the share preferences corresponding to the key "lp_android_choice" */
         carretera = sp.getString("carretera_seleccionada", "None Selected");
-        pkFinal = 0;
-        pkInicial = 0;
+        provincia = sp.getString("provincia_seleccionada", "None Selected");
+       // pkFinal = 0;
+       // pkInicial = 0;
 
         /** Getting an instance of the textview object corresponds to the layout in main.xml */
         TextView tv = (TextView) findViewById(R.id.selec_carr);
@@ -92,11 +92,17 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
         /** Set the value to the textview object */
         tv.setText(carretera);
 
+        /** Getting an instance of the textview object corresponds to the layout in main.xml */
+        TextView tv2 = (TextView) findViewById(R.id.selec_prov);
+
+        /** Set the value to the textview object */
+        tv2.setText(provincia);
+
+
+
         btnGuardar = (Button)findViewById(R.id.btnGuardar);
         btnCancelar = (Button)findViewById(R.id.btnCancelar);
 
-        Edit1   = (EditText)findViewById(R.id.pkIn);
-        Edit2   = (EditText)findViewById(R.id.pkFin);
 
         btnGuardar.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0){
@@ -104,22 +110,18 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 //                    Favoritos currentFavorito = new Favoritos();
 
                 carretera = sp.getString("carretera_seleccionada", "None Selected");
+                provincia = sp.getString("provincia_seleccionada", "None Selected");
 
-                    String pkInicialString = Edit1.getText().toString();
-                    String pkFinString = Edit2.getText().toString();
 
                     Log.d("", "Carretera: " + carretera);
+                    Log.d("", "Provincia: " + provincia);
 
 
-                    int pkInicial = Integer.parseInt(pkInicialString);
-                    int pkFinal = Integer.parseInt(pkFinString);
 
-                    Log.d("", "pkInicial: " + pkInicial);
-                    Log.d("", "pkFinal: " + pkFinal);
 
                     currentFavorito.setCarretera(carretera);
-                    currentFavorito.setPkInicial(pkInicial);
-                    currentFavorito.setPkFinal(pkFinal);
+                    currentFavorito.setProvincia(provincia);
+
 
                     Favoritos.FavoritosList.add(currentFavorito);
 
@@ -144,7 +146,6 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
                     }
 
                     catch (Exception ex)
-
                     {
 
                         Log.e("XmlTips", "No existe el xml. Creando uno");
@@ -175,11 +176,10 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
                     }
 
                     Log.d("","Pasa el if");
-                    Log.d("","Datos: " + carretera + "  " + pkInicial + "  " + pkFinal);
+                    Log.d("","Datos: " + carretera + "  " + provincia + "  ");
                     sb.append("<favorito>");
                     sb.append("<carretera>" + carretera + "</carretera>");
-                    sb.append("<pkInicial>" + pkInicial + "</pkInicial>");
-                    sb.append("<pkFinal>" + pkFinal + "</pkFinal>");
+                    sb.append("<provincia>" + provincia + "</provincia>");
                     sb.append("</favorito>");
 
                     Log.d("", "sb antes de append: " + sb.toString());
@@ -194,11 +194,12 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
                     Log.i("XmlTips", "Fichero XML creado correctamente.");
 
                     Context context = getApplicationContext();
-                    CharSequence text = "Favorito añadido con la carretera " + carretera + ", PkI " + pkInicial + ", pkF " +pkFinal;
+                    CharSequence text = "Favorito añadido con la carretera " + carretera + ", provincia " + provincia;
                     int duration = Toast.LENGTH_SHORT;
 
                     finish();
 
+                    ManageFavoritos.mf_lv.setAdapter((new FavoritosAdapter(AddFavoritos.this)));
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -246,8 +247,8 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
     }
 
-
-        public void save(){
+        //NO SE USA. ES CODIGO ANTIGUO QUE MANTENGO PORSI
+    /*    public void save(){
                  try
                     {
                         //Creamos un fichero en la memoria interna
@@ -260,8 +261,7 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
                         //Construimos el XML
                         sb.append("<favorito>");
                         sb.append("<carretera>" + carretera + "</carretera>");
-                        sb.append("<pkInicial>" + pkInicial + "</pkInicial>");
-                        sb.append("<pkFinal>" + pkFinal + "</pkFinal>");
+                        sb.append("<provincia>" + provincia + "</provincia>");
                         sb.append("</favorito>");
 
 
@@ -276,18 +276,33 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
                     {
                         Log.e("XmlTips", "Error al escribir fichero XML.");
                     }
-                }
+                } */
 
 
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        TextView tv = (TextView) findViewById(R.id.selec_carr);
-        tv.setText(newValue.toString());
+
+        Log.d("preference",preference.toString() );
+
+        if(preference.toString().equalsIgnoreCase("HAZ CLICK AQUÍ PARA SELECCIONAR UNA CARRETERA")){
+
+            TextView tv = (TextView) findViewById(R.id.selec_carr);
+            tv.setText(newValue.toString());
+
+        }
+
+        else if (preference.toString().equalsIgnoreCase("HAZ CLICK AQUÍ PARA SELECCIONAR UNA PROVINCIA")){
+
+            TextView tv = (TextView) findViewById(R.id.selec_prov);
+            tv.setText(newValue.toString());
+
+        }
         return true;
     }
 
-    public void addTask(Favoritos currentFavorito) {
+    //NO SE USA. ERA PARA INTENTAR GUARDAR LOS OBJETOS EN SHAREDPREFS
+    /*public void addTask(Favoritos currentFavorito) {
         assert(null != currentFavorito);
         if (null == Favoritos.FavoritosList) {
             Favoritos.FavoritosList = new ArrayList<Favoritos>();
@@ -304,7 +319,7 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
             e.printStackTrace();
         }
         editor.commit();
-    }
+    }*/
 
 
 }

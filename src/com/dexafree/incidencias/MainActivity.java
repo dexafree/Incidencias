@@ -56,7 +56,7 @@ import com.dexafree.incidencias.MyImageCard;
 public class MainActivity extends Activity {
 
     ProgressDialog ShowProgress;
-    public ArrayList<Incidencia> IncidenciaList = new ArrayList<Incidencia>();
+    public static ArrayList<Incidencia> IncidenciaList = new ArrayList<Incidencia>();
     private CardUI mCardView;
 
     String texto;

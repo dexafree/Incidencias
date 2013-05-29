@@ -75,7 +75,7 @@ import android.widget.TextView;
  */
 public class ManageFavoritos extends Activity {
 
-    ListView mf_lv;
+    public static ListView mf_lv;
     String texto;
     InputStream ins;
 
@@ -83,15 +83,18 @@ public class ManageFavoritos extends Activity {
 
     //private List<Favoritos> favList = Favoritos.FavoritosList;
 
+
     public void onCreate(Bundle savedInstanceState) {
 
-        //Favoritos.FavoritosList.clear();
+        Favoritos.FavoritosList.clear();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_favoritos);
 
         mf_lv = (ListView) findViewById(R.id.mf_lv);
-       /* try
+        mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
+
+        try
         {
             BufferedReader fin =
                     new BufferedReader(
@@ -104,11 +107,11 @@ public class ManageFavoritos extends Activity {
 
             for(int i=0; i<lines; i++){
 
-            texto = fin.readLine();
-            Log.d("", "XML: " + texto);
-            AndroidParseXMLActivity axa = new AndroidParseXMLActivity();
-            Log.d("","Vamos a parsear");
-            axa.parseXML(texto);
+                texto = fin.readLine();
+                Log.d("", "XML: " + texto);
+                AndroidParseXMLActivity axa = new AndroidParseXMLActivity();
+                Log.d("","Vamos a parsear");
+                axa.parseXML(texto);
             }
             fin.close();
         }
@@ -128,9 +131,9 @@ public class ManageFavoritos extends Activity {
             {
                 Log.e("","Ni siquiera se puede crear");
             }
-        }*/
+        }
 
-        mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
+       // mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
 
 
         }
@@ -142,7 +145,7 @@ public class ManageFavoritos extends Activity {
         return true;
     }
 
-  /*  public int load() throws IOException
+    public int load() throws IOException
     {
 
         StringBuilder text = new StringBuilder();
@@ -169,7 +172,7 @@ public class ManageFavoritos extends Activity {
             return 0;
         }
 
-    }*/
+    }
 
 
 
@@ -204,7 +207,7 @@ public class ManageFavoritos extends Activity {
 
 
 
-  /*  public class AndroidParseXMLActivity {
+   public class AndroidParseXMLActivity {
 
            private void parseXML(String contenido) {
 
@@ -218,7 +221,7 @@ public class ManageFavoritos extends Activity {
 
                 Log.w("AndroidParseXMLActivity", "Start");
                 /** Handling XML */
-             /*   SAXParserFactory spf = SAXParserFactory.newInstance();
+                SAXParserFactory spf = SAXParserFactory.newInstance();
                 SAXParser sp = spf.newSAXParser();
                 XMLReader xr = sp.getXMLReader();
 
@@ -244,7 +247,7 @@ public class ManageFavoritos extends Activity {
 
         }
 
-    }*/
+    }
 
 
 }

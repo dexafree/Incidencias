@@ -27,7 +27,7 @@ public class FavoritosAdapter extends BaseAdapter {
 
 
     private Activity activity;
-    private ArrayList<Favoritos> data = Favoritos.FavoritosList;
+    //public ArrayList<Favoritos> data = Favoritos.FavoritosList;
     private static LayoutInflater inflater = null;
     //public ImageLoader imageLoader;
     ViewHolder holder;
@@ -43,7 +43,7 @@ public class FavoritosAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return data.toArray().length;
+        return Favoritos.FavoritosList.size();
 
     }
 
@@ -62,8 +62,8 @@ public class FavoritosAdapter extends BaseAdapter {
     public static class ViewHolder {
 
         public TextView carretera;
-        public TextView pkinicio;
-        public TextView pkfin;
+        public TextView provincia;
+
 
 
 
@@ -78,16 +78,16 @@ public class FavoritosAdapter extends BaseAdapter {
             holder = new ViewHolder();
 
             holder.carretera = (TextView) vi.findViewById(R.id.carreteraFav);
-            holder.pkinicio = (TextView) vi.findViewById(R.id.pkinicioFav);
-            holder.pkfin = (TextView) vi.findViewById(R.id.pkfinFav);
+            holder.provincia = (TextView) vi.findViewById(R.id.provFav);
+
             vi.setTag(holder);
         } else
             holder = (ViewHolder) vi.getTag();
 
 
-        holder.carretera.setText("CARRETERA: " + data.get(position).getCarretera());
-        holder.pkinicio.setText("PK INICIAL: " + data.get(position).getPkInicial());
-        holder.pkfin.setText("PK FINAL: " + data.get(position).getPkFinal());
+        holder.carretera.setText("CARRETERA: " + Favoritos.FavoritosList.get(position).getCarretera());
+        holder.provincia.setText("PROVINCIA: " + Favoritos.FavoritosList.get(position).getProvincia());
+
 
 
 //
@@ -95,6 +95,11 @@ public class FavoritosAdapter extends BaseAdapter {
         return vi;
     }
 
+
+    public void setNotifyOnChange(Boolean notifyOnChange){
+        notifyOnChange = true;
+
+    }
 
 
 

@@ -64,24 +64,13 @@ public class RssParserDom
 
                         favorito.setCarretera(texto);
                     }
-                    else if (etiqueta.equals("pkInicial"))
+                    else if (etiqueta.equals("provincia"))
                     {
-                        String texto = obtenerTexto(dato);
+                        String prov = obtenerTexto(dato);
 
-                        int pkI = Integer.parseInt(texto);
-
-                        favorito.setPkInicial(pkI);
+                        favorito.setProvincia(prov);
                     }
-                    else if (etiqueta.equals("pkFinal"))
-                    {
-                        String texto = obtenerTexto(dato);
 
-                        int pkF = Integer.parseInt(texto);
-
-                        favorito.setPkFinal(pkF);
-
-
-                    }
 
                 }
 

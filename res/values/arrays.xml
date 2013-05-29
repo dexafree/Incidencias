@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="lista_provincias">
-        <item>Álava</item>
+        <item>Álava/Guipúzcoa/Vizcaya</item>
+        <item>A Coruña</item>
         <item>Albacete</item>
         <item>Alicante</item>
         <item>Almería</item>
@@ -16,16 +17,16 @@
         <item>Castellón</item>
         <item>Ciudad Real</item>
         <item>Córdoba</item>
-        <item>La Coruña</item>
         <item>Cuenca</item>
         <item>Gerona</item>
         <item>Granada</item>
         <item>Guadalajara</item>
-        <item>Guipúzcoa</item>
         <item>Huelva</item>
         <item>Huesca</item>
         <item>Islas Baleares</item>
         <item>Jaén</item>
+        <item>La Rioja</item>
+        <item>Las Palmas</item>
         <item>León</item>
         <item>Lleida</item>
         <item>Lugo</item>
@@ -35,9 +36,7 @@
         <item>Navarra</item>
         <item>Orense</item>
         <item>Palencia</item>
-        <item>Las Palmas</item>
         <item>Pontevedra</item>
-        <item>La Rioja</item>
         <item>Salamanca</item>
         <item>Segovia</item>
         <item>Sevilla</item>
@@ -48,7 +47,6 @@
         <item>Toledo</item>
         <item>Valencia</item>
         <item>Valladolid</item>
-        <item>Vizcaya</item>
         <item>Zamora</item>
         <item>Zaragoza</item>
     </string-array>

@@ -43,11 +43,9 @@ public class ItemXMLHandler extends DefaultHandler {
         /** set value */
         if (localName.equalsIgnoreCase("carretera"))
             favoritoActual.setCarretera(currentValue);
-        else if (localName.equalsIgnoreCase("pkInicial"))
-            favoritoActual.setPkInicial(Integer.parseInt(currentValue));
-        else if (localName.equalsIgnoreCase("pkFinal"))
-            favoritoActual.setPkFinal(Integer.parseInt(currentValue));
-        else if (localName.equalsIgnoreCase("favorito"))
+        if (localName.equalsIgnoreCase("provincia"))
+            favoritoActual.setProvincia(currentValue);
+        if (localName.equalsIgnoreCase("favorito"))
             Favoritos.FavoritosList.add(favoritoActual);
     }
 

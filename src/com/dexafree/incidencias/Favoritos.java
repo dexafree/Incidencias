@@ -13,11 +13,24 @@ public class Favoritos {
     public static ArrayList<Favoritos> FavoritosList = new ArrayList<Favoritos>();
 
 
-    private String carretera;
+    public String carretera;
 
-    public int pkInicial;
+    public String provincia;
 
-    public int pkFinal;
+    public String fechahora;
+
+
+    public void setProvincia(String provincia){
+        this.provincia = provincia;
+    }
+
+    public String getProvincia(){
+        return provincia;
+    }
+
+
+
+
 
     public void setCarretera(String carretera) {
         this.carretera = carretera;
@@ -27,20 +40,5 @@ public class Favoritos {
         return carretera;
     }
 
-    public void setPkInicial(int pkInicial) {
-        this.pkInicial = pkInicial;
-    }
-
-    public int getPkInicial() {
-        return pkInicial;
-    }
-
-    public void setPkFinal(int pkFinal) {
-        this.pkFinal = pkFinal;
-    }
-
-    public int getPkFinal() {
-        return pkFinal;
-    }
 
 }

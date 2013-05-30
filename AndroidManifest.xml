@@ -50,6 +50,11 @@
                   android:label="Crear Favorito">
         </activity>
 
+        <activity android:name="com.dexafree.incidencias.MainFavoritos"
+                  android:configChanges="orientation|screenSize"
+                  android:label="Favoritos">
+        </activity>
+
     </application>
 
 </manifest>

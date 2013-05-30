@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/manage_favs"
+            android:orderInCategory="10"
+            android:showAsAction="always"
+            android:title="ADMINISTRAR"/>
+
+    <item
+            android:id="@+id/actualizarF"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:title="Actualizar"
+            android:icon="@drawable/refresh"/>
+
+
+</menu>

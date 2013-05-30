@@ -137,7 +137,8 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
                     int lines = load();
 
-                    for(int i=0; i<lines; i++){
+                        previo = fin.readLine();
+                    for(int i=1; i<lines; i++){
                         previo = previo + "\n" + fin.readLine();
                         Log.d("","previo: " + previo);
                         }

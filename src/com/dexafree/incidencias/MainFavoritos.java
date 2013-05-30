@@ -1,6 +1,7 @@
 package com.dexafree.incidencias;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Activity;
@@ -9,6 +10,10 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -60,6 +65,100 @@ public class MainFavoritos extends Activity {
     public ArrayList<Favoritos> favList = Favoritos.FavoritosList;
 
 
+    public void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_cards);
+
+
+
+        // init CardView
+        mCardView2 = (CardUI) findViewById(R.id.cardsview);
+        mCardView2.setSwipeable(true);
+
+
+
+
+        //TAREA DE CARGA DE XML Y PARSEO
+
+        ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
+                "Cargando. Espere por favor...", true);
+        new loadingTask2().execute("http://dgt.es/incidencias.xml");
+
+
+        Favoritos.FavoritosList.clear();
+
+        try
+        {
+            BufferedReader fin =
+                    new BufferedReader(
+                            new InputStreamReader(
+                                    openFileInput("Favoritos.xml")));
+
+            //ins = openFileInput("Favoritos.xml");
+
+            int lines = load2();
+
+            for(int i=0; i<lines; i++){
+
+                String texto = fin.readLine();
+                Log.d("", "XML: " + texto);
+                AndroidParseXMLActivity3 axa = new AndroidParseXMLActivity3();
+                Log.d("","Vamos a parsear");
+                axa.parseXML(texto);
+            }
+            fin.close();
+        }
+        catch (Exception ex)
+        {
+            Log.e("Ficheros", "Error al leer fichero desde memoria interna");
+            Log.e("Ficheros", "Creando uno");
+
+            try{
+                OutputStreamWriter fcrear =
+                        new OutputStreamWriter(
+                                openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
+                fcrear.close();
+                Log.e("", "Creado XML");
+            }
+            catch (Exception exc)
+            {
+                Log.e("","Ni siquiera se puede crear");
+            }
+        }
+
+
+
+
+
+    }
+
+
+    //MENU ACTIONBAR
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.favs, menu);
+        return true;
+    }
+
+
+
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.manage_favs:
+                startActivity(new Intent(this, ManageFavoritos.class));
+                return true;
+            case R.id.actualizarF:
+                actualizar2();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 
 
@@ -68,19 +167,13 @@ public class MainFavoritos extends Activity {
 
 
 
-
-
-
-
-
-
-    class loadingTask extends AsyncTask<String, Void, String> {
+    class loadingTask2 extends AsyncTask<String, Void, String> {
 
         protected String doInBackground(String... urls) {
 
-            SAXHelper sh = null;
+            SAXHelper3 sh = null;
             try {
-                sh = new SAXHelper(urls[0]);
+                sh = new SAXHelper3(urls[0]);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -98,18 +191,62 @@ public class MainFavoritos extends Activity {
         }
     }
 
+    public void actualizar2() {
+        //ELIMINAMOS LAS INCIDENCIAS EXISTENTES
+        IncidenciaList2.clear();
+        mCardView2.clearCards();
+
+        //CARGAMOS NUEVAS INCIDENCIAS
+        ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
+                "Cargando. Espere por favor...", true);
+        new loadingTask2().execute("http://dgt.es/incidencias.xml");
+
+        //REFRESCAR LA VISTA DE LAS CARDS
+        mCardView2.refresh();
+
+    }
+
+    public int load2() throws IOException
+    {
+
+        StringBuilder text = new StringBuilder();
+
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("Favoritos.xml")));
+            String line;
 
 
-    class SAXHelper {
+            int lineCount = 0;
+            while ((line = br.readLine()) != null) {
+                text.append(line);
+                text.append('\n');
+
+                lineCount++;
+            }
+            Log.d("", "Lines: " + lineCount);
+
+            return lineCount;
+
+        }
+        catch (IOException e) {
+            Log.d("", "Ha saltado la excepcion de load");
+            return 0;
+        }
+
+    }
+
+
+
+    class SAXHelper3 {
         public HashMap<String, String> userList = new HashMap<String, String>();
         private URL url2;
 
-        public SAXHelper(String url1) throws MalformedURLException {
+        public SAXHelper3(String url1) throws MalformedURLException {
             this.url2 = new URL(url1);
         }
 
-        public RSSHandler parseContent(String parseContent) {
-            RSSHandler df = new RSSHandler();
+        public RSSHandler3 parseContent(String parseContent) {
+            RSSHandler3 df = new RSSHandler3();
             try {
 
                 SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -132,7 +269,7 @@ public class MainFavoritos extends Activity {
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask().execute("http://dgt.es/incidencias.xml");
+        new loadingTask2().execute("http://dgt.es/incidencias.xml");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView2.refresh();
@@ -468,7 +605,7 @@ public class MainFavoritos extends Activity {
 
 
 
-    class RSSHandler extends DefaultHandler {
+    class RSSHandler3 extends DefaultHandler {
 
         private Incidencia currentIncidencia = new Incidencia();
         StringBuffer chars = new StringBuffer();
@@ -541,16 +678,24 @@ public class MainFavoritos extends Activity {
 
             if (localName.equalsIgnoreCase("incidencia")) {
 
+                Log.d("","Paso 1");
 
+                //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
 
-                if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
+                    Log.d("","Paso 2");
 
                 for (int i = 0; i < favList.size(); i++){
+
+                    Log.d("","Paso 3");
 
 
                     if ((favList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
 
+                        Log.d("","Paso 4");
+
                         if ((favList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
+
+                            Log.d("","Paso 5");
 
                             mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
                             mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
@@ -567,7 +712,7 @@ public class MainFavoritos extends Activity {
 
                 }
 
-                }
+               // }
 
 
 
@@ -627,7 +772,7 @@ public class MainFavoritos extends Activity {
 
 
 
-    public class AndroidParseXMLActivity {
+    public class AndroidParseXMLActivity3 {
 
         private void parseXML(String contenido) {
 

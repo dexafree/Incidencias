@@ -190,7 +190,7 @@ public class MainActivity extends Activity {
 
                 return true;
             case R.id.prueba:
-                startActivity(new Intent(this, ManageFavoritos.class));
+                startActivity(new Intent(this, MainFavoritos.class));
                 Toast.makeText(getApplicationContext(), "Hecho", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.action_acerca:

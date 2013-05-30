@@ -48,9 +48,9 @@ public class Incidencia {
     }
 
     public String getCausa() {
-      /*  if (causa.trim().equals("")){
+        if (causa == null){
             return "No especificada";
-        }*/
+        }
         return causa;
     }
 

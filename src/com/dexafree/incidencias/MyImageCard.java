@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 public class MyImageCard extends Card {
 
-	public MyImageCard(String title, int image){
-		super(title, image);
+	public MyImageCard(String title, int image, String desc1, String desc2, String desc3){
+		super(title, image, desc1, desc2, desc3);
 	}
 
 	@Override
@@ -18,6 +18,9 @@ public class MyImageCard extends Card {
 
 		((TextView) view.findViewById(R.id.title)).setText(title);
 		((ImageView) view.findViewById(R.id.imageView1)).setImageResource(image);
+        ((TextView) view.findViewById(R.id.descriptionim1)).setText(desc1);
+        ((TextView) view.findViewById(R.id.descriptionim2)).setText(desc2);
+        ((TextView) view.findViewById(R.id.descriptionim3)).setText(desc3);
 		
 		return view;
 	}

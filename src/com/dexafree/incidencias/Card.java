@@ -62,6 +62,14 @@ public abstract class Card extends AbstractCard {
 		this.image = image;
 	}
 
+    public Card(String title, int image, String desc1, String desc2, String desc3) {
+        this.title = title;
+        this.image = image;
+        this.desc1 = desc1;
+        this.desc2 = desc2;
+        this.desc3 = desc3;
+    }
+
 
 	public Card(String title, String desc1, int image) {
 		this.title = title;

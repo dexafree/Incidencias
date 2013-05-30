@@ -16,23 +16,23 @@
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="com.dexafree.incidencias" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/DelFavoritos.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/menu/fav_long_press.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+    <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="BETA 8 - Nueva fuente DGT. Creado modo borrar. Falta Servicio y personalizar tarjeta rapida">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/Card.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/Card.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/CardStack.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/CardStack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/Incidencia.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/Incidencia.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/about.xml" afterPath="$PROJECT_DIR$/res/xml/about.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/main.xml" afterPath="$PROJECT_DIR$/res/menu/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MyImageCard.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MyImageCard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/arrays.xml" afterPath="$PROJECT_DIR$/res/values/arrays.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/card_picture.xml" afterPath="$PROJECT_DIR$/res/layout/card_picture.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/preferences.xml" afterPath="$PROJECT_DIR$/res/xml/preferences.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369873014980" ignored="false" />
-    <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369231039234" ignored="false" />
-    <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369865746372" ignored="false" />
+    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369922514915" ignored="false" />
+    <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369926884590" ignored="false" />
+    <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369926994004" ignored="false" />
     <file path="/fragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369677826367" ignored="false" />
     <file path="/about.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369922396394" ignored="false" />
     <file path="/About.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369012279042" ignored="false" />
@@ -41,16 +41,16 @@
     <file path="/CardsMainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369090238841" ignored="false" />
     <file path="/MyCard.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369300629716" ignored="false" />
     <file path="/main.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369920652140" ignored="false" />
-    <file path="/Card.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369300448930" ignored="false" />
+    <file path="/Card.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369924655815" ignored="false" />
     <file path="/CardStack.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369919483794" ignored="false" />
     <file path="/activity_main_cards.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369086320597" ignored="false" />
     <file path="/cards_view.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369086616825" ignored="false" />
     <file path="/card_ex.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369300789151" ignored="false" />
     <file path="/MainActivityProceso.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369177731560" ignored="false" />
     <file path="/AbstractCard.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369151741881" ignored="false" />
-    <file path="/Incidencia.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369301650375" ignored="false" />
+    <file path="/Incidencia.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369926425315" ignored="false" />
     <file path="/sel_provincias.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369179190928" ignored="false" />
-    <file path="/arrays.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369843868356" ignored="false" />
+    <file path="/arrays.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369923868793" ignored="false" />
     <file path="/UpdateService.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369403268974" ignored="false" />
     <file path="/Favoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369782249946" ignored="false" />
     <file path="/AbstractFavorito.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369406531543" ignored="false" />
@@ -58,7 +58,7 @@
     <file path="/SelectorFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369493825503" ignored="false" />
     <file path="/creador_favs.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369482376849" ignored="false" />
     <file path="/favoritos.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369484459778" ignored="false" />
-    <file path="/MainFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369919903726" ignored="false" />
+    <file path="/MainFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369925118364" ignored="false" />
     <file path="/AddFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369872211223" ignored="false" />
     <file path="/manage_favoritos.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369667324233" ignored="false" />
     <file path="/ManageFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369920616161" ignored="false" />
@@ -83,6 +83,9 @@
     <file path="$APPLICATION_HOME_DIR$/plugins/android/lib/android.jar!/org/jetbrains/android/android.xsd" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369837490575" ignored="false" />
     <file path="/favs.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369919544012" ignored="false" />
     <file path="/DelFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369920759452" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/dexafree/incidencias/BuildConfig.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369922598042" ignored="false" />
+    <file path="/MyImageCard.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369925050932" ignored="false" />
+    <file path="/card_picture.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369924891364" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,10 +146,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainFavoritos.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainFavoritos.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="272" column="63" selection-start="7412" selection-end="7412" vertical-scroll-proportion="12.90625">
+            <state line="703" column="32" selection-start="18784" selection-end="19065" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -154,21 +157,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="32" selection-start="1731" selection-end="1731" vertical-scroll-proportion="0.0">
+            <state line="84" column="12" selection-start="2283" selection-end="2283" vertical-scroll-proportion="0.7110482">
               <folding>
-                <element signature="e#1731#1747#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
+      <file leaf-file-name="preferences.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/xml/preferences.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="71" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
+            <state line="24" column="59" selection-start="985" selection-end="985" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Incidencia.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Incidencia.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="26" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -177,18 +189,39 @@
       <file leaf-file-name="CardStack.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/CardStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="0" selection-start="3415" selection-end="3415" vertical-scroll-proportion="4.923077">
+            <state line="71" column="76" selection-start="1961" selection-end="1961" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
+      <file leaf-file-name="MyImageCard.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MyImageCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="32" selection-start="1397" selection-end="1409" vertical-scroll-proportion="-3.6923077">
+            <state line="22" column="75" selection-start="876" selection-end="876" vertical-scroll-proportion="0.0">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Card.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Card.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="27" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="card_picture.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/card_picture.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="45" selection-start="2297" selection-end="2297" vertical-scroll-proportion="-9.88">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -220,22 +253,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/layout/crea_favoritos.xml" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MyPreferenceFragment2.java" />
-        <option value="$PROJECT_DIR$/res/xml/provinciasfav.xml" />
-        <option value="$PROJECT_DIR$/res/values/arrays.xml" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/FavoritosAdapter.java" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" />
         <option value="$PROJECT_DIR$/res/menu/fav_long_press.xml" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/CardStack.java" />
         <option value="$PROJECT_DIR$/res/menu/favs.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" />
         <option value="$PROJECT_DIR$/res/menu/main.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/DelFavoritos.java" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/xml/about.xml" />
+        <option value="$PROJECT_DIR$/res/values/arrays.xml" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Card.java" />
+        <option value="$PROJECT_DIR$/res/layout/card_picture.xml" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MyImageCard.java" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/CardStack.java" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Incidencia.java" />
+        <option value="$PROJECT_DIR$/res/xml/preferences.xml" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -488,7 +521,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="AndroidRunProguardForReleaseBuild" value="false" />
-    <property name="AndroidTargetDevices" value="01849a310dd767a7" />
+    <property name="AndroidTargetDevices" value="38357176FBE300EC" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
@@ -676,7 +709,7 @@
       <workItem from="1369605780014" duration="30906000" />
       <workItem from="1369774782128" duration="8878000" />
       <workItem from="1369835488702" duration="8099000" />
-      <workItem from="1369858386472" duration="20310000" />
+      <workItem from="1369858386472" duration="25069000" />
     </task>
     <task id="LOCAL-00001" summary="Añadido modo TEST">
       <created>1369011585262</created>
@@ -862,11 +895,15 @@
       <created>1369873026649</created>
       <updated>1369873026649</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="BETA 8 - Nueva fuente DGT. Creado modo borrar. Falta Servicio y personalizar tarjeta rapida">
+      <created>1369922483205</created>
+      <updated>1369922483205</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170739000" />
+    <option name="totallyTimeSpent" value="175498000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -892,9 +929,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6712095" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32245827" sideWeight="0.6712095" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6678024" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39863715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -905,12 +945,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2469697" sideWeight="0.6013629" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3321976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2469697" sideWeight="0.6678024" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3321976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6013629" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32348484" sideWeight="0.6013629" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6678024" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -960,7 +997,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="BETA 7 - Funcionan favoritos. Check fecha/hora deshabilitado. Falta crear &quot;modo borrar&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="BETA 8 - Nueva fuente DGT. Creado modo borrar. Falta Servicio y personalizar tarjeta rapida" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -974,7 +1011,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="PREPARANDO CARDS UI" />
     <MESSAGE value="Preparando Cards UI para mostrar mas info" />
     <MESSAGE value="CARDS UI 0.1" />
     <MESSAGE value="CARDS UI 0.2. Muestra incidencias en forma de tarjetas" />
@@ -999,60 +1035,12 @@
     <MESSAGE value="BETA 5 - Favoritos añadidos. Falta logica favoritos. Arreglado auto-añadido lista favoritos" />
     <MESSAGE value="BETA 6 - Se pueden borrar favoritos. Logica favs sin testear" />
     <MESSAGE value="BETA 7 - Funcionan favoritos. Check fecha/hora deshabilitado. Falta crear &quot;modo borrar&quot;" />
+    <MESSAGE value="BETA 8 - Nueva fuente DGT. Creado modo borrar. Falta Servicio y personalizar tarjeta rapida" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/QuickReturnListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="332" selection-end="332" vertical-scroll-proportion="0.35568514">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MyCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="9" selection-start="278" selection-end="279" vertical-scroll-proportion="0.27113703">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/EfficientAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="11" selection-start="602" selection-end="603" vertical-scroll-proportion="0.28279883">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/menu/fav_long_press.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="39" selection-start="195" selection-end="195" vertical-scroll-proportion="0.32249323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/CardUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="0" selection-start="3795" selection-end="3795" vertical-scroll-proportion="-2.2424242">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/SwipeDismissTouchListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="22" selection-start="2704" selection-end="2713" vertical-scroll-proportion="-7.2134833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/menu/favs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="202" column="20" selection-start="6402" selection-end="6478" vertical-scroll-proportion="0.0">
@@ -1087,20 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/CardStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="0" selection-start="3415" selection-end="3415" vertical-scroll-proportion="4.923077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="32" selection-start="1397" selection-end="1409" vertical-scroll-proportion="-3.6923077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="71" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
@@ -1117,9 +1091,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="0.33152175">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/arrays.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="407" column="19" selection-start="11131" selection-end="11131" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/card_picture.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="45" selection-start="2297" selection-end="2297" vertical-scroll-proportion="-9.88">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="27" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MyImageCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="75" selection-start="876" selection-end="876" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/CardStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="76" selection-start="1961" selection-end="1961" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Incidencia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="26" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="272" column="63" selection-start="7412" selection-end="7412" vertical-scroll-proportion="12.90625">
+        <state line="703" column="32" selection-start="18784" selection-end="19065" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/xml/preferences.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="59" selection-start="985" selection-end="985" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="12" selection-start="2283" selection-end="2283" vertical-scroll-proportion="0.7110482">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -20,7 +20,13 @@
                 android:entryValues="@array/Horas_val"
                 />
 
+        <SwitchPreference
+                android:key="actuinicio"
+                android:summary="Actualizar automáticamente al entrar a la aplicación"
+                android:title="Actual. automática" />
+
     </PreferenceCategory>
+
 
     <PreferenceCategory
             android:title="Modo testeo"

@@ -76,10 +76,17 @@ public class MainActivity extends Activity {
 
 
         //TAREA DE CARGA DE XML Y PARSEO
+        SharedPreferences pm =
+                PreferenceManager.getDefaultSharedPreferences(
+                        MainActivity.this);
 
-        ShowProgress = ProgressDialog.show(MainActivity.this, "",
-                "Cargando. Espere por favor...", true);
-        new loadingTask().execute("http://dgt.es/incidenciasXY.xml");
+        if ( pm.getBoolean("actuinicio", false)) {
+            // Log.i("", "Es true");
+                ShowProgress = ProgressDialog.show(MainActivity.this, "",
+             "Cargando. Espere por favor...", true);
+              new loadingTask().execute("http://dgt.es/incidenciasXY.xml");
+        }
+
         firstTime();
 
         Favoritos.FavoritosList.clear();
@@ -191,7 +198,7 @@ public class MainActivity extends Activity {
                 return true;
             case R.id.prueba:
                 startActivity(new Intent(this, MainFavoritos.class));
-                Toast.makeText(getApplicationContext(), "Hecho", Toast.LENGTH_LONG).show();
+
                 return true;
             case R.id.action_acerca:
                 startActivity(new Intent(this, About.class));
@@ -709,7 +716,7 @@ public class MainActivity extends Activity {
                                     IncidenciaList.add(currentIncidencia);
 
                                     mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
-                                    mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
+                                    mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
                                 }
 
                             }
@@ -717,7 +724,7 @@ public class MainActivity extends Activity {
                             else {
                                 IncidenciaList.add(currentIncidencia);
                                 mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
-                                mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
+                                mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
                             }
 
                         }
@@ -726,7 +733,7 @@ public class MainActivity extends Activity {
                     else {
                         IncidenciaList.add(currentIncidencia);
                         mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
-                        mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
+                        mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
 
                     }
 

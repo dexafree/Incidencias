@@ -69,7 +69,7 @@ public class CardStack extends AbstractCard {
 			title.setVisibility(View.VISIBLE);
 		}
 
-        final TextView desc = (TextView) view.findViewById(R.id.description);
+        final TextView desc = (TextView) view.findViewById(R.id.description1);
         if (!TextUtils.isEmpty(this.desc)) {
             desc.setText(this.desc);
             desc.setVisibility(View.VISIBLE);

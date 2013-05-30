@@ -127,7 +127,7 @@ public class CardStack extends AbstractCard {
 								// call onCardSwiped() listener
 								c.OnSwipeCard();
 								cards.remove(c);
-								
+
 
 								mAdapter.setItems(mStack, getPosition());
 

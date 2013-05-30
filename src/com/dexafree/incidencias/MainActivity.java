@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
 
         ShowProgress = ProgressDialog.show(MainActivity.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask().execute("http://dgt.es/incidencias.xml");
+        new loadingTask().execute("http://dgt.es/incidenciasXY.xml");
         firstTime();
 
         Favoritos.FavoritosList.clear();
@@ -290,7 +290,7 @@ public class MainActivity extends Activity {
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress = ProgressDialog.show(MainActivity.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask().execute("http://dgt.es/incidencias.xml");
+        new loadingTask().execute("http://dgt.es/incidenciasXY.xml");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView.refresh();

@@ -79,11 +79,13 @@ public class MainFavoritos extends Activity {
 
 
 
+
+
         //TAREA DE CARGA DE XML Y PARSEO
 
         ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask2().execute("http://dgt.es/incidencias.xml");
+        new loadingTask2().execute("http://dgt.es/incidenciasXY.xml");
 
 
         Favoritos.FavoritosList.clear();
@@ -199,7 +201,7 @@ public class MainFavoritos extends Activity {
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask2().execute("http://dgt.es/incidencias.xml");
+        new loadingTask2().execute("http://dgt.es/incidenciasXY.xml");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView2.refresh();
@@ -263,13 +265,12 @@ public class MainFavoritos extends Activity {
 
     public void actualizar() {
         //ELIMINAMOS LAS INCIDENCIAS EXISTENTES
-
         mCardView2.clearCards();
 
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask2().execute("http://dgt.es/incidencias.xml");
+        new loadingTask2().execute("http://dgt.es/incidenciasXY.xml");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView2.refresh();
@@ -680,39 +681,43 @@ public class MainFavoritos extends Activity {
 
                 Log.d("","Paso 1");
 
-                //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
+                if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
 
                     Log.d("","Paso 2");
 
-                for (int i = 0; i < favList.size(); i++){
+                    for (int i = 0; i < favList.size(); i++){
 
-                    Log.d("","Paso 3");
+                        Log.d("","Paso 3");
 
 
-                    if ((favList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
+                        if ((favList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
 
-                        Log.d("","Paso 4");
+                            Log.d("","Paso 4");
 
-                        if ((favList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
+                            if ((favList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
 
-                            Log.d("","Paso 5");
+                                Log.d("","Paso 5");
 
-                            mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
-                            mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
+
+
+                                mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
+                                mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
+
+
+
+
+                            }
+
+
 
 
                         }
 
 
 
-
                     }
 
-
-
                 }
-
-               // }
 
 
 

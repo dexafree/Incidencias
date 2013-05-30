@@ -31,7 +31,7 @@
             android:id="@+id/prueba"
             android:orderInCategory="101"
             android:showAsAction="ifRoom"
-            android:title="PRUEBA"/>
+            android:title="FAVORITOS"/>
 
 
 </menu>

@@ -47,12 +47,17 @@
 
         <activity android:name="com.dexafree.incidencias.ManageFavoritos"
                   android:configChanges="orientation|screenSize"
-                  android:label="Crear Favorito">
+                  android:label="Administrar Favoritos">
         </activity>
 
         <activity android:name="com.dexafree.incidencias.MainFavoritos"
                   android:configChanges="orientation|screenSize"
                   android:label="Favoritos">
+        </activity>
+
+        <activity android:name="com.dexafree.incidencias.DelFavoritos"
+                  android:configChanges="orientation|screenSize"
+                  android:label="Eliminar Favorito">
         </activity>
 
     </application>

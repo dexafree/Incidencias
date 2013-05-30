@@ -75,9 +75,9 @@ import android.widget.TextView;
 /**
  * Created by Carlos on 26/05/13.
  */
-public class ManageFavoritos extends Activity {
+public class DelFavoritos extends Activity {
 
-    public static ListView mf_lv;
+    public static ListView df_lv;
     String texto;
     InputStream ins;
 
@@ -93,13 +93,13 @@ public class ManageFavoritos extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_favoritos);
 
-        mf_lv = (ListView) findViewById(R.id.mf_lv);
-        mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
+        df_lv = (ListView) findViewById(R.id.mf_lv);
+        df_lv.setAdapter(new FavoritosAdapter(DelFavoritos.this));
 
 
 
 
-       /* mf_lv.setOnItemClickListener(new OnItemClickListener() {
+        df_lv.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
@@ -154,11 +154,12 @@ public class ManageFavoritos extends Activity {
                 }
 
                 Favoritos.FavoritosList.remove(position);
-                mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
+                df_lv.setAdapter(new FavoritosAdapter(DelFavoritos.this));
+                ManageFavoritos.mf_lv.setAdapter((new FavoritosAdapter(DelFavoritos.this)));
 
 
             }
-        }); */
+        });
 
         try
         {
@@ -187,11 +188,11 @@ public class ManageFavoritos extends Activity {
             Log.e("Ficheros", "Creando uno");
 
             try{
-            OutputStreamWriter fcrear =
-                    new OutputStreamWriter(
-                            openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
-            fcrear.close();
-             Log.e("", "Creado XML");
+                OutputStreamWriter fcrear =
+                        new OutputStreamWriter(
+                                openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
+                fcrear.close();
+                Log.e("", "Creado XML");
             }
             catch (Exception exc)
             {
@@ -199,22 +200,12 @@ public class ManageFavoritos extends Activity {
             }
         }
 
-       // mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
+        // mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
 
 
-        }
-
-
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.favs_menu, menu);
-
-        return true;
     }
+
+
 
     public int load(String fichero) throws IOException
     {
@@ -233,7 +224,7 @@ public class ManageFavoritos extends Activity {
 
                 lineCount++;
             }
-           Log.d("", "Lines: " + lineCount);
+            Log.d("", "Lines: " + lineCount);
 
             return lineCount;
 
@@ -248,43 +239,9 @@ public class ManageFavoritos extends Activity {
 
 
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.fav_add:
-                startActivity(new Intent(this, AddFavoritos.class));
-                return true;
-            case R.id.fav_del:
-                startActivity(new Intent(this, DelFavoritos.class));
-                return true;
+    public class AndroidParseXMLActivity {
 
-            case R.id.pruebafa:
-
-                int d = Favoritos.FavoritosList.size();
-                Context context = getApplicationContext();
-                CharSequence text = "Long FavoritosList: " + d;
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-                return true;
-
-
-
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-
-
-
-
-   public class AndroidParseXMLActivity {
-
-           private void parseXML(String contenido) {
+        private void parseXML(String contenido) {
 
             String carretera;
             int pkI;

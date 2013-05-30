@@ -5,10 +5,12 @@
 
     <Preference android:title="Copyright" android:summary="Dexafree"/>
 
+    <Preference android:title="Fuente de los datos" android:summary="Dirección General de Tráfico"/>
+
 
 
     <PreferenceCategory android:title="Version:">
-        <Preference android:title="App version" android:summary="BETA 1"/>
+        <Preference android:title="App version" android:summary="BETA 2"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

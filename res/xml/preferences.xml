@@ -39,4 +39,29 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+            android:title="Auto actualizar"
+            android:key="auto_actu">
+
+        <SwitchPreference
+                android:key="autorefresh"
+                android:summary="Obtiene los datos en segundo plano y muestra una notificación si hay incidencias entre los favoritos"
+                android:title="Auto-actualizar" />
+        <ListPreference
+                android:title="Update interval"
+                android:summary="Update interval"
+                android:key="updateInterval"
+                android:entries="@array/interals"
+                android:entryValues="@array/intervals_values"
+                android:defaultValue="86400000"
+                android:dependency="autorefresh"/>
+
+        <com.dexafree.incidencias.TimePickerDialog
+                android:key="hourtoSearch"
+                android:title="Hora para actualizar"
+                android:summary="Selecciona una hora para buscar las actualizaciones"
+                android:dependency="autorefresh" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

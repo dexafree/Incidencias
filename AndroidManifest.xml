@@ -60,6 +60,19 @@
                   android:label="Eliminar Favorito">
         </activity>
 
+
+        <service android:name=".UpdateService"
+                 android:process=":backUpdateProcess">
+        </service>
+        <receiver android:name=".StartAlarmManagerReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="INCIDENCIAS.AUTOUPDATE"/>
+                <action android:name="INCIDENCIAS.START_AUTOUPDATE" />
+                <action android:name="INCIDENCIAS.CANCEL_AUTOUPDATE"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

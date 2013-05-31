@@ -407,6 +407,19 @@
         <item>Eliminar</item>
     </string-array>
 
+    <string-array name="interals">
+        <item>Every 15 minutes</item>
+        <item>Every 30 minutes</item>
+        <item>Every hour</item>
+        <item>Every day</item>
+    </string-array>
+    <string-array name="intervals_values">
+        <item>900000</item>
+        <item>1800000</item>
+        <item>3600000</item>
+        <item>86400000</item>
+    </string-array>
+
 
 
 

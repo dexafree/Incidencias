@@ -96,6 +96,8 @@ public class DelFavoritos extends Activity {
         df_lv = (ListView) findViewById(R.id.mf_lv);
         df_lv.setAdapter(new FavoritosAdapter(DelFavoritos.this));
 
+        Toast.makeText(getApplicationContext(), "TOCA EL FAVORITO QUE DESEAS ELIMINAR", Toast.LENGTH_LONG).show();
+
 
 
 

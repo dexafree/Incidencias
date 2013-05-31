@@ -25,6 +25,10 @@ public class MyImageCard extends Card {
 		return view;
 	}
 
+
+
+
+
 	
 	
 	

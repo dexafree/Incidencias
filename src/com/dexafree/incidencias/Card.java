@@ -68,6 +68,7 @@ public abstract class Card extends AbstractCard {
         this.desc1 = desc1;
         this.desc2 = desc2;
         this.desc3 = desc3;
+
     }
 
 

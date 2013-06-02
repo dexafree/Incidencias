@@ -129,11 +129,8 @@ public class MainFavoritos extends Activity {
             }
         }
 
-
-
-
-
     }
+
 
 
     //MENU ACTIONBAR
@@ -679,24 +676,24 @@ public class MainFavoritos extends Activity {
 
             if (localName.equalsIgnoreCase("incidencia")) {
 
-                Log.d("","Paso 1");
+               // Log.d("","Paso 1");
 
                 if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
 
-                    Log.d("","Paso 2");
+                 //   Log.d("","Paso 2");
 
                     for (int i = 0; i < favList.size(); i++){
 
-                        Log.d("","Paso 3");
+                   //     Log.d("","Paso 3");
 
 
                         if ((favList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
 
-                            Log.d("","Paso 4");
+                     //       Log.d("","Paso 4");
 
                             if ((favList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
 
-                                Log.d("","Paso 5");
+                       //         Log.d("","Paso 5");
 
 
 

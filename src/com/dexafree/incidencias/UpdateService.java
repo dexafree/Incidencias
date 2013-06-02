@@ -70,10 +70,12 @@ public class UpdateService extends Service {
                 Log.d("THREAD", "THREAD STARTED");
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-                if(Favoritos.FavoritosList.size() > 0){
+                Log.d("Favoritos size"," " + Favoritos.FavoritosList.size());
+
+                if(Favoritos.FavoritosList.size() > 0 && sp.getBoolean("autorefresh", false) == true){
                     new loadingTask3().execute("http://dgt.es/incidenciasXY.xml");
                 }
-                else{
+                else if(Favoritos.FavoritosList.size() == 0){
                     try
                     {
                         BufferedReader fin =
@@ -92,8 +94,14 @@ public class UpdateService extends Service {
                             AndroidParseXMLActivity4 axa = new AndroidParseXMLActivity4();
                             Log.d("","Vamos a parsear");
                             axa.parseXML(texto);
+                            Log.d("Favoritos size post parse", " " + Favoritos.FavoritosList.size());
                         }
                         fin.close();
+
+                        Log.d("", "FavoritosList llenada");
+                        if(sp.getBoolean("autorefresh", false) == true){
+                        new loadingTask3().execute("http://dgt.es/incidenciasXY.xml");
+                        }
                     }
                     catch (Exception favlist0){
 
@@ -109,10 +117,10 @@ public class UpdateService extends Service {
                 Log.d("THREAD","JSON READ at "+new Time(System.currentTimeMillis()).toGMTString());
 
 
+                Log.d("AutoRefresh: ", "" + sp.getBoolean("autorefresh", false));
 
-
-
-                if(inciFavExist = true){
+                Log.d("inciFavExist: " , "" + inciFavExist);
+                if(inciFavExist == true && sp.getBoolean("autorefresh", false) == true){
                     NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                     Notification.Builder builder = new Notification.Builder(getApplicationContext());
                     builder.setTicker("Incidencias encontradas");
@@ -126,6 +134,7 @@ public class UpdateService extends Service {
                     PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
                     builder.setContentIntent(pi);
                     nm.notify(0, builder.getNotification());
+                    Log.d("NOTIFICACION","Notificacion mostrada");
                 }
 
             }
@@ -285,19 +294,19 @@ public class UpdateService extends Service {
 
             if (localName.equalsIgnoreCase("incidencia")) {
 
-                Log.d("","Paso 1");
+               //Log.d("","Paso 1");
 
                 if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
 
-                    Log.d("","Paso 2");
+                 //   Log.d("","Paso 2");
 
                     for (int i = 0; i < favorList.size(); i++){
 
-                        Log.d("","Paso 3");
+                   //     Log.d("","Paso 3");
                         if ((favorList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
-                            Log.d("","Paso 4");
+                     //       Log.d("","Paso 4");
                             if ((favorList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
-                                Log.d("","Paso 5");
+                                Log.d("","ENCONTRADA INCIDENCIA!");
                                 inciFavExist = true;
                                 break;
                             }

@@ -24,6 +24,7 @@ public class StartAlarmManagerReceiver extends BroadcastReceiver{
             context.startService(i);
         }else if(intent.getAction().equals("INCIDENCIAS.START_AUTOUPDATE") || intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)){
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+            Log.d("SERVICE", "Recibido START_AUTOUPDATE");
             if(!sp.getBoolean("autorefresh", false)){
                 return;
             }
@@ -42,6 +43,7 @@ public class StartAlarmManagerReceiver extends BroadcastReceiver{
             am.cancel(pi);
             am.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), Long.parseLong(sp.getString("updateInterval", String.valueOf(AlarmManager.INTERVAL_DAY))), pi);
         }else if(intent.getAction().equals("INCIDENCIAS.CANCEL_AUTOUPDATE")){
+            Log.d("SERVICE", "CANCEL_AUTOUPDATE");
             AlarmManager am = (AlarmManager) context.getSystemService(Activity.ALARM_SERVICE);
             Intent i = new Intent("INCIDENCIAS.AUTOUPDATE");
             PendingIntent pi = PendingIntent.getBroadcast(context, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);

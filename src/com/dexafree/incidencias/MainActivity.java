@@ -130,11 +130,19 @@ public class MainActivity extends Activity {
             }
         }
 
-
-
-
-
     }
+
+  /*  @Override
+    public void onDestroy(){
+
+        SharedPreferences settings = getSharedPreferences("autorefresh", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean("autorefresh", false);
+
+        // Commit the edits!
+        editor.commit();
+
+    }*/
 
 
     //MENU ACTIONBAR

@@ -130,6 +130,8 @@ public class Ajustes extends PreferenceActivity {
             text = "Cada media hora";
         }else if(interval.equals("900000")){
             text = "Cada 15 minutos";
+        }else if(interval.equals("60000")){
+            text = "Cada minuto";
         }
         Preference intervalPref = findPreference("updateInterval");
         intervalPref.setTitle("Intervalo entre busquedas: "+text);

@@ -410,12 +410,14 @@
     </string-array>
 
     <string-array name="interals">
-        <item>Every 15 minutes</item>
-        <item>Every 30 minutes</item>
-        <item>Every hour</item>
-        <item>Every day</item>
+        <item>Cada minuto</item>
+        <item>Cada 15 minutos</item>
+        <item>Cada 30 minutos</item>
+        <item>Cada hora</item>
+        <item>Diáriamente</item>
     </string-array>
     <string-array name="intervals_values">
+        <item>60000</item>
         <item>900000</item>
         <item>1800000</item>
         <item>3600000</item>

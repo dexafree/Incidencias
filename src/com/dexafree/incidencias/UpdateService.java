@@ -161,7 +161,7 @@ public class UpdateService extends Service {
         protected void onPostExecute(String s) {
             //   lv1.setAdapter(new EfficientAdapter(MainActivity.this, IncidenciaList));
 
-            Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
 
         }
     }
@@ -306,8 +306,9 @@ public class UpdateService extends Service {
                         if ((favorList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
                      //       Log.d("","Paso 4");
                             if ((favorList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
-                                Log.d("","ENCONTRADA INCIDENCIA!");
+
                                 inciFavExist = true;
+                                Log.d("","ENCONTRADA INCIDENCIA!");
                                 break;
                             }
                         }

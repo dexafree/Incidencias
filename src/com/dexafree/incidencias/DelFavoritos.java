@@ -1,5 +1,6 @@
 package com.dexafree.incidencias;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -92,6 +93,9 @@ public class DelFavoritos extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_favoritos);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         df_lv = (ListView) findViewById(R.id.mf_lv);
         df_lv.setAdapter(new FavoritosAdapter(DelFavoritos.this));
@@ -205,6 +209,19 @@ public class DelFavoritos extends Activity {
         // mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
 
 
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // app icon in action bar clicked; go home
+                Intent intent = new Intent(this, ManageFavoritos.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 

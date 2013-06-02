@@ -1,5 +1,6 @@
 package com.dexafree.incidencias;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -70,6 +71,8 @@ public class MainFavoritos extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cards);
 
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
 
         // init CardView
@@ -77,14 +80,8 @@ public class MainFavoritos extends Activity {
         mCardView2.setSwipeable(true);
 
 
-
-
-
-
         //TAREA DE CARGA DE XML Y PARSEO
-
-        ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
-                "Cargando. Espere por favor...", true);
+        ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "", "Cargando. Espere por favor...", true);
         new loadingTask2().execute("http://dgt.es/incidenciasXY.xml");
 
 
@@ -100,9 +97,7 @@ public class MainFavoritos extends Activity {
             //ins = openFileInput("Favoritos.xml");
 
             int lines = load2();
-
             for(int i=0; i<lines; i++){
-
                 String texto = fin.readLine();
                 Log.d("", "XML: " + texto);
                 AndroidParseXMLActivity3 axa = new AndroidParseXMLActivity3();
@@ -128,7 +123,6 @@ public class MainFavoritos extends Activity {
                 Log.e("","Ni siquiera se puede crear");
             }
         }
-
     }
 
 
@@ -141,9 +135,7 @@ public class MainFavoritos extends Activity {
         return true;
     }
 
-
-
-
+    //GESTIONAR ITEMS ACTIONBAR
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
@@ -152,6 +144,13 @@ public class MainFavoritos extends Activity {
                 return true;
             case R.id.actualizarF:
                 actualizar2();
+                return true;
+
+            case android.R.id.home:
+                // app icon in action bar clicked; go home
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 return true;
 
             default:
@@ -165,11 +164,9 @@ public class MainFavoritos extends Activity {
 
 
 
-
+    //CLASE LOADINGTASK
     class loadingTask2 extends AsyncTask<String, Void, String> {
-
         protected String doInBackground(String... urls) {
-
             SAXHelper3 sh = null;
             try {
                 sh = new SAXHelper3(urls[0]);
@@ -178,7 +175,6 @@ public class MainFavoritos extends Activity {
             }
             sh.parseContent("");
             return "";
-
         }
 
         protected void onPostExecute(String s) {
@@ -202,7 +198,6 @@ public class MainFavoritos extends Activity {
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView2.refresh();
-
     }
 
     public int load2() throws IOException
@@ -213,13 +208,10 @@ public class MainFavoritos extends Activity {
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("Favoritos.xml")));
             String line;
-
-
             int lineCount = 0;
             while ((line = br.readLine()) != null) {
                 text.append(line);
                 text.append('\n');
-
                 lineCount++;
             }
             Log.d("", "Lines: " + lineCount);
@@ -365,15 +357,11 @@ public class MainFavoritos extends Activity {
                 else {
                     return false;
                 }
-
             }
 
             else {
                 return false;
             }
-
-
-
         }
 
         else {
@@ -409,157 +397,83 @@ public class MainFavoritos extends Activity {
     public int incIcono(String tipo, String nivel){
 
         if (tipo.equalsIgnoreCase("METEOROLOGICA")){
-
             if (nivel.equals("VERDE")){
-
                 return R.drawable.meteo_verde;
-
             }
-
             if (nivel.equalsIgnoreCase("ROJO")){
-
                 return R.drawable.meteo_rojo;
-
             }
-
             if (nivel.equalsIgnoreCase("AMARILLO")){
-
                 return R.drawable.meteo_amarillo;
-
             }
-
             if (nivel.equalsIgnoreCase("NEGRO")){
-
                 return R.drawable.meteo_negro;
-
             }
-
-
-
         }
 
         else if (tipo.equalsIgnoreCase("CONOS")){
-
             if (nivel.equals("VERDE")){
-
                 return R.drawable.conos_verde;
-
             }
-
             if (nivel.equalsIgnoreCase("ROJO")){
-
                 return R.drawable.conos_rojo;
-
             }
-
             if (nivel.equalsIgnoreCase("AMARILLO")){
-
                 return R.drawable.conos_amarillo;
-
             }
-
             if (nivel.equalsIgnoreCase("NEGRO")){
-
                 return R.drawable.conos_negro;
-
             }
-
-
-
         }
 
         else if (tipo.equalsIgnoreCase("RETENCION")){
-
             if (nivel.equals("VERDE")){
-
                 return R.drawable.retencion_verde;
-
             }
-
             if (nivel.equalsIgnoreCase("ROJO")){
-
                 return R.drawable.retencion_rojo;
-
             }
-
             if (nivel.equalsIgnoreCase("AMARILLO")){
-
                 return R.drawable.retencion_amarillo;
-
             }
-
             if (nivel.equalsIgnoreCase("NEGRO")){
-
-                return R.drawable.retencion_negro;
-
+               return R.drawable.retencion_negro;
             }
-
-
-
         }
 
         else if (tipo.equalsIgnoreCase("CONOS")){
-
             if (nivel.equals("VERDE")){
-
                 return R.drawable.conos_verde;
-
             }
-
             if (nivel.equalsIgnoreCase("ROJO")){
-
                 return R.drawable.conos_rojo;
-
             }
-
             if (nivel.equalsIgnoreCase("AMARILLO")){
-
                 return R.drawable.conos_amarillo;
-
             }
-
             if (nivel.equalsIgnoreCase("NEGRO")){
-
                 return R.drawable.conos_negro;
-
             }
-
-
-
         }
 
         else if (tipo.equalsIgnoreCase("OBRAS")){
-
             if (nivel.equals("VERDE")){
-
                 return R.drawable.obras_verde;
-
             }
-
             if (nivel.equalsIgnoreCase("ROJO")){
 
                 return R.drawable.obras_rojo;
-
             }
-
             if (nivel.equalsIgnoreCase("AMARILLO")){
 
                 return R.drawable.obras_amarillo;
-
             }
-
             if (nivel.equalsIgnoreCase("NEGRO")){
 
                 return R.drawable.obras_negro;
-
             }
-
-
-
         }
-
         return R.drawable.conos_verde;
-
     }
 
     public boolean checkProvincia(String provincia) {

@@ -25,8 +25,8 @@ public class MyCard extends Card {
         super(title, desc1, desc2, desc3);
     }
 
-    public MyCard(String title, String desc1, String desc2, String desc3, String desc4, String desc5){
-        super(title, desc1, desc2, desc3, desc4, desc5);
+    public MyCard(String title, String desc1, String desc2, String desc3, String desc4){
+        super(title, desc1, desc2, desc3, desc4);
     }
 
     @Override
@@ -38,7 +38,6 @@ public class MyCard extends Card {
         ((TextView) view.findViewById(R.id.description2)).setText(desc2);
         ((TextView) view.findViewById(R.id.description3)).setText(desc3);
         ((TextView) view.findViewById(R.id.description4)).setText(desc4);
-        ((TextView) view.findViewById(R.id.description5)).setText(desc5);
 
 
 

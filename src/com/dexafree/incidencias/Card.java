@@ -47,13 +47,12 @@ public abstract class Card extends AbstractCard {
         this.desc3 = desc3;
     }
 
-    public Card(String title, String desc1, String desc2, String desc3, String desc4, String desc5){
+    public Card(String title, String desc1, String desc2, String desc3, String desc4){
         this.title = title;
         this.desc1 = desc1;
         this.desc2 = desc2;
         this.desc3 = desc3;
         this.desc4 = desc4;
-        this.desc5 = desc5;
     }
 
 

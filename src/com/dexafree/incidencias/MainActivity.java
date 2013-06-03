@@ -424,7 +424,8 @@ public class MainActivity extends Activity {
 
                                 //Si la diferencia coincide con el intervalo, significa que la hora es la misma
                                 //con lo que comprobaremos los minutos
-                                if ((dif == intervInt ) && ((minutes - minutosInt) >= 0)) {
+
+                                if ((dif == intervInt ) && ((minutosInt - minutes) >= 0)) {
                                     // Log.i("", "Es true");
                                     return true;
                                 }

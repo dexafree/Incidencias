@@ -79,6 +79,8 @@ public class MainFavoritos extends Activity {
         mCardView2 = (CardUI) findViewById(R.id.cardsview);
         mCardView2.setSwipeable(true);
 
+        firstTime2();
+
 
         //TAREA DE CARGA DE XML Y PARSEO
         ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "", "Cargando. Espere por favor...", true);
@@ -158,6 +160,29 @@ public class MainFavoritos extends Activity {
         }
     }
 
+
+    public void firstTime2() {
+        final String PREFS_NAME = "MyPrefsFile2";
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+        if (settings.getBoolean("my_first_time2", true)) {
+            //the app is being launched for first time, do something
+            Log.d("Comments", "First time");
+
+            mCardView2.addCard(new MyCard("No tienes ningun favorito añadido", "Entra al menú de Administrar y añade las carreteras y provincias que te interesen","Luego pulsa Actualizar"));
+            mCardView2.addCard(new MyCard("Notificaciones", "En el menú de ajustes de la pantalla anterior podrás configurar las comprobaciones automáticas del estado del tráfico de tus lugares favoritos", "Si la aplicación detecta que hay una incidencia en algún lugar que has marcado como favorito, recibirás una notificación "));
+            mCardView2.refresh();
+
+
+
+            // first time task
+
+            // record the fact that the app has been started at least once
+            settings.edit().putBoolean("my_first_time2", false).commit();
+        }
+
+    }
 
 
 
@@ -379,6 +404,7 @@ public class MainFavoritos extends Activity {
 
     public boolean comparador(String fechahora){
 
+        Log.d("", "Se ha disparado");
         //Obtenemos la fecha actual
         Date cDate = new Date();
         String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
@@ -426,6 +452,9 @@ public class MainFavoritos extends Activity {
             dayInt = dayInt -1;
         }
 
+        Log.d("Fecha/hora actual post-if", hours + ":" + minutes + "  " + dayInt + "-" + monthInt + "-" + yearInt);
+        Log.d("Fecha/hora incidencia post-if", horaInt + ":" + minutosInt + "  " + daypasInt + "-" + monthpasInt + "-" + yearpasInt);
+
         //Empezamos comparacion de fecha
 
         //Comprobamos si coincide el año
@@ -439,27 +468,29 @@ public class MainFavoritos extends Activity {
 
                     //Comprobamos si el filtrado horario esta habilitado
 
-                    SharedPreferences cFilt = PreferenceManager.getDefaultSharedPreferences(this);
+                   // SharedPreferences cadu = PreferenceManager.getDefaultSharedPreferences(this);
 
                     //En caso de que lo este
-                    if (cFilt.getBoolean("filtrado_horario", false)) {
+                   // if (cadu.getBoolean("caduc_fav", false)) {
 
                         if (hours >= horaInt){
 
                             //Obtenemos la preferencia de hora_selec, que es el intervalo maximo deseado.
                             SharedPreferences sphora = PreferenceManager.getDefaultSharedPreferences(this);
-                            String interv = sphora.getString("hora_selecc", "-1");
+                            String interv = sphora.getString("caduc_fav", "-1");
                             int intervInt = Integer.parseInt(interv);
+
+                            Log.d("intervInt", ""+intervInt);
 
                             //Obtenemos la diferencia entre la hora atual y la de la incidencia
                             int dif = hours-horaInt;
-
+                            Log.d("dif", ""+dif);
                             //Comparamos la diferencia con el intervalo maximo deseado
                             if (dif <= intervInt ) {
 
                                 //Si la diferencia coincide con el intervalo, significa que la hora es la misma
                                 //con lo que comprobaremos los minutos
-                                if ((dif == intervInt ) && ((minutes - minutosInt) >= 0)) {
+                                if ((dif == intervInt ) && ((minutosInt - minutes) >= 0)) {
                                     // Log.i("", "Es true");
                                     return true;
                                 }
@@ -478,8 +509,8 @@ public class MainFavoritos extends Activity {
 
                         }
 
-                    }
-                    return true;
+                   // }
+                    //return true;
                 }
             }
         }
@@ -701,7 +732,7 @@ public class MainFavoritos extends Activity {
 
                // Log.d("","Paso 1");
 
-                if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
+              //  if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
 
                  //   Log.d("","Paso 2");
 
@@ -718,13 +749,13 @@ public class MainFavoritos extends Activity {
 
                        //         Log.d("","Paso 5");
 
+                                if (comparador(currentIncidencia.getFechahora()) == true){
+
+                                    mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                                    mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
 
 
-                                mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                                mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
-
-
-
+                                }
 
                             }
 
@@ -737,7 +768,7 @@ public class MainFavoritos extends Activity {
 
                     }
 
-                }
+             //   }
 
 
 

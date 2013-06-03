@@ -62,6 +62,14 @@
                 android:summary="Selecciona una hora para buscar las actualizaciones"
                 android:dependency="autorefresh" />
 
+        <ListPreference
+                android:key="caduc_fav"
+                android:summary="Selecciona cuando quieres que caduquen los favoritos"
+                android:title="Caducidad favoritos"
+                android:entries="@array/Horas"
+                android:entryValues="@array/Horas_val"
+                />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

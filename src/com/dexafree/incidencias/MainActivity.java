@@ -373,9 +373,17 @@ public class MainActivity extends Activity {
 
         //Si la hora actual es entre las 00 y las 06, restaremos un dia y sumaremos 24 a las horas
         if (hours < 6){
-            hours = hours+ 24;
-            dayInt = dayInt -1;
+                hours = hours+ 24;
+                dayInt = dayInt -1;
+
+            if(horaInt < 6){
+                horaInt = horaInt + 24;
+                daypasInt = daypasInt -1;
+            }
+
         }
+
+        //Si la hora de la notificación también es menor a las 6AM, restamos un dia y añadimos 24 a las horas
 
         //Empezamos comparacion de fecha
 
@@ -430,18 +438,14 @@ public class MainActivity extends Activity {
                                 else {
                                     return false;
                                 }
-
                             }
                             else {
                                 return false;
                             }
-
-
                         }
                         else {
                             return false;
                         }
-
                     }
                     else {
                     Log.d("Filtrado horario", "Desactivado");

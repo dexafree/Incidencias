@@ -29,13 +29,13 @@
 
 
     <PreferenceCategory
-            android:title="Modo testeo"
+            android:title="Tutorial"
             android:key="modo_testeo">
 
         <SwitchPreference
-                android:key="testeo"
-                android:summary="Para que de igual si son de hoy"
-                android:title="TESTING" />
+                android:key="my_first_time"
+                android:summary="En el próximo inicio de la aplicación se volverá a mostrar el tutorial inicial"
+                android:title="Repetir tutorial" />
 
     </PreferenceCategory>
 

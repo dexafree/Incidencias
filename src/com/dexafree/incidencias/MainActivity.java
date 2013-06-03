@@ -222,17 +222,19 @@ public class MainActivity extends Activity {
 
 
     public void firstTime() {
-        final String PREFS_NAME = "MyPrefsFile";
+        //final String PREFS_NAME = "MyPrefsFile";
 
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+
 
         if (settings.getBoolean("my_first_time", true)) {
             //the app is being launched for first time, do something
             Log.d("Comments", "First time");
 
-            mCardView.addCard(new MyCard("No tienes ninguna provincia seleccionada", "Entra al menú de Provincias y selecciona las que te interesen\n \nLuego pulsa Actualizar"));
-            mCardView.addCard(new MyCard("Para acceder a más detalles...", "Y entonces pasarás a ver todos los detalles de la incidencia"));
-            mCardView.addCardToLastStack(new MyCard( "Deslízame!", "Puedes deslizar las tarjetas hacia los laterales para descartarlas"));
+            mCardView.addCard(new MyCard("No tienes ninguna provincia seleccionada", "Entra al menú de Provincias y selecciona las que te interesen","Luego pulsa Actualizar", "En el menú de Ajustes también podrás configurar opciones tales como el filtrado por horas, configurar si quieres que al iniciar la app se actualice automáticamente, o la recepción de notificaciones", "En el apartado de Acerca de... podrás ver información adicional de la aplicación, como el desarrollador, la fuente de los datos, o la versión de la aplicación que tienes instalada"));
+            mCardView.addCard(new MyCard("Para acceder a más detalles...", "Y entonces pasarás a ver todos los detalles de la incidencia", "En este apartado verás una información más detallada de la incidencia", "Contarás con información detallada, como el sentido, hacia donde circulan los coches que se encontrarán con la incidencia, la causa de la incidencia...", "Cuando pulses el botón de Actualizar, se volverán a mostrar las tarjetas que hayas descartado, por si las has descartado accidentalmente"));
+            mCardView.addCardToLastStack(new MyCard( "Deslízame!", "Puedes deslizar las tarjetas hacia los laterales para descartarlas", "En la tarjeta frontal verás información resumida acerca de la incidencia", "El icono que verás te indicará, con su forma, el tipo de incidencia, y con el color, la gravedad de la situación","De menos a más, el orden es VERDE < AMARILLO < ROJO < NEGRO"));
+            mCardView.addCard(new MyCard("Favoritos", "Pulsando el botón de Favoritos accederás a un nuevo menú donde podrás encontrar las incidencias en rutas que hayas marcado como favoritas", "Estos favoritos incluyen información sobre tus carreteras y tus provincias favoritas, mostrándote exactamente la información que tú quieres", "También sirven de base para, si así lo deseas, mostrarte notificaciones automáticas en caso de que la aplicación detecte que se ha producido una incidencia en tus rutas favoritas"));
             mCardView.refresh();
 
 

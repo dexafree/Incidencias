@@ -82,9 +82,9 @@ public class MainActivity extends Activity {
 
         if ( pm.getBoolean("actuinicio", false)) {
             // Log.i("", "Es true");
-                ShowProgress = ProgressDialog.show(MainActivity.this, "",
-             "Cargando. Espere por favor...", true);
-              new loadingTask().execute("http://dgt.es/incidenciasXY.xml");
+            ShowProgress = ProgressDialog.show(MainActivity.this, "",
+                    "Cargando. Espere por favor...", true);
+            new loadingTask().execute("http://www.dgt.es/incidenciasXY.xml");
         }
 
         firstTime();
@@ -305,7 +305,7 @@ public class MainActivity extends Activity {
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress = ProgressDialog.show(MainActivity.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask().execute("http://dgt.es/incidenciasXY.xml");
+        new loadingTask().execute("http://www.dgt.es/incidenciasXY.xml");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView.refresh();
@@ -331,6 +331,8 @@ public class MainActivity extends Activity {
     }
 
     public boolean comparador(String fechahora){
+
+        Log.d("","Iniciando comparador");
 
         //Obtenemos la fecha actual
         Date cDate = new Date();
@@ -393,6 +395,9 @@ public class MainActivity extends Activity {
                     //En caso de que lo este
                     if (cFilt.getBoolean("filtrado_horario", false)) {
 
+                        Log.d("Filtrado horario", "Activado");
+                        Log.d("", "Hours:" + hours + "  horaInt: " + horaInt);
+
                         if (hours >= horaInt){
 
                             //Obtenemos la preferencia de hora_selec, que es el intervalo maximo deseado.
@@ -400,8 +405,11 @@ public class MainActivity extends Activity {
                             String interv = sphora.getString("hora_selecc", "-1");
                             int intervInt = Integer.parseInt(interv);
 
+                            Log.d("intervInt", ""+intervInt);
+
                             //Obtenemos la diferencia entre la hora atual y la de la incidencia
                             int dif = hours-horaInt;
+                            Log.d("dif", ""+dif);
 
                             //Comparamos la diferencia con el intervalo maximo deseado
                             if (dif <= intervInt ) {
@@ -424,11 +432,21 @@ public class MainActivity extends Activity {
                                 }
 
                             }
+                            else {
+                                return false;
+                            }
 
+
+                        }
+                        else {
+                            return false;
                         }
 
                     }
+                    else {
+                    Log.d("Filtrado horario", "Desactivado");
                     return true;
+                    }
                 }
             }
         }
@@ -462,15 +480,15 @@ public class MainActivity extends Activity {
             //  Log.i("", "COINCIDE YEAR");
 
             if (month.equals(monthpas)) {
-                Log.i("", "COINCIDE MONTH");
-                Log.d("", "dayInt: " + dayInt + "  daypasInt: " + daypasInt);
+               // Log.i("", "COINCIDE MONTH");
+               // Log.d("", "dayInt: " + dayInt + "  daypasInt: " + daypasInt);
                 if (dayInt == daypasInt) {
                     //    Log.i("", "COINCIDE DAY");
                     return true;
                 }
 
                 else if (dayInt == (daypasInt-1)){
-                    Log.d("", "COINCIDE");
+                  //  Log.d("", "COINCIDE");
                     return true;
                 }
                 else {
@@ -491,7 +509,7 @@ public class MainActivity extends Activity {
 
     public boolean checkHora(String hora){
 
-        Log.i("", "Hora: " + hora);
+        //Log.i("", "Hora: " + hora);
 
         Calendar c = Calendar.getInstance();
         int minutes = c.get(Calendar.MINUTE);
@@ -570,13 +588,14 @@ public class MainActivity extends Activity {
 
     public String getHora(String fechaHora) {
 
-        Log.i("", "FechaHora: " + fechaHora);
+      //  Log.i("", "FechaHora: " + fechaHora);
         String fhs = fechaHora.trim();
-        Log.i("", "fhs: " + fhs);
+        //Log.i("", "fhs: " + fhs);
         String hora = fhs.substring(11,13);
-        Log.i("", "hora: " + hora);
+        //Log.i("", "hora: " + hora);
         String minutos = fhs.substring(14,16);
-        Log.i("", "minutos: " + minutos);
+        //Log.i("", "minutos: " + minutos);
+        Log.d("getHora","ok");
         return hora + ":" + minutos + "  ";
 
     }
@@ -829,34 +848,51 @@ public class MainActivity extends Activity {
 
             if (localName.equalsIgnoreCase("incidencia")) {
 
+
+
+
+                // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
                 if (checkProvincia(currentIncidencia.getProvincia()) == true) {
 
                     if (checkTesteo() == false) {
+                        //   Log.i("", "Pasado el primer if");
+                        //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
 
-                        if (comparador(currentIncidencia.getFechahora())) {
+                            //if (checkFiltrado()) {
 
-                            IncidenciaList.add(currentIncidencia);
+                                if (comparador(currentIncidencia.getFechahora())) {
+                                    Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
+                                    //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                                    IncidenciaList.add(currentIncidencia);
 
-                            mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                            mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
-                        }
+                                    mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                                    mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                                }
+
+                            //}
+
+                            /*else {
+                                Log.d("2 INFO", "Al menos no ha petado");
+                                IncidenciaList.add(currentIncidencia);
+                                mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                                mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                            }*/
+
+                       // }
+
                     }
-
                     else {
+                        Log.d("3 INFO", "Al menos no ha petado");
                         IncidenciaList.add(currentIncidencia);
                         mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
                         mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+
                     }
 
                 }
-                else {
-                    IncidenciaList.add(currentIncidencia);
-                    mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                    mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
-                }
-            }
-                currentIncidencia = new Incidencia();
+            currentIncidencia = new Incidencia();
         }
+    }
 
 
         @Override

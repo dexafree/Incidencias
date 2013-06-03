@@ -415,6 +415,10 @@ public class MainFavoritos extends Activity {
         int monthpasInt = Integer.parseInt(monthpas);
         int daypasInt = Integer.parseInt(daypas);
 
+        Log.d("Fecha/hora actual", hours + ":" + minutes + "  " + dayInt + "-" + monthInt + "-" + yearInt);
+        Log.d("Fecha/hora incidencia", horaInt + ":" + minutosInt + "  " + daypasInt + "-" + monthpasInt + "-" + yearpasInt);
+
+
 
         //Si la hora actual es entre las 00 y las 06, restaremos un dia y sumaremos 24 a las horas
         if (hours < 6){

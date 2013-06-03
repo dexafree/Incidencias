@@ -100,7 +100,7 @@ public class UpdateService extends Service {
 
                         Log.d("", "FavoritosList llenada");
                         if(sp.getBoolean("autorefresh", false) == true){
-                        new loadingTask3().execute("http://dgt.es/incidenciasXY.xml");
+                            new loadingTask3().execute("http://dgt.es/incidenciasXY.xml");
                         }
                     }
                     catch (Exception favlist0){
@@ -120,7 +120,7 @@ public class UpdateService extends Service {
                 Log.d("AutoRefresh: ", "" + sp.getBoolean("autorefresh", false));
 
                 Log.d("inciFavExist: " , "" + inciFavExist);
-                if(inciFavExist == true && sp.getBoolean("autorefresh", false) == true){
+                if(inciFavExist == true){
                     NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                     Notification.Builder builder = new Notification.Builder(getApplicationContext());
                     builder.setTicker("Incidencias encontradas");
@@ -128,12 +128,13 @@ public class UpdateService extends Service {
                     builder.setContentText("Hay incidencias en tus sitios favoritos");
                     builder.setSmallIcon(R.drawable.yaos_small);
                     builder.setWhen(System.currentTimeMillis());
+                    builder.setDefaults(Notification.DEFAULT_ALL);
                     builder.setAutoCancel(true);
                     Intent i = new Intent(getApplicationContext(), MainFavoritos.class);
                     //i.putExtra("jsonFile", json.getJsonFile());
                     PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
                     builder.setContentIntent(pi);
-                    nm.notify(0, builder.getNotification());
+                    nm.notify(0, builder.build());
                     Log.d("NOTIFICACION","Notificacion mostrada");
                 }
 

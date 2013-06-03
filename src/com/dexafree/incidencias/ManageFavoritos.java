@@ -263,17 +263,6 @@ public class ManageFavoritos extends Activity {
                 startActivity(new Intent(this, DelFavoritos.class));
                 return true;
 
-            case R.id.pruebafa:
-
-                int d = Favoritos.FavoritosList.size();
-                Context context = getApplicationContext();
-                CharSequence text = "Long FavoritosList: " + d;
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-                return true;
-
             case android.R.id.home:
                 // app icon in action bar clicked; go home
                 Intent intent = new Intent(this, MainFavoritos.class);

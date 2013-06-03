@@ -14,10 +14,5 @@
             android:showAsAction="always"
             android:title="Eliminar"/>
 
-    <item
-            android:id="@+id/pruebafa"
-            android:orderInCategory="2"
-            android:showAsAction="always"
-            android:title="PRUEBA"/>
 
 </menu>

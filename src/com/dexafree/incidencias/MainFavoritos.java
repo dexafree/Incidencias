@@ -377,6 +377,111 @@ public class MainFavoritos extends Activity {
         return false;
     }
 
+    public boolean comparador(String fechahora){
+
+        //Obtenemos la fecha actual
+        Date cDate = new Date();
+        String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
+
+        //Obtenemos la hora actual
+        Calendar c = Calendar.getInstance();
+        int minutes = c.get(Calendar.MINUTE);
+        int hours = c.get(Calendar.HOUR_OF_DAY);
+
+        //CREAMOS EL STRING YEAR, MONTH... PARA SACAR SOLO LOS PRIMEROS DIGITOS PARA INICIAR LA COMPARACION
+        String year = new SimpleDateFormat("yyyy").format(cDate);
+        String month = new SimpleDateFormat("MM").format(cDate);
+        String day = new SimpleDateFormat("dd").format(cDate);
+
+        //Obtener datos del argumento fechahora
+        String yearpas = fechahora.substring(0,4); //Año
+        String monthpas = fechahora.substring(5,7); //Mes
+        String daypas = fechahora.substring(8,10); //Dia
+        String fhs = fechahora.trim(); //Variable temporal para eliminar espacios al inicio y al final
+        String horapas = fhs.substring(11,13); //Hora
+        String minutospas = fhs.substring(14,16); //Minutos
+
+
+        //Convertimos cada uno de los Strings a Ints
+
+        int yearInt = Integer.parseInt(year);
+        int monthInt = Integer.parseInt(month);
+        int dayInt = Integer.parseInt(day);
+
+        int horaInt = Integer.parseInt(horapas);
+        int minutosInt = Integer.parseInt(minutospas);
+
+        int yearpasInt = Integer.parseInt(yearpas);
+        int monthpasInt = Integer.parseInt(monthpas);
+        int daypasInt = Integer.parseInt(daypas);
+
+
+        //Si la hora actual es entre las 00 y las 06, restaremos un dia y sumaremos 24 a las horas
+        if (hours < 6){
+            hours = hours+ 24;
+            dayInt = dayInt -1;
+        }
+
+        //Empezamos comparacion de fecha
+
+        //Comprobamos si coincide el año
+        if (yearInt == yearpasInt){
+
+            //Comprobamos si coincide el mes
+            if (monthInt == monthpasInt){
+
+                //Comprobamos si coincide el dia
+                if (dayInt == daypasInt){
+
+                    //Comprobamos si el filtrado horario esta habilitado
+
+                    SharedPreferences cFilt = PreferenceManager.getDefaultSharedPreferences(this);
+
+                    //En caso de que lo este
+                    if (cFilt.getBoolean("filtrado_horario", false)) {
+
+                        if (hours >= horaInt){
+
+                            //Obtenemos la preferencia de hora_selec, que es el intervalo maximo deseado.
+                            SharedPreferences sphora = PreferenceManager.getDefaultSharedPreferences(this);
+                            String interv = sphora.getString("hora_selecc", "-1");
+                            int intervInt = Integer.parseInt(interv);
+
+                            //Obtenemos la diferencia entre la hora atual y la de la incidencia
+                            int dif = hours-horaInt;
+
+                            //Comparamos la diferencia con el intervalo maximo deseado
+                            if (dif <= intervInt ) {
+
+                                //Si la diferencia coincide con el intervalo, significa que la hora es la misma
+                                //con lo que comprobaremos los minutos
+                                if ((dif == intervInt ) && ((minutes - minutosInt) >= 0)) {
+                                    // Log.i("", "Es true");
+                                    return true;
+                                }
+
+                                //Si la diferencia no coincide, significa que han pasado menos horas que las que
+                                //marca el intervalo, con lo que los minutos son indiferentes
+                                else if (dif != intervInt ) {
+                                    return true;
+                                }
+
+                                else {
+                                    return false;
+                                }
+
+                            }
+
+                        }
+
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
 
 

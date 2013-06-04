@@ -101,69 +101,6 @@ public class ManageFavoritos extends Activity {
         mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
 
 
-
-
-       /* mf_lv.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-
-                try {
-
-                    BufferedReader fichero =
-                            new BufferedReader(
-                                    new InputStreamReader(
-                                            openFileInput("Favoritos.xml")));
-
-
-                    int lineas = load("Favoritos.xml");
-
-                    Log.d("lineas","" + lineas);
-
-                    String text;
-
-                    StringBuilder bui = new StringBuilder();
-
-                    Log.d("position", "" +position);
-
-                    for (int i = 0; i < lineas; i++) {
-
-                        Log.d("","i: " + i);
-
-
-                        if (i != position) {
-                            text = fichero.readLine();
-                            Log.d("Text", text);
-
-                            bui.append(text + "\n");
-                            Log.d("bui", bui.toString());
-                        }
-                        else{
-                            fichero.readLine();
-                        }
-
-                    }
-
-                    fichero.close();
-
-                    OutputStreamWriter nuevoxml =
-                            new OutputStreamWriter(
-                                    openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
-
-                    nuevoxml.append(bui.toString());
-                    nuevoxml.close();
-
-
-                } catch (Exception exce) {
-                    Log.e("Ficheros", "Pues no ha funcionado");
-                }
-
-                Favoritos.FavoritosList.remove(position);
-                mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
-
-
-            }
-        }); */
-
         try
         {
             BufferedReader fin =
@@ -171,7 +108,7 @@ public class ManageFavoritos extends Activity {
                             new InputStreamReader(
                                     openFileInput("Favoritos.xml")));
 
-            //ins = openFileInput("Favoritos.xml");
+
 
             int lines = load("Favoritos.xml");
 
@@ -203,7 +140,7 @@ public class ManageFavoritos extends Activity {
             }
         }
 
-       // mf_lv.setAdapter(new FavoritosAdapter(ManageFavoritos.this));
+
 
 
         }
@@ -269,9 +206,6 @@ public class ManageFavoritos extends Activity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 return true;
-
-
-
 
             default:
                 return super.onOptionsItemSelected(item);

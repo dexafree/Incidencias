@@ -86,8 +86,8 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
         final SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
         /** Get the value stored in the share preferences corresponding to the key "lp_android_choice" */
-        carretera = sp.getString("carretera_seleccionada", "None Selected");
-        provincia = sp.getString("provincia_seleccionada", "None Selected");
+        carretera = sp.getString("carretera_seleccionada", "Ninguna carretera seleccionada");
+        provincia = sp.getString("provincia_seleccionada", "Ninguna provincia seleccionada");
        // pkFinal = 0;
        // pkInicial = 0;
 

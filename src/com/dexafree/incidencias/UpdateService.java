@@ -137,10 +137,10 @@ public class UpdateService extends Service {
                     PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
                     builder.setContentIntent(pi);
                     nm.notify(0, builder.build());
-                    Intent intent = new Intent("com.dexafree.incidencias.NEW_NOTIFICATION");
-                    intent.putExtra("NEW_NOTIFICATION_TEXT", "Se han encontrado incidencias");
-                    Context context = getApplicationContext();
-                    context.sendBroadcast(intent);
+                    //Intent intent = new Intent("com.dexafree.incidencias.NEW_NOTIFICATION");
+                    //intent.putExtra("NEW_NOTIFICATION_TEXT", "Se han encontrado incidencias");
+                    //Context context = getApplicationContext();
+                    //context.sendBroadcast(intent);
                     Log.d("NOTIFICACION","Notificacion mostrada");
                 }
 

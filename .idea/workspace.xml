@@ -17,16 +17,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/UpdateService.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/UpdateService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/about.xml" afterPath="$PROJECT_DIR$/res/xml/about.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370470081751" ignored="false" />
+    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370470504702" ignored="false" />
     <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370301601322" ignored="false" />
     <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370299832534" ignored="false" />
     <file path="/fragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369677826367" ignored="false" />
-    <file path="/about.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370209655666" ignored="false" />
+    <file path="/about.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370473020121" ignored="false" />
     <file path="/About.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369012279042" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370018106461" ignored="false" />
     <file path="/CardUI.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369084301390" ignored="false" />
@@ -140,10 +140,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UpdateService.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UpdateService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/UpdateService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="22" selection-start="5480" selection-end="5480" vertical-scroll-proportion="0.510929">
+            <state line="142" column="22" selection-start="5480" selection-end="5480" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="70" selection-start="492" selection-end="492" vertical-scroll-proportion="0.3715847">
               <folding />
             </state>
           </provider>
@@ -188,11 +197,11 @@
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
         <option value="$PROJECT_DIR$/res/menu/favs_menu.xml" />
         <option value="$PROJECT_DIR$/res/menu/main.xml" />
-        <option value="$PROJECT_DIR$/res/xml/about.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" />
         <option value="$PROJECT_DIR$/res/values/arrays.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/UpdateService.java" />
+        <option value="$PROJECT_DIR$/res/xml/about.xml" />
       </list>
     </option>
   </component>
@@ -604,7 +613,7 @@
       <workItem from="1370252620427" duration="9382000" />
       <workItem from="1370295030352" duration="8778000" />
       <workItem from="1370352404670" duration="4125000" />
-      <workItem from="1370469524951" duration="955000" />
+      <workItem from="1370469524951" duration="2529000" />
     </task>
     <task id="LOCAL-00001" summary="Añadido modo TEST">
       <created>1369011585262</created>
@@ -858,11 +867,15 @@
       <created>1370470096006</created>
       <updated>1370470096007</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="VERSION FINAL">
+      <created>1370470512125</created>
+      <updated>1370470512125</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236510000" />
+    <option name="totallyTimeSpent" value="238084000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1063,13 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="19" selection-start="460" selection-end="460" vertical-scroll-proportion="0.30195382">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="40" selection-start="739" selection-end="739" vertical-scroll-proportion="0.45648313">
@@ -1107,7 +1113,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/UpdateService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="22" selection-start="5480" selection-end="5480" vertical-scroll-proportion="0.510929">
+        <state line="142" column="22" selection-start="5480" selection-end="5480" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="70" selection-start="492" selection-end="492" vertical-scroll-proportion="0.3715847">
           <folding />
         </state>
       </provider>

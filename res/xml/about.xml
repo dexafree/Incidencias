@@ -4,8 +4,9 @@
 
     <Preference android:title="Copyright" android:summary="Dexafree"/>
     <Preference android:title="Fuente de los datos" android:summary="Dirección General de Tráfico"/>
+    <Preference android:title="Diseño del icono" android:summary="Todotuscani"/>
     <PreferenceCategory android:title="Version:">
-        <Preference android:title="App version" android:summary="RC 2"/>
+        <Preference android:title="App version" android:summary="1.0.0"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

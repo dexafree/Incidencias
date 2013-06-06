@@ -4,7 +4,7 @@
 
     <CheckBoxPreference
         android:key="ALAVA/GUIPUZCOA/VIZCAYA"
-        android:title="Álava"
+        android:title="Álava/Guipúzcoa/Vizcaya"
         android:defaultValue="false" />
 
 

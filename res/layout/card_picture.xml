@@ -41,7 +41,7 @@
             android:adjustViewBounds="true"
             android:baselineAlignBottom="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/url1" />
+            android:src="@drawable/obras_verde" />
 
         <LinearLayout
                 android:orientation="vertical"

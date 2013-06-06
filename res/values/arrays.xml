@@ -254,6 +254,9 @@
         <item>AS-I</item>
         <item>AS-II</item>
         <item>AS-III</item>
+        <item>B-10</item>
+        <item>B-20</item>
+        <item>B-23</item>
         <item>BA-142</item>
         <item>BI-30</item>
         <item>BI-631</item>
@@ -321,7 +324,10 @@
         <item>LZ-1</item>
         <item>LZ-2</item>
         <item>LZ-3</item>
+        <item>M-30</item>
+        <item>M-40</item>
         <item>M-45</item>
+        <item>M-50</item>
         <item>M-61</item>
         <item>M-100</item>
         <item>M-203</item>

@@ -17,12 +17,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/about.xml" afterPath="$PROJECT_DIR$/res/xml/about.xml" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\CONOS_AMARILLO.png" afterPath="$PROJECT_DIR$/res/drawable/conos_amarillo.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\CONOS_NEGRO.png" afterPath="$PROJECT_DIR$/res/drawable/conos_negro.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\CONOS_ROJO.png" afterPath="$PROJECT_DIR$/res/drawable/conos_rojo.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\CONOS_VERDE.png" afterPath="$PROJECT_DIR$/res/drawable/conos_verde.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\METEO_NEGRO.png" afterPath="$PROJECT_DIR$/res/drawable/meteo_negro.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\METEO_ROJO.png" afterPath="$PROJECT_DIR$/res/drawable/meteo_rojo.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\METEO_VERDE.png" afterPath="$PROJECT_DIR$/res/drawable/meteo_verde.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\OBRAS_AMARILLO.png" afterPath="$PROJECT_DIR$/res/drawable/obras_amarillo.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\OBRAS_NEGRO.png" afterPath="$PROJECT_DIR$/res/drawable/obras_negro.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\OBRAS_ROJO.png" afterPath="$PROJECT_DIR$/res/drawable/obras_rojo.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\OBRAS_VERDE.png" afterPath="$PROJECT_DIR$/res/drawable/obras_verde.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\RETENCION_AMARILLO.png" afterPath="$PROJECT_DIR$/res/drawable/retencion_amarillo.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\RETENCION_NEGRO.png" afterPath="$PROJECT_DIR$/res/drawable/retencion_negro.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\RETENCION_ROJO.png" afterPath="$PROJECT_DIR$/res/drawable/retencion_rojo.png" />
+      <change type="MOVED" beforePath="C:\Users\Carlos\workspace\Incidencias\res\drawable\RETENCION_VERDE.png" afterPath="$PROJECT_DIR$/res/drawable/retencion_verde.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incidencias.apk" afterPath="$PROJECT_DIR$/Incidencias.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370470504702" ignored="false" />
+    <file path="/Dummy.txt" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370561282205" ignored="false" />
     <file path="/preferences.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370301601322" ignored="false" />
     <file path="/MainActivity.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370299832534" ignored="false" />
     <file path="/fragment.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369677826367" ignored="false" />
@@ -41,7 +56,7 @@
     <file path="/MainActivityProceso.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369177731560" ignored="false" />
     <file path="/AbstractCard.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369151741881" ignored="false" />
     <file path="/Incidencia.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369926425315" ignored="false" />
-    <file path="/sel_provincias.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369179190928" ignored="false" />
+    <file path="/sel_provincias.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370558760721" ignored="false" />
     <file path="/arrays.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370303159825" ignored="false" />
     <file path="/UpdateService.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370355397015" ignored="false" />
     <file path="/Favoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369782249946" ignored="false" />
@@ -76,8 +91,8 @@
     <file path="/favs.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369919544012" ignored="false" />
     <file path="/DelFavoritos.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370212454386" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/dexafree/incidencias/BuildConfig.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369922598042" ignored="false" />
-    <file path="/MyImageCard.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369953652547" ignored="false" />
-    <file path="/card_picture.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1369924891364" ignored="false" />
+    <file path="/MyImageCard.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370557973299" ignored="false" />
+    <file path="/card_picture.xml" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370557955359" ignored="false" />
     <file path="/Ajustes.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370212276174" ignored="false" />
     <file path="/StartAlarmManagerReceiver.java" changelist="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" time="1370082633752" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,7 +109,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -131,6 +145,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -149,10 +164,70 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="about.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="70" selection-start="492" selection-end="492" vertical-scroll-proportion="0.3715847">
+            <state line="7" column="49" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="arrays.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/arrays.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="328" column="25" selection-start="9054" selection-end="9054" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sel_provincias.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/xml/sel_provincias.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="46" selection-start="235" selection-end="235" vertical-scroll-proportion="0.13821138">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="26" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main_cards.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/activity_main_cards.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="card_picture.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/card_picture.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="50" selection-start="1481" selection-end="1481" vertical-scroll-proportion="-5.56">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyImageCard.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MyImageCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="9" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -186,10 +261,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/DelFavoritos.java" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Provincias.java" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/About.java" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Card.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MyCard.java" />
         <option value="$PROJECT_DIR$/res/layout/card_ex.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
@@ -199,9 +270,13 @@
         <option value="$PROJECT_DIR$/res/menu/main.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" />
-        <option value="$PROJECT_DIR$/res/values/arrays.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/UpdateService.java" />
         <option value="$PROJECT_DIR$/res/xml/about.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/card_picture.xml" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MyImageCard.java" />
+        <option value="$PROJECT_DIR$/res/xml/sel_provincias.xml" />
+        <option value="$PROJECT_DIR$/res/values/arrays.xml" />
       </list>
     </option>
   </component>
@@ -391,7 +466,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Incidencias" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Incidencias" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="drawable-hdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Incidencias" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Incidencias" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -613,7 +724,9 @@
       <workItem from="1370252620427" duration="9382000" />
       <workItem from="1370295030352" duration="8778000" />
       <workItem from="1370352404670" duration="4125000" />
-      <workItem from="1370469524951" duration="2529000" />
+      <workItem from="1370469524951" duration="3194000" />
+      <workItem from="1370523891511" duration="1105000" />
+      <workItem from="1370556317180" duration="3752000" />
     </task>
     <task id="LOCAL-00001" summary="Añadido modo TEST">
       <created>1369011585262</created>
@@ -871,11 +984,19 @@
       <created>1370470512125</created>
       <updated>1370470512125</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="VERSION FINAL">
+      <created>1370473040036</created>
+      <updated>1370473040036</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Preparando V1.1">
+      <created>1370561286948</created>
+      <updated>1370561286948</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238084000" />
+    <option name="totallyTimeSpent" value="243606000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -901,28 +1022,28 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6678024" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3219697" sideWeight="0.6712095" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6678024" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3270869" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.70698464" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2469697" sideWeight="0.6678024" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3321976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6678024" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2469697" sideWeight="0.67291313" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3321976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3219697" sideWeight="0.6678024" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6678024" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -969,7 +1090,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="VERSION FINAL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preparando V1.1" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -983,7 +1104,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="BETA 2 - Filtrado horario implementado y añadida libreria a ext-lib" />
     <MESSAGE value="BETA 2 - Intentando implementar iconos" />
     <MESSAGE value="BETA 2 - Implementando iconos" />
     <MESSAGE value="BETA 3 - Iconos implementados" />
@@ -1008,67 +1128,12 @@
     <MESSAGE value="BETA 11 - CAMBIADO TESTEO POR REPETIR TUTORIAL" />
     <MESSAGE value="BETA 11 - AÑADIDAS CARRETERAS. ARREGLADO NONE SELECTED" />
     <MESSAGE value="VERSION FINAL" />
+    <MESSAGE value="Preparando V1.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MyCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="73" selection-start="1264" selection-end="1264" vertical-scroll-proportion="0.2568306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="84" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.04644809">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AbstractCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="22" selection-start="116" selection-end="116" vertical-scroll-proportion="0.04644809">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Ajustes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="11" selection-start="2195" selection-end="2195" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/xml/preferences.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="47" selection-start="1427" selection-end="1427" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/xml/provinciasfav.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="0" selection-start="5459" selection-end="5459" vertical-scroll-proportion="0.030195381">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="89" column="77" selection-start="2498" selection-end="2498" vertical-scroll-proportion="0.030195381">
@@ -1079,13 +1144,6 @@
     <entry file="file://$PROJECT_DIR$/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="40" selection-start="739" selection-end="739" vertical-scroll-proportion="0.45648313">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/arrays.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="229" column="21" selection-start="6383" selection-end="6383" vertical-scroll-proportion="0.030195381">
           <folding />
         </state>
       </provider>
@@ -1111,6 +1169,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.project">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.8114754" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/UpdateService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="142" column="22" selection-start="5480" selection-end="5480" vertical-scroll-proportion="0.0">
@@ -1120,7 +1183,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="70" selection-start="492" selection-end="492" vertical-scroll-proportion="0.3715847">
+        <state line="7" column="49" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_main_cards.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/card_picture.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="50" selection-start="1481" selection-end="1481" vertical-scroll-proportion="-5.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MyImageCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="9" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/xml/provincias.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="26" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable/conos_amarillo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/arrays.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="328" column="25" selection-start="9054" selection-end="9054" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/xml/sel_provincias.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="46" selection-start="235" selection-end="235" vertical-scroll-proportion="0.13821138">
           <folding />
         </state>
       </provider>

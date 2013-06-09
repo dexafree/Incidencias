@@ -6,7 +6,7 @@
     <Preference android:title="Fuente de los datos" android:summary="Dirección General de Tráfico"/>
     <Preference android:title="Diseño del icono" android:summary="Todotuscani"/>
     <PreferenceCategory android:title="Version:">
-        <Preference android:title="App version" android:summary="1.0.0"/>
+        <Preference android:title="App version" android:summary="1.2"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

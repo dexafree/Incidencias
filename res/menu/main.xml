@@ -8,7 +8,7 @@
 
     <item
             android:id="@+id/action_provincias"
-            android:orderInCategory="100"
+            android:orderInCategory="99"
             android:showAsAction="ifRoom"
             android:title="@string/provincias"/>
 
@@ -29,9 +29,10 @@
 
     <item
             android:id="@+id/prueba"
-            android:orderInCategory="101"
-            android:showAsAction="ifRoom"
-            android:title="FAVORITOS"/>
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:icon="@drawable/favoritos"
+            android:title="Favoritos"/>
 
 
 </menu>

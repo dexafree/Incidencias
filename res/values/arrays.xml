@@ -273,6 +273,7 @@
         <item>C-32B</item>
         <item>C-33</item>
         <item>C-35</item>
+        <item>C-37</item>
         <item>C-58</item>
         <item>C-58CC</item>
         <item>C-60</item>
@@ -288,6 +289,7 @@
         <item>CM-45</item>
         <item>CV-10</item>
         <item>CV-20</item>
+        <item>CV-21</item>
         <item>CV-30</item>
         <item>CV-31</item>
         <item>CV-32</item>
@@ -336,6 +338,7 @@
         <item>M-406</item>
         <item>M-407</item>
         <item>M-423</item>
+        <item>M-607</item>
         <item>N-120</item>
         <item>N-322</item>
         <item>N-332</item>
@@ -422,6 +425,8 @@
         <item>TF-4</item>
         <item>TF-5</item>
         <item>TF-11</item>
+        <item>V-21</item>
+        <item>V-30</item>
     </string-array>
 
     <string-array name="ManageFavoritos">

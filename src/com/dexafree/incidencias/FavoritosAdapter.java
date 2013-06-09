@@ -14,6 +14,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,6 +64,7 @@ public class FavoritosAdapter extends BaseAdapter {
 
         public TextView carretera;
         public TextView provincia;
+        public TextView pkFinal;
 
 
 
@@ -77,16 +79,40 @@ public class FavoritosAdapter extends BaseAdapter {
             vi = inflater.inflate(R.layout.row_favs, null);
             holder = new ViewHolder();
 
+
             holder.carretera = (TextView) vi.findViewById(R.id.carreteraFav);
             holder.provincia = (TextView) vi.findViewById(R.id.provFav);
+            holder.pkFinal = (TextView) vi.findViewById(R.id.pkFinal);
 
             vi.setTag(holder);
         } else
             holder = (ViewHolder) vi.getTag();
 
+        Log.d("", "******");
+        Log.d("", Favoritos.FavoritosList.get(position).getCarretera());
+//        Log.d("", Favoritos.FavoritosList.get(position).getProvincia());
+        Log.d("",""+ Favoritos.FavoritosList.get(position).getPkInicial());
+        Log.d("",""+ Favoritos.FavoritosList.get(position).getPkFinal());
+        Log.d("", "******");
+
 
         holder.carretera.setText("CARRETERA: " + Favoritos.FavoritosList.get(position).getCarretera());
-        holder.provincia.setText("PROVINCIA: " + Favoritos.FavoritosList.get(position).getProvincia());
+
+        if (Favoritos.FavoritosList.get(position).getPkInicial() == 0 && Favoritos.FavoritosList.get(position).getPkFinal() == 0){
+            holder.provincia.setText("PROVINCIA: " + Favoritos.FavoritosList.get(position).getProvincia());
+            holder.pkFinal.setText(" ");
+        }
+
+        else if (Favoritos.FavoritosList.get(position).getPkInicial() != 0){
+
+            holder.provincia.setText("KM INICIAL: " + Favoritos.FavoritosList.get(position).getPkInicial());
+            holder.pkFinal.setText("KM FINAL: " + Favoritos.FavoritosList.get(position).getPkFinal());
+        }
+
+        else if (Favoritos.FavoritosList.get(position).getProvincia() != null){
+
+
+        }
 
 
 

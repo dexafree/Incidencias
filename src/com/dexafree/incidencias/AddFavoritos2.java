@@ -178,6 +178,7 @@ public class AddFavoritos2 extends Activity implements OnPreferenceChangeListene
                     sb.append("<favorito>");
                     sb.append("<tipo>" + 2 + "</tipo>");
                     sb.append("<carretera>" + carretera + "</carretera>");
+                    sb.append("<provincia>" + "</provincia>");
                     sb.append("<pkInicial>" + pkInicial + "</pkInicial>");
                     sb.append("<pkFinal>" + pkFinal+ "</pkFinal>");
                     sb.append("</favorito>");

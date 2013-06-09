@@ -12,14 +12,19 @@
             android:textColor="#e8e8e8"/>
 
 
-        <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/provFav"
-                android:textColor="#e8e8e8" />
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/provFav"
+            android:textColor="#e8e8e8" />
 
-
+    <TextView
+            android:layout_width="150dp"
+            android:layout_height="fill_parent"
+            android:text=" "
+            android:id="@+id/pkFinal"
+            android:textColor="#e8e8e8"/>
 
 
 </LinearLayout>

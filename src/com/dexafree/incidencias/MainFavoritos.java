@@ -481,7 +481,7 @@ public class MainFavoritos extends Activity {
 
                             //Obtenemos la preferencia de hora_selec, que es el intervalo maximo deseado.
                             SharedPreferences sphora = PreferenceManager.getDefaultSharedPreferences(this);
-                            String interv = sphora.getString("caduc_fav", "-1");
+                            String interv = sphora.getString("caduc_fav", "2");
                             int intervInt = Integer.parseInt(interv);
 
                             Log.d("intervInt", ""+intervInt);
@@ -772,51 +772,10 @@ public class MainFavoritos extends Activity {
 
                     }
 
-             //   }
 
 
 
-
-
-                // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
-             /*   if (checkProvincia(currentIncidencia.getProvincia()) == true) {
-
-                    if (checkTesteo() == false) {
-                        //   Log.i("", "Pasado el primer if");
-                        if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
-
-                            if (checkFiltrado()) {
-
-                                if (checkHora(currentIncidencia.getFechahora())) {
-                                    //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
-                                    IncidenciaList.add(currentIncidencia);
-
-                                    mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
-                                    mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
-                                }
-
-                            }
-
-                            else {
-                                IncidenciaList.add(currentIncidencia);
-                                mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
-                                mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
-                            }
-
-                        }
-
-                    }
-                    else {
-                        IncidenciaList.add(currentIncidencia);
-                        mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), "ALOHA"));
-                        mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel())));
-
-                    }
-
-                } */
-
-
-                currentIncidencia = new Incidencia();
+               currentIncidencia = new Incidencia();
 
             }
         }
@@ -835,8 +794,6 @@ public class MainFavoritos extends Activity {
     public class AndroidParseXMLActivity3 {
 
         private void parseXML(String contenido) {
-
-
 
 
             try {

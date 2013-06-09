@@ -3,6 +3,8 @@ package com.dexafree.incidencias;
 /**
  * Created by Carlos on 27/05/13.
  */
+import android.util.Log;
+
 import java.util.ArrayList;
 
 import org.xml.sax.Attributes;
@@ -40,13 +42,24 @@ public class ItemXMLHandler extends DefaultHandler {
 
         currentElement = false;
 
-        /** set value */
+
+
         if (localName.equalsIgnoreCase("carretera"))
             favoritoActual.setCarretera(currentValue);
         if (localName.equalsIgnoreCase("provincia"))
             favoritoActual.setProvincia(currentValue);
+        if (localName.equalsIgnoreCase("pkInicial")){
+            int pkI = Integer.parseInt(currentValue);
+            favoritoActual.setPkInicial(pkI);
+        }
+        if (localName.equalsIgnoreCase("pkFinal")){
+            int pkF = Integer.parseInt(currentValue);
+            favoritoActual.setPkFinal(pkF);
+        }
+
         if (localName.equalsIgnoreCase("favorito"))
             Favoritos.FavoritosList.add(favoritoActual);
+        Log.d("", "----------------");
     }
 
     // Called to get tag characters

@@ -17,7 +17,9 @@ public class Favoritos {
 
     public String provincia;
 
-    public String fechahora;
+    public int pkInicial;
+
+    public int pkFinal;
 
 
     public void setProvincia(String provincia){
@@ -26,6 +28,22 @@ public class Favoritos {
 
     public String getProvincia(){
         return provincia;
+    }
+
+    public void setPkInicial(int pkInicial){
+        this.pkInicial = pkInicial;
+    }
+
+    public int getPkInicial(){
+        return pkInicial;
+    }
+
+    public void setPkFinal(int pkFinal){
+        this.pkFinal= pkFinal;
+    }
+
+    public int getPkFinal(){
+        return pkFinal;
     }
 
 

@@ -60,6 +60,16 @@
                   android:label="Eliminar Favorito">
         </activity>
 
+        <activity android:name="com.dexafree.incidencias.TipoFavorito"
+                  android:configChanges="orientation|screenSize"
+                  android:label="Añadir Favorito">
+        </activity>
+
+        <activity android:name="com.dexafree.incidencias.AddFavoritos2"
+                  android:configChanges="orientation|screenSize"
+                  android:label="Añadir Favorito">
+        </activity>
+
 
         <service android:name=".UpdateService"
                  android:process=":backUpdateProcess">

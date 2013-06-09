@@ -82,9 +82,7 @@ public class MainFavoritos extends Activity {
         firstTime2();
 
 
-        //TAREA DE CARGA DE XML Y PARSEO
-        ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "", "Cargando. Espere por favor...", true);
-        new loadingTask2().execute("http://dgt.es/incidenciasXY.xml");
+
 
 
         Favoritos.FavoritosList.clear();
@@ -124,6 +122,12 @@ public class MainFavoritos extends Activity {
             {
                 Log.e("","Ni siquiera se puede crear");
             }
+        }
+
+        if (Favoritos.FavoritosList.size() < 0){
+            //TAREA DE CARGA DE XML Y PARSEO
+            ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "", "Cargando. Espere por favor...", true);
+            new loadingTask2().execute("http://dgt.es/incidenciasXY.xml");
         }
     }
 

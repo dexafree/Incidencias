@@ -3,9 +3,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <Preference android:title="Copyright" android:summary="Dexafree"/>
-    <Preference android:title="Fuente de los datos" android:summary="Dirección General de Tráfico"/>
+    <Preference android:title="Fuente de los datos" android:summary="Dirección General de Tráfico, Ministerio del Interior"/>
     <Preference android:title="Diseño del icono" android:summary="Todotuscani"/>
-    <PreferenceCategory android:title="Version:">
+    <Preference android:title="Consejo y soporte técnico" android:summary="Arasthel"/>
+    <PreferenceCategory android:title="Versión:">
         <Preference android:title="App version" android:summary="1.2"/>
     </PreferenceCategory>
 

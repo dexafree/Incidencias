@@ -194,7 +194,7 @@ public class ManageFavoritos extends Activity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.fav_add:
-                startActivity(new Intent(this, AddFavoritos.class));
+                startActivity(new Intent(this, TipoFavorito.class));
                 return true;
             case R.id.fav_del:
                 startActivity(new Intent(this, DelFavoritos.class));

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Ninguna carretera seleccionada"
+            android:id="@+id/selec_carr"
+            android:layout_gravity="left|center_vertical"/>
+    <fragment
+            android:id="@+id/list_preference"
+            android:name="com.dexafree.incidencias.MyPreferenceFragment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Kilómetro inicial"
+            android:id="@+id/km_inicial_text"
+            android:layout_gravity="left|center_vertical"/>
+
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/eTextInicial"
+            android:layout_gravity="left|center_vertical"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Kilómetro final"
+            android:id="@+id/km_final_text"
+            android:layout_gravity="left|center_vertical"/>
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/eTextFinal"
+            android:layout_gravity="left|center_vertical"/>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp" android:layout_gravity="left|center_vertical">
+        <Button
+                android:layout_width="152dp"
+                android:layout_height="fill_parent"
+                android:text="Guardar"
+                android:id="@+id/btnGuardar"/>
+        <Button
+                android:layout_width="182dp"
+                android:layout_height="fill_parent"
+                android:text="Cancelar"
+                android:id="@+id/btnCancelar"/>
+    </LinearLayout>
+
+
+</LinearLayout>

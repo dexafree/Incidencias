@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:title="Carretera + Provincia"
+        android:summary="Añade un favorito indicando su carretera y la provincia"
+        android:key="tipo1"/>
+
+    <Preference
+        android:title="Carretera + Kilómetro"
+        android:summary="Añade un favorito indicando la carretera y los kilómetros inciales y finales"
+        android:key="tipo2"/>
+
+</PreferenceScreen>

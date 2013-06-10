@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -21,6 +23,10 @@ import com.google.android.gms.maps.model.PolylineOptions;
 public class MapActivity extends FragmentActivity {
 
     private GoogleMap mapa = null;
+    private double latCentral = 40.97872614480813;
+    private double lonCentral = -3.051414079964161;
+    private double zoomCentral = 5.396;
+    public float z = (float)zoomCentral;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,10 @@ public class MapActivity extends FragmentActivity {
 
         mapa = ((SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
+
+        CameraUpdate camUpd1 = CameraUpdateFactory.newLatLngZoom( new LatLng(latCentral, lonCentral), z);
+
+        mapa.moveCamera(camUpd1);
 
         mapa.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             public void onMapClick(LatLng point) {
@@ -60,9 +70,17 @@ public class MapActivity extends FragmentActivity {
             }
         });
 
+
+
        /* mapa.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
             public void onCameraChange(CameraPosition position) {
-                Toast.makeText(
+
+                latCentral = position.target.latitude;
+                lonCentral = position.target.longitude;
+                zoomCentral = position.zoom;
+
+
+                /*Toast.makeText(
                         MapActivity.this,
                         "Cambio Camara\n" +
                                 "Lat: " + position.target.latitude + "\n" +
@@ -72,7 +90,8 @@ public class MapActivity extends FragmentActivity {
                                 "Angulo: " + position.tilt,
                         Toast.LENGTH_SHORT).show();
             }
-        }); */
+        });*/
+
 
         mapa.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             public boolean onMarkerClick(Marker marker) {
@@ -84,6 +103,7 @@ public class MapActivity extends FragmentActivity {
                 return false;
             }
         });
+
 
         crearMarcadores();
 
@@ -102,7 +122,10 @@ public class MapActivity extends FragmentActivity {
         {
             case R.id.menu_marcadores:
                 //mostrarMarcador(40.5, -3.5);
-                crearMarcadores();
+                //crearMarcadores();
+                Log.d("Latitud","" + latCentral);
+                Log.d("Longitud","" + lonCentral);
+                Log.d("Zoom","" + zoomCentral);
                 break;
             case R.id.menu_lineas:
                 mostrarLineas();

@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -21,6 +23,10 @@ import com.google.android.gms.maps.model.PolylineOptions;
 public class MapFavActivity extends FragmentActivity {
 
     private GoogleMap mapa = null;
+    private double latCentral = 40.97872614480813;
+    private double lonCentral = -3.051414079964161;
+    private double zoomCentral = 5.396;
+    public float z = (float)zoomCentral;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +36,11 @@ public class MapFavActivity extends FragmentActivity {
         mapa = ((SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
 
-        mapa.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+        CameraUpdate camUpd1 = CameraUpdateFactory.newLatLngZoom(new LatLng(latCentral, lonCentral), z);
+
+        mapa.moveCamera(camUpd1);
+
+       /* mapa.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             public void onMapClick(LatLng point) {
                 Projection proj = mapa.getProjection();
                 Point coord = proj.toScreenLocation(point);
@@ -58,7 +68,7 @@ public class MapFavActivity extends FragmentActivity {
                                 "X: " + coord.x + " - Y: " + coord.y,
                         Toast.LENGTH_SHORT).show();
             }
-        });
+        }); */
 
        /* mapa.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
             public void onCameraChange(CameraPosition position) {
@@ -90,14 +100,13 @@ public class MapFavActivity extends FragmentActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.map, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId())
         {
             case R.id.menu_marcadores:
@@ -112,9 +121,7 @@ public class MapFavActivity extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void mostrarMarcador(Incidencia incidActual)
-    //private void mostrarMarcador(double lat, double lng)
-    {
+    private void mostrarMarcador(Incidencia incidActual){
 
 
         double lat = incidActual.getX();
@@ -129,7 +136,7 @@ public class MapFavActivity extends FragmentActivity {
 
     private void crearMarcadores(){
 
-        Log.d("Tamaño", ""+ MainFavoritos.InciFavList.size());
+        Log.d("Tamaño", "" + MainFavoritos.InciFavList.size());
 
         for (int i = 0; i < MainFavoritos.InciFavList.size(); i++){
 
@@ -140,8 +147,7 @@ public class MapFavActivity extends FragmentActivity {
 
     }
 
-    private void mostrarLineas()
-    {
+    private void mostrarLineas(){
         //Dibujo con Lineas
 
         PolylineOptions lineas = new PolylineOptions()

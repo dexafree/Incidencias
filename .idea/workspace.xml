@@ -17,7 +17,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incidencias.apk" afterPath="$PROJECT_DIR$/Incidencias.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
@@ -82,15 +83,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Favoritos.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="20" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1292">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AddFavoritos2.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -118,15 +110,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FavoritosAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/FavoritosAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="2" selection-start="2243" selection-end="2243" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="2091">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainFavoritos.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -136,10 +119,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="20" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.4815864" vertical-offset="544" max-vertical-offset="15980">
+            <state line="89" column="20" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="15980">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="arrays.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/arrays.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="5457" max-vertical-offset="7837">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="26" selection-start="173" selection-end="173" vertical-scroll-proportion="0.13934426" vertical-offset="0" max-vertical-offset="1581">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
               <folding />
             </state>
           </provider>
@@ -158,18 +168,6 @@
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/UpdateService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="327" column="24" selection-start="11815" selection-end="11815" vertical-scroll-proportion="-136.65384" vertical-offset="1156" max-vertical-offset="8602">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="crea_favoritos2.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/crea_favoritos2.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1292">
               <folding />
             </state>
           </provider>
@@ -205,7 +203,6 @@
       <list>
         <option value="$PROJECT_DIR$/res/layout/tipo_favorito.xml" />
         <option value="$PROJECT_DIR$/res/xml/tipo_favorito.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/TipoFavorito.java" />
         <option value="$PROJECT_DIR$/res/xml/crea_favoritos2_pref.xml" />
@@ -219,6 +216,7 @@
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/UpdateService.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -893,7 +891,11 @@
       <created>1370855593946</created>
       <updated>1370855593946</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Preparando V2&#10;Borra los Favs la primera vez que muestra la nueva version">
+      <created>1370856179208</created>
+      <updated>1370856179208</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -939,7 +941,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18939394" sideWeight="0.6678024" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3321976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3321976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6678024" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1017,7 +1019,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Preparando V2&#10;Muestra notificaciones + solucionado bug tonto de no auto-actualizar con mas de 1 favorito el MainFavoritos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preparando V2&#10;Borra los Favs la primera vez que muestra la nueva version" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1031,7 +1033,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="BETA 4 - Crea favoritos. Falta implementar" />
     <MESSAGE value="BETA 5 - Favoritos añadidos. Falta logica favoritos" />
     <MESSAGE value="BETA 5 - Favoritos añadidos. Falta logica favoritos. Arreglado auto-añadido lista favoritos" />
     <MESSAGE value="BETA 6 - Se pueden borrar favoritos. Logica favs sin testear" />
@@ -1056,35 +1057,12 @@
     <MESSAGE value="Preparando V2&#10;Monster function comprobar pks" />
     <MESSAGE value="Preparando V2&#10;Comprueba pks" />
     <MESSAGE value="Preparando V2&#10;Muestra notificaciones + solucionado bug tonto de no auto-actualizar con mas de 1 favorito el MainFavoritos" />
+    <MESSAGE value="Preparando V2&#10;Borra los Favs la primera vez que muestra la nueva version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="48" selection-start="2584" selection-end="2584" vertical-scroll-proportion="0.41337386" vertical-offset="952" max-vertical-offset="1581">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/RssParserDom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="449" selection-end="449" vertical-scroll-proportion="0.20668693" vertical-offset="0" max-vertical-offset="1734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/row_favs.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="26" column="41" selection-start="1010" selection-end="1010" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/DelFavoritos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="264" column="0" selection-start="7293" selection-end="7365" vertical-scroll-proportion="0.0" vertical-offset="4471" max-vertical-offset="5270">
@@ -1174,7 +1152,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="20" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.4815864" vertical-offset="544" max-vertical-offset="15980">
+        <state line="89" column="20" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="15980">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/arrays.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="5457" max-vertical-offset="7837">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="26" selection-start="173" selection-end="173" vertical-scroll-proportion="0.13934426" vertical-offset="0" max-vertical-offset="1581">
           <folding />
         </state>
       </provider>

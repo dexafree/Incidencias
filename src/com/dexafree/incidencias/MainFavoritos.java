@@ -190,11 +190,6 @@ public class MainFavoritos extends Activity {
 
     }
 
-
-
-
-
-
     //CLASE LOADINGTASK
     class loadingTask2 extends AsyncTask<String, Void, String> {
         protected String doInBackground(String... urls) {
@@ -931,9 +926,5 @@ public class MainFavoritos extends Activity {
         }
 
     }
-
-
-
-
 
 }

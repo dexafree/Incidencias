@@ -21,6 +21,8 @@ public class Favoritos {
 
     public int pkFinal;
 
+    public int tipo;
+
 
     public void setProvincia(String provincia){
         this.provincia = provincia;
@@ -44,6 +46,14 @@ public class Favoritos {
 
     public int getPkFinal(){
         return pkFinal;
+    }
+
+    public void setTipo(int tipo){
+        this.tipo= tipo;
+    }
+
+    public int getTipo(){
+        return tipo;
     }
 
 

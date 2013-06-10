@@ -118,6 +118,7 @@ public class AddFavoritos2 extends Activity implements OnPreferenceChangeListene
                 currentFavorito.setCarretera(carretera);
                 currentFavorito.setPkInicial(pkInicial);
                 currentFavorito.setPkFinal(pkFinal);
+                currentFavorito.setTipo(2);
 
 
                 Favoritos.FavoritosList.add(currentFavorito);

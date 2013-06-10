@@ -43,7 +43,10 @@ public class ItemXMLHandler extends DefaultHandler {
         currentElement = false;
 
 
-
+        if (localName.equalsIgnoreCase("tipo")){
+            int tipo = Integer.parseInt(currentValue);
+            favoritoActual.setTipo(tipo);
+        }
         if (localName.equalsIgnoreCase("carretera"))
             favoritoActual.setCarretera(currentValue);
         if (localName.equalsIgnoreCase("provincia"))

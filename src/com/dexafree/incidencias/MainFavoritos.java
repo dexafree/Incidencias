@@ -343,6 +343,116 @@ public class MainFavoritos extends Activity {
 
     }
 
+    public boolean comparaPKs(Favoritos favActual, Incidencia incidenciaActual){
+
+        int inicialIncidencia = Integer.parseInt(incidenciaActual.getPkInicio());
+        int finalIncidencia = Integer.parseInt(incidenciaActual.getPkFin());
+
+        int inicialFavorito = favActual.getPkInicial();
+        int finalFavorito = favActual.getPkFinal();
+
+        Log.d("", "inicialIncidencia: " + inicialIncidencia + " finalIncidencia: " + finalIncidencia );
+        Log.d("", "inicialFavorito: " + inicialFavorito + " finalFavorito: " + finalFavorito);
+
+        //NORMAL
+        if (inicialIncidencia <= finalIncidencia){
+
+            if (inicialFavorito <= finalFavorito){
+
+                if (inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito){
+                    return false;
+                }
+                else if (inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia >= inicialFavorito && finalIncidencia <= finalFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia >= inicialFavorito && finalIncidencia <= finalFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito){
+                    return false;
+                }
+            }
+
+            else if (inicialFavorito >= finalFavorito){
+
+                if (inicialIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito){
+                    return false;
+                }
+                else if (inicialIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia <= inicialFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia <= inicialFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito){
+                    return false;
+                }
+            }
+        }
+
+        else if (inicialIncidencia >= finalIncidencia){
+
+            if (inicialFavorito <= finalFavorito){
+
+                if(finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito){
+                    return false;
+                }
+                else if (finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito){
+                    return true;
+                }
+                else if (finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia >= finalFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia >= finalFavorito){
+                    return false;
+                }
+            }
+
+            else if (inicialFavorito >= finalFavorito){
+
+                if (finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia < finalFavorito && inicialIncidencia < inicialFavorito){
+                    return false;
+                }
+                else if (finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia <= inicialFavorito){
+                    return true;
+                }
+                else if (finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia <= inicialFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito){
+                    return false;
+                }
+            }
+        }
+
+        return false;
+    }
+
+
     public boolean checkHora(String hora){
 
         Log.i("", "Hora: " + hora);
@@ -734,42 +844,35 @@ public class MainFavoritos extends Activity {
 
             if (localName.equalsIgnoreCase("incidencia")) {
 
-               // Log.d("","Paso 1");
-
-              //  if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
-
-                 //   Log.d("","Paso 2");
-
                     for (int i = 0; i < favList.size(); i++){
 
-                   //     Log.d("","Paso 3");
+                        if ((favList.get(i).getTipo()) == 1){
+                            if ((favList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
 
+                                if ((favList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
 
-                        if ((favList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
+                                    if (comparador(currentIncidencia.getFechahora()) == true){
 
-                     //       Log.d("","Paso 4");
+                                        mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                                        mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+
+                                    }
+                                }
+                            }
+                        }
+
+                        else if ((favList.get(i)).getTipo() == 2){
 
                             if ((favList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
-
-                       //         Log.d("","Paso 5");
 
                                 if (comparador(currentIncidencia.getFechahora()) == true){
 
                                     mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
                                     mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
 
-
                                 }
-
                             }
-
-
-
-
                         }
-
-
-
                     }
 
 

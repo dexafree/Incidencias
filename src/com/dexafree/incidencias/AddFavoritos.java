@@ -118,6 +118,7 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
                     currentFavorito.setCarretera(carretera);
                     currentFavorito.setProvincia(provincia);
+                    currentFavorito.setTipo(1);
 
 
                     Favoritos.FavoritosList.add(currentFavorito);

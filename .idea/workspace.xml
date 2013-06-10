@@ -19,10 +19,9 @@
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/FavoritosAdapter.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/FavoritosAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/ItemXMLHandler.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/ItemXMLHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/row_favs.xml" afterPath="$PROJECT_DIR$/res/layout/row_favs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
@@ -90,7 +89,7 @@
       <file leaf-file-name="Favoritos.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="25" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1122">
+            <state line="55" column="20" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1292">
               <folding />
             </state>
           </provider>
@@ -108,7 +107,7 @@
       <file leaf-file-name="AddFavoritos2.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="56" selection-start="5606" selection-end="5606" vertical-scroll-proportion="0.0" vertical-offset="1921" max-vertical-offset="4199">
+            <state line="120" column="43" selection-start="3506" selection-end="3506" vertical-scroll-proportion="-9.307693" vertical-offset="1050" max-vertical-offset="4216">
               <folding />
             </state>
           </provider>
@@ -117,7 +116,7 @@
       <file leaf-file-name="AddFavoritos.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="182" column="47" selection-start="6130" selection-end="6130" vertical-scroll-proportion="0.0" vertical-offset="1887" max-vertical-offset="4284">
+            <state line="120" column="20" selection-start="3783" selection-end="3783" vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="4301">
               <folding />
             </state>
           </provider>
@@ -135,7 +134,7 @@
       <file leaf-file-name="ItemXMLHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/ItemXMLHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0" vertical-offset="712" max-vertical-offset="1275">
+            <state line="47" column="41" selection-start="1183" selection-end="1183" vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1326">
               <folding />
             </state>
           </provider>
@@ -153,7 +152,7 @@
       <file leaf-file-name="MainFavoritos.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="483" column="76" selection-start="15569" selection-end="15569" vertical-scroll-proportion="0.5894161" vertical-offset="6987" max-vertical-offset="13396">
+            <state line="444" column="17" selection-start="16765" selection-end="16765" vertical-scroll-proportion="0.25547445" vertical-offset="6507" max-vertical-offset="15147">
               <folding />
             </state>
           </provider>
@@ -210,7 +209,6 @@
       <list>
         <option value="$PROJECT_DIR$/res/values/arrays.xml" />
         <option value="$PROJECT_DIR$/res/xml/about.xml" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java" />
         <option value="$PROJECT_DIR$/res/layout/tipo_favorito.xml" />
         <option value="$PROJECT_DIR$/res/xml/tipo_favorito.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
@@ -219,10 +217,11 @@
         <option value="$PROJECT_DIR$/res/xml/crea_favoritos2_pref.xml" />
         <option value="$PROJECT_DIR$/res/layout/crea_favoritos2.xml" />
         <option value="$PROJECT_DIR$/res/layout/row_favs.xml" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/FavoritosAdapter.java" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/ItemXMLHandler.java" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/FavoritosAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
       </list>
     </option>
@@ -882,7 +881,11 @@
       <created>1370740999510</created>
       <updated>1370740999510</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Preparando V2&#10;Los muestra en ManageFavoritos&#10;Falta crear logica para que MainFavoritos utilice los dos">
+      <created>1370813405033</created>
+      <updated>1370813405033</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -916,7 +919,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3219697" sideWeight="0.6712095" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39182281" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -927,7 +930,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18939394" sideWeight="0.60477" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18939394" sideWeight="0.6081772" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3321976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6678024" order="3" side_tool="false" content_ui="tabs" />
@@ -1006,7 +1009,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Preparando V2&#10;Creados dos tipos de favorito.&#10;Guarda correctamente 2 tipos favorito&#10;Falta mostrarlos correctamente en ManageFavoritos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preparando V2&#10;Los muestra en ManageFavoritos&#10;Falta crear logica para que MainFavoritos utilice los dos" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1020,7 +1023,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="BETA 3 - Iconos implementados" />
     <MESSAGE value="BETA 4 - Funciona todo" />
     <MESSAGE value="BETA 4 - Intentando implementar favoritos" />
     <MESSAGE value="BETA 4 - Intentando implementar favoritos. Parsea xml, pero no lo escribe bien" />
@@ -1045,6 +1047,7 @@
     <MESSAGE value="Preparando V1.1" />
     <MESSAGE value="Preparando V2&#10;Añadido icono Favoritos" />
     <MESSAGE value="Preparando V2&#10;Creados dos tipos de favorito.&#10;Guarda correctamente 2 tipos favorito&#10;Falta mostrarlos correctamente en ManageFavoritos" />
+    <MESSAGE value="Preparando V2&#10;Los muestra en ManageFavoritos&#10;Falta crear logica para que MainFavoritos utilice los dos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1129,34 +1132,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="25" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1122">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="47" selection-start="6130" selection-end="6130" vertical-scroll-proportion="0.0" vertical-offset="1887" max-vertical-offset="4284">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="56" selection-start="5606" selection-end="5606" vertical-scroll-proportion="0.0" vertical-offset="1921" max-vertical-offset="4199">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/ItemXMLHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0" vertical-offset="712" max-vertical-offset="1275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/FavoritosAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="92" column="2" selection-start="2243" selection-end="2243" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="2091">
@@ -1164,9 +1139,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/Favoritos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="20" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="43" selection-start="3506" selection-end="3506" vertical-scroll-proportion="-9.307693" vertical-offset="1050" max-vertical-offset="4216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="20" selection-start="3783" selection-end="3783" vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="4301">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/ItemXMLHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="41" selection-start="1183" selection-end="1183" vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="483" column="76" selection-start="15569" selection-end="15569" vertical-scroll-proportion="0.5894161" vertical-offset="6987" max-vertical-offset="13396">
+        <state line="444" column="17" selection-start="16765" selection-end="16765" vertical-scroll-proportion="0.25547445" vertical-offset="6507" max-vertical-offset="15147">
           <folding />
         </state>
       </provider>

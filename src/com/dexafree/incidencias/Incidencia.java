@@ -18,6 +18,8 @@ public class Incidencia {
     private String pkFin;
     private String sentido;
     private String hacia;
+    private double x;
+    private double y;
 
     public String getTipo() {
         return tipo;
@@ -120,6 +122,22 @@ public class Incidencia {
     }
     public void setHacia(String hacia) {
         this.hacia = hacia;
+    }
+
+    public void setX(double x){
+        this.x = x;
+    }
+
+    public double getX(){
+        return x;
+    }
+
+    public void setY(double y){
+        this.y = y;
+    }
+
+    public double getY(){
+        return y;
     }
 
 }

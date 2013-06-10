@@ -24,6 +24,7 @@ public class Favoritos {
     public int tipo;
 
 
+
     public void setProvincia(String provincia){
         this.provincia = provincia;
     }
@@ -67,6 +68,8 @@ public class Favoritos {
     public String getCarretera() {
         return carretera;
     }
+
+
 
 
 }

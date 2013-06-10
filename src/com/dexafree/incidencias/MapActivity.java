@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -97,7 +98,8 @@ public class MapActivity extends FragmentActivity {
         switch(item.getItemId())
         {
             case R.id.menu_marcadores:
-                mostrarMarcador(40.5, -3.5);
+                //mostrarMarcador(40.5, -3.5);
+                crearMarcadores();
                 break;
             case R.id.menu_lineas:
                 mostrarLineas();
@@ -107,11 +109,32 @@ public class MapActivity extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void mostrarMarcador(double lat, double lng)
+    private void mostrarMarcador(Incidencia incidActual)
+    //private void mostrarMarcador(double lat, double lng)
     {
-        mapa.addMarker(new MarkerOptions()
-                .position(new LatLng(lat, lng))
-                .title("Pais: España"));
+
+
+          double lat = incidActual.getX();
+          double lng = incidActual.getY();
+
+          mapa.addMarker(new MarkerOptions()
+              .position(new LatLng(lat, lng))
+              .title(incidActual.getCarretera() + "\n" + incidActual.getHacia())
+              .snippet((incidActual.getPkInicio() + " - " + incidActual.getPkFin())));
+
+    }
+
+    private void crearMarcadores(){
+
+        Log.d("Tamaño", ""+ MainActivity.IncidenciaList.size());
+
+        for (int i = 0; i < MainActivity.IncidenciaList.size(); i++){
+
+            Log.d("", "Marcador creado en: " + MainActivity.IncidenciaList.get(i).getX() + " | " + MainActivity.IncidenciaList.get(i).getY());
+
+            mostrarMarcador(MainActivity.IncidenciaList.get(i));
+        }
+
     }
 
     private void mostrarLineas()

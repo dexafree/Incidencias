@@ -876,6 +876,24 @@ public class MainActivity extends Activity {
                     && currentIncidencia.getHacia() == null) {
                 currentIncidencia.setHacia(chars.toString().trim());
             }
+            if (localName.equalsIgnoreCase("x")
+                    && currentIncidencia.getX() == 0.0f) {
+                String xTemp = chars.toString().trim();
+                Log.d("X", xTemp);
+                if (xTemp != ""){
+                    double x = Double.parseDouble(xTemp);
+                    currentIncidencia.setX(x);
+                }
+            }
+            if (localName.equalsIgnoreCase("y")
+                    && currentIncidencia.getY() == 0.0f) {
+                String yTemp = chars.toString().trim();
+                Log.d("Y", yTemp);
+                if (yTemp != ""){
+                    double y = Double.parseDouble(yTemp);
+                    currentIncidencia.setY(y);
+                }
+            }
 
             if (localName.equalsIgnoreCase("incidencia")) {
 

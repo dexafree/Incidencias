@@ -309,19 +309,36 @@ public class UpdateService extends Service {
 
                  //   Log.d("","Paso 2");
 
+
                     for (int i = 0; i < favorList.size(); i++){
 
-                   //     Log.d("","Paso 3");
-                        if ((favorList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
-                     //       Log.d("","Paso 4");
+                        if(favorList.get(i).getTipo() == 1){
+                            //Log.d("","Paso 3");
+                            if ((favorList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
+                                //Log.d("","Paso 4");
+                                if ((favorList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
+
+                                    inciFavExist = true;
+                                    Log.d("","ENCONTRADA INCIDENCIA!");
+                                    break;
+                                }
+                            }
+                        }
+
+                        else if (favorList.get(i).getTipo() == 2){
+
                             if ((favorList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
 
-                                inciFavExist = true;
-                                Log.d("","ENCONTRADA INCIDENCIA!");
-                                break;
+                                if(comparaPKs(favorList.get(i), currentIncidencia)){
+
+                                    inciFavExist = true;
+                                    Log.d("","ENCONTRADA INCIDENCIA!");
+                                    break;
+                                }
                             }
                         }
                     }
+
                 }
                 currentIncidencia = new Incidencia();
             }
@@ -332,6 +349,113 @@ public class UpdateService extends Service {
             chars.append(new String(ch, start, length));
         }
 
+    }
+
+    public boolean comparaPKs(Favoritos favActual, Incidencia incidenciaActual){
+
+        float inicialIncidencia = Float.parseFloat(incidenciaActual.getPkInicio());
+        float finalIncidencia = Float.parseFloat(incidenciaActual.getPkFin());
+
+        int inicialFavorito = favActual.getPkInicial();
+        int finalFavorito = favActual.getPkFinal();
+
+
+        //NORMAL
+        if (inicialIncidencia <= finalIncidencia){
+
+            if (inicialFavorito <= finalFavorito){
+
+                if (inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito){
+                    return false;
+                }
+                else if (inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia >= inicialFavorito && finalIncidencia <= finalFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia >= inicialFavorito && finalIncidencia <= finalFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito){
+                    return false;
+                }
+            }
+
+            else if (inicialFavorito >= finalFavorito){
+
+                if (inicialIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito){
+                    return false;
+                }
+                else if (inicialIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia <= inicialFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia <= inicialFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito){
+                    return true;
+                }
+                else if (inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito){
+                    return false;
+                }
+            }
+        }
+
+        else if (inicialIncidencia >= finalIncidencia){
+
+            if (inicialFavorito <= finalFavorito){
+
+                if(finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito){
+                    return false;
+                }
+                else if (finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito){
+                    return true;
+                }
+                else if (finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia >= finalFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia >= finalFavorito){
+                    return false;
+                }
+            }
+
+            else if (inicialFavorito >= finalFavorito){
+
+                if (finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia < finalFavorito && inicialIncidencia < inicialFavorito){
+                    return false;
+                }
+                else if (finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia <= inicialFavorito){
+                    return true;
+                }
+                else if (finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia <= inicialFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito){
+                    return true;
+                }
+                else if (finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito){
+                    return false;
+                }
+            }
+        }
+
+        return false;
     }
 
 

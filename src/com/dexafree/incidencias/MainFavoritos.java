@@ -124,7 +124,9 @@ public class MainFavoritos extends Activity {
             }
         }
 
-        if (Favoritos.FavoritosList.size() < 0){
+        //Log.d("MainFavoritos", "FavoritosList.size() = " + Favoritos.FavoritosList.size());
+
+        if (Favoritos.FavoritosList.size() > 0){
             //TAREA DE CARGA DE XML Y PARSEO
             ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "", "Cargando. Espere por favor...", true);
             new loadingTask2().execute("http://dgt.es/incidenciasXY.xml");
@@ -348,12 +350,9 @@ public class MainFavoritos extends Activity {
         float inicialIncidencia = Float.parseFloat(incidenciaActual.getPkInicio());
         float finalIncidencia = Float.parseFloat(incidenciaActual.getPkFin());
 
-
         int inicialFavorito = favActual.getPkInicial();
         int finalFavorito = favActual.getPkFinal();
 
-        Log.d("", "inicialIncidencia: " + inicialIncidencia + " finalIncidencia: " + finalIncidencia );
-        Log.d("", "inicialFavorito: " + inicialFavorito + " finalFavorito: " + finalFavorito);
 
         //NORMAL
         if (inicialIncidencia <= finalIncidencia){
@@ -861,13 +860,10 @@ public class MainFavoritos extends Activity {
                         }
 
                         else if ((favList.get(i)).getTipo() == 2){
-                            Log.d("Tipo", "2");
 
                             if ((favList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
 
                                 if(comparaPKs(favList.get(i), currentIncidencia)){
-                                    Log.d("INFO", "Ha pasado el comparaPKs");
-                                    Log.d("", currentIncidencia.getFechahora());
 
                                     if (comparador(currentIncidencia.getFechahora()) == true){
 

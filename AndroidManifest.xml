@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dexafree.incidencias"
-    android:versionCode="3"
-    android:versionName="1.2" >
+    android:versionCode="4"
+    android:versionName="1.3" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -88,6 +88,11 @@
         </activity>
 
         <activity android:name="com.dexafree.incidencias.MapActivity"
+                  android:configChanges="orientation|screenSize"
+                  android:label="Mapa">
+        </activity>
+
+        <activity android:name="com.dexafree.incidencias.MapFavActivity"
                   android:configChanges="orientation|screenSize"
                   android:label="Mapa">
         </activity>

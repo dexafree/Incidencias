@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-public class MapActivity extends FragmentActivity {
+public class MapFavActivity extends FragmentActivity {
 
     private GoogleMap mapa = null;
 
@@ -36,7 +36,7 @@ public class MapActivity extends FragmentActivity {
                 Point coord = proj.toScreenLocation(point);
 
                 Toast.makeText(
-                        MapActivity.this,
+                        MapFavActivity.this,
                         "Click\n" +
                                 "Lat: " + point.latitude + "\n" +
                                 "Lng: " + point.longitude + "\n" +
@@ -51,7 +51,7 @@ public class MapActivity extends FragmentActivity {
                 Point coord = proj.toScreenLocation(point);
 
                 Toast.makeText(
-                        MapActivity.this,
+                        MapFavActivity.this,
                         "Click Largo\n" +
                                 "Lat: " + point.latitude + "\n" +
                                 "Lng: " + point.longitude + "\n" +
@@ -63,7 +63,7 @@ public class MapActivity extends FragmentActivity {
        /* mapa.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
             public void onCameraChange(CameraPosition position) {
                 Toast.makeText(
-                        MapActivity.this,
+                        MapFavActivity.this,
                         "Cambio Camara\n" +
                                 "Lat: " + position.target.latitude + "\n" +
                                 "Lng: " + position.target.longitude + "\n" +
@@ -77,7 +77,7 @@ public class MapActivity extends FragmentActivity {
         mapa.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             public boolean onMarkerClick(Marker marker) {
                 Toast.makeText(
-                        MapActivity.this,
+                        MapFavActivity.this,
                         "Marcador pulsado:\n" +
                                 marker.getTitle(),
                         Toast.LENGTH_SHORT).show();
@@ -117,25 +117,25 @@ public class MapActivity extends FragmentActivity {
     {
 
 
-          double lat = incidActual.getX();
-          double lng = incidActual.getY();
+        double lat = incidActual.getX();
+        double lng = incidActual.getY();
 
-          mapa.addMarker(new MarkerOptions()
-              .position(new LatLng(lat, lng))
-              .title(incidActual.getCarretera() + "\n" + incidActual.getHacia())
-              .snippet((incidActual.getPkInicio() + " - " + incidActual.getPkFin())));
+        mapa.addMarker(new MarkerOptions()
+                .position(new LatLng(lat, lng))
+                .title(incidActual.getCarretera() + "\n" + incidActual.getHacia())
+                .snippet((incidActual.getPkInicio() + " - " + incidActual.getPkFin())));
 
     }
 
     private void crearMarcadores(){
 
-        Log.d("Tamaño", ""+ MainActivity.IncidenciaList.size());
+        Log.d("Tamaño", ""+ MainFavoritos.InciFavList.size());
 
-        for (int i = 0; i < MainActivity.IncidenciaList.size(); i++){
+        for (int i = 0; i < MainFavoritos.InciFavList.size(); i++){
 
-            Log.d("", "Marcador creado en: " + MainActivity.IncidenciaList.get(i).getX() + " | " + MainActivity.IncidenciaList.get(i).getY());
+            Log.d("", "Marcador creado en: " + MainFavoritos.InciFavList.get(i).getX() + " | " + MainFavoritos.InciFavList.get(i).getY());
 
-            mostrarMarcador(MainActivity.IncidenciaList.get(i));
+            mostrarMarcador(MainFavoritos.InciFavList.get(i));
         }
 
     }

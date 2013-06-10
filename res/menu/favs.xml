@@ -15,5 +15,11 @@
             android:title="Actualizar"
             android:icon="@drawable/refresh"/>
 
+    <item
+            android:id="@+id/mapaFavs"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:title="MAPA" />
+
 
 </menu>

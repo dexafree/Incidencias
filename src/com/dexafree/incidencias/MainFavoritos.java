@@ -65,6 +65,8 @@ public class MainFavoritos extends Activity {
     public ArrayList<Incidencia> IncidenciaList2 = MainActivity.IncidenciaList;
     public ArrayList<Favoritos> favList = Favoritos.FavoritosList;
 
+    public static ArrayList<Incidencia> InciFavList;
+
 
     public void onCreate(Bundle savedInstanceState) {
 
@@ -153,6 +155,9 @@ public class MainFavoritos extends Activity {
             case R.id.actualizarF:
                 actualizar2();
                 return true;
+            case R.id.mapaFavs:
+                startActivity(new Intent(this, MapFavActivity.class));
+                return true;
 
             case android.R.id.home:
                 // app icon in action bar clicked; go home
@@ -215,7 +220,9 @@ public class MainFavoritos extends Activity {
     public void actualizar2() {
         //ELIMINAMOS LAS INCIDENCIAS EXISTENTES
         IncidenciaList2.clear();
+        favList.clear();
         mCardView2.clearCards();
+
 
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
@@ -848,6 +855,7 @@ public class MainFavoritos extends Activity {
 
                                         mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
                                         mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                                        InciFavList.add(currentIncidencia);
 
                                     }
                                 }

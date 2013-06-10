@@ -88,6 +88,7 @@ public class MainActivity extends Activity {
         }
 
         firstTime();
+        borrardatos();
 
         Favoritos.FavoritosList.clear();
 
@@ -132,17 +133,6 @@ public class MainActivity extends Activity {
 
     }
 
-  /*  @Override
-    public void onDestroy(){
-
-        SharedPreferences settings = getSharedPreferences("autorefresh", 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putBoolean("autorefresh", false);
-
-        // Commit the edits!
-        editor.commit();
-
-    }*/
 
 
     //MENU ACTIONBAR
@@ -218,6 +208,40 @@ public class MainActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void borrardatos() {
+        //final String PREFS_NAME = "MyPrefsFile";
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if (settings.getBoolean("borradatos", true)) {
+            //the app is being launched for first time, do something
+            Log.d("Comments", "First time");
+
+            try{
+            OutputStreamWriter fout =
+                    new OutputStreamWriter(
+                            openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
+
+            StringBuilder sb = new StringBuilder();
+
+            Log.d("","Consigue crear el sb");
+
+            sb.append("");
+            Log.d("", "sb antes de append: " + sb.toString());
+            //Escribimos el resultado a un fichero
+            fout.append(sb.toString());
+
+            fout.close();
+            }
+            catch (Exception ex)
+            {
+                Log.e("XmlTips", "Error al escribir fichero XML.");
+            }
+
+            settings.edit().putBoolean("borradatos", false).commit();
+        }
+
     }
 
 

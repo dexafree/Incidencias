@@ -345,8 +345,9 @@ public class MainFavoritos extends Activity {
 
     public boolean comparaPKs(Favoritos favActual, Incidencia incidenciaActual){
 
-        int inicialIncidencia = Integer.parseInt(incidenciaActual.getPkInicio());
-        int finalIncidencia = Integer.parseInt(incidenciaActual.getPkFin());
+        float inicialIncidencia = Float.parseFloat(incidenciaActual.getPkInicio());
+        float finalIncidencia = Float.parseFloat(incidenciaActual.getPkFin());
+
 
         int inicialFavorito = favActual.getPkInicial();
         int finalFavorito = favActual.getPkFinal();
@@ -769,8 +770,6 @@ public class MainFavoritos extends Activity {
 
 
 
-
-
     class RSSHandler3 extends DefaultHandler {
 
         private Incidencia currentIncidencia = new Incidencia();
@@ -862,14 +861,20 @@ public class MainFavoritos extends Activity {
                         }
 
                         else if ((favList.get(i)).getTipo() == 2){
+                            Log.d("Tipo", "2");
 
                             if ((favList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
 
-                                if (comparador(currentIncidencia.getFechahora()) == true){
+                                if(comparaPKs(favList.get(i), currentIncidencia)){
+                                    Log.d("INFO", "Ha pasado el comparaPKs");
+                                    Log.d("", currentIncidencia.getFechahora());
 
-                                    mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                                    mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                                    if (comparador(currentIncidencia.getFechahora()) == true){
 
+                                        mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                                        mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+
+                                    }
                                 }
                             }
                         }

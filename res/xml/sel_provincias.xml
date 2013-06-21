@@ -2,9 +2,15 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <CheckBoxPreference
-        android:key="ALAVA/GUIPUZCOA/VIZCAYA"
-        android:title="Álava/Guipúzcoa/Vizcaya"
+            android:key="A CORUÑA"
+            android:title="A Coruña"
+            android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="VI"
+        android:title="Álava"
         android:defaultValue="false" />
 
 
@@ -49,6 +55,11 @@
             android:defaultValue="false" />
 
     <CheckBoxPreference
+            android:key="BI"
+            android:title="Bizkaia"
+            android:defaultValue="false" />
+
+    <CheckBoxPreference
             android:key="BURGOS"
             android:title="Burgos"
             android:defaultValue="false" />
@@ -90,11 +101,6 @@
 
 
     <CheckBoxPreference
-            android:key="A CORUÑA"
-            android:title="A Coruña"
-            android:defaultValue="false" />
-
-    <CheckBoxPreference
             android:key="CUENCA"
             android:title="Cuenca"
             android:defaultValue="false" />
@@ -115,6 +121,11 @@
     <CheckBoxPreference
             android:key="GUADALAJARA"
             android:title="Guadalajara"
+            android:defaultValue="false" />
+
+    <CheckBoxPreference
+            android:key="SS"
+            android:title="Guipuzkoa"
             android:defaultValue="false" />
 
     <CheckBoxPreference

@@ -131,7 +131,7 @@ public class MainFavoritos extends Activity {
         if (Favoritos.FavoritosList.size() > 0){
             //TAREA DE CARGA DE XML Y PARSEO
             ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "", "Cargando. Espere por favor...", true);
-            new loadingTask2().execute("http://dgt.es/incidenciasXY.xml");
+            new loadingTask2().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
         }
     }
 
@@ -199,12 +199,18 @@ public class MainFavoritos extends Activity {
     class loadingTask2 extends AsyncTask<String, Void, String> {
         protected String doInBackground(String... urls) {
             SAXHelper3 sh = null;
-            try {
-                sh = new SAXHelper3(urls[0]);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
+            int i = urls.length;
+
+            for (int j = 0;j<i; j++){
+                try {
+                    sh = new SAXHelper3(urls[j]);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+                sh.parseContent("");
+                //return "";
+
             }
-            sh.parseContent("");
             return "";
         }
 
@@ -227,7 +233,7 @@ public class MainFavoritos extends Activity {
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask2().execute("http://dgt.es/incidenciasXY.xml");
+        new loadingTask2().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView2.refresh();
@@ -292,7 +298,7 @@ public class MainFavoritos extends Activity {
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask2().execute("http://dgt.es/incidenciasXY.xml");
+        new loadingTask2().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView2.refresh();
@@ -800,10 +806,17 @@ public class MainFavoritos extends Activity {
                 currentIncidencia.setAutonomia(chars.toString().trim());
 
             }
+
             if (localName.equalsIgnoreCase("provincia")
                     && currentIncidencia.getProvincia() == null) {
+                //Log.d("PROVINCIA", chars.toString().trim());
                 currentIncidencia.setProvincia(chars.toString().trim());
-
+            }
+            //PROBAR A QUITAR EL ELSE
+            if (localName.equalsIgnoreCase("matricula")
+                    && currentIncidencia.getMatricula() == null) {
+                //Log.d("MATRICULA", chars.toString().trim());
+                currentIncidencia.setMatricula(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("causa")
                     && currentIncidencia.getCausa() == null) {
@@ -815,6 +828,8 @@ public class MainFavoritos extends Activity {
             }
             if (localName.equalsIgnoreCase("fechahora_ini")
                     && currentIncidencia.getFechahora() == null) {
+                //Log.d("FECHAHORA", chars.toString().trim());
+                //Log.d(" ", "***************");
                 currentIncidencia.setFechahora(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("nivel")
@@ -841,48 +856,106 @@ public class MainFavoritos extends Activity {
                     && currentIncidencia.getHacia() == null) {
                 currentIncidencia.setHacia(chars.toString().trim());
             }
+            if (localName.equalsIgnoreCase("x")
+                    && currentIncidencia.getX() == 0.0f) {
+                String xTemp = chars.toString().trim();
+                //Log.d("X", xTemp);
+                if (xTemp != ""){
+                    double x = Double.parseDouble(xTemp);
+                    currentIncidencia.setX(x);
+                }
+            }
+            if (localName.equalsIgnoreCase("y")
+                    && currentIncidencia.getY() == 0.0f) {
+                String yTemp = chars.toString().trim();
+                //Log.d("Y", yTemp);
+                if (yTemp != ""){
+                    double y = Double.parseDouble(yTemp);
+                    currentIncidencia.setY(y);
+                }
+            }
 
             if (localName.equalsIgnoreCase("incidencia")) {
 
-                    for (int i = 0; i < favList.size(); i++){
 
-                        if ((favList.get(i).getTipo()) == 1){
-                            if ((favList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
 
-                                if ((favList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
 
-                                    if (comparador(currentIncidencia.getFechahora()) == true){
+                // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
+                if (checkProvincia(currentIncidencia.getProvincia()) == true) {
 
-                                        mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                                        mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
-                                        InciFavList.add(currentIncidencia);
+                    if (checkTesteo() == false) {
+                        Log.i("", "Pasado el primer if");
+                        //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
 
-                                    }
-                                }
-                            }
+                        //if (checkFiltrado()) {
+
+                        if (comparador(currentIncidencia.getFechahora())) {
+                            //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
+                            //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                            IncidenciaList2.add(currentIncidencia);
+
+                            mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                            mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
                         }
 
-                        else if ((favList.get(i)).getTipo() == 2){
+                        //}
 
-                            if ((favList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
+                            /*else {
+                                Log.d("2 INFO", "Al menos no ha petado");
+                                IncidenciaList.add(currentIncidencia);
+                                mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                                mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                            }*/
 
-                                if(comparaPKs(favList.get(i), currentIncidencia)){
+                        // }
 
-                                    if (comparador(currentIncidencia.getFechahora()) == true){
+                    }
+                    else {
+                        //Log.d("3 INFO", "Al menos no ha petado");
+                        IncidenciaList2.add(currentIncidencia);
+                        mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                        mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
 
-                                        mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                                        mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
-
-                                    }
-                                }
-                            }
-                        }
                     }
 
+                }
+                else if (checkProvincia(currentIncidencia.getMatricula()) == true){
+                    if (checkTesteo() == false) {
+                        Log.i("", "Pasado el primer if");
+                        //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
 
+                        //if (checkFiltrado()) {
 
+                        if (comparador(currentIncidencia.getFechahora())) {
+                            //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
+                            //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                            IncidenciaList2.add(currentIncidencia);
 
-               currentIncidencia = new Incidencia();
+                            mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                            mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                        }
+
+                        //}
+
+                            /*else {
+                                Log.d("2 INFO", "Al menos no ha petado");
+                                IncidenciaList2.add(currentIncidencia);
+                                mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                                mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                            }*/
+
+                        // }
+
+                    }
+                    else {
+                        //Log.d("3 INFO", "Al menos no ha petado");
+                        IncidenciaList2.add(currentIncidencia);
+                        mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                        mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+
+                    }
+                }
+                currentIncidencia = new Incidencia();
 
             }
         }

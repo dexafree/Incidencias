@@ -48,6 +48,8 @@ import org.xml.sax.helpers.DefaultHandler;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import com.dexafree.incidencias.R;
+
 public class UpdateService extends Service {
 
 
@@ -315,6 +317,15 @@ public class UpdateService extends Service {
                         if(favorList.get(i).getTipo() == 1){
                             //Log.d("","Paso 3");
                             if ((favorList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
+                                //Log.d("","Paso 4");
+                                if ((favorList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
+
+                                    inciFavExist = true;
+                                    Log.d("","ENCONTRADA INCIDENCIA!");
+                                    break;
+                                }
+                            }
+                            else if ((favorList.get(i).getProvincia().equalsIgnoreCase(currentIncidencia.getMatricula()))){
                                 //Log.d("","Paso 4");
                                 if ((favorList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
 

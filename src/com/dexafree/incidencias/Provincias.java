@@ -9,6 +9,7 @@ import android.preference.PreferenceActivity;
 import android.view.MenuItem;
 import android.widget.AbsListView;
 import android.widget.ListAdapter;
+import com.dexafree.incidencias.R;
 
 /**
  * Created by Carlos on 19/05/13.

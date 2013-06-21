@@ -7,6 +7,7 @@ public class Incidencia {
 
     private String tipo;
     private String autonomia;
+    private String matricula;
     private String provincia;
     private String causa;
     private String poblacion;
@@ -43,6 +44,14 @@ public class Incidencia {
 
     public void setProvincia(String provincia) {
         this.provincia = provincia;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
     public void setCausa(String causa) {

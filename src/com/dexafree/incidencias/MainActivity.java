@@ -16,13 +16,18 @@ import android.view.Menu;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Scanner;
+
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
 
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -84,7 +89,10 @@ public class MainActivity extends Activity {
             // Log.i("", "Es true");
             ShowProgress = ProgressDialog.show(MainActivity.this, "",
                     "Cargando. Espere por favor...", true);
-            new loadingTask().execute("http://www.dgt.es/incidenciasXY.xml");
+            new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
+            //Log.d("ASY", "FIN DEL PRIMER XML");
+            //new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciVascP.xml");
+            //Log.d("ASY", "FIN DEL SEGUNDO XML");
         }
 
         firstTime();
@@ -106,28 +114,28 @@ public class MainActivity extends Activity {
             for(int i=0; i<lines; i++){
 
                 texto = fin.readLine();
-                Log.d("", "XML: " + texto);
+                //Log.d("", "XML: " + texto);
                 AndroidParseXMLActivity axa = new AndroidParseXMLActivity();
-                Log.d("","Vamos a parsear");
+                //Log.d("","Vamos a parsear");
                 axa.parseXML(texto);
             }
             fin.close();
         }
         catch (Exception ex)
         {
-            Log.e("Ficheros", "Error al leer fichero desde memoria interna");
-            Log.e("Ficheros", "Creando uno");
+            //Log.e("Ficheros", "Error al leer fichero desde memoria interna");
+            //Log.e("Ficheros", "Creando uno");
 
             try{
                 OutputStreamWriter fcrear =
                         new OutputStreamWriter(
                                 openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
                 fcrear.close();
-                Log.e("", "Creado XML");
+                //Log.e("", "Creado XML");
             }
             catch (Exception exc)
             {
-                Log.e("","Ni siquiera se puede crear");
+                //Log.e("","Ni siquiera se puede crear");
             }
         }
 
@@ -161,13 +169,13 @@ public class MainActivity extends Activity {
 
                 lineCount++;
             }
-            Log.d("", "Lines: " + lineCount);
+            //Log.d("", "Lines: " + lineCount);
 
             return lineCount;
 
         }
         catch (IOException e) {
-            Log.d("", "Ha saltado la excepcion de load");
+            //Log.d("", "Ha saltado la excepcion de load");
             return 0;
         }
 
@@ -216,27 +224,27 @@ public class MainActivity extends Activity {
 
         if (settings.getBoolean("borradatos", true)) {
             //the app is being launched for first time, do something
-            Log.d("Comments", "First time");
+            //Log.d("Comments", "First time");
 
             try{
-            OutputStreamWriter fout =
-                    new OutputStreamWriter(
-                            openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
+                OutputStreamWriter fout =
+                        new OutputStreamWriter(
+                                openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
 
-            StringBuilder sb = new StringBuilder();
+                StringBuilder sb = new StringBuilder();
 
-            Log.d("","Consigue crear el sb");
+                //Log.d("","Consigue crear el sb");
 
-            sb.append("");
-            Log.d("", "sb antes de append: " + sb.toString());
-            //Escribimos el resultado a un fichero
-            fout.append(sb.toString());
+                sb.append("");
+                //Log.d("", "sb antes de append: " + sb.toString());
+                //Escribimos el resultado a un fichero
+                fout.append(sb.toString());
 
-            fout.close();
+                fout.close();
             }
             catch (Exception ex)
             {
-                Log.e("XmlTips", "Error al escribir fichero XML.");
+                //Log.e("XmlTips", "Error al escribir fichero XML.");
             }
 
             settings.edit().putBoolean("borradatos", false).commit();
@@ -253,7 +261,7 @@ public class MainActivity extends Activity {
 
         if (settings.getBoolean("my_first_time", true)) {
             //the app is being launched for first time, do something
-            Log.d("Comments", "First time");
+            //Log.d("Comments", "First time");
 
             mCardView.addCard(new MyCard("No tienes ninguna provincia seleccionada", "Entra al menú de Provincias y selecciona las que te interesen","Luego pulsa Actualizar", "En el menú de Ajustes también podrás configurar opciones tales como el filtrado por horas, configurar si quieres que al iniciar la app se actualice automáticamente, o la recepción de notificaciones", "En el apartado de Acerca de... podrás ver información adicional de la aplicación, como el desarrollador, la fuente de los datos, o la versión de la aplicación que tienes instalada"));
             mCardView.addCard(new MyCard("Para acceder a más detalles...", "Y entonces pasarás a ver todos los detalles de la incidencia", "En este apartado verás una información más detallada de la incidencia", "Contarás con información detallada, como el sentido, hacia donde circulan los coches que se encontrarán con la incidencia, la causa de la incidencia...", "Cuando pulses el botón de Actualizar, se volverán a mostrar las tarjetas que hayas descartado, por si las has descartado accidentalmente"));
@@ -277,15 +285,42 @@ public class MainActivity extends Activity {
 
         protected String doInBackground(String... urls) {
 
-            SAXHelper sh = null;
-            try {
-                sh = new SAXHelper(urls[0]);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-            sh.parseContent("");
-            return "";
+            /*try {
 
+                OutputStreamWriter fout =
+                        new OutputStreamWriter(
+                                openFileOutput("Probando.xml", Context.MODE_PRIVATE));
+
+                URLConnection connection = new URL("http://www.dexa-dev.es/incidencias/InciVascP.xml").openConnection();
+                Scanner scan = new Scanner(connection.getInputStream());
+                while(scan.hasNext()) {
+
+                    fout.append(scan.nextLine());
+                }
+                fout.close();
+            } catch (MalformedURLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } */
+
+            SAXHelper sh = null;
+
+            int i = urls.length;
+
+            for (int j = 0;j<i; j++){
+                try {
+                    sh = new SAXHelper(urls[j]);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+            }
+                sh.parseContent("");
+                //return "";
+
+            }
+            return "";
         }
 
         protected void onPostExecute(String s) {
@@ -315,6 +350,8 @@ public class MainActivity extends Activity {
                 SAXParser sp = spf.newSAXParser();
                 XMLReader xr = sp.getXMLReader();
                 xr.setContentHandler(df);
+
+
                 xr.parse(new InputSource(url2.openStream()));
             } catch (Exception e) {
                 e.printStackTrace();
@@ -328,10 +365,15 @@ public class MainActivity extends Activity {
         IncidenciaList.clear();
         mCardView.clearCards();
 
+
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress = ProgressDialog.show(MainActivity.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask().execute("http://www.dgt.es/incidenciasXY.xml");
+
+        new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
+        //Log.d("ASY", "FIN DEL PRIMER XML");
+        //new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciVascP.xml");
+        //Log.d("ASY", "FIN DEL SEGUNDO XML");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView.refresh();
@@ -358,7 +400,14 @@ public class MainActivity extends Activity {
 
     public boolean comparador(String fechahora){
 
-        Log.d("","Iniciando comparador");
+        //Log.d("","Iniciando comparador");
+
+        String checker = fechahora.substring(11,12);
+        //Log.d("Checker", checker);
+        if (checker.equals("-")){
+            //Log.d("COMPARADORFECHA", "FALSE");
+            return false;
+        }
 
         //Obtenemos la fecha actual
         Date cDate = new Date();
@@ -379,8 +428,25 @@ public class MainActivity extends Activity {
         String monthpas = fechahora.substring(5,7); //Mes
         String daypas = fechahora.substring(8,10); //Dia
         String fhs = fechahora.trim(); //Variable temporal para eliminar espacios al inicio y al final
+
+
+
+
         String horapas = fhs.substring(11,13); //Hora
         String minutospas = fhs.substring(14,16); //Minutos
+
+
+
+        /*Log.d("AÑO", yearpas );
+        Log.d("MES", monthpas );
+        Log.d("DIA", daypas );
+        Log.d("FHS", fhs );
+        Log.d("HORAPAS", horapas );
+        Log.d("MINUTOSPAS", minutospas );*/
+
+
+
+        //Log.d("DATOS", "0,4: " + yearpas + " 5,7: " + monthpas + " 8,10: " + daypas + "   " + fhs + " 11,13: " + horapas + " 14,16: "  + minutospas);
 
 
         //Convertimos cada uno de los Strings a Ints
@@ -389,18 +455,26 @@ public class MainActivity extends Activity {
         int monthInt = Integer.parseInt(month);
         int dayInt = Integer.parseInt(day);
 
+        //Log.d("horapas", ""+horapas);
+        //Log.d("minutospas", ""+minutospas);
+
         int horaInt = Integer.parseInt(horapas);
         int minutosInt = Integer.parseInt(minutospas);
+
+
 
         int yearpasInt = Integer.parseInt(yearpas);
         int monthpasInt = Integer.parseInt(monthpas);
         int daypasInt = Integer.parseInt(daypas);
 
+        /*Log.d("TIEMPO", hours + "  " + horaInt);
+        Log.d("TIEMPO", dayInt + "  " + daypasInt);
 
+        Log.d("","***********************");*/
         //Si la hora actual es entre las 00 y las 06, restaremos un dia y sumaremos 24 a las horas
         if (hours < 6){
-                hours = hours+ 24;
-                dayInt = dayInt -1;
+            hours = hours+ 24;
+            dayInt = dayInt -1;
 
             if(horaInt < 6){
                 horaInt = horaInt + 24;
@@ -429,8 +503,8 @@ public class MainActivity extends Activity {
                     //En caso de que lo este
                     if (cFilt.getBoolean("filtrado_horario", false)) {
 
-                        Log.d("Filtrado horario", "Activado");
-                        Log.d("", "Hours:" + hours + "  horaInt: " + horaInt);
+                        //Log.d("Filtrado horario", "Activado");
+                        //Log.d("", "Hours:" + hours + "  horaInt: " + horaInt);
 
                         if (hours >= horaInt){
 
@@ -439,11 +513,11 @@ public class MainActivity extends Activity {
                             String interv = sphora.getString("hora_selecc", "-1");
                             int intervInt = Integer.parseInt(interv);
 
-                            Log.d("intervInt", ""+intervInt);
+                            //Log.d("intervInt", ""+intervInt);
 
                             //Obtenemos la diferencia entre la hora atual y la de la incidencia
                             int dif = hours-horaInt;
-                            Log.d("dif", ""+dif);
+                            //Log.d("dif", ""+dif);
 
                             //Comparamos la diferencia con el intervalo maximo deseado
                             if (dif <= intervInt ) {
@@ -475,8 +549,8 @@ public class MainActivity extends Activity {
                         }
                     }
                     else {
-                    Log.d("Filtrado horario", "Desactivado");
-                    return true;
+                        //Log.d("Filtrado horario", "Desactivado");
+                        return true;
                     }
                 }
             }
@@ -511,15 +585,15 @@ public class MainActivity extends Activity {
             //  Log.i("", "COINCIDE YEAR");
 
             if (month.equals(monthpas)) {
-               // Log.i("", "COINCIDE MONTH");
-               // Log.d("", "dayInt: " + dayInt + "  daypasInt: " + daypasInt);
+                // Log.i("", "COINCIDE MONTH");
+                // Log.d("", "dayInt: " + dayInt + "  daypasInt: " + daypasInt);
                 if (dayInt == daypasInt) {
                     //    Log.i("", "COINCIDE DAY");
                     return true;
                 }
 
                 else if (dayInt == (daypasInt-1)){
-                  //  Log.d("", "COINCIDE");
+                    //  Log.d("", "COINCIDE");
                     return true;
                 }
                 else {
@@ -550,13 +624,13 @@ public class MainActivity extends Activity {
             hours = hours+24;
         }
 
-        Log.i("", "hora minuto: " + hours + "  " + minutes);
+        //Log.i("", "hora minuto: " + hours + "  " + minutes);
 
         String horatr = hora.trim();
         String hourpas = horatr.substring(11,13);
         String minutepas = horatr.substring(14,16);
-        Log.i("", "hp: " + hourpas);
-        Log.i("", "mp: " + minutepas);
+        //Log.i("", "hp: " + hourpas);
+        //Log.i("", "mp: " + minutepas);
 
         int hourInc = Integer.parseInt(hourpas);
         int minuteInc= Integer.parseInt(minutepas);
@@ -569,11 +643,11 @@ public class MainActivity extends Activity {
             SharedPreferences sphora = PreferenceManager.getDefaultSharedPreferences(this);
             String interv = sphora.getString("hora_selecc", "-1");
 
-            Log.i("", "interv: " + interv);
+            //Log.i("", "interv: " + interv);
 
             int intervInt = Integer.parseInt(interv);
             int dif = hours-hourInc;
-            Log.i("", "dif: " + dif);
+            //Log.i("", "dif: " + dif);
 
             if (dif <= intervInt ) {
 
@@ -619,14 +693,14 @@ public class MainActivity extends Activity {
 
     public String getHora(String fechaHora) {
 
-      //  Log.i("", "FechaHora: " + fechaHora);
+        //  Log.i("", "FechaHora: " + fechaHora);
         String fhs = fechaHora.trim();
         //Log.i("", "fhs: " + fhs);
         String hora = fhs.substring(11,13);
         //Log.i("", "hora: " + hora);
         String minutos = fhs.substring(14,16);
         //Log.i("", "minutos: " + minutos);
-        Log.d("getHora","ok");
+        //Log.d("getHora","ok");
         return hora + ":" + minutos + "  ";
 
     }
@@ -787,16 +861,19 @@ public class MainActivity extends Activity {
 
     }
 
+    //DE MOMENTO FUNCIONA EN EL PAIS VASCO, FALTA IMPLEMENTAR QUE LO HAGA
+    //EN LOS DOS XML A LA VEZ. EN EUSKADI FUNCIONA SI LO HACES CON MATRICULA
+
     public boolean checkProvincia(String provincia) {
 
         SharedPreferences pref =
                 PreferenceManager.getDefaultSharedPreferences(
                         MainActivity.this);
 
-        //   Log.i("", provincia + ": " + pref.getBoolean(provincia, false));
+           //Log.i("CHECKPROVINCIA", provincia + ": " + pref.getBoolean(provincia, false));
 
         if ( pref.getBoolean(provincia, false) == true) {
-            //   Log.i("", "Es true");
+               //Log.i(provincia, "Es true");
             return true;
         }
         else {
@@ -835,10 +912,20 @@ public class MainActivity extends Activity {
                 currentIncidencia.setAutonomia(chars.toString().trim());
 
             }
+
             if (localName.equalsIgnoreCase("provincia")
                     && currentIncidencia.getProvincia() == null) {
+                //Log.d("PROVINCIA", chars.toString().trim());
                 currentIncidencia.setProvincia(chars.toString().trim());
-
+            }
+            if (localName.equalsIgnoreCase("matricula")
+                    && currentIncidencia.getMatricula() == null) {
+                //Log.d("MATRICULA", chars.toString().trim());
+                currentIncidencia.setMatricula(chars.toString().trim());
+            }
+            if (localName.equalsIgnoreCase("carretera")
+                    && currentIncidencia.getCarretera() == null) {
+                Log.d("", chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("causa")
                     && currentIncidencia.getCausa() == null) {
@@ -850,6 +937,8 @@ public class MainActivity extends Activity {
             }
             if (localName.equalsIgnoreCase("fechahora_ini")
                     && currentIncidencia.getFechahora() == null) {
+                //Log.d("FECHAHORA", chars.toString().trim());
+                //Log.d(" ", "***************");
                 currentIncidencia.setFechahora(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("nivel")
@@ -879,7 +968,7 @@ public class MainActivity extends Activity {
             if (localName.equalsIgnoreCase("x")
                     && currentIncidencia.getX() == 0.0f) {
                 String xTemp = chars.toString().trim();
-                Log.d("X", xTemp);
+                //Log.d("X", xTemp);
                 if (xTemp != ""){
                     double x = Double.parseDouble(xTemp);
                     currentIncidencia.setX(x);
@@ -888,7 +977,7 @@ public class MainActivity extends Activity {
             if (localName.equalsIgnoreCase("y")
                     && currentIncidencia.getY() == 0.0f) {
                 String yTemp = chars.toString().trim();
-                Log.d("Y", yTemp);
+                //Log.d("Y", yTemp);
                 if (yTemp != ""){
                     double y = Double.parseDouble(yTemp);
                     currentIncidencia.setY(y);
@@ -904,21 +993,21 @@ public class MainActivity extends Activity {
                 if (checkProvincia(currentIncidencia.getProvincia()) == true) {
 
                     if (checkTesteo() == false) {
-                        //   Log.i("", "Pasado el primer if");
+                           //Log.i("", "Pasado el primer if");
                         //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
 
-                            //if (checkFiltrado()) {
+                        //if (checkFiltrado()) {
 
-                                if (comparador(currentIncidencia.getFechahora())) {
-                                    Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
-                                    //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
-                                    IncidenciaList.add(currentIncidencia);
+                        if (comparador(currentIncidencia.getFechahora())) {
+                            //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
+                            //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                            IncidenciaList.add(currentIncidencia);
 
-                                    mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                                    mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
-                                }
+                            mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                            mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                        }
 
-                            //}
+                        //}
 
                             /*else {
                                 Log.d("2 INFO", "Al menos no ha petado");
@@ -927,11 +1016,11 @@ public class MainActivity extends Activity {
                                 mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
                             }*/
 
-                       // }
+                        // }
 
                     }
                     else {
-                        Log.d("3 INFO", "Al menos no ha petado");
+                        //Log.d("3 INFO", "Al menos no ha petado");
                         IncidenciaList.add(currentIncidencia);
                         mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
                         mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
@@ -939,9 +1028,45 @@ public class MainActivity extends Activity {
                     }
 
                 }
-            currentIncidencia = new Incidencia();
+                else if (checkProvincia(currentIncidencia.getMatricula()) == true){
+                    if (checkTesteo() == false) {
+                        //Log.i("", "Pasado el primer if");
+                        //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
+
+                        //if (checkFiltrado()) {
+
+                        if (comparador(currentIncidencia.getFechahora())) {
+                            //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
+                            //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                            IncidenciaList.add(currentIncidencia);
+
+                            mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                            mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                        }
+
+                        //}
+
+                            /*else {
+                                Log.d("2 INFO", "Al menos no ha petado");
+                                IncidenciaList.add(currentIncidencia);
+                                mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                                mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                            }*/
+
+                        // }
+
+                    }
+                    else {
+                        //Log.d("3 INFO", "Al menos no ha petado");
+                        IncidenciaList.add(currentIncidencia);
+                        mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                        mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+
+                    }
+                }
+                currentIncidencia = new Incidencia();
+            }
         }
-    }
 
 
         @Override

@@ -526,7 +526,15 @@ public class MainFavoritos extends Activity {
 
     public boolean comparador(String fechahora){
 
-        Log.d("", "Se ha disparado");
+
+        String checker = fechahora.substring(11,12);
+        //Log.d("Checker", checker);
+        if (checker.equals("-")){
+            //Log.d("COMPARADORFECHA", "FALSE");
+            return false;
+        }
+
+        //Log.d("", "Se ha disparado");
         //Obtenemos la fecha actual
         Date cDate = new Date();
         String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
@@ -563,8 +571,8 @@ public class MainFavoritos extends Activity {
         int monthpasInt = Integer.parseInt(monthpas);
         int daypasInt = Integer.parseInt(daypas);
 
-        Log.d("Fecha/hora actual", hours + ":" + minutes + "  " + dayInt + "-" + monthInt + "-" + yearInt);
-        Log.d("Fecha/hora incidencia", horaInt + ":" + minutosInt + "  " + daypasInt + "-" + monthpasInt + "-" + yearpasInt);
+        //Log.d("Fecha/hora actual", hours + ":" + minutes + "  " + dayInt + "-" + monthInt + "-" + yearInt);
+        //Log.d("Fecha/hora incidencia", horaInt + ":" + minutosInt + "  " + daypasInt + "-" + monthpasInt + "-" + yearpasInt);
 
 
 
@@ -574,8 +582,8 @@ public class MainFavoritos extends Activity {
             dayInt = dayInt -1;
         }
 
-        Log.d("Fecha/hora actual post-if", hours + ":" + minutes + "  " + dayInt + "-" + monthInt + "-" + yearInt);
-        Log.d("Fecha/hora incidencia post-if", horaInt + ":" + minutosInt + "  " + daypasInt + "-" + monthpasInt + "-" + yearpasInt);
+        //Log.d("Fecha/hora actual post-if", hours + ":" + minutes + "  " + dayInt + "-" + monthInt + "-" + yearInt);
+        //Log.d("Fecha/hora incidencia post-if", horaInt + ":" + minutosInt + "  " + daypasInt + "-" + monthpasInt + "-" + yearpasInt);
 
         //Empezamos comparacion de fecha
 
@@ -590,10 +598,10 @@ public class MainFavoritos extends Activity {
 
                     //Comprobamos si el filtrado horario esta habilitado
 
-                   // SharedPreferences cadu = PreferenceManager.getDefaultSharedPreferences(this);
+                    // SharedPreferences cadu = PreferenceManager.getDefaultSharedPreferences(this);
 
                     //En caso de que lo este
-                   // if (cadu.getBoolean("caduc_fav", false)) {
+                    // if (cadu.getBoolean("caduc_fav", false)) {
 
                         if (hours >= horaInt){
 
@@ -602,11 +610,11 @@ public class MainFavoritos extends Activity {
                             String interv = sphora.getString("caduc_fav", "2");
                             int intervInt = Integer.parseInt(interv);
 
-                            Log.d("intervInt", ""+intervInt);
+                            //Log.d("intervInt", ""+intervInt);
 
                             //Obtenemos la diferencia entre la hora atual y la de la incidencia
                             int dif = hours-horaInt;
-                            Log.d("dif", ""+dif);
+                            //Log.d("dif", ""+dif);
                             //Comparamos la diferencia con el intervalo maximo deseado
                             if (dif <= intervInt ) {
 
@@ -631,7 +639,7 @@ public class MainFavoritos extends Activity {
 
                         }
 
-                   // }
+                    // }
                     //return true;
                 }
             }
@@ -645,13 +653,13 @@ public class MainFavoritos extends Activity {
 
     public String getHora(String fechaHora) {
 
-        Log.i("", "FechaHora: " + fechaHora);
+        //Log.i("", "FechaHora: " + fechaHora);
         String fhs = fechaHora.trim();
-        Log.i("", "fhs: " + fhs);
+        //Log.i("", "fhs: " + fhs);
         String hora = fhs.substring(11,13);
-        Log.i("", "hora: " + hora);
+        //Log.i("", "hora: " + hora);
         String minutos = fhs.substring(14,16);
-        Log.i("", "minutos: " + minutos);
+        //Log.i("", "minutos: " + minutos);
         return hora + ":" + minutos + "  ";
 
     }
@@ -744,7 +752,7 @@ public class MainFavoritos extends Activity {
                 PreferenceManager.getDefaultSharedPreferences(
                         MainFavoritos.this);
 
-        //   Log.i("", provincia + ": " + pref.getBoolean(provincia, false));
+           Log.i("Provincia_Mostrada", ": " + pref.getBoolean(provincia, false));
 
         if ( pref.getBoolean(provincia, false) == true) {
             //   Log.i("", "Es true");
@@ -812,7 +820,7 @@ public class MainFavoritos extends Activity {
                 //Log.d("PROVINCIA", chars.toString().trim());
                 currentIncidencia.setProvincia(chars.toString().trim());
             }
-            //PROBAR A QUITAR EL ELSE
+
             if (localName.equalsIgnoreCase("matricula")
                     && currentIncidencia.getMatricula() == null) {
                 //Log.d("MATRICULA", chars.toString().trim());
@@ -876,11 +884,11 @@ public class MainFavoritos extends Activity {
             }
 
             if (localName.equalsIgnoreCase("incidencia")) {
-
-
-
-
                 // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
+                Log.d("", "****");
+                Log.d("CI-P", currentIncidencia.getProvincia().toString());
+                Log.d("CI-M", currentIncidencia.getMatricula().toString());
+
                 if (checkProvincia(currentIncidencia.getProvincia()) == true) {
 
                     if (checkTesteo() == false) {
@@ -921,7 +929,7 @@ public class MainFavoritos extends Activity {
                 }
                 else if (checkProvincia(currentIncidencia.getMatricula()) == true){
                     if (checkTesteo() == false) {
-                        Log.i("", "Pasado el primer if");
+                        Log.i("", "IF MATRICULA PASADO");
                         //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
 
                         //if (checkFiltrado()) {
@@ -998,6 +1006,18 @@ public class MainFavoritos extends Activity {
 
 
                 Log.w("AndroidParseXMLActivity", "Done");
+
+
+                int i = favList.size();
+                for (int j = 0; j<i ; j++){
+
+
+                    String prov = favList.get(j).getProvincia().toString();
+                    SharedPreferences settings = getSharedPreferences(prov, 0);
+                    settings.edit().putBoolean(prov, true).commit();
+
+                }
+
             }
             catch (Exception e) {
                 Log.w("AndroidParseXMLActivity",e );

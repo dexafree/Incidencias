@@ -3,6 +3,9 @@ package com.dexafree.incidencias;
 /**
  * Created by Carlos on 27/05/13.
  */
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.preference.ListPreference;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -16,6 +19,7 @@ public class ItemXMLHandler extends DefaultHandler {
     Boolean currentElement = false;
     String currentValue = "";
     Favoritos favoritoActual = null;
+
 
 
     public ArrayList<Favoritos> getItemsList() {
@@ -43,14 +47,18 @@ public class ItemXMLHandler extends DefaultHandler {
         currentElement = false;
 
 
+
         if (localName.equalsIgnoreCase("tipo")){
             int tipo = Integer.parseInt(currentValue);
             favoritoActual.setTipo(tipo);
         }
         if (localName.equalsIgnoreCase("carretera"))
             favoritoActual.setCarretera(currentValue);
-        if (localName.equalsIgnoreCase("provincia"))
+        if (localName.equalsIgnoreCase("provincia")){
             favoritoActual.setProvincia(currentValue);
+        }
+
+
         if (localName.equalsIgnoreCase("pkInicial")){
             int pkI = Integer.parseInt(currentValue);
             favoritoActual.setPkInicial(pkI);

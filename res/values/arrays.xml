@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="lista_provincias">
-        <item>Álava/Guipúzcoa/Vizcaya</item>
         <item>A Coruña</item>
+        <item>Álava</item>
         <item>Albacete</item>
         <item>Alicante</item>
         <item>Almería</item>
@@ -10,6 +10,7 @@
         <item>Ávila</item>
         <item>Badajoz</item>
         <item>Barcelona</item>
+        <item>Bizkaia</item>
         <item>Burgos</item>
         <item>Cáceres</item>
         <item>Cádiz</item>
@@ -21,6 +22,7 @@
         <item>Gerona</item>
         <item>Granada</item>
         <item>Guadalajara</item>
+        <item>Guipúzkoa</item>
         <item>Huelva</item>
         <item>Huesca</item>
         <item>Islas Baleares</item>
@@ -51,8 +53,8 @@
         <item>Zaragoza</item>
     </string-array>
     <string-array name="entries_provinces_preference2">
-        <item>ALAVA/GUIPUZCOA/VIZCAYA</item>
         <item>A CORUÑA</item>
+        <item>VI</item>
         <item>ALBACETE</item>
         <item>ALICANTE/ALACANT</item>
         <item>ALMERIA</item>
@@ -60,6 +62,7 @@
         <item>AVILA</item>
         <item>BADAJOZ</item>
         <item>BARCELONA</item>
+        <item>BI</item>
         <item>BURGOS</item>
         <item>CACERES</item>
         <item>CADIZ</item>
@@ -71,6 +74,7 @@
         <item>GIRONA</item>
         <item>GRANADA</item>
         <item>GUADALAJARA</item>
+        <item>SS</item>
         <item>HUELVA</item>
         <item>HUESCA</item>
         <item>ILLES BALEARS</item>

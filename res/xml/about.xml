@@ -3,11 +3,14 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <Preference android:title="Copyright" android:summary="Dexafree"/>
-    <Preference android:title="Fuente de los datos" android:summary="Dirección General de Tráfico, Ministerio del Interior"/>
+    <PreferenceCategory android:title="Fuente de los datos">
+        <Preference android:title="Dirección General de Tráfico" android:summary="Ministerio del Interior, Gobierno de España"/>
+        <Preference android:title="Trafikoa" android:summary="Departamento de Interior, Gobierno Vasco"/>
+    </PreferenceCategory>
     <Preference android:title="Diseño del icono" android:summary="Todotuscani"/>
     <Preference android:title="Consejo y soporte técnico" android:summary="Arasthel"/>
     <PreferenceCategory android:title="Versión:">
-        <Preference android:title="App version" android:summary="1.3"/>
+        <Preference android:title="App version" android:summary="2.0"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

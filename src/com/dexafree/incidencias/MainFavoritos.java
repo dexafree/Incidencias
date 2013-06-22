@@ -746,9 +746,9 @@ public class MainFavoritos extends Activity {
         return R.drawable.conos_verde;
     }
 
-    public boolean checkProvincia(String provincia) {
+    public boolean checkProvincia(Incidencia currentIncidencia) {
 
-        SharedPreferences pref =
+        /*SharedPreferences pref =
                 PreferenceManager.getDefaultSharedPreferences(
                         MainFavoritos.this);
 
@@ -761,7 +761,21 @@ public class MainFavoritos extends Activity {
         else {
             // Log.i("", "Es false");
             return false;
+        }*/
+
+        for (int i = 0; i<favList.size(); i++){
+
+            if ((currentIncidencia.getProvincia()).equalsIgnoreCase(favList.get(i).getProvincia())){
+                return true;
+            }
+            else if ((currentIncidencia.getMatricula()).equalsIgnoreCase((favList.get(i).getProvincia()))){
+                return true;
+            }
         }
+
+        return false;
+
+
     }
 
     public boolean checkTesteo() {
@@ -889,7 +903,7 @@ public class MainFavoritos extends Activity {
                 Log.d("CI-P", currentIncidencia.getProvincia().toString());
                 Log.d("CI-M", currentIncidencia.getMatricula().toString());
 
-                if (checkProvincia(currentIncidencia.getProvincia()) == true) {
+                if (checkProvincia(currentIncidencia) == true) {
 
                     if (checkTesteo() == false) {
                         Log.i("", "Pasado el primer if");
@@ -927,7 +941,7 @@ public class MainFavoritos extends Activity {
                     }
 
                 }
-                else if (checkProvincia(currentIncidencia.getMatricula()) == true){
+                else if (checkProvincia(currentIncidencia) == true){
                     if (checkTesteo() == false) {
                         Log.i("", "IF MATRICULA PASADO");
                         //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
@@ -1010,12 +1024,10 @@ public class MainFavoritos extends Activity {
 
                 int i = favList.size();
                 for (int j = 0; j<i ; j++){
-
-
                     String prov = favList.get(j).getProvincia().toString();
-                    SharedPreferences settings = getSharedPreferences(prov, 0);
+                    Log.d("PROV", prov);
+                    SharedPreferences settings = getSharedPreferences("MyPref", 0);
                     settings.edit().putBoolean(prov, true).commit();
-
                 }
 
             }

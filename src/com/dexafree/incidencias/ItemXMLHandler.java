@@ -58,7 +58,6 @@ public class ItemXMLHandler extends DefaultHandler {
             favoritoActual.setProvincia(currentValue);
         }
 
-
         if (localName.equalsIgnoreCase("pkInicial")){
             int pkI = Integer.parseInt(currentValue);
             favoritoActual.setPkInicial(pkI);

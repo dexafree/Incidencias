@@ -209,9 +209,9 @@ public class MainActivity extends Activity {
             case R.id.action_acerca:
                 startActivity(new Intent(this, About.class));
                 return true;
-            case R.id.mapa:
+            /*case R.id.mapa:
                 startActivity(new Intent(this, MapActivity.class));
-                return true;
+                return true;*/
 
             default:
                 return super.onOptionsItemSelected(item);

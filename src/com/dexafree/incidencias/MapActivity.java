@@ -27,7 +27,7 @@ public class MapActivity extends FragmentActivity {
     private double latCentral = 40.97872614480813;
     private double lonCentral = -3.051414079964161;
     //private double zoomCentral = 5.396;
-    private double zoomCentral = 8.396;
+    private double zoomCentral = 9.396;
     public float z = (float)zoomCentral;
 
     @Override
@@ -54,7 +54,7 @@ public class MapActivity extends FragmentActivity {
 
         //mapa.moveCamera(camUpd1);
 
-        mapa.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+       /* mapa.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             public void onMapClick(LatLng point) {
                 Projection proj = mapa.getProjection();
                 Point coord = proj.toScreenLocation(point);
@@ -69,7 +69,7 @@ public class MapActivity extends FragmentActivity {
             }
         });
 
-        mapa.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
+       /* mapa.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
             public void onMapLongClick(LatLng point) {
                 Projection proj = mapa.getProjection();
                 Point coord = proj.toScreenLocation(point);
@@ -82,7 +82,7 @@ public class MapActivity extends FragmentActivity {
                                 "X: " + coord.x + " - Y: " + coord.y,
                         Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
 
 
@@ -111,7 +111,7 @@ public class MapActivity extends FragmentActivity {
             public boolean onMarkerClick(Marker marker) {
                 Toast.makeText(
                         MapActivity.this,
-                        "Marcador pulsado:\n" +
+                        "Incidencia:\n" +
                                 marker.getTitle(),
                         Toast.LENGTH_SHORT).show();
                 return false;
@@ -123,7 +123,7 @@ public class MapActivity extends FragmentActivity {
 
     }
 
-    @Override
+  /*  @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.map, menu);
         return true;
@@ -147,7 +147,7 @@ public class MapActivity extends FragmentActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     private void mostrarMarcador(Incidencia incidActual)
     //private void mostrarMarcador(double lat, double lng)

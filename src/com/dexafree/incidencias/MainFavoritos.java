@@ -60,9 +60,13 @@ import com.dexafree.incidencias.MyImageCard;
  */
 public class MainFavoritos extends Activity {
 
+
+    public final static String XCOORDFAV = "com.dexafree.incidencias.XCOORDFAV";
+    public final static String YCOORDFAV = "com.dexafree.incidencias.YCOORDFAV";
+
     ProgressDialog ShowProgress2;
     private CardUI mCardView2;
-    public ArrayList<Incidencia> IncidenciaList2 = MainActivity.IncidenciaList;
+    public static ArrayList<Incidencia> IncidenciaList2 = MainActivity.IncidenciaList;
     public ArrayList<Favoritos> favList = Favoritos.FavoritosList;
 
     public static ArrayList<Incidencia> InciFavList;
@@ -830,6 +834,46 @@ public class MainFavoritos extends Activity {
     }
 
 
+    public void creaCard(Incidencia currentIncidencia){
+
+        final double x = currentIncidencia.getX();
+        final double y = currentIncidencia.getY();
+
+        MyCard card = new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia());
+        card.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Context context = getApplicationContext();
+                Intent intent = new Intent(context, MapFavActivity.class);
+                intent.putExtra(XCOORDFAV,x);
+                intent.putExtra(YCOORDFAV,y);
+                startActivity(intent);
+
+            }
+        });
+
+        mCardView2.addCard(card);
+
+
+        MyImageCard imCard = new MyImageCard((currentIncidencia.getTipo()), incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido());
+        imCard.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Context context = getApplicationContext();
+                Intent intent = new Intent(context, MapFavActivity.class);
+                intent.putExtra(XCOORDFAV,x);
+                intent.putExtra(YCOORDFAV,y);
+                startActivity(intent);
+
+            }
+        });
+
+        mCardView2.addCardToLastStack(imCard);
+
+
+    }
 
 
 
@@ -946,8 +990,7 @@ public class MainFavoritos extends Activity {
                                     //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
                                     //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
                                     IncidenciaList2.add(currentIncidencia);
-                                    mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                                    mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                                creaCard(currentIncidencia);
 
                             }
                         }
@@ -965,8 +1008,7 @@ public class MainFavoritos extends Activity {
                                 if(comparaPKs(favList.get(i), currentIncidencia)){
 
                                     IncidenciaList2.add(currentIncidencia);
-                                    mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                                    mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                                    creaCard(currentIncidencia);
 
 
                                 }

@@ -1,5 +1,6 @@
 package com.dexafree.incidencias;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -25,7 +26,7 @@ public class MapFavActivity extends FragmentActivity {
     private GoogleMap mapa = null;
     private double latCentral = 40.97872614480813;
     private double lonCentral = -3.051414079964161;
-    private double zoomCentral = 5.396;
+    private double zoomCentral = 9.396;
     public float z = (float)zoomCentral;
 
     @Override
@@ -36,7 +37,11 @@ public class MapFavActivity extends FragmentActivity {
         mapa = ((SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
 
-        CameraUpdate camUpd1 = CameraUpdateFactory.newLatLngZoom(new LatLng(latCentral, lonCentral), z);
+        Intent intent = getIntent();
+        double xcoord = intent.getDoubleExtra(MainFavoritos.XCOORDFAV, latCentral);
+        double ycoord = intent.getDoubleExtra(MainFavoritos.YCOORDFAV, lonCentral);
+
+        CameraUpdate camUpd1 = CameraUpdateFactory.newLatLngZoom( new LatLng(xcoord, ycoord), z);
 
         mapa.moveCamera(camUpd1);
 
@@ -88,7 +93,7 @@ public class MapFavActivity extends FragmentActivity {
             public boolean onMarkerClick(Marker marker) {
                 Toast.makeText(
                         MapFavActivity.this,
-                        "Marcador pulsado:\n" +
+                        "Incidencia:\n" +
                                 marker.getTitle(),
                         Toast.LENGTH_SHORT).show();
                 return false;
@@ -99,7 +104,7 @@ public class MapFavActivity extends FragmentActivity {
 
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.map, menu);
         return true;
@@ -119,7 +124,7 @@ public class MapFavActivity extends FragmentActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     private void mostrarMarcador(Incidencia incidActual){
 
@@ -131,18 +136,23 @@ public class MapFavActivity extends FragmentActivity {
                 .position(new LatLng(lat, lng))
                 .title(incidActual.getCarretera() + "\n" + incidActual.getHacia())
                 .snippet((incidActual.getPkInicio() + " - " + incidActual.getPkFin())));
-
     }
 
     private void crearMarcadores(){
 
-        Log.d("Tamaño", "" + MainFavoritos.InciFavList.size());
+        Log.d("A", "HASTA AQUI SI");
 
-        for (int i = 0; i < MainFavoritos.InciFavList.size(); i++){
+        Log.d("Tamaño", "" + MainFavoritos.IncidenciaList2.size());
+        Log.d("B", "HASTA AQUI NO");
 
-            Log.d("", "Marcador creado en: " + MainFavoritos.InciFavList.get(i).getX() + " | " + MainFavoritos.InciFavList.get(i).getY());
+        for (int i = 0; i < MainFavoritos.IncidenciaList2.size(); i++){
 
-            mostrarMarcador(MainFavoritos.InciFavList.get(i));
+
+
+            if (MainFavoritos.IncidenciaList2.get(i).getX() != 0.0){
+                Log.d("", "Marcador creado en: " + MainFavoritos.IncidenciaList2.get(i).getX() + " | " + MainFavoritos.IncidenciaList2.get(i).getY());
+                mostrarMarcador(MainFavoritos.IncidenciaList2.get(i));
+            }
         }
 
     }

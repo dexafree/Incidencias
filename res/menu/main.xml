@@ -34,11 +34,5 @@
             android:icon="@drawable/favoritos"
             android:title="Favoritos"/>
 
-    <item
-            android:id="@+id/mapa"
-            android:orderInCategory="200"
-            android:showAsAction="ifRoom"
-            android:title="Mapa"/>
-
 
 </menu>

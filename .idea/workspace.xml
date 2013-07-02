@@ -17,13 +17,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incidencias.apk" afterPath="$PROJECT_DIR$/Incidencias.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MapActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MapActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MapFavActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MapFavActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/main.xml" afterPath="$PROJECT_DIR$/res/menu/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
@@ -117,7 +110,7 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="73" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0" vertical-offset="281" max-vertical-offset="2091">
+            <state line="34" column="73" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="2091">
               <folding>
                 <element signature="e#1106#1124#0" expanded="true" />
                 <element signature="e#1654#1672#0" expanded="true" />
@@ -127,10 +120,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainFavoritos.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainFavoritos.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="86" selection-start="2065" selection-end="2065" vertical-scroll-proportion="-19.475096" vertical-offset="11322" max-vertical-offset="18598">
+            <state line="660" column="42" selection-start="24236" selection-end="24236" vertical-scroll-proportion="-13.730769" vertical-offset="10863" max-vertical-offset="18598">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#10139#10155#0" expanded="true" />
@@ -139,6 +132,15 @@
                 <element signature="e#31234#31612#0" expanded="true" />
                 <element signature="e#31601#31602#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LICENSE" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="65" column="65" selection-start="20984" selection-end="20984" vertical-scroll-proportion="0.9616788" vertical-offset="578" max-vertical-offset="1207">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -211,7 +213,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/ItemXMLHandler.java" />
         <option value="$PROJECT_DIR$/res/xml/about.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/Card.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/AbstractCard.java" />
@@ -227,6 +228,7 @@
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MapFavActivity.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MapActivity.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/LICENSE" />
       </list>
     </option>
   </component>
@@ -950,7 +952,11 @@
       <created>1372772369197</created>
       <updated>1372772369197</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="2.2 Finalizado">
+      <created>1372777396255</created>
+      <updated>1372777396255</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1048,7 +1054,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="2.2 en proceso&#10;Mapas implementados&#10;Corregido bug de AddFavoritos y AddFavoritos2 (era el encoding)&#10;Falta MainFavoritos y mapas" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.2 Finalizado" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1062,7 +1068,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="BETA 10 - ARREGLADAS NOTIFICACIONES" />
     <MESSAGE value="BETA 11 - CADUCIDAD FAVORITOS" />
     <MESSAGE value="BETA 11 - CAMBIADO TESTEO POR REPETIR TUTORIAL" />
     <MESSAGE value="BETA 11 - AÑADIDAS CARRETERAS. ARREGLADO NONE SELECTED" />
@@ -1087,18 +1092,12 @@
     <MESSAGE value="2.1 en proceso. Commit con AndroidManifest cambiado" />
     <MESSAGE value="2.2 en proceso. Commit con AndroidManifest cambiado" />
     <MESSAGE value="2.2 en proceso&#10;Mapas implementados&#10;Corregido bug de AddFavoritos y AddFavoritos2 (era el encoding)&#10;Falta MainFavoritos y mapas" />
+    <MESSAGE value="2.2 Finalizado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MyImageCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="10" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MyCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="20" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1139">
@@ -1207,7 +1206,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="73" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0" vertical-offset="281" max-vertical-offset="2091">
+        <state line="34" column="73" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="2091">
           <folding>
             <element signature="e#1106#1124#0" expanded="true" />
             <element signature="e#1654#1672#0" expanded="true" />
@@ -1218,7 +1217,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="86" selection-start="2065" selection-end="2065" vertical-scroll-proportion="-19.475096" vertical-offset="11322" max-vertical-offset="18598">
+        <state line="660" column="42" selection-start="24236" selection-end="24236" vertical-scroll-proportion="-13.730769" vertical-offset="10863" max-vertical-offset="18598">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#10139#10155#0" expanded="true" />
@@ -1227,6 +1226,13 @@
             <element signature="e#31234#31612#0" expanded="true" />
             <element signature="e#31601#31602#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="65" selection-start="20984" selection-end="20984" vertical-scroll-proportion="0.9616788" vertical-offset="578" max-vertical-offset="1207">
+          <folding />
         </state>
       </provider>
     </entry>

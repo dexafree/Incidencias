@@ -196,7 +196,7 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
                     Log.i("XmlTips", "Fichero XML creado correctamente.");
 
                     Context context = getApplicationContext();
-                    CharSequence text = "Favorito a√±adido con la carretera " + carretera + ", provincia " + provincia;
+                    CharSequence text = "Favorito aÒadido con la carretera " + carretera + ", provincia " + provincia;
                     int duration = Toast.LENGTH_SHORT;
 
                     finish();
@@ -270,14 +270,14 @@ public class AddFavoritos extends Activity implements OnPreferenceChangeListener
 
         Log.d("preference",preference.toString() );
 
-        if(preference.toString().equalsIgnoreCase("HAZ CLICK AQU√ç PARA SELECCIONAR UNA CARRETERA")){
+        if(preference.toString().equalsIgnoreCase("HAZ CLICK AQUÕ PARA SELECCIONAR UNA CARRETERA")){
 
             TextView tv = (TextView) findViewById(R.id.selec_carr);
             tv.setText(newValue.toString());
 
         }
 
-        else if (preference.toString().equalsIgnoreCase("HAZ CLICK AQU√ç PARA SELECCIONAR UNA PROVINCIA")){
+        else if (preference.toString().equalsIgnoreCase("HAZ CLICK AQUÕ PARA SELECCIONAR UNA PROVINCIA")){
 
             TextView tv = (TextView) findViewById(R.id.selec_prov);
             tv.setText(newValue.toString());

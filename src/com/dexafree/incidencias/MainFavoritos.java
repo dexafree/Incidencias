@@ -131,6 +131,7 @@ public class MainFavoritos extends Activity {
         if (Favoritos.FavoritosList.size() > 0){
             //TAREA DE CARGA DE XML Y PARSEO
             ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "", "Cargando. Espere por favor...", true);
+            ShowProgress2.setCancelable(true);
             new loadingTask2().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
         }
     }

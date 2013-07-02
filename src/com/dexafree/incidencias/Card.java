@@ -12,6 +12,9 @@ import com.dexafree.incidencias.Utils;
 
 public abstract class Card extends AbstractCard {
 
+    static int ID = 0;
+    public int IDCard;
+
 	public interface OnCardSwiped {
 		public void onCardSwiped(Card card, View layout);
 	}
@@ -26,18 +29,24 @@ public abstract class Card extends AbstractCard {
 	
 	public Card(String title) {
 		this.title = title;
+        this.IDCard = ID;
+        ID++;
 	}
 
 
     public Card(String title, String desc1){
         this.title = title;
         this.desc1 = desc1;
+        this.IDCard = ID;
+        ID++;
     }
 
     public Card(String title, String desc1, String desc2){
         this.title = title;
         this.desc1 = desc1;
         this.desc2 = desc2;
+        this.IDCard = ID;
+        ID++;
     }
 
     public Card(String title, String desc1, String desc2, String desc3){
@@ -45,6 +54,8 @@ public abstract class Card extends AbstractCard {
         this.desc1 = desc1;
         this.desc2 = desc2;
         this.desc3 = desc3;
+        this.IDCard = ID;
+        ID++;
     }
 
     public Card(String title, String desc1, String desc2, String desc3, String desc4){
@@ -53,12 +64,16 @@ public abstract class Card extends AbstractCard {
         this.desc2 = desc2;
         this.desc3 = desc3;
         this.desc4 = desc4;
+        this.IDCard = ID;
+        ID++;
     }
 
 
     public Card(String title, int image) {
 		this.title = title;
 		this.image = image;
+        this.IDCard = ID;
+        ID++;
 	}
 
     public Card(String title, int image, String desc1, String desc2, String desc3) {
@@ -67,6 +82,8 @@ public abstract class Card extends AbstractCard {
         this.desc1 = desc1;
         this.desc2 = desc2;
         this.desc3 = desc3;
+        this.IDCard = ID;
+        ID++;
 
     }
 
@@ -75,6 +92,8 @@ public abstract class Card extends AbstractCard {
 		this.title = title;
 		this.desc1 = desc1;
 		this.image = image;
+        this.IDCard = ID;
+        ID++;
 	}
 
 
@@ -200,5 +219,9 @@ public abstract class Card extends AbstractCard {
 	protected int getFirstCardLayout() {
 		return R.layout.item_card_empty_first;
 	}
+
+    public int getIDCard(){
+        return this.IDCard;
+    }
 
 }

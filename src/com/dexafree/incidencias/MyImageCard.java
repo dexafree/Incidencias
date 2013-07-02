@@ -8,9 +8,18 @@ import android.widget.TextView;
 
 public class MyImageCard extends Card {
 
+    public double x;
+    public double y;
+
 	public MyImageCard(String title, int image, String desc1, String desc2, String desc3){
 		super(title, image, desc1, desc2, desc3);
 	}
+
+    public MyImageCard(String title, int image, String desc1, String desc2, String desc3, double x, double y){
+        super(title, image, desc1, desc2, desc3);
+        this.x = x;
+        this.y = y;
+    }
 
 	@Override
 	public View getCardContent(Context context) {

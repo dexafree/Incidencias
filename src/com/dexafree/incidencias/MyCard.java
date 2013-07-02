@@ -9,6 +9,10 @@ import com.dexafree.incidencias.Card;
 
 public class MyCard extends Card {
 
+
+    public double x;
+    public double y;
+
     public MyCard(String title){
         super(title);
     }
@@ -21,13 +25,26 @@ public class MyCard extends Card {
         super(title, desc1, desc2);
     }
 
+    public MyCard(String title, String desc1, String desc2, String desc3, double x, double y){
+        super(title, desc1, desc2, desc3);
+        this.x = x;
+        this.y = y;
+    }
+
     public MyCard(String title, String desc1, String desc2, String desc3){
         super(title, desc1, desc2, desc3);
+    }
+
+    public MyCard(String title, String desc1, String desc2, String desc3, String desc4, double x, double y){
+        super(title, desc1, desc2, desc3, desc4);
+        this.x = x;
+        this.y = y;
     }
 
     public MyCard(String title, String desc1, String desc2, String desc3, String desc4){
         super(title, desc1, desc2, desc3, desc4);
     }
+
 
     @Override
     public View getCardContent(Context context) {
@@ -39,10 +56,10 @@ public class MyCard extends Card {
         ((TextView) view.findViewById(R.id.description3)).setText(desc3);
         ((TextView) view.findViewById(R.id.description4)).setText(desc4);
 
-
-
         return view;
     }
+
+
 
 
 

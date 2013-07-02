@@ -1,5 +1,6 @@
 package com.dexafree.incidencias;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -25,7 +26,8 @@ public class MapActivity extends FragmentActivity {
     private GoogleMap mapa = null;
     private double latCentral = 40.97872614480813;
     private double lonCentral = -3.051414079964161;
-    private double zoomCentral = 5.396;
+    //private double zoomCentral = 5.396;
+    private double zoomCentral = 8.396;
     public float z = (float)zoomCentral;
 
     @Override
@@ -36,9 +38,21 @@ public class MapActivity extends FragmentActivity {
         mapa = ((SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
 
-        CameraUpdate camUpd1 = CameraUpdateFactory.newLatLngZoom( new LatLng(latCentral, lonCentral), z);
+        Intent intent = getIntent();
+        double xcoord = intent.getDoubleExtra(MainActivity.XCOORD, latCentral);
+        double ycoord = intent.getDoubleExtra(MainActivity.YCOORD, lonCentral);
+
+
+
+        CameraUpdate camUpd1 = CameraUpdateFactory.newLatLngZoom( new LatLng(xcoord, ycoord), z);
 
         mapa.moveCamera(camUpd1);
+
+
+
+        //CameraUpdate camUpd1 = CameraUpdateFactory.newLatLngZoom( new LatLng(latCentral, lonCentral), z);
+
+        //mapa.moveCamera(camUpd1);
 
         mapa.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             public void onMapClick(LatLng point) {
@@ -156,9 +170,12 @@ public class MapActivity extends FragmentActivity {
 
         for (int i = 0; i < MainActivity.IncidenciaList.size(); i++){
 
-            Log.d("", "Marcador creado en: " + MainActivity.IncidenciaList.get(i).getX() + " | " + MainActivity.IncidenciaList.get(i).getY());
 
-            mostrarMarcador(MainActivity.IncidenciaList.get(i));
+
+            if (MainActivity.IncidenciaList.get(i).getX() != 0.0){
+                Log.d("", "Marcador creado en: " + MainActivity.IncidenciaList.get(i).getX() + " | " + MainActivity.IncidenciaList.get(i).getY());
+                mostrarMarcador(MainActivity.IncidenciaList.get(i));
+            }
         }
 
     }

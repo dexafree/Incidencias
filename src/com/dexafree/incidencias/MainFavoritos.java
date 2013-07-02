@@ -226,8 +226,48 @@ public class MainFavoritos extends Activity {
     public void actualizar2() {
         //ELIMINAMOS LAS INCIDENCIAS EXISTENTES
         IncidenciaList2.clear();
-        favList.clear();
+        Favoritos.FavoritosList.clear();
         mCardView2.clearCards();
+
+
+        try
+        {
+            BufferedReader fin =
+                    new BufferedReader(
+                            new InputStreamReader(
+                                    openFileInput("Favoritos.xml")));
+
+            //ins = openFileInput("Favoritos.xml");
+
+            int lines = load2();
+            for(int i=0; i<lines; i++){
+                String texto = fin.readLine();
+                Log.d("", "XML: " + texto);
+                AndroidParseXMLActivity3 axa = new AndroidParseXMLActivity3();
+                Log.d("","Vamos a parsear");
+                axa.parseXML(texto);
+            }
+            fin.close();
+        }
+        catch (Exception ex)
+        {
+            Log.e("Ficheros", "Error al leer fichero desde memoria interna");
+            Log.e("Ficheros", "Creando uno");
+
+            try{
+                OutputStreamWriter fcrear =
+                        new OutputStreamWriter(
+                                openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
+                fcrear.close();
+                Log.e("", "Creado XML");
+            }
+            catch (Exception exc)
+            {
+                Log.e("","Ni siquiera se puede crear");
+            }
+        }
+
+
 
 
         //CARGAMOS NUEVAS INCIDENCIAS
@@ -368,6 +408,7 @@ public class MainFavoritos extends Activity {
             if (inicialFavorito <= finalFavorito){
 
                 if (inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito){
+                    Log.d("PK", "Caso 1");
                     return false;
                 }
                 else if (inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia >= inicialFavorito && finalIncidencia <= finalFavorito){
@@ -383,6 +424,7 @@ public class MainFavoritos extends Activity {
                     return true;
                 }
                 else if (inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito){
+                    Log.d("PK", "Caso 2");
                     return false;
                 }
             }
@@ -390,6 +432,7 @@ public class MainFavoritos extends Activity {
             else if (inicialFavorito >= finalFavorito){
 
                 if (inicialIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito){
+                    Log.d("PK", "Caso 3");
                     return false;
                 }
                 else if (inicialIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia <= inicialFavorito){
@@ -405,6 +448,7 @@ public class MainFavoritos extends Activity {
                     return true;
                 }
                 else if (inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito){
+                    Log.d("PK", "Caso 4");
                     return false;
                 }
             }
@@ -415,6 +459,7 @@ public class MainFavoritos extends Activity {
             if (inicialFavorito <= finalFavorito){
 
                 if(finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito){
+                    Log.d("PK", "Caso 5");
                     return false;
                 }
                 else if (finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito){
@@ -430,6 +475,7 @@ public class MainFavoritos extends Activity {
                     return true;
                 }
                 else if (finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia >= finalFavorito){
+                    Log.d("PK", "Caso 6");
                     return false;
                 }
             }
@@ -437,6 +483,7 @@ public class MainFavoritos extends Activity {
             else if (inicialFavorito >= finalFavorito){
 
                 if (finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia < finalFavorito && inicialIncidencia < inicialFavorito){
+                    Log.d("PK", "Caso 7");
                     return false;
                 }
                 else if (finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia <= inicialFavorito){
@@ -452,6 +499,7 @@ public class MainFavoritos extends Activity {
                     return true;
                 }
                 else if (finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito){
+                    Log.d("PK", "Caso 8");
                     return false;
                 }
             }
@@ -747,6 +795,7 @@ public class MainFavoritos extends Activity {
     }
 
     public boolean checkProvincia(Incidencia currentIncidencia) {
+
         for (int i = 0; i<favList.size(); i++){
 
             if ((currentIncidencia.getProvincia()).equalsIgnoreCase(favList.get(i).getProvincia())){
@@ -883,48 +932,53 @@ public class MainFavoritos extends Activity {
 
             if (localName.equalsIgnoreCase("incidencia")) {
                 // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
-                Log.d("", "****");
-                Log.d("CI-P", currentIncidencia.getProvincia().toString());
-                Log.d("CI-M", currentIncidencia.getMatricula().toString());
+
 
                 if (checkProvincia(currentIncidencia) == true) {
 
-                    if (checkTesteo() == false) {
-                        Log.i("", "Pasado el primer if");
-                        //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
+                    if (comparador(currentIncidencia.getFechahora())) {
 
-                        //if (checkFiltrado()) {
+                        for (int i=0; i<favList.size();i++){
 
-                        if (comparador(currentIncidencia.getFechahora())) {
-                            //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
-                            //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
-                            IncidenciaList2.add(currentIncidencia);
+                            if (currentIncidencia.getCarretera().equalsIgnoreCase(favList.get(i).getCarretera())){
 
-                            mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                            mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+                                    //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
+                                    //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                                    IncidenciaList2.add(currentIncidencia);
+                                    mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                                    mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+
+                            }
+                        }
+                    }
+                }
+
+                else {
+
+                    if(comparador(currentIncidencia.getFechahora())){
+
+                        for(int i=0; i<favList.size(); i++){
+
+                            if(currentIncidencia.getCarretera().equalsIgnoreCase(favList.get(i).getCarretera())){
+
+                                if(comparaPKs(favList.get(i), currentIncidencia)){
+
+                                    IncidenciaList2.add(currentIncidencia);
+                                    mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
+                                    mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
+
+
+                                }
+
+                            }
+
                         }
 
-                        //}
-
-                            /*else {
-                                Log.d("2 INFO", "Al menos no ha petado");
-                                IncidenciaList.add(currentIncidencia);
-                                mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                                mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
-                            }*/
-
-                        // }
-
-                    }
-                    else {
-                        //Log.d("3 INFO", "Al menos no ha petado");
-                        IncidenciaList2.add(currentIncidencia);
-                        mCardView2.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                        mCardView2.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
 
                     }
 
                 }
+
                 currentIncidencia = new Incidencia();
 
             }

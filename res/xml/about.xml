@@ -10,7 +10,7 @@
     <Preference android:title="Diseño del icono" android:summary="Todotuscani"/>
     <Preference android:title="Consejo y soporte técnico" android:summary="Arasthel"/>
     <PreferenceCategory android:title="Versión:">
-        <Preference android:title="App version" android:summary="2.0"/>
+        <Preference android:title="App version" android:summary="2.1"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

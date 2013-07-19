@@ -9,8 +9,9 @@
     </PreferenceCategory>
     <Preference android:title="Diseño del icono" android:summary="Todotuscani"/>
     <Preference android:title="Consejo y soporte técnico" android:summary="Arasthel"/>
+    <Preference android:title="Servidores gracias a:" android:summary="GMO"/>
     <PreferenceCategory android:title="Versión:">
-        <Preference android:title="App version" android:summary="2.2"/>
+        <Preference android:title="App version" android:summary="2.3"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

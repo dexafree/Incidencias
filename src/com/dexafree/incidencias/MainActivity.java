@@ -327,6 +327,11 @@ public class MainActivity extends Activity {
 
         protected void onPostExecute(String s) {
             //   lv1.setAdapter(new EfficientAdapter(MainActivity.this, IncidenciaList));
+
+            if(IncidenciaList.size() == 0){
+                mCardView.addCard(new MyCard("No hay incidencias a mostrar!", "Circule con cuidado","No olvide abrocharse el cinturón", "No utilice la aplicación mientras conduce", "Pare a descansar cada 2 horas de conducción"));
+            }
+
             ShowProgress.dismiss();
             mCardView.refresh();
             Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();

@@ -221,6 +221,9 @@ public class MainFavoritos extends Activity {
 
         protected void onPostExecute(String s) {
             //   lv1.setAdapter(new EfficientAdapter(MainActivity.this, IncidenciaList));
+
+
+
             ShowProgress2.dismiss();
             mCardView2.refresh();
             Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();

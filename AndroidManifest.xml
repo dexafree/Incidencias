@@ -99,6 +99,7 @@
                   android:configChanges="orientation|screenSize"
                   android:label="Mapa">
         </activity>
+        <activity android:name=".DevMenu" android:configChanges="orientation|screenSize" android:label="Dev Menu" />
 
 
         <service android:name=".UpdateService"

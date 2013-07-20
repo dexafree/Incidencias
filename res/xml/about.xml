@@ -11,7 +11,7 @@
     <Preference android:title="Consejo y soporte técnico" android:summary="Arasthel"/>
     <Preference android:title="Servidores gracias a:" android:summary="GMO"/>
     <PreferenceCategory android:title="Versión:">
-        <Preference android:title="App version" android:summary="2.3"/>
+        <Preference android:title="App version" android:summary="2.3" android:key="dev_menu"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

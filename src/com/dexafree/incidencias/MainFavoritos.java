@@ -186,8 +186,8 @@ public class MainFavoritos extends Activity {
             //the app is being launched for first time, do something
             Log.d("Comments", "First time");
 
-            mCardView2.addCard(new MyCard("No tienes ningun favorito aÃ±adido", "Entra al menÃº de Administrar y aÃ±ade las carreteras y provincias que te interesen","Luego pulsa Actualizar", "AsegÃºrate de seleccionar tambiÃ©n cada cuanto quieres que caduquen tus favoritos!"));
-            mCardView2.addCard(new MyCard("Notificaciones", "En el menÃº de ajustes de la pantalla anterior podrÃ¡s configurar las comprobaciones automÃ¡ticas del estado del trÃ¡fico de tus lugares favoritos", "Si la aplicaciÃ³n detecta que hay una incidencia en algÃºn lugar que has marcado como favorito, recibirÃ¡s una notificaciÃ³n si lo deseas"));
+            mCardView2.addCard(new MyCard("No tienes ningun favorito añadido", "Entra al menú de Administrar y añade las carreteras y provincias que te interesen","Luego pulsa Actualizar", "Asegúrate de seleccionar también cada cuanto quieres que caduquen tus favoritos!"));
+            mCardView2.addCard(new MyCard("Notificaciones", "En el menú de ajustes de la pantalla anterior podrás configurar las comprobaciones automáticas del estado del tráfico de tus lugares favoritos", "Si la aplicación detecta que hay una incidencia en algún lugar que has marcado como favorito, recibirás una notificación si lo deseas"));
             mCardView2.refresh();
 
 
@@ -606,7 +606,7 @@ public class MainFavoritos extends Activity {
         String day = new SimpleDateFormat("dd").format(cDate);
 
         //Obtener datos del argumento fechahora
-        String yearpas = fechahora.substring(0,4); //AÃ±o
+        String yearpas = fechahora.substring(0,4); //Año
         String monthpas = fechahora.substring(5,7); //Mes
         String daypas = fechahora.substring(8,10); //Dia
         String fhs = fechahora.trim(); //Variable temporal para eliminar espacios al inicio y al final
@@ -643,7 +643,7 @@ public class MainFavoritos extends Activity {
 
         //Empezamos comparacion de fecha
 
-        //Comprobamos si coincide el aÃ±o
+        //Comprobamos si coincide el año
         if (yearInt == yearpasInt){
 
             //Comprobamos si coincide el mes
@@ -843,35 +843,40 @@ public class MainFavoritos extends Activity {
         final double y = currentIncidencia.getY();
 
         MyCard card = new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia());
-        card.setOnClickListener(new OnClickListener() {
+        if(x!= 0.0){
+            card.setOnClickListener(new OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                Context context = getApplicationContext();
-                Intent intent = new Intent(context, MapFavActivity.class);
-                intent.putExtra(XCOORDFAV,x);
-                intent.putExtra(YCOORDFAV,y);
-                startActivity(intent);
+                @Override
+                public void onClick(View v) {
+                    Context context = getApplicationContext();
+                    Intent intent = new Intent(context, MapFavActivity.class);
+                    intent.putExtra(XCOORDFAV,x);
+                    intent.putExtra(YCOORDFAV,y);
+                    startActivity(intent);
 
-            }
-        });
+                }
+            });
+        }
 
         mCardView2.addCard(card);
 
 
         MyImageCard imCard = new MyImageCard((currentIncidencia.getTipo()), incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido());
-        imCard.setOnClickListener(new OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                Context context = getApplicationContext();
-                Intent intent = new Intent(context, MapFavActivity.class);
-                intent.putExtra(XCOORDFAV,x);
-                intent.putExtra(YCOORDFAV,y);
-                startActivity(intent);
+        if(x!= 0.0){
+            imCard.setOnClickListener(new OnClickListener() {
 
-            }
-        });
+                @Override
+                public void onClick(View v) {
+                    Context context = getApplicationContext();
+                    Intent intent = new Intent(context, MapFavActivity.class);
+                    intent.putExtra(XCOORDFAV,x);
+                    intent.putExtra(YCOORDFAV,y);
+                    startActivity(intent);
+
+                }
+            });
+        }
 
         mCardView2.addCardToLastStack(imCard);
 
@@ -991,7 +996,7 @@ public class MainFavoritos extends Activity {
                             if (currentIncidencia.getCarretera().equalsIgnoreCase(favList.get(i).getCarretera())){
 
                                     //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
-                                    //     Log.i("", "AÃ±adida la provincia: " + currentIncidencia.getProvincia());
+                                    //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
                                     IncidenciaList2.add(currentIncidencia);
                                 creaCard(currentIncidencia);
 

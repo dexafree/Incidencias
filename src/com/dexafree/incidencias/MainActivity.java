@@ -895,36 +895,46 @@ public class MainActivity extends Activity {
         final double x = currentIncidencia.getX();
         final double y = currentIncidencia.getY();
 
+
+
+
+
         MyCard card = new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), currentIncidencia.getX(), currentIncidencia.getY());
-        card.setOnClickListener(new OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                Context context = getApplicationContext();
-                Intent intent = new Intent(context, MapActivity.class);
-                intent.putExtra(XCOORD,x);
-                intent.putExtra(YCOORD,y);
-                startActivity(intent);
+        if(x!= 0.0){
+            card.setOnClickListener(new OnClickListener() {
 
-            }
-        });
+                @Override
+                public void onClick(View v) {
+                    Context context = getApplicationContext();
+                    Intent intent = new Intent(context, MapActivity.class);
+                    intent.putExtra(XCOORD,x);
+                    intent.putExtra(YCOORD,y);
+                    startActivity(intent);
+
+                }
+            });
+        }
 
         mCardView.addCard(card);
 
 
         MyImageCard imCard = new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido());
-        imCard.setOnClickListener(new OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                Context context = getApplicationContext();
-                Intent intent = new Intent(context, MapActivity.class);
-                intent.putExtra(XCOORD,x);
-                intent.putExtra(YCOORD,y);
-                startActivity(intent);
+        if(x!= 0.0){
+            imCard.setOnClickListener(new OnClickListener() {
 
-            }
-        });
+                @Override
+                public void onClick(View v) {
+                    Context context = getApplicationContext();
+                    Intent intent = new Intent(context, MapActivity.class);
+                    intent.putExtra(XCOORD,x);
+                    intent.putExtra(YCOORD,y);
+                    startActivity(intent);
+
+                }
+            });
+        }
 
         mCardView.addCardToLastStack(imCard);
 

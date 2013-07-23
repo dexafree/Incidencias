@@ -25,6 +25,12 @@
                 android:summary="Actualizar automáticamente al entrar a la aplicación"
                 android:title="Actual. automática" />
 
+        <SwitchPreference
+                android:key="trafico"
+                android:summary="Muestra la información del tráfico en tiempo real en la vista de mapa"
+                android:title="Tráfico en mapa"
+                android:defaultValue="false" />
+
     </PreferenceCategory>
 
 

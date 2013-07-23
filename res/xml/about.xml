@@ -2,16 +2,17 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Preference android:title="Copyright" android:summary="Dexafree"/>
     <PreferenceCategory android:title="Fuente de los datos">
         <Preference android:title="Dirección General de Tráfico" android:summary="Ministerio del Interior, Gobierno de España"/>
         <Preference android:title="Trafikoa" android:summary="Departamento de Interior, Gobierno Vasco"/>
+        <Preference android:title="Google" android:summary="Información de trafico de Google para su visualización en el mapa"/>
     </PreferenceCategory>
     <Preference android:title="Diseño del icono" android:summary="Todotuscani"/>
     <Preference android:title="Consejo y soporte técnico" android:summary="Arasthel"/>
-    <Preference android:title="Servidores gracias a:" android:summary="GMO"/>
-    <PreferenceCategory android:title="Versión:">
-        <Preference android:title="App version" android:summary="2.3" android:key="dev_menu"/>
+    <Preference android:title="Servidores" android:summary="GMO"/>
+    <PreferenceCategory android:title="Versión">
+        <Preference android:title="App version" android:summary="2.4" android:key="dev_menu"/>
+        <Preference android:title="Copyright" android:summary="Dexafree"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

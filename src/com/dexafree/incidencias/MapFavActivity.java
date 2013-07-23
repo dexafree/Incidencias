@@ -1,9 +1,11 @@
 package com.dexafree.incidencias;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -36,6 +38,17 @@ public class MapFavActivity extends FragmentActivity {
 
         mapa = ((SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
+
+        SharedPreferences pm =
+                PreferenceManager.getDefaultSharedPreferences(
+                        MapFavActivity.this);
+
+        if(pm.getBoolean("trafico", false)){
+            mapa.setTrafficEnabled(true);
+        }
+        else{
+            mapa.setTrafficEnabled(false);
+        }
 
         Intent intent = getIntent();
         double xcoord = intent.getDoubleExtra(MainFavoritos.XCOORDFAV, latCentral);

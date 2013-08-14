@@ -92,9 +92,9 @@ public class MainActivity extends Activity {
             // Log.i("", "Es true");
             ShowProgress = ProgressDialog.show(MainActivity.this, "",
                     "Cargando. Espere por favor...", true);
-            new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
+            new loadingTask().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml", "http://dexafree.quijost.com/incidencias/InciVascP.xml");
             //Log.d("ASY", "FIN DEL PRIMER XML");
-            //new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciVascP.xml");
+            //new loadingTask().execute("http://dexafree.quijost.com/incidencias/InciVascP.xml");
             //Log.d("ASY", "FIN DEL SEGUNDO XML");
         }
 
@@ -293,7 +293,7 @@ public class MainActivity extends Activity {
                         new OutputStreamWriter(
                                 openFileOutput("Probando.xml", Context.MODE_PRIVATE));
 
-                URLConnection connection = new URL("http://www.dexa-dev.es/incidencias/InciVascP.xml").openConnection();
+                URLConnection connection = new URL("http://dexafree.quijost.com/incidencias/InciVascP.xml").openConnection();
                 Scanner scan = new Scanner(connection.getInputStream());
                 while(scan.hasNext()) {
 
@@ -377,9 +377,9 @@ public class MainActivity extends Activity {
         ShowProgress = ProgressDialog.show(MainActivity.this, "",
                 "Cargando. Espere por favor...", true);
 
-        new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
+        new loadingTask().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml", "http://dexafree.quijost.com/incidencias/InciVascP.xml");
         //Log.d("ASY", "FIN DEL PRIMER XML");
-        //new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciVascP.xml");
+        //new loadingTask().execute("http://dexafree.quijost.com/incidencias/InciVascP.xml");
         //Log.d("ASY", "FIN DEL SEGUNDO XML");
 
         //REFRESCAR LA VISTA DE LAS CARDS

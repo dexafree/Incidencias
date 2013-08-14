@@ -32,4 +32,37 @@
                 android:textStyle="bold"/>
     </LinearLayout>
 
-</LinearLayout>
+    <Space
+            android:layout_width="fill_parent"
+            android:layout_height="37dp"
+            />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEST MIO"
+            android:id="@+id/TestDGT2"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_gravity="left|center_vertical"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical">
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="COMPROBAR MIO"
+                android:id="@+id/btnTestDGT2"
+                android:layout_gravity="left|center_vertical"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/DGTFH2"
+                android:textStyle="bold"/>
+    </LinearLayout>
+

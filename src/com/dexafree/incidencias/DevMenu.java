@@ -29,16 +29,21 @@ import java.io.OutputStreamWriter;
 public class DevMenu extends Activity {
 
     private Button btnDGT;
+    private Button btnDGT2;
     private TextView txtv;
+    private TextView txtv2;
     private ProgressDialog dialog;
     public String asda;
+    public String asda2;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dev_menu);
 
         btnDGT = (Button)findViewById(R.id.btnTestDGT);
+        btnDGT2 = (Button)findViewById(R.id.btnTestDGT2);
         txtv = (TextView)findViewById(R.id.DGTFH);
+        txtv2 = (TextView)findViewById(R.id.DGTFH2);
 
         dialog = new ProgressDialog(this);
         dialog.setMessage("Descargando...");
@@ -52,7 +57,17 @@ public class DevMenu extends Activity {
         btnDGT.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0){
 
-                new MiTarea().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml");
+                new MiTarea().execute("http://www.dgt.es/incidenciasXY.xml");
+
+            }
+
+
+        });
+
+        btnDGT2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0){
+
+                new MiTarea2().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml");
 
             }
 
@@ -75,7 +90,7 @@ public class DevMenu extends Activity {
             try{
 
                 DefaultHttpClient httpclient = new DefaultHttpClient();
-                HttpGet httppost = new HttpGet("http://www.dexa-dev.es/incidencias/InciDGT.xml");
+                HttpGet httppost = new HttpGet("http://www.dgt.es/incidenciasXY.xml");
 
                 HttpResponse response = httpclient.execute(httppost);
                 HttpEntity ht = response.getEntity();
@@ -116,6 +131,63 @@ public class DevMenu extends Activity {
         protected void onPostExecute(Integer bytes) {
             dialog.dismiss();
             txtv.setText(asda);
+        }
+    }
+
+
+    private class MiTarea2 extends AsyncTask<String, Float, Integer>{
+
+        protected void onPreExecute() {
+            dialog.setProgress(0);
+            dialog.setMax(100);
+            dialog.show(); //Mostramos el diálogo antes de comenzar
+        }
+
+        protected Integer doInBackground(String... urls) {
+            try{
+
+                DefaultHttpClient httpclient = new DefaultHttpClient();
+                HttpGet httppost = new HttpGet("http://dexafree.quijost.com/incidencias/InciDGT.xml");
+
+                HttpResponse response = httpclient.execute(httppost);
+                HttpEntity ht = response.getEntity();
+
+                BufferedHttpEntity buf = new BufferedHttpEntity(ht);
+
+                InputStream is = buf.getContent();
+
+
+                BufferedReader r = new BufferedReader(new InputStreamReader(is));
+
+                StringBuilder total = new StringBuilder();
+                String line;
+                /*while ((line = r.readLine()) != null) {
+                    total.append(line + "\n");
+                }*/
+
+                line = r.readLine();
+
+
+                asda2 = line.substring(72,88);
+
+
+
+            }
+            catch(IOException e){
+                Log.d("", "EXCEPCION");
+            }
+
+            return 0;
+        }
+
+        protected void onProgressUpdate (Float... valores) {
+            int p = Math.round(100*valores[0]);
+            dialog.setProgress(p);
+        }
+
+        protected void onPostExecute(Integer bytes) {
+            dialog.dismiss();
+            txtv2.setText(asda2);
         }
     }
 

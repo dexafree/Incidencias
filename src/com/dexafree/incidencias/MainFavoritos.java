@@ -136,7 +136,7 @@ public class MainFavoritos extends Activity {
             //TAREA DE CARGA DE XML Y PARSEO
             ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "", "Cargando. Espere por favor...", true);
             ShowProgress2.setCancelable(true);
-            new loadingTask2().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
+            new loadingTask2().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml", "http://dexafree.quijost.com/incidencias/InciVascP.xml");
         }
     }
 
@@ -281,7 +281,7 @@ public class MainFavoritos extends Activity {
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask2().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
+        new loadingTask2().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml", "http://dexafree.quijost.com/incidencias/InciVascP.xml");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView2.refresh();
@@ -346,7 +346,7 @@ public class MainFavoritos extends Activity {
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",
                 "Cargando. Espere por favor...", true);
-        new loadingTask2().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
+        new loadingTask2().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml", "http://dexafree.quijost.com/incidencias/InciVascP.xml");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView2.refresh();

@@ -1,9 +1,5 @@
 package com.dexafree.incidencias;
 
-/**
- * Created by Carlos on 21/05/13.
- */
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -88,14 +84,10 @@ public class MainActivity extends Activity {
                 PreferenceManager.getDefaultSharedPreferences(
                         MainActivity.this);
 
-        if ( pm.getBoolean("actuinicio", false)) {
-            // Log.i("", "Es true");
+        if ( pm.getBoolean("actuinicio", false)) {;
             ShowProgress = ProgressDialog.show(MainActivity.this, "",
                     "Cargando. Espere por favor...", true);
             new loadingTask().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml", "http://dexafree.quijost.com/incidencias/InciVascP.xml");
-            //Log.d("ASY", "FIN DEL PRIMER XML");
-            //new loadingTask().execute("http://dexafree.quijost.com/incidencias/InciVascP.xml");
-            //Log.d("ASY", "FIN DEL SEGUNDO XML");
         }
 
         firstTime();
@@ -110,35 +102,24 @@ public class MainActivity extends Activity {
                             new InputStreamReader(
                                     openFileInput("Favoritos.xml")));
 
-            //ins = openFileInput("Favoritos.xml");
-
             int lines = load();
 
             for(int i=0; i<lines; i++){
-
                 texto = fin.readLine();
-                //Log.d("", "XML: " + texto);
                 AndroidParseXMLActivity axa = new AndroidParseXMLActivity();
-                //Log.d("","Vamos a parsear");
                 axa.parseXML(texto);
             }
             fin.close();
         }
         catch (Exception ex)
         {
-            //Log.e("Ficheros", "Error al leer fichero desde memoria interna");
-            //Log.e("Ficheros", "Creando uno");
-
             try{
                 OutputStreamWriter fcrear =
                         new OutputStreamWriter(
                                 openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
                 fcrear.close();
-                //Log.e("", "Creado XML");
             }
-            catch (Exception exc)
-            {
-                //Log.e("","Ni siquiera se puede crear");
+            catch (Exception exc){
             }
         }
 
@@ -149,7 +130,6 @@ public class MainActivity extends Activity {
     //MENU ACTIONBAR
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -157,43 +137,30 @@ public class MainActivity extends Activity {
 
     public int load() throws IOException
     {
-
         StringBuilder text = new StringBuilder();
-
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("Favoritos.xml")));
             String line;
-
-
             int lineCount = 0;
+
             while ((line = br.readLine()) != null) {
                 text.append(line);
                 text.append('\n');
-
                 lineCount++;
             }
-            //Log.d("", "Lines: " + lineCount);
 
             return lineCount;
-
         }
         catch (IOException e) {
-            //Log.d("", "Ha saltado la excepcion de load");
             return 0;
         }
-
     }
-
-
-
-
 
     //GESTIONAR CLICK ACTIONBAR
     //GESTIONANDO EL CLICK DE LA ACTIONBAR
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
         switch (item.getItemId()) {
             case R.id.action_provincias:
                 startActivity(new Intent(this, Provincias.class));
@@ -203,113 +170,57 @@ public class MainActivity extends Activity {
                 return true;
             case R.id.actualizar:
                 actualizar();
-
                 return true;
             case R.id.prueba:
                 startActivity(new Intent(this, MainFavoritos.class));
-
                 return true;
             case R.id.action_acerca:
                 startActivity(new Intent(this, About.class));
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
     public void borrardatos() {
-        //final String PREFS_NAME = "MyPrefsFile";
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 
         if (settings.getBoolean("borradatos", true)) {
-            //the app is being launched for first time, do something
-            //Log.d("Comments", "First time");
-
             try{
                 OutputStreamWriter fout =
                         new OutputStreamWriter(
                                 openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
 
                 StringBuilder sb = new StringBuilder();
-
-                //Log.d("","Consigue crear el sb");
-
                 sb.append("");
-                //Log.d("", "sb antes de append: " + sb.toString());
                 //Escribimos el resultado a un fichero
                 fout.append(sb.toString());
-
                 fout.close();
             }
-            catch (Exception ex)
-            {
-                //Log.e("XmlTips", "Error al escribir fichero XML.");
+            catch (Exception ex){
             }
-
             settings.edit().putBoolean("borradatos", false).commit();
         }
-
     }
 
 
     public void firstTime() {
-        //final String PREFS_NAME = "MyPrefsFile";
-
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-
-
         if (settings.getBoolean("my_first_time", true)) {
-            //the app is being launched for first time, do something
-            //Log.d("Comments", "First time");
-
             mCardView.addCard(new MyCard("No tienes ninguna provincia seleccionada", "Entra al menú de Provincias y selecciona las que te interesen","Luego pulsa Actualizar", "En el menú de Ajustes también podrás configurar opciones tales como el filtrado por horas, configurar si quieres que al iniciar la app se actualice automáticamente, o la recepción de notificaciones", "En el apartado de Acerca de... podrás ver información adicional de la aplicación, como el desarrollador, la fuente de los datos, o la versión de la aplicación que tienes instalada"));
             mCardView.addCard(new MyCard("Para acceder a más detalles...", "Y entonces pasarás a ver todos los detalles de la incidencia", "En este apartado verás una información más detallada de la incidencia", "Contarás con información detallada, como el sentido, hacia donde circulan los coches que se encontrarán con la incidencia, la causa de la incidencia...", "Cuando pulses el botón de Actualizar, se volverán a mostrar las tarjetas que hayas descartado, por si las has descartado accidentalmente"));
             mCardView.addCardToLastStack(new MyCard( "Deslízame!", "Puedes deslizar las tarjetas hacia los laterales para descartarlas", "En la tarjeta frontal verás información resumida acerca de la incidencia", "El icono que verás te indicará, con su forma, el tipo de incidencia, y con el color, la gravedad de la situación","De menos a más, el orden es VERDE < AMARILLO < ROJO < NEGRO"));
             mCardView.addCard(new MyCard("Favoritos", "Pulsando el botón de Favoritos accederás a un nuevo menú donde podrás encontrar las incidencias en rutas que hayas marcado como favoritas", "Estos favoritos incluyen información sobre tus carreteras y tus provincias favoritas, mostrándote exactamente la información que tú quieres", "También sirven de base para, si así lo deseas, mostrarte notificaciones automáticas en caso de que la aplicación detecte que se ha producido una incidencia en tus rutas favoritas"));
             mCardView.refresh();
-
-
-
-
-
-            // first time task
-
-            // record the fact that the app has been started at least once
             settings.edit().putBoolean("my_first_time", false).commit();
         }
-
     }
-
 
     //LOADINGTASK Y PARSEO
     class loadingTask extends AsyncTask<String, Void, String> {
 
         protected String doInBackground(String... urls) {
-
-            /*try {
-
-                OutputStreamWriter fout =
-                        new OutputStreamWriter(
-                                openFileOutput("Probando.xml", Context.MODE_PRIVATE));
-
-                URLConnection connection = new URL("http://dexafree.quijost.com/incidencias/InciVascP.xml").openConnection();
-                Scanner scan = new Scanner(connection.getInputStream());
-                while(scan.hasNext()) {
-
-                    fout.append(scan.nextLine());
-                }
-                fout.close();
-            } catch (MalformedURLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } */
-
             SAXHelper sh = null;
-
             int i = urls.length;
 
             for (int j = 0;j<i; j++){
@@ -317,25 +228,20 @@ public class MainActivity extends Activity {
                     sh = new SAXHelper(urls[j]);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
-            }
+                }
                 sh.parseContent("");
-                //return "";
-
             }
             return "";
         }
 
         protected void onPostExecute(String s) {
-            //   lv1.setAdapter(new EfficientAdapter(MainActivity.this, IncidenciaList));
 
             if(IncidenciaList.size() == 0){
                 mCardView.addCard(new MyCard("No hay incidencias a mostrar!", "Circule con cuidado","No olvide abrocharse el cinturón", "No utilice la aplicación mientras conduce", "Pare a descansar cada 2 horas de conducción"));
             }
-
             ShowProgress.dismiss();
             mCardView.refresh();
             Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
-
         }
     }
 
@@ -357,8 +263,6 @@ public class MainActivity extends Activity {
                 SAXParser sp = spf.newSAXParser();
                 XMLReader xr = sp.getXMLReader();
                 xr.setContentHandler(df);
-
-
                 xr.parse(new InputSource(url2.openStream()));
             } catch (Exception e) {
                 e.printStackTrace();
@@ -378,9 +282,6 @@ public class MainActivity extends Activity {
                 "Cargando. Espere por favor...", true);
 
         new loadingTask().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml", "http://dexafree.quijost.com/incidencias/InciVascP.xml");
-        //Log.d("ASY", "FIN DEL PRIMER XML");
-        //new loadingTask().execute("http://dexafree.quijost.com/incidencias/InciVascP.xml");
-        //Log.d("ASY", "FIN DEL SEGUNDO XML");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView.refresh();
@@ -394,11 +295,9 @@ public class MainActivity extends Activity {
                         MainActivity.this);
 
         if ( pref.getBoolean("testeo", false)) {
-            // Log.i("", "Es true");
             return true;
         }
         else {
-            //Log.i("", "Es false");
             return false;
         }
 
@@ -407,12 +306,9 @@ public class MainActivity extends Activity {
 
     public boolean comparador(String fechahora){
 
-        //Log.d("","Iniciando comparador");
-
         String checker = fechahora.substring(11,12);
-        //Log.d("Checker", checker);
+
         if (checker.equals("-")){
-            //Log.d("COMPARADORFECHA", "FALSE");
             return false;
         }
 
@@ -435,49 +331,19 @@ public class MainActivity extends Activity {
         String monthpas = fechahora.substring(5,7); //Mes
         String daypas = fechahora.substring(8,10); //Dia
         String fhs = fechahora.trim(); //Variable temporal para eliminar espacios al inicio y al final
-
-
-
-
         String horapas = fhs.substring(11,13); //Hora
         String minutospas = fhs.substring(14,16); //Minutos
 
-
-
-        /*Log.d("AÑO", yearpas );
-        Log.d("MES", monthpas );
-        Log.d("DIA", daypas );
-        Log.d("FHS", fhs );
-        Log.d("HORAPAS", horapas );
-        Log.d("MINUTOSPAS", minutospas );*/
-
-
-
-        //Log.d("DATOS", "0,4: " + yearpas + " 5,7: " + monthpas + " 8,10: " + daypas + "   " + fhs + " 11,13: " + horapas + " 14,16: "  + minutospas);
-
-
         //Convertimos cada uno de los Strings a Ints
-
         int yearInt = Integer.parseInt(year);
         int monthInt = Integer.parseInt(month);
         int dayInt = Integer.parseInt(day);
-
-        //Log.d("horapas", ""+horapas);
-        //Log.d("minutospas", ""+minutospas);
-
         int horaInt = Integer.parseInt(horapas);
         int minutosInt = Integer.parseInt(minutospas);
-
-
-
         int yearpasInt = Integer.parseInt(yearpas);
         int monthpasInt = Integer.parseInt(monthpas);
         int daypasInt = Integer.parseInt(daypas);
 
-        /*Log.d("TIEMPO", hours + "  " + horaInt);
-        Log.d("TIEMPO", dayInt + "  " + daypasInt);
-
-        Log.d("","***********************");*/
         //Si la hora actual es entre las 00 y las 06, restaremos un dia y sumaremos 24 a las horas
         if (hours < 6){
             hours = hours+ 24;
@@ -489,8 +355,6 @@ public class MainActivity extends Activity {
             }
 
         }
-
-        //Si la hora de la notificación también es menor a las 6AM, restamos un dia y añadimos 24 a las horas
 
         //Empezamos comparacion de fecha
 
@@ -510,17 +374,12 @@ public class MainActivity extends Activity {
                     //En caso de que lo este
                     if (cFilt.getBoolean("filtrado_horario", false)) {
 
-                        //Log.d("Filtrado horario", "Activado");
-                        //Log.d("", "Hours:" + hours + "  horaInt: " + horaInt);
-
                         if (hours >= horaInt){
 
                             //Obtenemos la preferencia de hora_selec, que es el intervalo maximo deseado.
                             SharedPreferences sphora = PreferenceManager.getDefaultSharedPreferences(this);
                             String interv = sphora.getString("hora_selecc", "-1");
                             int intervInt = Integer.parseInt(interv);
-
-                            //Log.d("intervInt", ""+intervInt);
 
                             //Obtenemos la diferencia entre la hora atual y la de la incidencia
                             int dif = hours-horaInt;
@@ -533,7 +392,6 @@ public class MainActivity extends Activity {
                                 //con lo que comprobaremos los minutos
 
                                 if ((dif == intervInt ) && ((minutosInt - minutes) >= 0)) {
-                                    // Log.i("", "Es true");
                                     return true;
                                 }
 
@@ -576,8 +434,6 @@ public class MainActivity extends Activity {
         String month = new SimpleDateFormat("MM").format(cDate);
         String day = new SimpleDateFormat("dd").format(cDate);
 
-        //   Log.i("", "year month day: " + year + " " + month + " " + day);
-
         String yearpas = fechahora.substring(0,4);
         String monthpas = fechahora.substring(5,7);
         String daypas = fechahora.substring(8,10);
@@ -585,22 +441,14 @@ public class MainActivity extends Activity {
         int dayInt = Integer.parseInt(day);
         int daypasInt = Integer.parseInt(daypas);
 
-        //  Log.i("", "yearpas monthpas daypas: " + yearpas + " " + monthpas + " " + daypas);
-
         if (year.equals(yearpas)) {
 
-            //  Log.i("", "COINCIDE YEAR");
-
             if (month.equals(monthpas)) {
-                // Log.i("", "COINCIDE MONTH");
-                // Log.d("", "dayInt: " + dayInt + "  daypasInt: " + daypasInt);
                 if (dayInt == daypasInt) {
-                    //    Log.i("", "COINCIDE DAY");
                     return true;
                 }
 
                 else if (dayInt == (daypasInt-1)){
-                    //  Log.d("", "COINCIDE");
                     return true;
                 }
                 else {
@@ -612,7 +460,6 @@ public class MainActivity extends Activity {
             }
         }
         else {
-            //   Log.i("", "No coincide year");
             return false;
         }
 
@@ -620,8 +467,6 @@ public class MainActivity extends Activity {
     }
 
     public boolean checkHora(String hora){
-
-        //Log.i("", "Hora: " + hora);
 
         Calendar c = Calendar.getInstance();
         int minutes = c.get(Calendar.MINUTE);
@@ -631,13 +476,9 @@ public class MainActivity extends Activity {
             hours = hours+24;
         }
 
-        //Log.i("", "hora minuto: " + hours + "  " + minutes);
-
         String horatr = hora.trim();
         String hourpas = horatr.substring(11,13);
         String minutepas = horatr.substring(14,16);
-        //Log.i("", "hp: " + hourpas);
-        //Log.i("", "mp: " + minutepas);
 
         int hourInc = Integer.parseInt(hourpas);
         int minuteInc= Integer.parseInt(minutepas);
@@ -650,16 +491,11 @@ public class MainActivity extends Activity {
             SharedPreferences sphora = PreferenceManager.getDefaultSharedPreferences(this);
             String interv = sphora.getString("hora_selecc", "-1");
 
-            //Log.i("", "interv: " + interv);
-
             int intervInt = Integer.parseInt(interv);
             int dif = hours-hourInc;
-            //Log.i("", "dif: " + dif);
-
             if (dif <= intervInt ) {
 
                 if ((dif == intervInt ) && ((minutes - minuteInc) >= 0)) {
-                    // Log.i("", "Es true");
                     return true;
                 }
 
@@ -670,17 +506,11 @@ public class MainActivity extends Activity {
                 else {
                     return false;
                 }
-
             }
-
             else {
                 return false;
             }
-
-
-
         }
-
         else {
             return false;
         }
@@ -694,182 +524,112 @@ public class MainActivity extends Activity {
         return false;
     }
 
-
-
-
-
     public String getHora(String fechaHora) {
-
-        //  Log.i("", "FechaHora: " + fechaHora);
         String fhs = fechaHora.trim();
-        //Log.i("", "fhs: " + fhs);
         String hora = fhs.substring(11,13);
-        //Log.i("", "hora: " + hora);
         String minutos = fhs.substring(14,16);
-        //Log.i("", "minutos: " + minutos);
-        //Log.d("getHora","ok");
-        return hora + ":" + minutos + "  ";
 
+        return hora + ":" + minutos + "  ";
     }
 
     public int incIcono(String tipo, String nivel){
 
         if (tipo.equalsIgnoreCase("METEOROLOGICA")){
-
             if (nivel.equals("VERDE")){
-
                 return R.drawable.meteo_verde;
-
             }
 
             if (nivel.equalsIgnoreCase("ROJO")){
-
                 return R.drawable.meteo_rojo;
-
             }
 
             if (nivel.equalsIgnoreCase("AMARILLO")){
-
                 return R.drawable.meteo_amarillo;
-
             }
 
             if (nivel.equalsIgnoreCase("NEGRO")){
-
                 return R.drawable.meteo_negro;
-
             }
-
-
-
         }
 
         else if (tipo.equalsIgnoreCase("CONOS")){
-
             if (nivel.equals("VERDE")){
-
                 return R.drawable.conos_verde;
-
             }
 
             if (nivel.equalsIgnoreCase("ROJO")){
-
                 return R.drawable.conos_rojo;
-
             }
 
             if (nivel.equalsIgnoreCase("AMARILLO")){
-
                 return R.drawable.conos_amarillo;
-
             }
 
             if (nivel.equalsIgnoreCase("NEGRO")){
-
                 return R.drawable.conos_negro;
-
             }
-
-
-
         }
 
         else if (tipo.equalsIgnoreCase("RETENCION")){
 
             if (nivel.equals("VERDE")){
-
                 return R.drawable.retencion_verde;
-
             }
 
             if (nivel.equalsIgnoreCase("ROJO")){
-
                 return R.drawable.retencion_rojo;
-
             }
 
             if (nivel.equalsIgnoreCase("AMARILLO")){
-
                 return R.drawable.retencion_amarillo;
-
             }
 
             if (nivel.equalsIgnoreCase("NEGRO")){
-
                 return R.drawable.retencion_negro;
-
             }
-
-
-
         }
 
         else if (tipo.equalsIgnoreCase("CONOS")){
 
             if (nivel.equals("VERDE")){
-
                 return R.drawable.conos_verde;
-
             }
 
             if (nivel.equalsIgnoreCase("ROJO")){
-
                 return R.drawable.conos_rojo;
-
             }
 
             if (nivel.equalsIgnoreCase("AMARILLO")){
-
                 return R.drawable.conos_amarillo;
-
             }
 
             if (nivel.equalsIgnoreCase("NEGRO")){
-
                 return R.drawable.conos_negro;
-
             }
-
-
-
         }
 
         else if (tipo.equalsIgnoreCase("OBRAS")){
 
             if (nivel.equals("VERDE")){
-
                 return R.drawable.obras_verde;
-
             }
 
             if (nivel.equalsIgnoreCase("ROJO")){
-
                 return R.drawable.obras_rojo;
-
             }
 
             if (nivel.equalsIgnoreCase("AMARILLO")){
-
                 return R.drawable.obras_amarillo;
-
             }
 
             if (nivel.equalsIgnoreCase("NEGRO")){
-
                 return R.drawable.obras_negro;
-
             }
-
-
-
         }
 
         return R.drawable.conos_verde;
 
     }
-
-    //DE MOMENTO FUNCIONA EN EL PAIS VASCO, FALTA IMPLEMENTAR QUE LO HAGA
-    //EN LOS DOS XML A LA VEZ. EN EUSKADI FUNCIONA SI LO HACES CON MATRICULA
 
     public boolean checkProvincia(String provincia) {
 
@@ -877,28 +637,18 @@ public class MainActivity extends Activity {
                 PreferenceManager.getDefaultSharedPreferences(
                         MainActivity.this);
 
-           //Log.i("CHECKPROVINCIA", provincia + ": " + pref.getBoolean(provincia, false));
-
         if ( pref.getBoolean(provincia, false) == true) {
-               //Log.i(provincia, "Es true");
             return true;
         }
         else {
-            // Log.i("", "Es false");
             return false;
         }
     }
-
 
     public void creaCard(Incidencia currentIncidencia){
 
         final double x = currentIncidencia.getX();
         final double y = currentIncidencia.getY();
-
-
-
-
-
         MyCard card = new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), currentIncidencia.getX(), currentIncidencia.getY());
 
         if(x!= 0.0){
@@ -937,8 +687,6 @@ public class MainActivity extends Activity {
         }
 
         mCardView.addCardToLastStack(imCard);
-
-
     }
 
 
@@ -997,8 +745,6 @@ public class MainActivity extends Activity {
             }
             if (localName.equalsIgnoreCase("fechahora_ini")
                     && currentIncidencia.getFechahora() == null) {
-                //Log.d("FECHAHORA", chars.toString().trim());
-                //Log.d(" ", "***************");
                 currentIncidencia.setFechahora(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("nivel")
@@ -1028,7 +774,6 @@ public class MainActivity extends Activity {
             if (localName.equalsIgnoreCase("x")
                     && currentIncidencia.getX() == 0.0f) {
                 String xTemp = chars.toString().trim();
-                //Log.d("X", xTemp);
                 if (xTemp != ""){
                     double x = Double.parseDouble(xTemp);
                     currentIncidencia.setX(x);
@@ -1037,7 +782,6 @@ public class MainActivity extends Activity {
             if (localName.equalsIgnoreCase("y")
                     && currentIncidencia.getY() == 0.0f) {
                 String yTemp = chars.toString().trim();
-                //Log.d("Y", yTemp);
                 if (yTemp != ""){
                     double y = Double.parseDouble(yTemp);
                     currentIncidencia.setY(y);
@@ -1046,67 +790,36 @@ public class MainActivity extends Activity {
 
             if (localName.equalsIgnoreCase("incidencia")) {
 
-
-
-
-                // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
                 if (checkProvincia(currentIncidencia.getProvincia()) == true) {
 
                     if (checkTesteo() == false) {
-                           //Log.i("", "Pasado el primer if");
-                        //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
-
-                        //if (checkFiltrado()) {
 
                         if (comparador(currentIncidencia.getFechahora())) {
-                            //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
-                            //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+
                             IncidenciaList.add(currentIncidencia);
 
                             creaCard(currentIncidencia);
                         }
-
-                        //}
-
-                            /*else {
-                                Log.d("2 INFO", "Al menos no ha petado");
-                                IncidenciaList.add(currentIncidencia);
-                                mCardView.addCard(new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia()));
-                                mCardView.addCardToLastStack(new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido()));
-                            }*/
-
-                        // }
-
                     }
                     else {
-                        //Log.d("3 INFO", "Al menos no ha petado");
                         IncidenciaList.add(currentIncidencia);
                         creaCard(currentIncidencia);
-
                     }
-
                 }
+
                 else if (checkProvincia(currentIncidencia.getMatricula()) == true){
                     if (checkTesteo() == false) {
-                        //Log.i("", "Pasado el primer if");
-                        //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
-
-                        //if (checkFiltrado()) {
 
                         if (comparador(currentIncidencia.getFechahora())) {
-                            //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
-                            //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
                             IncidenciaList.add(currentIncidencia);
-
                             creaCard(currentIncidencia);
                         }
-
                     }
+
                     else {
                         //Log.d("3 INFO", "Al menos no ha petado");
                         IncidenciaList.add(currentIncidencia);
                         creaCard(currentIncidencia);
-
                     }
                 }
                 currentIncidencia = new Incidencia();
@@ -1123,7 +836,6 @@ public class MainActivity extends Activity {
 
 
 
-
     public class AndroidParseXMLActivity {
 
         private void parseXML(String contenido) {
@@ -1131,8 +843,6 @@ public class MainActivity extends Activity {
             String carretera;
             int pkI;
             int pkF;
-
-
 
             try {
 
@@ -1147,24 +857,18 @@ public class MainActivity extends Activity {
                 InputSource inStream = new InputSource();
                 Log.w("AndroidParseXMLActivity", "Parse1");
 
-
                 inStream.setCharacterStream(new StringReader(contenido.toString()));
                 Log.w("AndroidParseXMLActivity", "Parse2");
 
                 xr.parse(inStream);
                 Log.w("AndroidParseXMLActivity", "Parse3");
 
-
                 Log.w("AndroidParseXMLActivity", "Done");
             }
             catch (Exception e) {
                 Log.w("AndroidParseXMLActivity",e );
             }
-
-
         }
 
     }
-
-
 }

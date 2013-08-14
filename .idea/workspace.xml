@@ -16,9 +16,12 @@
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="com.dexafree.incidencias" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/DevMenu.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/DevMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/dev_menu.xml" afterPath="$PROJECT_DIR$/res/layout/dev_menu.xml" />
+    <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="2.5&#10;CAMBIO HOSTING">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext-lib/gson-2.2.4.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/gson-2.2.4.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_2_4.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incidencias.iml" afterPath="$PROJECT_DIR$/Incidencias.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
@@ -89,7 +92,7 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="34" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2125">
+            <state line="4" column="34" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2125">
               <folding />
             </state>
           </provider>
@@ -98,7 +101,7 @@
       <file leaf-file-name="about.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="68" selection-start="922" selection-end="922" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+            <state line="13" column="68" selection-start="922" selection-end="922" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="391">
               <folding />
             </state>
           </provider>
@@ -107,25 +110,17 @@
       <file leaf-file-name="About.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/About.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="13" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1173">
+            <state line="19" column="13" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1445">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="381" column="64" selection-start="13247" selection-end="13247" vertical-scroll-proportion="-88.5" vertical-offset="1875" max-vertical-offset="19975">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1951#1963#0" expanded="true" />
-                <element signature="e#11986#12002#0" expanded="true" />
-                <element signature="e#27710#28115#0" expanded="true" />
-                <element signature="e#28100#28101#0" expanded="true" />
-                <element signature="e#28504#28909#0" expanded="true" />
-                <element signature="e#28894#28895#0" expanded="true" />
-              </folding>
+            <state line="873" column="1" selection-start="30528" selection-end="30528" vertical-scroll-proportion="38.714287" vertical-offset="0" max-vertical-offset="13923">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,23 +128,16 @@
       <file leaf-file-name="MainFavoritos.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="348" column="118" selection-start="11255" selection-end="11255" vertical-scroll-proportion="-71.82692" vertical-offset="2181" max-vertical-offset="18734">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#10162#10178#0" expanded="true" />
-                <element signature="e#30559#30973#0" expanded="true" />
-                <element signature="e#30958#30959#0" expanded="true" />
-                <element signature="e#31364#31778#0" expanded="true" />
-                <element signature="e#31763#31764#0" expanded="true" />
-              </folding>
+            <state line="348" column="118" selection-start="11255" selection-end="11255" vertical-scroll-proportion="0.0" vertical-offset="2181" max-vertical-offset="18734">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DevMenu.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DevMenu.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/DevMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="0" selection-start="2356" selection-end="2356" vertical-scroll-proportion="0.6666667" vertical-offset="476" max-vertical-offset="3060">
+            <state line="89" column="11" selection-start="2571" selection-end="2571" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3060">
               <folding />
             </state>
           </provider>
@@ -207,10 +195,10 @@
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/FavoritosAdapter.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/xml/about.xml" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
         <option value="$PROJECT_DIR$/res/layout/dev_menu.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/DevMenu.java" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -250,7 +238,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -258,15 +245,9 @@
               <option name="myItemId" value="Incidencias" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -278,103 +259,16 @@
               <option name="myItemId" value="Incidencias" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Incidencias" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incidencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -389,7 +283,7 @@
     <property name="ExportedApkPath" value="C:\Users\Carlos\workspace\Incidencias\Incidencias-final-2.5.apk" />
     <property name="ExportedModule" value="Incidencias" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.WIDTH" value="353" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/android-support-v4.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -407,11 +301,11 @@
       <recent name="com.dexafree.incidencias" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Carlos\workspace\Incidencias\libs" />
       <recent name="C:\Users\Carlos\workspace\Incidencias\res\drawable-mdpi" />
       <recent name="C:\Users\Carlos\workspace\Incidencias\res\drawable-hdpi" />
       <recent name="C:\Users\Carlos\workspace\Incidencias\res\drawable-xhdpi" />
       <recent name="C:\Users\Carlos\workspace\Incidencias\res\drawable" />
-      <recent name="C:\Users\Carlos\workspace\Incidencias\res\layout" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.Incidencias">
@@ -996,7 +890,11 @@
       <created>1376483607900</created>
       <updated>1376483607900</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="2.5&#10;CAMBIO HOSTING">
+      <created>1376483934061</created>
+      <updated>1376483934061</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1029,26 +927,26 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6678024" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3219697" sideWeight="0.6712095" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6678024" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39182281" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253833" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3253833" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7052811" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6081772" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22045454" sideWeight="0.6746167" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22045454" sideWeight="0.6746167" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3321976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.6678024" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1141,9 +1039,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/TipoFavorito.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="590" selection-end="952" vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="952">
-          <folding />
-        </state>
+        <state line="23" column="0" selection-start="590" selection-end="952" vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="952" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/manage_favoritos.xml">
@@ -1168,9 +1064,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/preferences.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="25" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1462">
-          <folding />
-        </state>
+        <state line="27" column="25" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1462" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/arrays.xml">
@@ -1182,34 +1076,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MapFavActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="45" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.0" vertical-offset="107" max-vertical-offset="3162">
-          <folding />
-        </state>
+        <state line="43" column="45" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.0" vertical-offset="107" max-vertical-offset="3162" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="11" selection-start="2410" selection-end="2413" vertical-scroll-proportion="0.33271027" vertical-offset="213" max-vertical-offset="3349">
-          <folding />
-        </state>
+        <state line="94" column="11" selection-start="2410" selection-end="2413" vertical-scroll-proportion="0.33271027" vertical-offset="213" max-vertical-offset="3349" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/FavoritosAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="0" selection-start="3275" selection-end="3275" vertical-scroll-proportion="0.90909094" vertical-offset="1139" max-vertical-offset="2091">
-          <folding />
-        </state>
+        <state line="113" column="0" selection-start="3275" selection-end="3275" vertical-scroll-proportion="0.90909094" vertical-offset="1139" max-vertical-offset="2091" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MapActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="9" selection-start="1527" selection-end="1820" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="3944">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4496#4866#0" expanded="false" />
-            <element signature="e#4855#4856#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="52" column="9" selection-start="1527" selection-end="1820" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="3944" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -1233,32 +1115,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="381" column="64" selection-start="13247" selection-end="13247" vertical-scroll-proportion="-88.5" vertical-offset="1875" max-vertical-offset="19975">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1951#1963#0" expanded="true" />
-            <element signature="e#11986#12002#0" expanded="true" />
-            <element signature="e#27710#28115#0" expanded="true" />
-            <element signature="e#28100#28101#0" expanded="true" />
-            <element signature="e#28504#28909#0" expanded="true" />
-            <element signature="e#28894#28895#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="348" column="118" selection-start="11255" selection-end="11255" vertical-scroll-proportion="-71.82692" vertical-offset="2181" max-vertical-offset="18734">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#10162#10178#0" expanded="true" />
-            <element signature="e#30559#30973#0" expanded="true" />
-            <element signature="e#30958#30959#0" expanded="true" />
-            <element signature="e#31364#31778#0" expanded="true" />
-            <element signature="e#31763#31764#0" expanded="true" />
-          </folding>
+        <state line="348" column="118" selection-start="11255" selection-end="11255" vertical-scroll-proportion="0.0" vertical-offset="2181" max-vertical-offset="18734">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1274,7 +1134,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/DevMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="0" selection-start="2356" selection-end="2356" vertical-scroll-proportion="0.6666667" vertical-offset="476" max-vertical-offset="3060">
+        <state line="89" column="11" selection-start="2571" selection-end="2571" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3060">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="873" column="1" selection-start="30528" selection-end="30528" vertical-scroll-proportion="38.714287" vertical-offset="0" max-vertical-offset="13923">
           <folding />
         </state>
       </provider>
@@ -1355,7 +1222,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>google-play-services</last-edited>
+          <last-edited>nineoldandroids-2.4.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

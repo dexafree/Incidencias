@@ -66,4 +66,16 @@
                 android:textStyle="bold"/>
     </LinearLayout>
 
+    <Space
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="left|center_vertical"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FORZAR ACTU"
+            android:id="@+id/force"
+            android:layout_gravity="left|center_vertical"/>
+
 </LinearLayout>

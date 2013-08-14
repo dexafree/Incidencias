@@ -3,6 +3,8 @@ package com.dexafree.incidencias;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +32,7 @@ public class DevMenu extends Activity {
 
     private Button btnDGT;
     private Button btnDGT2;
+    private Button force;
     private TextView txtv;
     private TextView txtv2;
     private ProgressDialog dialog;
@@ -42,6 +45,7 @@ public class DevMenu extends Activity {
 
         btnDGT = (Button)findViewById(R.id.btnTestDGT);
         btnDGT2 = (Button)findViewById(R.id.btnTestDGT2);
+        force = (Button)findViewById(R.id.force);
         txtv = (TextView)findViewById(R.id.DGTFH);
         txtv2 = (TextView)findViewById(R.id.DGTFH2);
 
@@ -68,6 +72,17 @@ public class DevMenu extends Activity {
             public void onClick(View arg0){
 
                 new MiTarea2().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml");
+
+            }
+
+
+        });
+
+        force.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://dexafree.quijost.com/incidencias/actualizar.php"));
+                startActivity(browserIntent);
 
             }
 

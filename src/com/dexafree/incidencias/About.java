@@ -56,6 +56,7 @@ public class About extends PreferenceActivity {
             }
         });
 
+
     }
 
     public void iniciar(){

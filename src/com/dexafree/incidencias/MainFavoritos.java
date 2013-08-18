@@ -140,6 +140,13 @@ public class MainFavoritos extends Activity {
         }
     }
 
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+
+        Log.d("DEX", "SE HA EJECUTADO");
+    }
+
 
 
     //MENU ACTIONBAR
@@ -155,14 +162,12 @@ public class MainFavoritos extends Activity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.manage_favs:
+                new Evento("Administrar Favoritos");
                 startActivity(new Intent(this, ManageFavoritos.class));
                 return true;
             case R.id.actualizarF:
                 actualizar2();
                 return true;
-            /*case R.id.mapaFavs:
-                startActivity(new Intent(this, MapFavActivity.class));
-                return true;*/
 
             case android.R.id.home:
                 // app icon in action bar clicked; go home
@@ -202,7 +207,11 @@ public class MainFavoritos extends Activity {
 
     //CLASE LOADINGTASK
     class loadingTask2 extends AsyncTask<String, Void, String> {
+
         protected String doInBackground(String... urls) {
+
+            new Evento("Actualizado Favoritos");
+
             SAXHelper3 sh = null;
             int i = urls.length;
 
@@ -848,6 +857,7 @@ public class MainFavoritos extends Activity {
 
                 @Override
                 public void onClick(View v) {
+                    new Evento("Mapa Favoritos");
                     Context context = getApplicationContext();
                     Intent intent = new Intent(context, MapFavActivity.class);
                     intent.putExtra(XCOORDFAV,x);
@@ -868,6 +878,7 @@ public class MainFavoritos extends Activity {
 
                 @Override
                 public void onClick(View v) {
+                    new Evento("Mapa Favoritos");
                     Context context = getApplicationContext();
                     Intent intent = new Intent(context, MapFavActivity.class);
                     intent.putExtra(XCOORDFAV,x);

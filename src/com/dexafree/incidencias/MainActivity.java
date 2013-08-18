@@ -2,6 +2,7 @@ package com.dexafree.incidencias;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.gesture.GestureOverlayView;
 import android.os.Bundle;
 import android.app.Activity;
 import android.preference.ListPreference;
@@ -70,14 +71,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cards);
 
-
-
         // init CardView
         mCardView = (CardUI) findViewById(R.id.cardsview);
         mCardView.setSwipeable(true);
-
-
-
 
         //TAREA DE CARGA DE XML Y PARSEO
         SharedPreferences pm =
@@ -123,7 +119,31 @@ public class MainActivity extends Activity {
             }
         }
 
+        Evento ev = new Evento("Iniciado");
+
+        new WhatsNewScreen(this).show();
+
     }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        SharedPreferences pm =
+                PreferenceManager.getDefaultSharedPreferences(
+                        MainActivity.this);
+
+        if ( pm.getBoolean("estadisticas", true)) {;
+            DevMenu.enviar();
+        }
+
+
+
+        /*String json = Evento.generar();
+        Context context = getApplicationContext();
+        DevMenu.guardar2(context, json);*/
+
+    }
+
 
 
 
@@ -163,18 +183,23 @@ public class MainActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_provincias:
+                new Evento("Provincias");
                 startActivity(new Intent(this, Provincias.class));
                 return true;
             case R.id.action_settings:
+                new Evento("Ajustes");
                 startActivity(new Intent(this, Ajustes.class));
                 return true;
             case R.id.actualizar:
+                new Evento("Actualizar");
                 actualizar();
                 return true;
             case R.id.prueba:
+                new Evento("Favoritos");
                 startActivity(new Intent(this, MainFavoritos.class));
                 return true;
             case R.id.action_acerca:
+                new Evento("Acerca de");
                 startActivity(new Intent(this, About.class));
                 return true;
             default:
@@ -628,7 +653,6 @@ public class MainActivity extends Activity {
         }
 
         return R.drawable.conos_verde;
-
     }
 
     public boolean checkProvincia(String provincia) {
@@ -649,13 +673,15 @@ public class MainActivity extends Activity {
 
         final double x = currentIncidencia.getX();
         final double y = currentIncidencia.getY();
-        MyCard card = new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), currentIncidencia.getX(), currentIncidencia.getY());
+
 
         if(x!= 0.0){
+            MyCardMap card = new MyCardMap(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), currentIncidencia.getX(), currentIncidencia.getY());
             card.setOnClickListener(new OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
+                    new Evento("Mapa");
                     Context context = getApplicationContext();
                     Intent intent = new Intent(context, MapActivity.class);
                     intent.putExtra(XCOORD,x);
@@ -664,9 +690,19 @@ public class MainActivity extends Activity {
 
                 }
             });
+
+            mCardView.addCard(card);
         }
 
-        mCardView.addCard(card);
+        else{
+
+            MyCard card = new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), currentIncidencia.getX(), currentIncidencia.getY());
+
+            mCardView.addCard(card);
+
+        }
+
+
 
 
         MyImageCard imCard = new MyImageCard(currentIncidencia.getTipo() , incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido());
@@ -676,6 +712,7 @@ public class MainActivity extends Activity {
 
                 @Override
                 public void onClick(View v) {
+                    new Evento("Mapa");
                     Context context = getApplicationContext();
                     Intent intent = new Intent(context, MapActivity.class);
                     intent.putExtra(XCOORD,x);
@@ -718,22 +755,18 @@ public class MainActivity extends Activity {
             if (localName.equalsIgnoreCase("autonomia")
                     && currentIncidencia.getAutonomia() == null) {
                 currentIncidencia.setAutonomia(chars.toString().trim());
-
             }
 
             if (localName.equalsIgnoreCase("provincia")
                     && currentIncidencia.getProvincia() == null) {
-                //Log.d("PROVINCIA", chars.toString().trim());
                 currentIncidencia.setProvincia(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("matricula")
                     && currentIncidencia.getMatricula() == null) {
-                //Log.d("MATRICULA", chars.toString().trim());
                 currentIncidencia.setMatricula(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("carretera")
                     && currentIncidencia.getCarretera() == null) {
-                //Log.d("", chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("causa")
                     && currentIncidencia.getCausa() == null) {

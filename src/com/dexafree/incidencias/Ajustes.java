@@ -154,9 +154,10 @@ public class Ajustes extends PreferenceActivity {
                 // Read all the text returned by the server
                 BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
                 String str;
+                mensaje = "";
                 while ((str = in.readLine()) != null) {
                     // str is one line of text; readLine() strips the newline character(s)
-                    mensaje = str;
+                    mensaje = mensaje + str;
                 }
                 in.close();
             } catch (MalformedURLException e) {

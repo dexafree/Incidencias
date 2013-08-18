@@ -157,7 +157,7 @@ public class Ajustes extends PreferenceActivity {
                 mensaje = "";
                 while ((str = in.readLine()) != null) {
                     // str is one line of text; readLine() strips the newline character(s)
-                    mensaje = mensaje + str;
+                    mensaje = mensaje + "\n" + str;
                 }
                 in.close();
             } catch (MalformedURLException e) {
@@ -174,6 +174,7 @@ public class Ajustes extends PreferenceActivity {
         protected void onPostExecute(Integer bytes) {
 
             new EstadoServicio(mAct, mensaje).show();
+            new Evento("Estado servicio");
         }
     }
 

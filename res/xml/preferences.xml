@@ -79,7 +79,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="ESTADÍSTICAS ANÓNIMAS">
-        <CheckBoxPreference android:title="Estadisticas anonimas de uso" android:summary="Habilitar o deshabilitar el envío anónimo de estadísticas de uso" android:key="estadisticas" android:defaultValue="true" />
+        <CheckBoxPreference android:title="Estadisticas anonimas de uso" android:summary="Habilitar o deshabilitar el envío anónimo de estadísticas de uso" android:key="sendstats" android:defaultValue="true" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="ESTADO DEL SERVICIO" android:key="estado">

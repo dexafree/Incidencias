@@ -129,7 +129,7 @@ public class Ajustes extends PreferenceActivity {
         protected Integer doInBackground(String... params) {
             /*try{
 
-                String newUrl = "http://dexafree.quijost.com/incidencias/php/status.php";
+                String newUrl = "http://www.dexa-dev.es/incidencias/php/status.php";
 
                 DefaultHttpClient httpclient = new DefaultHttpClient();
                 HttpGet httppost = new HttpGet(newUrl);
@@ -149,7 +149,7 @@ public class Ajustes extends PreferenceActivity {
 
             try {
                 // Create a URL for the desired page
-                URL url = new URL("http://dexafree.quijost.com/incidencias/php/status.php");
+                URL url = new URL("http://www.dexa-dev.es/incidencias/php/status.php");
 
                 // Read all the text returned by the server
                 BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));

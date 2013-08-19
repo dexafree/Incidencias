@@ -53,7 +53,7 @@ public class DevMenu extends Activity {
     private ProgressDialog dialog;
     public String asda;
     public String asda2;
-    String url = "http://dexafree.quijost.com/incidencias/php/webservice4.php";
+    String url = "http://www.dexa-dev.es/incidencias/php/webservice4.php";
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,7 +93,7 @@ public class DevMenu extends Activity {
         btnDGT2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0){
 
-                new MiTarea2().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml");
+                new MiTarea2().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml");
 
             }
 
@@ -103,7 +103,7 @@ public class DevMenu extends Activity {
         force.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://dexafree.quijost.com/incidencias/actualizar.php"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.dexa-dev.es/incidencias/actualizar.php"));
                 startActivity(browserIntent);
 
             }
@@ -260,7 +260,7 @@ public class DevMenu extends Activity {
             try{
 
                 DefaultHttpClient httpclient = new DefaultHttpClient();
-                HttpGet httppost = new HttpGet("http://dexafree.quijost.com/incidencias/InciDGT.xml");
+                HttpGet httppost = new HttpGet("http://www.dexa-dev.es/incidencias/InciDGT.xml");
 
                 HttpResponse response = httpclient.execute(httppost);
                 HttpEntity ht = response.getEntity();
@@ -312,7 +312,7 @@ public class DevMenu extends Activity {
         protected Integer doInBackground(String... params) {
             try{
 
-                String newUrl = "http://dexafree.quijost.com/incidencias/php/webservice4.php" + "?data=" + URLEncoder.encode(params[0], "UTF-8");
+                String newUrl = "http://www.dexa-dev.es/incidencias/php/webservice4.php" + "?data=" + URLEncoder.encode(params[0], "UTF-8");
 
                 DefaultHttpClient httpclient = new DefaultHttpClient();
                 HttpGet httppost = new HttpGet(newUrl);
@@ -343,7 +343,7 @@ public class DevMenu extends Activity {
         protected Integer doInBackground(String... params) {
             try{
 
-                String newUrl = "http://dexafree.quijost.com/incidencias/php/status.php" + "?msg=" + URLEncoder.encode(params[0], "UTF-8");
+                String newUrl = "http://www.dexa-dev.es/incidencias/php/status.php" + "?msg=" + URLEncoder.encode(params[0], "UTF-8");
 
                 DefaultHttpClient httpclient = new DefaultHttpClient();
                 HttpGet httppost = new HttpGet(newUrl);

@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
         if ( pm.getBoolean("actuinicio", false)) {;
             ShowProgress = ProgressDialog.show(MainActivity.this, "",
                     "Cargando. Espere por favor...", true);
-            new loadingTask().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml", "http://dexafree.quijost.com/incidencias/InciVascP.xml");
+            new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
         }
 
         firstTime();
@@ -128,24 +128,22 @@ public class MainActivity extends Activity {
     @Override
     public void onDestroy(){
         super.onDestroy();
-        SharedPreferences pm =
+        Log.d("DEXA", "Esto al menos si");
+
+        SharedPreferences shapre =
                 PreferenceManager.getDefaultSharedPreferences(
                         MainActivity.this);
 
-        if ( pm.getBoolean("estadisticas", true)) {;
+        Log.d("KEY", ""+shapre.getBoolean("sendstats", false));
+
+        if ( shapre.getBoolean("sendstats", true)) {
             DevMenu.enviar();
+            Log.d("estadisticas", "enviadas");
         }
 
 
 
-        /*String json = Evento.generar();
-        Context context = getApplicationContext();
-        DevMenu.guardar2(context, json);*/
-
     }
-
-
-
 
     //MENU ACTIONBAR
     @Override
@@ -306,7 +304,7 @@ public class MainActivity extends Activity {
         ShowProgress = ProgressDialog.show(MainActivity.this, "",
                 "Cargando. Espere por favor...", true);
 
-        new loadingTask().execute("http://dexafree.quijost.com/incidencias/InciDGT.xml", "http://dexafree.quijost.com/incidencias/InciVascP.xml");
+        new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView.refresh();

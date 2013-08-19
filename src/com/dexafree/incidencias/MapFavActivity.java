@@ -106,7 +106,7 @@ public class MapFavActivity extends FragmentActivity {
             public boolean onMarkerClick(Marker marker) {
                 Toast.makeText(
                         MapFavActivity.this,
-                        "Incidencia:\n" +
+                        "Incidencia:\nHacia " +
                                 marker.getTitle(),
                         Toast.LENGTH_SHORT).show();
                 return false;
@@ -153,10 +153,7 @@ public class MapFavActivity extends FragmentActivity {
 
     private void crearMarcadores(){
 
-        Log.d("A", "HASTA AQUI SI");
-
         Log.d("Tamaño", "" + MainFavoritos.IncidenciaList2.size());
-        Log.d("B", "HASTA AQUI NO");
 
         for (int i = 0; i < MainFavoritos.IncidenciaList2.size(); i++){
 

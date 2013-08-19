@@ -125,7 +125,7 @@ public class MapActivity extends FragmentActivity {
             public boolean onMarkerClick(Marker marker) {
                 Toast.makeText(
                         MapActivity.this,
-                        "Incidencia:\n" +
+                        "Incidencia:\nHacia " +
                                 marker.getTitle(),
                         Toast.LENGTH_SHORT).show();
                 return false;
@@ -173,7 +173,7 @@ public class MapActivity extends FragmentActivity {
 
           mapa.addMarker(new MarkerOptions()
               .position(new LatLng(lat, lng))
-              .title(incidActual.getCarretera() + "\n" + incidActual.getHacia())
+              .title(incidActual.getCarretera() + "\nSENTIDO " + incidActual.getHacia())
               .snippet((incidActual.getPkInicio() + " - " + incidActual.getPkFin())));
 
     }

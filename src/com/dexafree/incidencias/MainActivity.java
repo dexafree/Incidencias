@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.preference.ListPreference;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
 
@@ -71,6 +72,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cards);
 
+
         // init CardView
         mCardView = (CardUI) findViewById(R.id.cardsview);
         mCardView.setSwipeable(true);
@@ -80,10 +82,8 @@ public class MainActivity extends Activity {
                 PreferenceManager.getDefaultSharedPreferences(
                         MainActivity.this);
 
-        if ( pm.getBoolean("actuinicio", false)) {;
-            ShowProgress = ProgressDialog.show(MainActivity.this, "",
-                    "Cargando. Espere por favor...", true);
-            new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
+        if ( pm.getBoolean("actuinicio", false)) {
+            actualizar();
         }
 
         firstTime();
@@ -119,7 +119,8 @@ public class MainActivity extends Activity {
             }
         }
 
-        Evento ev = new Evento("Iniciado");
+        new Utils(Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID));
+        new Evento("Iniciado");
 
         new WhatsNewScreen(this).show();
 
@@ -239,6 +240,158 @@ public class MainActivity extends Activity {
         }
     }
 
+
+
+    public boolean provsEsp(){
+
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if (settings.getBoolean("A CORUÑA", true)){
+            return true;
+        }
+        if (settings.getBoolean("ALBACETE", true)){
+            return true;
+        }
+        if (settings.getBoolean("ALICANTE/ALACANT", true)){
+            return true;
+        }
+        if (settings.getBoolean("ALMERIA", true)){
+            return true;
+        }
+        if (settings.getBoolean("ASTURIAS", true)){
+            return true;
+        }
+        if (settings.getBoolean("AVILA", true)){
+            return true;
+        }
+        if (settings.getBoolean("BADAJOZ", true)){
+            return true;
+        }
+        if (settings.getBoolean("BARCELONA", true)){
+            return true;
+        }
+        if (settings.getBoolean("BURGOS", true)){
+            return true;
+        }
+        if (settings.getBoolean("CACERES", true)){
+            return true;
+        }
+        if (settings.getBoolean("CADIZ", true)){
+            return true;
+        }
+        if (settings.getBoolean("CANTABRIA", true)){
+            return true;
+        }
+        if (settings.getBoolean("CASTELLON/CASTELLO", true)){
+            return true;
+        }
+        if (settings.getBoolean("CIUDAD REAL", true)){
+            return true;
+        }
+        if (settings.getBoolean("CORDOBA", true)){
+            return true;
+        }
+        if (settings.getBoolean("CUENCA", true)){
+            return true;
+        }
+        if (settings.getBoolean("GERONA", true)){
+            return true;
+        }
+        if (settings.getBoolean("GRANADA", true)){
+            return true;
+        }
+        if (settings.getBoolean("GUADALAJARA", true)){
+            return true;
+        }
+        if (settings.getBoolean("HUELVA", true)){
+            return true;
+        }
+        if (settings.getBoolean("HUESCA", true)){
+            return true;
+        }
+        if (settings.getBoolean("ILLES BALEARS", true)){
+            return true;
+        }
+        if (settings.getBoolean("JAEN", true)){
+            return true;
+        }
+        if (settings.getBoolean("LA RIOJA", true)){
+            return true;
+        }
+        if (settings.getBoolean("LAS PALMAS", true)){
+            return true;
+        }
+        if (settings.getBoolean("LEON", true)){
+            return true;
+        }
+        if (settings.getBoolean("LLEIDA", true)){
+            return true;
+        }
+        if (settings.getBoolean("LUGO", true)){
+            return true;
+        }
+        if (settings.getBoolean("MADRID", true)){
+            return true;
+        }
+        if (settings.getBoolean("MALAGA", true)){
+            return true;
+        }
+        if (settings.getBoolean("MURCIA", true)){
+            return true;
+        }
+        if (settings.getBoolean("NAVARRA", true)){
+            return true;
+        }
+        if (settings.getBoolean("OURENSE", true)){
+            return true;
+        }
+        if (settings.getBoolean("PALENCIA", true)){
+            return true;
+        }
+        if (settings.getBoolean("PONTEVEDRA", true)){
+            return true;
+        }
+        if (settings.getBoolean("SALAMANCA", true)){
+            return true;
+        }
+        if (settings.getBoolean("SANTA CRUZ DE TENERIFE", true)){
+            return true;
+        }
+        if (settings.getBoolean("SEGOVIA", true)){
+            return true;
+        }
+        if (settings.getBoolean("SEVILLA", true)){
+            return true;
+        }
+        if (settings.getBoolean("SORIA", true)){
+            return true;
+        }
+        if (settings.getBoolean("TARRAGONA", true)){
+            return true;
+        }
+        if (settings.getBoolean("TERUEL", true)){
+            return true;
+        }
+        if (settings.getBoolean("TOLEDO", true)){
+            return true;
+        }
+        if (settings.getBoolean("VALENCIA", true)){
+            return true;
+        }
+        if (settings.getBoolean("VALLADOLID", true)){
+            return true;
+        }
+        if (settings.getBoolean("ZAMORA", true)){
+            return true;
+        }
+        if (settings.getBoolean("ZARAGOZA", true)){
+            return true;
+        }
+        return false;
+    }
+
+
+
     //LOADINGTASK Y PARSEO
     class loadingTask extends AsyncTask<String, Void, String> {
 
@@ -249,6 +402,7 @@ public class MainActivity extends Activity {
             for (int j = 0;j<i; j++){
                 try {
                     sh = new SAXHelper(urls[j]);
+                    Log.d("URLS", urls[j]);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
@@ -281,12 +435,15 @@ public class MainActivity extends Activity {
         public RSSHandler parseContent(String parseContent) {
             RSSHandler df = new RSSHandler();
             try {
-
                 SAXParserFactory spf = SAXParserFactory.newInstance();
                 SAXParser sp = spf.newSAXParser();
                 XMLReader xr = sp.getXMLReader();
                 xr.setContentHandler(df);
-                xr.parse(new InputSource(url2.openStream()));
+                InputSource is = new InputSource(url2.openStream());
+                if(url2.toString().equalsIgnoreCase("http://www.dexa-dev.es/incidencias/InciVascP.xml")){
+                    is.setEncoding("ISO-8859-1");
+                }
+                xr.parse(is);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -300,11 +457,33 @@ public class MainActivity extends Activity {
         mCardView.clearCards();
 
 
-        //CARGAMOS NUEVAS INCIDENCIAS
-        ShowProgress = ProgressDialog.show(MainActivity.this, "",
-                "Cargando. Espere por favor...", true);
 
-        new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
+
+        SharedPreferences pm =
+                PreferenceManager.getDefaultSharedPreferences(
+                        MainActivity.this);
+
+        if((pm.getBoolean("VI", true) == false && pm.getBoolean("BI", true) == false && pm.getBoolean("SS", true) == false ) && provsEsp() == false){
+            MyCard aviso = new MyCard("No tienes ninguna provincia seleccionada!", "En el Menú, accede al apartado provincias y selecciona de qué provincias quieres conocer el estado del tráfico");
+            mCardView.addCard(aviso);
+        }
+        else if((pm.getBoolean("VI", true) || pm.getBoolean("BI", true) || pm.getBoolean("SS", true)) && provsEsp() ){
+            //CARGAMOS NUEVAS INCIDENCIAS
+            ShowProgress = ProgressDialog.show(MainActivity.this, "",
+                    "Cargando. Espere por favor...", true);
+            new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
+        }
+        else if((pm.getBoolean("VI", true) || pm.getBoolean("BI", true) || pm.getBoolean("SS", true) ) && provsEsp() == false){
+            //CARGAMOS NUEVAS INCIDENCIAS
+            ShowProgress = ProgressDialog.show(MainActivity.this, "",
+                    "Cargando. Espere por favor...", true);
+            new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciVascP.xml");
+        }
+        else if((pm.getBoolean("VI", true) == false && pm.getBoolean("BI", true) == false && pm.getBoolean("SS", true) == false ) && provsEsp()){
+            ShowProgress = ProgressDialog.show(MainActivity.this, "",
+                    "Cargando. Espere por favor...", true);
+            new loadingTask().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml");
+        }
 
         //REFRESCAR LA VISTA DE LAS CARDS
         mCardView.refresh();

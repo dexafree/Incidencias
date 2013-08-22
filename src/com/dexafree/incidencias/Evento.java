@@ -1,39 +1,13 @@
 package com.dexafree.incidencias;
 
-import android.content.BroadcastReceiver;
-import android.content.ComponentName;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.IntentSender;
-import android.content.ServiceConnection;
-import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.database.DatabaseErrorHandler;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.UserHandle;
-import android.util.Log;
-import android.view.Display;
-
-import java.io.*;
-
-import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import com.google.gson.Gson;
+import android.provider.Settings.Secure;
+
+
 
 public class Evento {
 
@@ -42,11 +16,13 @@ public class Evento {
     private String date;
     private String hour;
     private String mensaje;
+    private String ID;
 
     public Evento(String mensaje) {
         setHour();
         setDate();
         setMensaje(mensaje);
+        setID();
         Eventos.add(this);
     }
 
@@ -65,8 +41,17 @@ public class Evento {
         //Obtenemos la hora actual
         Calendar c = Calendar.getInstance();
         int minutes = c.get(Calendar.MINUTE);
+        String minutesString = minutes + "";
+        if (minutes <= 9){
+            minutesString = "0"+ minutes;
+        }
         int hours = c.get(Calendar.HOUR_OF_DAY);
-        String hora = hours + ":" + minutes;
+        String hoursString = hours + "";
+        if (hours <= 9){
+            hoursString = "0"+hours;
+        }
+
+        String hora = hoursString + ":" + minutesString;
         this.hour = hora;
     }
 
@@ -87,8 +72,10 @@ public class Evento {
         String json = gson.toJson(Eventos);
         //Log.d("STRING", json);
         return json;
+    }
 
-
+    public void setID(){
+        this.ID = Utils.ID;
     }
 
 

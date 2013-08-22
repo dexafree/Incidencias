@@ -57,10 +57,25 @@ public class About extends PreferenceActivity {
         });
 
 
+        Preference politica = findPreference("politica");
+        politica.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+
+                String url = "http://www.dexa-dev.es/prueba/privacy.htm";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+                return true;
+            }
+        });
+
+
     }
 
     public void iniciar(){
-        startActivity(new Intent(this, DevMenu.class));
+        startActivity(new Intent(this, Seguridad.class));
     }
 
     @Override

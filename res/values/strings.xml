@@ -7,13 +7,12 @@
     <string name="provincias">Provincias</string>
     <string name="acerca_de">Acerca de...</string>
     <string name="whatsnew">
-        - Ahora se mostrarán las novedades de una nueva versión al iniciar la aplicación.\n\n
-        - Las tarjetas con geolocalización presentarán un distintivo tono verde, para informar de que hay información geográfica disponible\n\n
-        - Envío anónimo de estadísticas de uso. Estas estadísticas no recogen ningún tipo de información personal, únicamente incluyen información como la hora más habitual de uso de la aplicación, el día, y las acciones (como por ejemplo, actualizar), que serán utilizadas para intentar mejorar los servicios de la aplicación\n\n
-        En ningún momento se recoge ningún dato personal ni identificativo del teléfono, así como ninguna información geográfica\n\n
-        Además, es activable/desactivable a elección del usuario en el apartado de Ajustes\n\n
-        Para cualquier duda, pregunta o petición respecto a las estadísticas de uso, no dudes en ponerte en contacto conmigo en dexafree90@gmail.com\n\n
-        - Posibilidad de consultar el estado del servicio en "Ajustes"
+        - Disminuido el consumo de datos a la mitad\n\n
+        - Optimizadas las peticiones al servidor\n\n
+        - En caso de no tener provincias seleccionadas, no se ejecuta la petición\n\n
+        - Mejorada la consulta del estado del servicio\n\n
+        - Añadido enlace a Politica de privacidad respecto a estadísticas anónimas\n\n
+        - Solucionado bug en la busqueda de incidencias en segundo plano
     </string>
 
 </resources>

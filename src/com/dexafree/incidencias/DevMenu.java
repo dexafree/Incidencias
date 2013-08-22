@@ -36,6 +36,8 @@ import java.io.Writer;
 import java.net.URI;
 import java.net.URLEncoder;
 
+import android.provider.Settings.Secure;
+
 /**
  * Created by Carlos on 19/07/13.
  */
@@ -53,7 +55,7 @@ public class DevMenu extends Activity {
     private ProgressDialog dialog;
     public String asda;
     public String asda2;
-    String url = "http://www.dexa-dev.es/incidencias/php/webservice4.php";
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,9 +77,8 @@ public class DevMenu extends Activity {
         dialog.setMessage("Descargando...");
         dialog.setTitle("Progreso");
         dialog.setCancelable(false);
-        //Realizamos cualquier otra operación necesaria
-        //Creamos una nueva instancia y llamamos al método ejecutar
-        //pasándole el string.
+
+        new Evento("Dev_Menu");
 
 
         btnDGT.setOnClickListener(new View.OnClickListener() {
@@ -126,13 +127,7 @@ public class DevMenu extends Activity {
         sendJson.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                String json = Evento.generar();
-
-                //getInputStreamFromUrl(url, json);
-
-                new envioJson().execute(json);
-
-
+                //Log.d("PRUEBA",ID);
 
             }
 
@@ -141,36 +136,8 @@ public class DevMenu extends Activity {
 
     }
 
-    public static InputStream getInputStreamFromUrl(String url, String params) {
-        InputStream content = null;
-        try {
-            String newUrl = url + "?data=" + URLEncoder.encode(params, "UTF-8");
-
-
-            Log.d("DEXA", ""+newUrl);
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpResponse response = httpclient.execute(new HttpGet(newUrl));
-
-            Log.d("DEXA", "Esto se ejecuta?");
-            content = response.getEntity().getContent();
-        } catch (Exception e) {
-            Log.d("[GET REQUEST]", "Network exception", e);
-        }
-        return content;
-    }
 
     public void guardar(Context context, String json){
-        try {
-            FileOutputStream fos = context.openFileOutput("registro.json", Context.MODE_PRIVATE);
-            Writer out = new OutputStreamWriter(fos);
-            out.write(json);
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void guardar2(Context context, String json){
         try {
             FileOutputStream fos = context.openFileOutput("registro.json", Context.MODE_PRIVATE);
             Writer out = new OutputStreamWriter(fos);
@@ -185,6 +152,8 @@ public class DevMenu extends Activity {
     public static void enviar(){
 
         String json = Evento.generar();
+
+        Log.d("JSON", json);
 
         new envioJson().execute(json);
 
@@ -312,7 +281,7 @@ public class DevMenu extends Activity {
         protected Integer doInBackground(String... params) {
             try{
 
-                String newUrl = "http://www.dexa-dev.es/incidencias/php/webservice4.php" + "?data=" + URLEncoder.encode(params[0], "UTF-8");
+                String newUrl = "http://www.dexa-dev.es/incidencias/php/webservice5.php" + "?data=" + URLEncoder.encode(params[0], "UTF-8");
 
                 DefaultHttpClient httpclient = new DefaultHttpClient();
                 HttpGet httppost = new HttpGet(newUrl);

@@ -23,6 +23,7 @@ import java.sql.Time;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -57,6 +58,8 @@ public class UpdateService extends Service {
     public ArrayList<Favoritos> favorList = Favoritos.FavoritosList;
 
     private boolean inciFavExist = false;
+
+
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -150,6 +153,10 @@ public class UpdateService extends Service {
         });
         updateThread.start();
         super.onStart(intent, startId);
+
+
+
+
     }
 
     public void notificar(){
@@ -207,6 +214,7 @@ public class UpdateService extends Service {
             if (inciFavExist == true){
                 notificar();
             }
+            UpdateService.this.stopSelf();
             //Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
 
         }
@@ -258,7 +266,11 @@ public class UpdateService extends Service {
                 SAXParser sp = spf.newSAXParser();
                 XMLReader xr = sp.getXMLReader();
                 xr.setContentHandler(df);
-                xr.parse(new InputSource(url2.openStream()));
+                InputSource is = new InputSource(url2.openStream());
+                if(url2.toString().equalsIgnoreCase("http://www.dexa-dev.es/incidencias/InciVascP.xml")){
+                    is.setEncoding("ISO-8859-1");
+                }
+                xr.parse(is);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -344,7 +356,7 @@ public class UpdateService extends Service {
 
             if (localName.equalsIgnoreCase("incidencia")) {
 
-               //Log.d("","Paso 1");
+               Log.d("","Paso 1");
 
                 /*Log.d("CI-FH", currentIncidencia.getFechahora().toString());
                 Log.d("CI-PR", currentIncidencia.getProvincia().toString());
@@ -352,9 +364,10 @@ public class UpdateService extends Service {
                 Log.d("CI-MA", currentIncidencia.getMatricula().toString());*/
 
 
-                if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
+                //if (comparaFecha(currentIncidencia.getFechahora().trim()) == true) {
+                if (comparador(currentIncidencia.getFechahora().trim()) == true) {
 
-                 //   Log.d("","Paso 2");
+                    Log.d("","Paso 2");
 
 
                     for (int i = 0; i < favorList.size(); i++){
@@ -366,9 +379,9 @@ public class UpdateService extends Service {
 
 
                         if(favorList.get(i).getTipo() == 1){
-                            //Log.d("","Paso 3");
+                            Log.d("","Paso 3");
                             if ((favorList.get(i).getProvincia()).equalsIgnoreCase(currentIncidencia.getProvincia())){
-                                //Log.d("","Paso 4");
+                                Log.d("","Paso 4");
                                 if ((favorList.get(i).getCarretera()).equalsIgnoreCase(currentIncidencia.getCarretera())){
 
                                     inciFavExist = true;
@@ -517,6 +530,125 @@ public class UpdateService extends Service {
             }
         }
 
+        return false;
+    }
+
+    public boolean comparador(String fechahora){
+
+        String checker = fechahora.substring(11,12);
+
+        if (checker.equals("-")){
+            return false;
+        }
+
+        //Obtenemos la fecha actual
+        Date cDate = new Date();
+        String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
+
+        //Obtenemos la hora actual
+        Calendar c = Calendar.getInstance();
+        int minutes = c.get(Calendar.MINUTE);
+        int hours = c.get(Calendar.HOUR_OF_DAY);
+
+        //CREAMOS EL STRING YEAR, MONTH... PARA SACAR SOLO LOS PRIMEROS DIGITOS PARA INICIAR LA COMPARACION
+        String year = new SimpleDateFormat("yyyy").format(cDate);
+        String month = new SimpleDateFormat("MM").format(cDate);
+        String day = new SimpleDateFormat("dd").format(cDate);
+
+        //Obtener datos del argumento fechahora
+        String yearpas = fechahora.substring(0,4); //Año
+        String monthpas = fechahora.substring(5,7); //Mes
+        String daypas = fechahora.substring(8,10); //Dia
+        String fhs = fechahora.trim(); //Variable temporal para eliminar espacios al inicio y al final
+        String horapas = fhs.substring(11,13); //Hora
+        String minutospas = fhs.substring(14,16); //Minutos
+
+        //Convertimos cada uno de los Strings a Ints
+        int yearInt = Integer.parseInt(year);
+        int monthInt = Integer.parseInt(month);
+        int dayInt = Integer.parseInt(day);
+        int horaInt = Integer.parseInt(horapas);
+        int minutosInt = Integer.parseInt(minutospas);
+        int yearpasInt = Integer.parseInt(yearpas);
+        int monthpasInt = Integer.parseInt(monthpas);
+        int daypasInt = Integer.parseInt(daypas);
+
+        //Si la hora actual es entre las 00 y las 06, restaremos un dia y sumaremos 24 a las horas
+        if (hours < 6){
+            hours = hours+ 24;
+            dayInt = dayInt -1;
+
+            if(horaInt < 6){
+                horaInt = horaInt + 24;
+                daypasInt = daypasInt -1;
+            }
+
+        }
+
+        //Empezamos comparacion de fecha
+
+        //Comprobamos si coincide el año
+        if (yearInt == yearpasInt){
+
+            //Comprobamos si coincide el mes
+            if (monthInt == monthpasInt){
+
+                //Comprobamos si coincide el dia
+                if (dayInt == daypasInt){
+
+                    //Comprobamos si el filtrado horario esta habilitado
+
+                    SharedPreferences cFilt = PreferenceManager.getDefaultSharedPreferences(this);
+
+                    //En caso de que lo este
+                    if (cFilt.getBoolean("filtrado_horario", false)) {
+
+                        if (hours >= horaInt){
+
+                            //Obtenemos la preferencia de hora_selec, que es el intervalo maximo deseado.
+                            SharedPreferences sphora = PreferenceManager.getDefaultSharedPreferences(this);
+                            String interv = sphora.getString("hora_selecc", "-1");
+                            int intervInt = Integer.parseInt(interv);
+
+                            //Obtenemos la diferencia entre la hora atual y la de la incidencia
+                            int dif = hours-horaInt;
+                            //Log.d("dif", ""+dif);
+
+                            //Comparamos la diferencia con el intervalo maximo deseado
+                            if (dif <= intervInt ) {
+
+                                //Si la diferencia coincide con el intervalo, significa que la hora es la misma
+                                //con lo que comprobaremos los minutos
+
+                                if ((dif == intervInt ) && ((minutosInt - minutes) >= 0)) {
+                                    return true;
+                                }
+
+                                //Si la diferencia no coincide, significa que han pasado menos horas que las que
+                                //marca el intervalo, con lo que los minutos son indiferentes
+                                else if (dif != intervInt ) {
+                                    return true;
+                                }
+
+                                else {
+                                    return false;
+                                }
+                            }
+                            else {
+                                return false;
+                            }
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+                    else {
+                        //Log.d("Filtrado horario", "Desactivado");
+                        return true;
+                    }
+                }
+            }
+        }
         return false;
     }
 

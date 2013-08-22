@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -51,6 +52,7 @@ public class Ajustes extends PreferenceActivity {
 
     private String mensaje;
     private Activity mAct = this;
+    ProgressDialog ShowProgress;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -112,6 +114,9 @@ public class Ajustes extends PreferenceActivity {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
+                ShowProgress = ProgressDialog.show(Ajustes.this, "",
+                        "Cargando. Espere por favor...", true);
+
                 new EstServicio().execute();
 
                 return true;
@@ -127,25 +132,6 @@ public class Ajustes extends PreferenceActivity {
         }
 
         protected Integer doInBackground(String... params) {
-            /*try{
-
-                String newUrl = "http://www.dexa-dev.es/incidencias/php/status.php";
-
-                DefaultHttpClient httpclient = new DefaultHttpClient();
-                HttpGet httppost = new HttpGet(newUrl);
-
-                HttpResponse response = httpclient.execute(httppost);
-
-                mensaje = response.toString();
-                Log.d("DEXA", mensaje);
-
-
-
-
-            }
-            catch(IOException e){
-                Log.d("", "EXCEPCION");
-            }*/
 
             try {
                 // Create a URL for the desired page
@@ -173,6 +159,7 @@ public class Ajustes extends PreferenceActivity {
 
         protected void onPostExecute(Integer bytes) {
 
+            ShowProgress.dismiss();
             new EstadoServicio(mAct, mensaje).show();
             new Evento("Estado servicio");
         }

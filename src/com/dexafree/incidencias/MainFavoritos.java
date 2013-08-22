@@ -205,6 +205,7 @@ public class MainFavoritos extends Activity {
 
     }
 
+
     //CLASE LOADINGTASK
     class loadingTask2 extends AsyncTask<String, Void, String> {
 
@@ -229,9 +230,6 @@ public class MainFavoritos extends Activity {
         }
 
         protected void onPostExecute(String s) {
-            //   lv1.setAdapter(new EfficientAdapter(MainActivity.this, IncidenciaList));
-
-
 
             ShowProgress2.dismiss();
             mCardView2.refresh();
@@ -283,9 +281,6 @@ public class MainFavoritos extends Activity {
                 Log.e("","Ni siquiera se puede crear");
             }
         }
-
-
-
 
         //CARGAMOS NUEVAS INCIDENCIAS
         ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "",

@@ -115,8 +115,9 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mandar JSON Prueba"
+            android:text="Boton comodin"
             android:id="@+id/sendJson"
-            android:layout_gravity="left|center_vertical"/>
+            android:layout_gravity="left|center_vertical"
+            android:singleLine="true"/>
 
 </LinearLayout>

@@ -10,8 +10,11 @@
     <Preference android:title="Diseño del icono" android:summary="Todotuscani"/>
     <Preference android:title="Consejo y soporte técnico" android:summary="Arasthel"/>
     <Preference android:title="Servidores" android:summary="GMO"/>
-    <PreferenceCategory android:title="Versión">
-        <Preference android:title="App version" android:summary="2.6" android:key="dev_menu"/>
+    <PreferenceCategory android:title="Política de privacidad">
+        <Preference android:title="Política de privacidad" android:summary="Haz click aquí para leer la política de privacidad" android:key="politica" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="App">
+        <Preference android:title="App version" android:summary="2.7" android:key="dev_menu"/>
         <Preference android:title="Copyright" android:summary="Dexafree"/>
     </PreferenceCategory>
 

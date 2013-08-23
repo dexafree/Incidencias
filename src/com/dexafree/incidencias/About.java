@@ -1,18 +1,37 @@
 package com.dexafree.incidencias;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.util.Log;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import java.io.IOException;
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Random;
 
 /**
  * Created by Carlos on 20/05/13.
@@ -72,6 +91,67 @@ public class About extends PreferenceActivity {
         });
 
 
+        Preference feedback = findPreference("feedback");
+        feedback.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(About.this);
+                LayoutInflater inflater = About.this.getLayoutInflater();
+                //this is what I did to added the layout to the alert dialog
+                View layout=inflater.inflate(R.layout.alert,null);
+                alert.setView(layout);
+                final EditText userName = (EditText)layout.findViewById(R.id.nameField);
+                final EditText userEmail = (EditText)layout.findViewById(R.id.emailField);
+                final EditText message = (EditText)layout.findViewById(R.id.commentField);
+
+                String nombre = userName.getText().toString();
+                String email = userEmail.getText().toString();
+                String mensaje = message.getText().toString();
+
+                alert.setTitle("Feedback");
+                //alert.setMessage("Rellena los campos:");
+                alert.setPositiveButton("Enviar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        //provide user with caution before uninstalling
+                        //also here should be added a AsyncTask that going to read the password and once its checked the password is correct the app will be removed
+
+                        String nombre = userName.getText().toString();
+                        String email = userEmail.getText().toString();
+                        String mensaje = message.getText().toString();
+
+                        new envioEmail().execute(nombre, email, mensaje);
+
+                        Context context = getApplicationContext();
+                        CharSequence text = "Sugerencia enviada\n Gracias por tu colaboración";
+                        int duration = Toast.LENGTH_SHORT;
+
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+
+                    }
+                });
+
+                alert.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                        dialog.dismiss();
+
+                    }
+                });
+
+                alert.create().show();
+
+
+
+
+                return true;
+
+            }
+        });
+
+
     }
 
     public void iniciar(){
@@ -89,6 +169,79 @@ public class About extends PreferenceActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void enviarMail(String nombre, String email, String mensaje){
+
+
+
+    }
+
+
+    public static class envioEmail extends AsyncTask<String, Float, Integer> {
+
+        protected void onPreExecute() {
+        }
+
+        protected Integer doInBackground(String... params) {
+            try{
+
+                //OBTENEMOS HORA
+                Calendar c = Calendar.getInstance();
+                int minutes = c.get(Calendar.MINUTE);
+                String minutesString = minutes + "";
+                if (minutes <= 9){
+                    minutesString = "0"+ minutes;
+                }
+                int hours = c.get(Calendar.HOUR_OF_DAY);
+                String hoursString = hours + "";
+                if (hours <= 9){
+                    hoursString = "0"+hours;
+                }
+
+                String hora = hoursString + ":" + minutesString;
+
+
+                //OBTENEMOS FECHA
+                Date cDate = new Date();
+                String aDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
+
+                //GENERAMOS ID
+                // Usually this can be a field rather than a method variable
+                Random rand = new Random();
+
+                // nextInt is normally exclusive of the top value,
+                // so add 1 to make it inclusive
+                int ID = rand.nextInt((999999 - 100000) + 1) + 100000;
+
+
+                String newUrl = "http://www.dexa-dev.es/incidencias/php/mail.php" +
+                        "?fecha=" + URLEncoder.encode(aDate, "UTF-8") +
+                        "&hora=" + URLEncoder.encode(hora, "UTF-8") +
+                        "&autor=" + URLEncoder.encode(params[0], "UTF-8") +
+                        "&emautor=" + URLEncoder.encode(params[1], "UTF-8") +
+                        "&mensaje=" + URLEncoder.encode(params[2], "UTF-8") +
+                        "&ID=" + ID ;
+
+                DefaultHttpClient httpclient = new DefaultHttpClient();
+                HttpGet httppost = new HttpGet(newUrl);
+
+                HttpResponse response = httpclient.execute(httppost);
+
+            }
+            catch(IOException e){
+                Log.d("", "EXCEPCION");
+            }
+
+            return 0;
+        }
+
+        protected void onProgressUpdate (Float... valores) {
+            int p = Math.round(100*valores[0]);
+        }
+
+        protected void onPostExecute(Integer bytes) {
         }
     }
 

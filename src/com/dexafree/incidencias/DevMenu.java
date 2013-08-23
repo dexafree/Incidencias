@@ -127,7 +127,7 @@ public class DevMenu extends Activity {
         sendJson.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                //Log.d("PRUEBA",ID);
+                //
 
             }
 
@@ -153,7 +153,7 @@ public class DevMenu extends Activity {
 
         String json = Evento.generar();
 
-        Log.d("JSON", json);
+        //Log.d("JSON", json);
 
         new envioJson().execute(json);
 

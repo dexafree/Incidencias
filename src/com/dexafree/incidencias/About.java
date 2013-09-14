@@ -33,9 +33,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
-/**
- * Created by Carlos on 20/05/13.
- */
+
 public class About extends PreferenceActivity {
 
     private int DEVTOUCH = 0;
@@ -106,30 +104,36 @@ public class About extends PreferenceActivity {
                 final EditText userEmail = (EditText)layout.findViewById(R.id.emailField);
                 final EditText message = (EditText)layout.findViewById(R.id.commentField);
 
-                String nombre = userName.getText().toString();
-                String email = userEmail.getText().toString();
-                String mensaje = message.getText().toString();
-
                 alert.setTitle("Feedback");
-                //alert.setMessage("Rellena los campos:");
                 alert.setPositiveButton("Enviar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        //provide user with caution before uninstalling
-                        //also here should be added a AsyncTask that going to read the password and once its checked the password is correct the app will be removed
 
                         String nombre = userName.getText().toString();
                         String email = userEmail.getText().toString();
                         String mensaje = message.getText().toString();
 
-                        new envioEmail().execute(nombre, email, mensaje);
+                        Log.d("Nombre", nombre);
+                        Log.d("email", email);
+                        Log.d("mensaje", mensaje);
+                        Log.d("mensaje l", mensaje.length()+"");
 
-                        Context context = getApplicationContext();
-                        CharSequence text = "Sugerencia enviada\n Gracias por tu colaboraciÃ³n";
-                        int duration = Toast.LENGTH_SHORT;
+                        if(nombre.length() != 0 && mensaje.length() != 0){
+                            new envioEmail().execute(nombre, email, mensaje);
+                            Context context = getApplicationContext();
+                            CharSequence text = "Sugerencia enviada\nGracias por tu colaboración";
+                            int duration = Toast.LENGTH_SHORT;
 
-                        Toast toast = Toast.makeText(context, text, duration);
-                        toast.show();
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
+                        }
+                        else{
+                            Context context = getApplicationContext();
+                            CharSequence text = "Por favor, rellena los campos antes de darle a Enviar";
+                            int duration = Toast.LENGTH_SHORT;
 
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
+                        }
                     }
                 });
 

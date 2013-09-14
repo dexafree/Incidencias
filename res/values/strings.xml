@@ -7,12 +7,9 @@
     <string name="provincias">Provincias</string>
     <string name="acerca_de">Acerca de...</string>
     <string name="whatsnew">
-        - Disminuido el consumo de datos a la mitad\n\n
-        - Optimizadas las peticiones al servidor\n\n
-        - En caso de no tener provincias seleccionadas, no se ejecuta la petición\n\n
-        - Mejorada la consulta del estado del servicio\n\n
-        - Añadido enlace a Politica de privacidad respecto a estadísticas anónimas\n\n
-        - Solucionado bug en la busqueda de incidencias en segundo plano
+        - Implementada la posibilidad de feedback\n\n
+        - Arreglados fallos varios provocados por un organismo cesor de los datos\n\n
+        - Arreglado fallo si se seleccionaba la provincia de Girona (hay que seleccionarla de nuevo)
     </string>
 
 </resources>

@@ -981,10 +981,37 @@ public class MainActivity extends Activity {
                     && currentIncidencia.getHacia() == null) {
                 currentIncidencia.setHacia(chars.toString().trim());
             }
+
+            if (localName.equalsIgnoreCase("ref_incidencia")
+                    && currentIncidencia.getRefIncidencia() == null) {
+                currentIncidencia.setRefIncidencia(chars.toString().trim());
+
+                if(currentIncidencia.getRefIncidencia().equalsIgnoreCase("GI309140042")){
+                    String debug = "";
+
+                    debug += "Tipo: " + currentIncidencia.getTipo() + "\n";
+                    debug += "Autonomia: " + currentIncidencia.getAutonomia() + "\n";
+                    debug += "Matricula: " + currentIncidencia.getMatricula() + "\n";
+                    debug += "Provincia: " + currentIncidencia.getProvincia() + "\n";
+                    debug += "Causa: " + currentIncidencia.getCausa() + "\n";
+                    debug += "Poblacion: " + currentIncidencia.getPoblacion() + "\n";
+                    debug += "Fechahora: " + currentIncidencia.getFechahora() + "\n";
+                    debug += "Nivel: " + currentIncidencia.getNivel() + "\n";
+                    debug += "Carretera: " + currentIncidencia.getCarretera() + "\n";
+                    debug += "PkInicio: " + currentIncidencia.getPkInicio() + "\n";
+                    debug += "PkFin: " + currentIncidencia.getPkFin() + "\n";
+                    debug += "Sentido: " + currentIncidencia.getSentido() + "\n";
+                    debug += "Hacia: " + currentIncidencia.getHacia();
+
+                    Log.d("DEBUG", debug);
+                }
+            }
+
             if (localName.equalsIgnoreCase("x")
                     && currentIncidencia.getX() == 0.0f) {
+
                 String xTemp = chars.toString().trim();
-                if (xTemp != ""){
+                if (xTemp != null && !(xTemp.equalsIgnoreCase("null")) && !(xTemp.equalsIgnoreCase(""))){
                     double x = Double.parseDouble(xTemp);
                     currentIncidencia.setX(x);
                 }
@@ -992,7 +1019,7 @@ public class MainActivity extends Activity {
             if (localName.equalsIgnoreCase("y")
                     && currentIncidencia.getY() == 0.0f) {
                 String yTemp = chars.toString().trim();
-                if (yTemp != ""){
+                if (yTemp != null && !(yTemp.equalsIgnoreCase("null")) && !(yTemp.equalsIgnoreCase(""))){
                     double y = Double.parseDouble(yTemp);
                     currentIncidencia.setY(y);
                 }

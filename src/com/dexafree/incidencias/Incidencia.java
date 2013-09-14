@@ -19,6 +19,7 @@ public class Incidencia {
     private String pkFin;
     private String sentido;
     private String hacia;
+    private String refIncidencia;
     private double x;
     private double y;
 
@@ -124,6 +125,13 @@ public class Incidencia {
     }
     public void setSentido(String sentido) {
         this.sentido = sentido;
+    }
+
+    public String getRefIncidencia() {
+        return refIncidencia;
+    }
+    public void setRefIncidencia(String refIncidencia) {
+        this.refIncidencia = refIncidencia;
     }
 
     public String getHacia() {

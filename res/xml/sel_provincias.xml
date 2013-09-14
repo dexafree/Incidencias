@@ -107,7 +107,7 @@
 
 
     <CheckBoxPreference
-            android:key="GERONA"
+            android:key="GIRONA"
             android:title="Gerona"
             android:defaultValue="false" />
 

@@ -846,8 +846,8 @@ public class MainFavoritos extends Activity {
         final double x = currentIncidencia.getX();
         final double y = currentIncidencia.getY();
 
-        MyCard card = new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia());
         if(x!= 0.0){
+            MyCardMap card = new MyCardMap(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), currentIncidencia.getX(), currentIncidencia.getY());
             card.setOnClickListener(new OnClickListener() {
 
                 @Override
@@ -861,9 +861,19 @@ public class MainFavoritos extends Activity {
 
                 }
             });
+
+            mCardView2.addCard(card);
         }
 
-        mCardView2.addCard(card);
+        else{
+
+            MyCard card = new MyCard(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), currentIncidencia.getX(), currentIncidencia.getY());
+
+            mCardView2.addCard(card);
+
+        }
+
+
 
 
         MyImageCard imCard = new MyImageCard((currentIncidencia.getTipo()), incIcono(currentIncidencia.getTipo(), currentIncidencia.getNivel()), "KM INI: " + currentIncidencia.getPkInicio(),"KM FIN: " +  currentIncidencia.getPkFin(),"SENTIDO: " +  currentIncidencia.getSentido());
@@ -972,9 +982,9 @@ public class MainFavoritos extends Activity {
             }
             if (localName.equalsIgnoreCase("x")
                     && currentIncidencia.getX() == 0.0f) {
+
                 String xTemp = chars.toString().trim();
-                //Log.d("X", xTemp);
-                if (xTemp != ""){
+                if (xTemp != null && !(xTemp.equalsIgnoreCase("null")) && !(xTemp.equalsIgnoreCase(""))){
                     double x = Double.parseDouble(xTemp);
                     currentIncidencia.setX(x);
                 }
@@ -982,8 +992,7 @@ public class MainFavoritos extends Activity {
             if (localName.equalsIgnoreCase("y")
                     && currentIncidencia.getY() == 0.0f) {
                 String yTemp = chars.toString().trim();
-                //Log.d("Y", yTemp);
-                if (yTemp != ""){
+                if (yTemp != null && !(yTemp.equalsIgnoreCase("null")) && !(yTemp.equalsIgnoreCase(""))){
                     double y = Double.parseDouble(yTemp);
                     currentIncidencia.setY(y);
                 }

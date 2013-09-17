@@ -7,6 +7,9 @@
     <string name="provincias">Provincias</string>
     <string name="acerca_de">Acerca de...</string>
     <string name="whatsnew">
+        2.9\n
+        - Corregido bug en favoritos\n\n
+        2.8\n
         - Implementada la posibilidad de feedback\n\n
         - Arreglados fallos varios provocados por un organismo cesor de los datos\n\n
         - Arreglado fallo si se seleccionaba la provincia de Girona (hay que seleccionarla de nuevo)

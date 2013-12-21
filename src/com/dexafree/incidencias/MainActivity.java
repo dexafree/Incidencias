@@ -9,8 +9,9 @@ import android.preference.ListPreference;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.Menu;
+//import android.view.Menu;
 
+import com.crashlytics.android.Crashlytics;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -27,8 +28,13 @@ import javax.xml.parsers.SAXParserFactory;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 
-import android.view.MenuItem;
+//import android.view.MenuItem;
 import android.widget.Toast;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -49,14 +55,17 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
+//import android.view.Menu;
 import android.view.View;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import android.view.View.OnClickListener;
 import com.dexafree.incidencias.CardStack;
 import com.dexafree.incidencias.CardUI;
 import com.dexafree.incidencias.MyImageCard;
 
-public class MainActivity extends Activity {
+
+public class MainActivity extends SherlockActivity {
 
     public final static String XCOORD = "com.dexafree.incidencias.XCOORD";
     public final static String YCOORD = "com.dexafree.incidencias.YCOORD";
@@ -70,6 +79,8 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        Crashlytics.start(this);
+
         setContentView(R.layout.activity_main_cards);
 
 
@@ -149,7 +160,7 @@ public class MainActivity extends Activity {
     //MENU ACTIONBAR
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getSupportMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -231,10 +242,10 @@ public class MainActivity extends Activity {
     public void firstTime() {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
         if (settings.getBoolean("my_first_time", true)) {
-            mCardView.addCard(new MyCard("No tienes ninguna provincia seleccionada", "Entra al menú de Provincias y selecciona las que te interesen","Luego pulsa Actualizar", "En el menú de Ajustes también podrás configurar opciones tales como el filtrado por horas, configurar si quieres que al iniciar la app se actualice automáticamente, o la recepción de notificaciones", "En el apartado de Acerca de... podrás ver información adicional de la aplicación, como el desarrollador, la fuente de los datos, o la versión de la aplicación que tienes instalada"));
-            mCardView.addCard(new MyCard("Para acceder a más detalles...", "Y entonces pasarás a ver todos los detalles de la incidencia", "En este apartado verás una información más detallada de la incidencia", "Contarás con información detallada, como el sentido, hacia donde circulan los coches que se encontrarán con la incidencia, la causa de la incidencia...", "Cuando pulses el botón de Actualizar, se volverán a mostrar las tarjetas que hayas descartado, por si las has descartado accidentalmente"));
-            mCardView.addCardToLastStack(new MyCard( "Deslízame!", "Puedes deslizar las tarjetas hacia los laterales para descartarlas", "En la tarjeta frontal verás información resumida acerca de la incidencia", "El icono que verás te indicará, con su forma, el tipo de incidencia, y con el color, la gravedad de la situación","De menos a más, el orden es VERDE < AMARILLO < ROJO < NEGRO"));
-            mCardView.addCard(new MyCard("Favoritos", "Pulsando el botón de Favoritos accederás a un nuevo menú donde podrás encontrar las incidencias en rutas que hayas marcado como favoritas", "Estos favoritos incluyen información sobre tus carreteras y tus provincias favoritas, mostrándote exactamente la información que tú quieres", "También sirven de base para, si así lo deseas, mostrarte notificaciones automáticas en caso de que la aplicación detecte que se ha producido una incidencia en tus rutas favoritas"));
+            mCardView.addCard(new MyCard("No tienes ninguna provincia seleccionada", "Entra al menÃº de Provincias y selecciona las que te interesen","Luego pulsa Actualizar", "En el menÃº de Ajustes tambiÃ©n podrÃ¡s configurar opciones tales como el filtrado por horas, configurar si quieres que al iniciar la app se actualice automÃ¡ticamente, o la recepciÃ³n de notificaciones", "En el apartado de Acerca de... podrÃ¡s ver informaciÃ³n adicional de la aplicaciÃ³n, como el desarrollador, la fuente de los datos, o la versiÃ³n de la aplicaciÃ³n que tienes instalada"));
+            mCardView.addCard(new MyCard("Para acceder a mÃ¡s detalles...", "Y entonces pasarÃ¡s a ver todos los detalles de la incidencia", "En este apartado verÃ¡s una informaciÃ³n mÃ¡s detallada de la incidencia", "ContarÃ¡s con informaciÃ³n detallada, como el sentido, hacia donde circulan los coches que se encontrarÃ¡n con la incidencia, la causa de la incidencia...", "Cuando pulses el botÃ³n de Actualizar, se volverÃ¡n a mostrar las tarjetas que hayas descartado, por si las has descartado accidentalmente"));
+            mCardView.addCardToLastStack(new MyCard( "DeslÃ­zame!", "Puedes deslizar las tarjetas hacia los laterales para descartarlas", "En la tarjeta frontal verÃ¡s informaciÃ³n resumida acerca de la incidencia", "El icono que verÃ¡s te indicarÃ¡, con su forma, el tipo de incidencia, y con el color, la gravedad de la situaciÃ³n","De menos a mÃ¡s, el orden es VERDE < AMARILLO < ROJO < NEGRO"));
+            mCardView.addCard(new MyCard("Favoritos", "Pulsando el botÃ³n de Favoritos accederÃ¡s a un nuevo menÃº donde podrÃ¡s encontrar las incidencias en rutas que hayas marcado como favoritas", "Estos favoritos incluyen informaciÃ³n sobre tus carreteras y tus provincias favoritas, mostrÃ¡ndote exactamente la informaciÃ³n que tÃº quieres", "TambiÃ©n sirven de base para, si asÃ­ lo deseas, mostrarte notificaciones automÃ¡ticas en caso de que la aplicaciÃ³n detecte que se ha producido una incidencia en tus rutas favoritas"));
             mCardView.refresh();
             settings.edit().putBoolean("my_first_time", false).commit();
         }
@@ -246,7 +257,7 @@ public class MainActivity extends Activity {
 
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 
-        if (settings.getBoolean("A CORUÑA", true)){
+        if (settings.getBoolean("A CORUï¿½A", true)){
             return true;
         }
         if (settings.getBoolean("ALBACETE", true)){
@@ -414,7 +425,7 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String s) {
 
             if(IncidenciaList.size() == 0){
-                mCardView.addCard(new MyCard("No hay incidencias a mostrar!", "Circule con cuidado","No olvide abrocharse el cinturón", "No utilice la aplicación mientras conduce", "Pare a descansar cada 2 horas de conducción"));
+                mCardView.addCard(new MyCard("No hay incidencias a mostrar!", "Circule con cuidado","No olvide abrocharse el cinturÃ³n", "No utilice la aplicaciÃ³n mientras conduce", "Pare a descansar cada 2 horas de conducciÃ³n"));
             }
             ShowProgress.dismiss();
             mCardView.refresh();
@@ -464,7 +475,7 @@ public class MainActivity extends Activity {
                         MainActivity.this);
 
         if((pm.getBoolean("VI", true) == false && pm.getBoolean("BI", true) == false && pm.getBoolean("SS", true) == false ) && provsEsp() == false){
-            MyCard aviso = new MyCard("No tienes ninguna provincia seleccionada!", "En el Menú, accede al apartado provincias y selecciona de qué provincias quieres conocer el estado del tráfico");
+            MyCard aviso = new MyCard("No tienes ninguna provincia seleccionada!", "En el Menï¿½, accede al apartado provincias y selecciona de quï¿½ provincias quieres conocer el estado del trï¿½fico");
             mCardView.addCard(aviso);
         }
         else if((pm.getBoolean("VI", true) || pm.getBoolean("BI", true) || pm.getBoolean("SS", true)) && provsEsp() ){
@@ -529,7 +540,7 @@ public class MainActivity extends Activity {
         String day = new SimpleDateFormat("dd").format(cDate);
 
         //Obtener datos del argumento fechahora
-        String yearpas = fechahora.substring(0,4); //Año
+        String yearpas = fechahora.substring(0,4); //Aï¿½o
         String monthpas = fechahora.substring(5,7); //Mes
         String daypas = fechahora.substring(8,10); //Dia
         String fhs = fechahora.trim(); //Variable temporal para eliminar espacios al inicio y al final
@@ -560,7 +571,7 @@ public class MainActivity extends Activity {
 
         //Empezamos comparacion de fecha
 
-        //Comprobamos si coincide el año
+        //Comprobamos si coincide el aï¿½o
         if (yearInt == yearpasInt){
 
             //Comprobamos si coincide el mes
@@ -852,18 +863,25 @@ public class MainActivity extends Activity {
         final double y = currentIncidencia.getY();
 
 
+
         if(x!= 0.0){
             MyCardMap card = new MyCardMap(getHora(currentIncidencia.getFechahora()) + currentIncidencia.getCarretera() + "  -  " + currentIncidencia.getPoblacion(), "CAUSA: " + currentIncidencia.getCausa(), "KM INICIAL: " + currentIncidencia.getPkInicio() + "        KM FINAL: " + currentIncidencia.getPkFin(), "SENTIDO: " + currentIncidencia.getSentido(), "HACIA: " + currentIncidencia.getHacia(), currentIncidencia.getX(), currentIncidencia.getY());
             card.setOnClickListener(new OnClickListener() {
 
+
+
                 @Override
                 public void onClick(View v) {
-                    new Evento("Mapa");
-                    Context context = getApplicationContext();
-                    Intent intent = new Intent(context, MapActivity.class);
-                    intent.putExtra(XCOORD,x);
-                    intent.putExtra(YCOORD,y);
-                    startActivity(intent);
+                    if(GooglePlayServicesUtil.isGooglePlayServicesAvailable(MainActivity.this) == ConnectionResult.SUCCESS){
+                        new Evento("Mapa");
+                        Context context = getApplicationContext();
+                        Intent intent = new Intent(context, MapActivity.class);
+                        intent.putExtra(XCOORD,x);
+                        intent.putExtra(YCOORD,y);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(MainActivity.this, "AsegÃºrese de que su dispositivo tiene instalado y actualizado el servicio Google Play Services", Toast.LENGTH_SHORT).show();
+                    }
 
                 }
             });
@@ -889,12 +907,16 @@ public class MainActivity extends Activity {
 
                 @Override
                 public void onClick(View v) {
-                    new Evento("Mapa");
-                    Context context = getApplicationContext();
-                    Intent intent = new Intent(context, MapActivity.class);
-                    intent.putExtra(XCOORD,x);
-                    intent.putExtra(YCOORD,y);
-                    startActivity(intent);
+                    if(GooglePlayServicesUtil.isGooglePlayServicesAvailable(MainActivity.this) == ConnectionResult.SUCCESS){
+                        new Evento("Mapa");
+                        Context context = getApplicationContext();
+                        Intent intent = new Intent(context, MapActivity.class);
+                        intent.putExtra(XCOORD,x);
+                        intent.putExtra(YCOORD,y);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(MainActivity.this, "AsegÃºrese de que su dispositivo tiene instalado y actualizado el servicio Google Play Services", Toast.LENGTH_SHORT).show();
+                    }
 
                 }
             });

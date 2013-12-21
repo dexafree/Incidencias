@@ -1,6 +1,6 @@
 package com.dexafree.incidencias;
 
-import android.app.ActionBar;
+//import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,7 +9,7 @@ import android.app.Activity;
 import android.preference.ListPreference;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.Menu;
+//import android.view.Menu;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -26,8 +26,14 @@ import java.util.HashMap;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import android.view.MenuItem;
+//import android.view.MenuItem;
 import android.widget.Toast;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -48,7 +54,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
+//import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.dexafree.incidencias.CardStack;
@@ -58,7 +64,7 @@ import com.dexafree.incidencias.MyImageCard;
 /**
  * Created by Carlos on 25/05/13.
  */
-public class MainFavoritos extends Activity {
+public class MainFavoritos extends SherlockActivity {
 
 
     public final static String XCOORDFAV = "com.dexafree.incidencias.XCOORDFAV";
@@ -77,7 +83,7 @@ public class MainFavoritos extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cards);
 
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
 
@@ -153,7 +159,7 @@ public class MainFavoritos extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.favs, menu);
+        getSupportMenuInflater().inflate(R.menu.favs, menu);
         return true;
     }
 
@@ -191,8 +197,8 @@ public class MainFavoritos extends Activity {
             //the app is being launched for first time, do something
             Log.d("Comments", "First time");
 
-            mCardView2.addCard(new MyCard("No tienes ningun favorito añadido", "Entra al menú de Administrar y añade las carreteras y provincias que te interesen","Luego pulsa Actualizar", "Asegúrate de seleccionar también cada cuanto quieres que caduquen tus favoritos!"));
-            mCardView2.addCard(new MyCard("Notificaciones", "En el menú de ajustes de la pantalla anterior podrás configurar las comprobaciones automáticas del estado del tráfico de tus lugares favoritos", "Si la aplicación detecta que hay una incidencia en algún lugar que has marcado como favorito, recibirás una notificación si lo deseas"));
+            mCardView2.addCard(new MyCard("No tienes ningun favorito aÃ±adido", "Entra al menÃº de Administrar y aÃ±ade las carreteras y provincias que te interesen","Luego pulsa Actualizar", "AsegÃºrate de seleccionar tambiÃ©n cada cuanto quieres que caduquen tus favoritos!"));
+            mCardView2.addCard(new MyCard("Notificaciones", "En el menÃº de ajustes de la pantalla anterior podrÃ¡s configurar las comprobaciones automÃ¡ticas del estado del trÃ¡fico de tus lugares favoritos", "Si la aplicaciÃ³n detecta que hay una incidencia en algÃºn lugar que has marcado como favorito, recibirÃ¡s una notificaciÃ³n si lo deseas"));
             mCardView2.refresh();
 
 
@@ -230,7 +236,9 @@ public class MainFavoritos extends Activity {
         }
 
         protected void onPostExecute(String s) {
-
+            if(IncidenciaList2.size() == 0){
+                mCardView2.addCard(new MyCard("No hay incidencias a mostrar!", "Circule con cuidado","No olvide abrocharse el cinturÃ³n", "No utilice la aplicaciÃ³n mientras conduce", "Pare a descansar cada 2 horas de conducciÃ³n"));
+            }
             ShowProgress2.dismiss();
             mCardView2.refresh();
             Toast.makeText(getApplicationContext(), "Actualizado", Toast.LENGTH_LONG).show();
@@ -610,7 +618,7 @@ public class MainFavoritos extends Activity {
         String day = new SimpleDateFormat("dd").format(cDate);
 
         //Obtener datos del argumento fechahora
-        String yearpas = fechahora.substring(0,4); //Año
+        String yearpas = fechahora.substring(0,4); //Aï¿½o
         String monthpas = fechahora.substring(5,7); //Mes
         String daypas = fechahora.substring(8,10); //Dia
         String fhs = fechahora.trim(); //Variable temporal para eliminar espacios al inicio y al final
@@ -647,7 +655,7 @@ public class MainFavoritos extends Activity {
 
         //Empezamos comparacion de fecha
 
-        //Comprobamos si coincide el año
+        //Comprobamos si coincide el aï¿½o
         if (yearInt == yearpasInt){
 
             //Comprobamos si coincide el mes
@@ -852,12 +860,16 @@ public class MainFavoritos extends Activity {
 
                 @Override
                 public void onClick(View v) {
-                    new Evento("Mapa Favoritos");
-                    Context context = getApplicationContext();
-                    Intent intent = new Intent(context, MapFavActivity.class);
-                    intent.putExtra(XCOORDFAV,x);
-                    intent.putExtra(YCOORDFAV,y);
-                    startActivity(intent);
+                    if((GooglePlayServicesUtil.isGooglePlayServicesAvailable(MainFavoritos.this)) == ConnectionResult.SUCCESS){
+                        new Evento("Mapa Favoritos");
+                        Context context = getApplicationContext();
+                        Intent intent = new Intent(context, MapFavActivity.class);
+                        intent.putExtra(XCOORDFAV,x);
+                        intent.putExtra(YCOORDFAV,y);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(MainFavoritos.this, "AsegÃºrese de que su dispositivo tiene instalado y actualizado el servicio Google Play Services", Toast.LENGTH_SHORT).show();
+                    }
 
                 }
             });
@@ -883,12 +895,16 @@ public class MainFavoritos extends Activity {
 
                 @Override
                 public void onClick(View v) {
-                    new Evento("Mapa Favoritos");
-                    Context context = getApplicationContext();
-                    Intent intent = new Intent(context, MapFavActivity.class);
-                    intent.putExtra(XCOORDFAV,x);
-                    intent.putExtra(YCOORDFAV,y);
-                    startActivity(intent);
+                    if((GooglePlayServicesUtil.isGooglePlayServicesAvailable(MainFavoritos.this)) == ConnectionResult.SUCCESS){
+                        new Evento("Mapa Favoritos");
+                        Context context = getApplicationContext();
+                        Intent intent = new Intent(context, MapFavActivity.class);
+                        intent.putExtra(XCOORDFAV,x);
+                        intent.putExtra(YCOORDFAV,y);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(MainFavoritos.this, "AsegÃºrese de que su dispositivo tiene instalado y actualizado el servicio Google Play Services", Toast.LENGTH_SHORT).show();
+                    }
 
                 }
             });
@@ -1011,7 +1027,7 @@ public class MainFavoritos extends Activity {
                             if (currentIncidencia.getCarretera().equalsIgnoreCase(favList.get(i).getCarretera())){
 
                                     //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
-                                    //     Log.i("", "Añadida la provincia: " + currentIncidencia.getProvincia());
+                                    //     Log.i("", "Aï¿½adida la provincia: " + currentIncidencia.getProvincia());
                                     IncidenciaList2.add(currentIncidencia);
                                 creaCard(currentIncidencia);
 

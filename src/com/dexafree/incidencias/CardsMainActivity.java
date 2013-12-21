@@ -4,16 +4,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
+//import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
 import com.dexafree.incidencias.CardStack;
 import com.dexafree.incidencias.CardUI;
 
 /**
  * Created by Carlos on 20/05/13.
  */
-public class CardsMainActivity extends Activity {
+public class CardsMainActivity extends SherlockActivity {
 
     private CardUI mCardView;
 
@@ -79,7 +81,7 @@ public class CardsMainActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getSupportMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 }

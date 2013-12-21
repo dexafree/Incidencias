@@ -1,6 +1,6 @@
 package com.dexafree.incidencias;
 
-import android.app.ActionBar;
+//import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +12,12 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.util.Xml;
-import android.view.MenuItem;
+//import android.view.MenuItem;
 import android.widget.*;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.MenuItem;
 import org.xmlpull.v1.XmlSerializer;
 
 import java.io.*;
@@ -53,7 +57,7 @@ import com.dexafree.incidencias.Favoritos;
 
 
 
-public class AddFavoritos2 extends Activity implements OnPreferenceChangeListener{
+public class AddFavoritos2 extends SherlockFragmentActivity implements OnPreferenceChangeListener{
 
 
     public String carretera;
@@ -79,7 +83,7 @@ public class AddFavoritos2 extends Activity implements OnPreferenceChangeListene
 
         setContentView(R.layout.crea_favoritos2);
 
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         final SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
@@ -196,7 +200,7 @@ public class AddFavoritos2 extends Activity implements OnPreferenceChangeListene
                     Log.i("XmlTips", "Fichero XML creado correctamente.");
 
                     Context context = getApplicationContext();
-                    CharSequence text = "Favorito aÒadido con la carretera " + carretera + ", km inicial " + pkInicial + ", km final " + pkFinal;
+                    CharSequence text = "Favorito a√±adido con la carretera " + carretera + ", km inicial " + pkInicial + ", km final " + pkFinal;
                     int duration = Toast.LENGTH_SHORT;
 
                     finish();
@@ -273,7 +277,7 @@ public class AddFavoritos2 extends Activity implements OnPreferenceChangeListene
 
         Log.d("preference",preference.toString() );
 
-        if(preference.toString().equalsIgnoreCase("HAZ CLICK AQUÕ PARA SELECCIONAR UNA CARRETERA")){
+        if(preference.toString().equalsIgnoreCase("HAZ CLICK AQU√ç PARA SELECCIONAR UNA CARRETERA")){
 
             TextView tv = (TextView) findViewById(R.id.selec_carr);
             tv.setText(newValue.toString());

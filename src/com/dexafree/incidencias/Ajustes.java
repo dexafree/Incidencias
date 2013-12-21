@@ -1,6 +1,6 @@
 package com.dexafree.incidencias;
 
-import android.app.ActionBar;
+//import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -14,10 +14,13 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.preference.SwitchPreference;
+import android.preference.CheckBoxPreference;
 import android.util.Log;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockPreferenceActivity;
+import com.actionbarsherlock.view.MenuItem;
 import com.dexafree.incidencias.R;
-import android.view.MenuItem;
+//import android.view.MenuItem;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -28,7 +31,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.preference.SwitchPreference;
+import android.preference.CheckBoxPreference;
 import android.util.Log;
 import android.preference.Preference.OnPreferenceChangeListener;
 
@@ -48,7 +51,7 @@ import java.util.Calendar;
 /**
  * Created by Carlos on 19/05/13.
  */
-public class Ajustes extends PreferenceActivity {
+public class Ajustes extends SherlockPreferenceActivity {
 
     private String mensaje;
     private Activity mAct = this;
@@ -59,7 +62,7 @@ public class Ajustes extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
 
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         updateTimePickerTime();
         updateIntervalPreference();
@@ -83,7 +86,7 @@ public class Ajustes extends PreferenceActivity {
 
         updateTimePickerTime();
         updateIntervalPreference();
-        SwitchPreference autoUpdate = (SwitchPreference) findPreference("autorefresh");
+        CheckBoxPreference autoUpdate = (CheckBoxPreference) findPreference("autorefresh");
         autoUpdate.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
 
             @Override

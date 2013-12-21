@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.SherlockActivity;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -41,7 +42,7 @@ import android.provider.Settings.Secure;
 /**
  * Created by Carlos on 19/07/13.
  */
-public class DevMenu extends Activity {
+public class DevMenu extends SherlockActivity {
 
     private Button btnDGT;
     private Button btnDGT2;

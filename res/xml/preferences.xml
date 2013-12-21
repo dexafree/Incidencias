@@ -20,12 +20,12 @@
                 android:entryValues="@array/Horas_val"
                 />
 
-        <SwitchPreference
+        <CheckBoxPreference
                 android:key="actuinicio"
                 android:summary="Actualizar automáticamente al entrar a la aplicación"
                 android:title="Actual. automática" />
 
-        <SwitchPreference
+        <CheckBoxPreference
                 android:key="trafico"
                 android:summary="Muestra la información del tráfico en tiempo real en la vista de mapa"
                 android:title="Tráfico en mapa"
@@ -38,7 +38,7 @@
             android:title="Tutorial"
             android:key="modo_testeo">
 
-        <SwitchPreference
+        <CheckBoxPreference
                 android:key="my_first_time"
                 android:summary="En el próximo inicio de la aplicación se volverá a mostrar el tutorial inicial"
                 android:title="Repetir tutorial" />
@@ -49,7 +49,7 @@
             android:title="Auto actualizar"
             android:key="auto_actu">
 
-        <SwitchPreference
+        <CheckBoxPreference
                 android:key="autorefresh"
                 android:summary="Obtiene los datos en segundo plano y muestra una notificación si hay incidencias entre los favoritos"
                 android:title="Auto-actualizar" />

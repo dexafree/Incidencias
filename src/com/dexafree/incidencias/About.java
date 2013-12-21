@@ -6,13 +6,13 @@ import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.ActionBar;
+//import android.app.ActionBar;
 import android.content.Intent;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
+//import android.view.MenuItem;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
@@ -22,6 +22,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockPreferenceActivity;
+import com.actionbarsherlock.view.MenuItem;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -34,7 +37,7 @@ import java.util.Date;
 import java.util.Random;
 
 
-public class About extends PreferenceActivity {
+public class About extends SherlockPreferenceActivity {
 
     private int DEVTOUCH = 0;
 
@@ -43,7 +46,7 @@ public class About extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.about);
 
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
 
@@ -120,7 +123,7 @@ public class About extends PreferenceActivity {
                         if(nombre.length() != 0 && mensaje.length() != 0){
                             new envioEmail().execute(nombre, email, mensaje);
                             Context context = getApplicationContext();
-                            CharSequence text = "Sugerencia enviada\nGracias por tu colaboración";
+                            CharSequence text = "Sugerencia enviada\nGracias por tu colaboracion";
                             int duration = Toast.LENGTH_SHORT;
 
                             Toast toast = Toast.makeText(context, text, duration);

@@ -5,7 +5,7 @@
           android:versionName="2.9" >
 
     <uses-sdk
-            android:minSdkVersion="15"
+            android:minSdkVersion="8"
             android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -27,13 +27,20 @@
             android:allowBackup="true"
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/Sherlock.__Theme.DarkActionBar" >
+            <!--android:theme="@style/Sherlock.__Theme.DarkActionBar" >-->
 
-        <!-- <meta-data android:name="com.google.android.maps.v2.API_KEY"
-                   android:value="AIzaSyA9BTbdnFNhJsnmt_xMb85yAd30DdKvBTs"/> --> <!-- DEBUG -->
 
          <meta-data android:name="com.google.android.maps.v2.API_KEY"
-                   android:value="AIzaSyDu4RXTsMnzQWj6o1S2z6gPe59fU6RizMw"/>  <!-- RELEASE! -->
+                   android:value="AIzaSyA9BTbdnFNhJsnmt_xMb85yAd30DdKvBTs"/> <!-- DEBUG -->
+
+        <meta-data
+                android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="ad4ee4f5e9786e34806ad80b17313354dcb92332"/>
+
+         <!--<meta-data android:name="com.google.android.maps.v2.API_KEY"
+                   android:value="AIzaSyDu4RXTsMnzQWj6o1S2z6gPe59fU6RizMw"/> --> <!-- RELEASE! -->
 
         <activity
                 android:name="com.dexafree.incidencias.MainActivity"

@@ -32,10 +32,7 @@
                 android:textStyle="bold"/>
     </LinearLayout>
 
-    <Space
-            android:layout_width="fill_parent"
-            android:layout_height="37dp"
-            />
+
 
     <TextView
             android:layout_width="wrap_content"
@@ -44,7 +41,8 @@
             android:id="@+id/TestDGT2"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:layout_gravity="left|center_vertical"/>
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginTop="37dp"/>
 
     <LinearLayout
             android:orientation="horizontal"
@@ -66,26 +64,20 @@
                 android:textStyle="bold"/>
     </LinearLayout>
 
-    <Space
-            android:layout_width="fill_parent"
-            android:layout_height="30dp"
-            android:layout_gravity="left|center_vertical"/>
 
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="FORZAR ACTU"
             android:id="@+id/force"
-            android:layout_gravity="left|center_vertical"/>
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginTop="30dp"/>
 
-    <Space
-            android:layout_width="fill_parent"
-            android:layout_height="50px"
-            android:layout_gravity="left|center_vertical"/>
 
     <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="56dp">
+            android:layout_height="56dp"
+            android:layout_marginTop="50dp">
 
         <EditText
                 android:layout_width="215dp"
@@ -106,11 +98,6 @@
             android:id="@+id/sendAlert"
             android:layout_gravity="left|center_vertical"/>
 
-    <Space
-            android:layout_width="wrap_content"
-            android:layout_height="50px"
-            android:layout_gravity="left|center_vertical"
-            android:id="@+id/space"/>
 
     <Button
             android:layout_width="wrap_content"
@@ -118,6 +105,7 @@
             android:text="Boton comodin"
             android:id="@+id/sendJson"
             android:layout_gravity="left|center_vertical"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:layout_marginTop="50dp"/>
 
 </LinearLayout>

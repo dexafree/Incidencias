@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              style="@android:style/TextAppearance.Holo">
+              style="@style/TextAppearance.Sherlock">
 
     <TextView
             android:layout_width="wrap_content"
@@ -12,9 +12,9 @@
             android:text="TU NOMBRE:"
             android:id="@+id/textView"
             android:layout_gravity="left|center_vertical"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="@color/abs__primary_text_holo_dark"
             android:textStyle="bold"
-            style="@android:style/TextAppearance.Holo"/>
+            style="@style/TextAppearance.Sherlock"/>
 
     <EditText
             android:layout_width="wrap_content"
@@ -22,22 +22,18 @@
             android:ems="10"
             android:id="@+id/nameField"
             android:layout_gravity="left|center_vertical"
-            android:inputType="textCapWords|textPersonName"/>
+            android:inputType="textCapWords|textPersonName"
+            android:paddingBottom="34dp"/>
 
-    <Space
-            android:layout_width="fill_parent"
-            android:layout_height="33dp"
-            android:layout_gravity="left|center_vertical"
-            android:layout_marginBottom="1dp"/>
 
     <TextView
-            style="@android:style/TextAppearance.Holo"
+            style="@style/TextAppearance.Sherlock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TU E-MAIL:"
             android:id="@+id/textView2"
             android:layout_gravity="left|center_vertical"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="#ff33b5e5"
             android:textStyle="bold"/>
 
     <EditText
@@ -48,22 +44,18 @@
             android:id="@+id/emailField"
             android:layout_gravity="left|center_vertical"/>
 
-    <Space
-            android:layout_width="fill_parent"
-            android:layout_height="33dp"
-            android:layout_gravity="left|center_vertical"
-            android:layout_marginBottom="1dp"
-            android:id="@+id/space"/>
 
     <TextView
-            style="@android:style/TextAppearance.Holo"
+            style="@style/TextAppearance.Sherlock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TU COMENTARIO:"
             android:id="@+id/textView3"
             android:layout_gravity="left|center_vertical"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="bold"/>
+            android:textColor="#ff33b5e5"
+            android:textStyle="bold"
+            android:layout_marginTop="33dp"
+            android:layout_marginBottom="1dp"/>
 
     <EditText
             android:layout_width="fill_parent"

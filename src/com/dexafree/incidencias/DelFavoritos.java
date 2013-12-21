@@ -1,6 +1,6 @@
 package com.dexafree.incidencias;
 
-import android.app.ActionBar;
+//import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -26,8 +26,11 @@ import java.util.*;
 import javax.xml.parsers.*;
 
 import android.view.MenuInflater;
-import android.view.MenuItem;
+//import android.view.MenuItem;
 import android.widget.*;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -48,7 +51,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import android.view.MenuItem;
+//import android.view.MenuItem;
 import android.widget.Toast;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
@@ -76,7 +79,7 @@ import android.widget.TextView;
 /**
  * Created by Carlos on 26/05/13.
  */
-public class DelFavoritos extends Activity {
+public class DelFavoritos extends SherlockActivity {
 
     public static ListView df_lv;
     String texto;
@@ -94,7 +97,7 @@ public class DelFavoritos extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_favoritos);
 
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         df_lv = (ListView) findViewById(R.id.mf_lv);

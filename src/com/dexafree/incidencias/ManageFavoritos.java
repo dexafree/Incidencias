@@ -1,6 +1,6 @@
 package com.dexafree.incidencias;
 
-import android.app.ActionBar;
+//import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -16,7 +16,7 @@ import android.sax.StartElementListener;
 import android.util.Log;
 import android.util.Xml;
 import android.view.ContextMenu;
-import android.view.Menu;
+//import android.view.Menu;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -26,8 +26,12 @@ import java.util.*;
 import javax.xml.parsers.*;
 
 import android.view.MenuInflater;
-import android.view.MenuItem;
+//import android.view.MenuItem;
 import android.widget.*;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -48,7 +52,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import android.view.MenuItem;
+//import android.view.MenuItem;
 import android.widget.Toast;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
@@ -76,7 +80,7 @@ import android.widget.TextView;
 /**
  * Created by Carlos on 26/05/13.
  */
-public class ManageFavoritos extends Activity {
+public class ManageFavoritos extends SherlockActivity {
 
     public static ListView mf_lv;
     String texto;
@@ -94,7 +98,7 @@ public class ManageFavoritos extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_favoritos);
 
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         mf_lv = (ListView) findViewById(R.id.mf_lv);
@@ -152,7 +156,7 @@ public class ManageFavoritos extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.favs_menu, menu);
+        getSupportMenuInflater().inflate(R.menu.favs_menu, menu);
 
         return true;
     }

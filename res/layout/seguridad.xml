@@ -9,12 +9,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="En progreso..."
-            android:id="@+id/textView"/>
-
-    <Space
-            android:layout_width="fill_parent"
-            android:layout_height="340dp"
+            android:id="@+id/textView"
             />
+
 
     <Button
             android:layout_width="46dp"
@@ -22,5 +19,6 @@
             android:text="New Button"
             android:id="@+id/secButton"
             android:layout_gravity="left|center_vertical"
-            android:alpha="0"/>
+            android:alpha="0" android:layout_marginTop="340dp" android:background="#ffffff"
+            android:textColor="#ffffff"/>
 </LinearLayout>

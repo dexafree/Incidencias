@@ -8,11 +8,12 @@ import android.widget.Button;
 import android.content.Intent;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.actionbarsherlock.app.SherlockActivity;
 
 /**
  * Created by Carlos on 21/08/13.
  */
-public class Seguridad extends Activity {
+public class Seguridad extends SherlockActivity {
 
     private Button secButton;
 

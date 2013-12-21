@@ -1,20 +1,23 @@
 package com.dexafree.incidencias;
 
-import android.app.ActionBar;
+//import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-import android.view.MenuItem;
+//import android.view.MenuItem;
 import android.widget.AbsListView;
 import android.widget.ListAdapter;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockPreferenceActivity;
+import com.actionbarsherlock.view.MenuItem;
 import com.dexafree.incidencias.R;
 
 /**
  * Created by Carlos on 19/05/13.
  */
-public class Provincias extends PreferenceActivity {
+public class Provincias extends SherlockPreferenceActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,7 +25,7 @@ public class Provincias extends PreferenceActivity {
         addPreferencesFromResource(R.xml.sel_provincias);
 
 
-       ActionBar actionBar = getActionBar();
+       ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 

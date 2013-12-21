@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,7 +24,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-public class MapActivity extends FragmentActivity {
+public class MapActivity extends SherlockFragmentActivity {
 
     private GoogleMap mapa = null;
     private double latCentral = 40.97872614480813;
@@ -37,8 +38,12 @@ public class MapActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_map);
 
+        /*SupportMapFragment fragment = SupportMapFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().add((R.id.map), fragment).commit();*/
+
         mapa = ((SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
+        //mapa = fragment.getMap();
 
 
         SharedPreferences pm =
@@ -62,65 +67,6 @@ public class MapActivity extends FragmentActivity {
 
         mapa.moveCamera(camUpd1);
 
-
-
-        //CameraUpdate camUpd1 = CameraUpdateFactory.newLatLngZoom( new LatLng(latCentral, lonCentral), z);
-
-        //mapa.moveCamera(camUpd1);
-
-       /* mapa.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-            public void onMapClick(LatLng point) {
-                Projection proj = mapa.getProjection();
-                Point coord = proj.toScreenLocation(point);
-
-                Toast.makeText(
-                        MapActivity.this,
-                        "Click\n" +
-                                "Lat: " + point.latitude + "\n" +
-                                "Lng: " + point.longitude + "\n" +
-                                "X: " + coord.x + " - Y: " + coord.y,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-       /* mapa.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
-            public void onMapLongClick(LatLng point) {
-                Projection proj = mapa.getProjection();
-                Point coord = proj.toScreenLocation(point);
-
-                Toast.makeText(
-                        MapActivity.this,
-                        "Click Largo\n" +
-                                "Lat: " + point.latitude + "\n" +
-                                "Lng: " + point.longitude + "\n" +
-                                "X: " + coord.x + " - Y: " + coord.y,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });*/
-
-
-
-       /* mapa.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
-            public void onCameraChange(CameraPosition position) {
-
-                latCentral = position.target.latitude;
-                lonCentral = position.target.longitude;
-                zoomCentral = position.zoom;
-
-
-                /*Toast.makeText(
-                        MapActivity.this,
-                        "Cambio Camara\n" +
-                                "Lat: " + position.target.latitude + "\n" +
-                                "Lng: " + position.target.longitude + "\n" +
-                                "Zoom: " + position.zoom + "\n" +
-                                "Orientacion: " + position.bearing + "\n" +
-                                "Angulo: " + position.tilt,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });*/
-
-
         mapa.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             public boolean onMarkerClick(Marker marker) {
                 Toast.makeText(
@@ -137,37 +83,10 @@ public class MapActivity extends FragmentActivity {
 
     }
 
-  /*  @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.map, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch(item.getItemId())
-        {
-            case R.id.menu_marcadores:
-                //mostrarMarcador(40.5, -3.5);
-                //crearMarcadores();
-                Log.d("Latitud","" + latCentral);
-                Log.d("Longitud","" + lonCentral);
-                Log.d("Zoom","" + zoomCentral);
-                break;
-            case R.id.menu_lineas:
-                mostrarLineas();
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
 
     private void mostrarMarcador(Incidencia incidActual)
     //private void mostrarMarcador(double lat, double lng)
     {
-
-
           double lat = incidActual.getX();
           double lng = incidActual.getY();
 

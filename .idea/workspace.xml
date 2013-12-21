@@ -27,44 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/PreferenceFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/PreferenceManagerCompat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/SherlockMapFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/preference_list_fragment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/About.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/About.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/Ajustes.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/Ajustes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/dexafree/incidencias/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/dexafree/incidencias/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/CardsMainActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/CardsMainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/DelFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/DelFavoritos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/DevMenu.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/DevMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incidencias.iml" afterPath="$PROJECT_DIR$/Incidencias.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/ManageFavoritos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MapActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MapActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MapFavActivity.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MapFavActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MyPreferenceFragment.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MyPreferenceFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MyPreferenceFragment2.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MyPreferenceFragment2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/Provincias.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/Provincias.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/Seguridad.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/Seguridad.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/TipoFavorito.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/TipoFavorito.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/about.xml" afterPath="$PROJECT_DIR$/res/xml/about.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/alert.xml" afterPath="$PROJECT_DIR$/res/layout/alert.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/card_ex.xml" afterPath="$PROJECT_DIR$/res/layout/card_ex.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/card_ex_map.xml" afterPath="$PROJECT_DIR$/res/layout/card_ex_map.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/dev_menu.xml" afterPath="$PROJECT_DIR$/res/layout/dev_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/dimens.xml" afterPath="$PROJECT_DIR$/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/preferences.xml" afterPath="$PROJECT_DIR$/res/xml/preferences.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/seguridad.xml" afterPath="$PROJECT_DIR$/res/layout/seguridad.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
@@ -159,21 +122,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1572" selection-end="1572" vertical-scroll-proportion="0.0" vertical-offset="458" max-vertical-offset="2484">
+            <state line="4" column="34" selection-start="222" selection-end="222" vertical-scroll-proportion="0.12286689" vertical-offset="0" max-vertical-offset="2484">
               <folding>
-                <element signature="e#1529#1568#0" expanded="true" />
+                <element signature="e#1536#1575#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="56" selection-start="461" selection-end="461" vertical-scroll-proportion="0.33788395" vertical-offset="0" max-vertical-offset="586">
+            <state line="9" column="0" selection-start="337" selection-end="533" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486">
               <folding />
             </state>
           </provider>
@@ -208,7 +171,7 @@
     </FindUsagesManager>
   </component>
   <component name="GenerateSignedApkSettings">
-    <option name="KEY_STORE_PATH" value="H:\CPU_ID\Nueva carpeta\MI YAOS ICS\dexafree.keystore" />
+    <option name="KEY_STORE_PATH" value="I:\CPU_ID\Nueva carpeta\MI YAOS ICS\dexafree.keystore" />
     <option name="KEY_ALIAS" value="dexafree" />
     <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
@@ -239,12 +202,12 @@
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/PreferenceManagerCompat.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/PreferenceFragment.java" />
         <option value="$PROJECT_DIR$/res/layout/seguridad.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/About.java" />
         <option value="$PROJECT_DIR$/res/xml/about.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -434,6 +397,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../google-play-services_lib/libs/google-play-services.jar!/" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="01849a310dd767a7" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Infra" />
+    <property name="ExportedModule" value="Incidencias" />
+    <property name="ExportedApkPath" value="C:\Users\Carlos\workspace\Incidencias\Incidencias3.0-final.apk" />
+    <property name="AndroidRunProguardForReleaseBuild" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1100,7 +1066,11 @@
       <created>1379426315498</created>
       <updated>1379426315498</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="3.0&#10;+ Integrado Crashlytics&#10;+ Integrado ActionBarSherlock&#10;+ Compatible con 2.3&#10;+ Añadida CARD de &quot;No hay incidencias a mostrar&quot; en Favoritos">
+      <created>1387641531372</created>
+      <updated>1387641531373</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1165,7 +1135,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Integrando mapas&#10;&#10;Se centra la cámara" />
     <MESSAGE value="AÑADIDO SOPORTE AL PAIS VASCO" />
     <MESSAGE value="Probando SharedPreferences para MainFavoritos" />
     <MESSAGE value="Solucionado Bug MainFavoritos&#10;Mejorada la comprobacion de provincia/matricula" />
@@ -1190,7 +1159,8 @@
     <MESSAGE value="2.8&#10;- Añadido botón de Feedback&#10;- Arregladas chapuzas causadas por la DGT:&#10;+ Gerona -&gt; Girona&#10;+ &quot;null&quot; como texto" />
     <MESSAGE value="2.8&#10;- Añadido botón de Feedback&#10;- Añadida posibilidad de debuggear incidencias individuales mediante la referencia&#10;- Arregladas chapuzas causadas por la DGT:&#10;+ Gerona -&gt; Girona&#10;+ &quot;null&quot; como texto&#10;" />
     <MESSAGE value="2.9&#10;- Corrige error de nulls en Favoritos" />
-    <option name="LAST_COMMIT_MESSAGE" value="2.9&#10;- Corrige error de nulls en Favoritos" />
+    <MESSAGE value="3.0&#10;+ Integrado Crashlytics&#10;+ Integrado ActionBarSherlock&#10;+ Compatible con 2.3&#10;+ Añadida CARD de &quot;No hay incidencias a mostrar&quot; en Favoritos" />
+    <option name="LAST_COMMIT_MESSAGE" value="3.0&#10;+ Integrado Crashlytics&#10;+ Integrado ActionBarSherlock&#10;+ Compatible con 2.3&#10;+ Añadida CARD de &quot;No hay incidencias a mostrar&quot; en Favoritos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1275,15 +1245,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1572" selection-end="1572" vertical-scroll-proportion="0.0" vertical-offset="458" max-vertical-offset="2484">
-          <folding>
-            <element signature="e#1529#1568#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="892" column="20" selection-start="32922" selection-end="32922" vertical-scroll-proportion="2.8" vertical-offset="16126" max-vertical-offset="20394">
@@ -1329,8 +1290,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="56" selection-start="461" selection-end="461" vertical-scroll-proportion="0.33788395" vertical-offset="0" max-vertical-offset="586">
+        <state line="9" column="0" selection-start="337" selection-end="533" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="34" selection-start="222" selection-end="222" vertical-scroll-proportion="0.12286689" vertical-offset="0" max-vertical-offset="2484">
+          <folding>
+            <element signature="e#1536#1575#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

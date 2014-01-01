@@ -27,10 +27,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ec15fb-cb06-4d4b-b073-35033dcf0a17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/about.xml" afterPath="$PROJECT_DIR$/res/xml/about.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/alert.xml" afterPath="$PROJECT_DIR$/res/layout/alert.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" afterPath="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Incidencias.iws" />
@@ -104,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainFavoritos.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainFavoritos.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="892" column="20" selection-start="32922" selection-end="32922" vertical-scroll-proportion="0.0" vertical-offset="15910" max-vertical-offset="19206">
+            <state line="142" column="0" selection-start="4736" selection-end="4736" vertical-scroll-proportion="0.9056604" vertical-offset="1224" max-vertical-offset="19116">
               <folding />
             </state>
           </provider>
@@ -125,7 +123,7 @@
       <file leaf-file-name="AddFavoritos2.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="0" selection-start="3062" selection-end="3062" vertical-scroll-proportion="0.0" vertical-offset="385" max-vertical-offset="5652">
+            <state line="107" column="0" selection-start="3062" selection-end="3062" vertical-scroll-proportion="0.0" vertical-offset="1681" max-vertical-offset="5652">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2994#7777#0" expanded="true" />
@@ -133,6 +131,15 @@
                 <element signature="e#7823#7941#0" expanded="true" />
                 <element signature="e#7930#7931#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="55" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,10 +156,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="about.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="68" selection-start="1348" selection-end="1348" vertical-scroll-proportion="0.47521865" vertical-offset="143" max-vertical-offset="486">
+            <state line="17" column="68" selection-start="1348" selection-end="1348" vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="486">
               <folding />
             </state>
           </provider>
@@ -205,13 +212,13 @@
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/PreferenceFragment.java" />
         <option value="$PROJECT_DIR$/res/layout/seguridad.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/About.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java" />
         <option value="$PROJECT_DIR$/res/layout/alert.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/xml/about.xml" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java" />
       </list>
     </option>
   </component>
@@ -399,10 +406,10 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../google-play-services_lib/libs/google-play-services.jar!/" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="01849a310dd767a7" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Prueba" />
     <property name="ExportedModule" value="Incidencias" />
-    <property name="ExportedApkPath" value="C:\Users\Carlos\workspace\Incidencias\Incidencias3.0-final.apk" />
+    <property name="ExportedApkPath" value="C:\Users\Carlos\workspace\Incidencias\Incidencias3.1-final.apk" />
     <property name="AndroidRunProguardForReleaseBuild" value="false" />
   </component>
   <component name="RecentsManager">
@@ -1078,7 +1085,11 @@
       <created>1387642211593</created>
       <updated>1387642211593</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="3.1&#10;+ Solucionado ParseIntError al no introducir numeros en los Favoritos&#10;+ Corregido problema de color en Feedback">
+      <created>1388613333189</created>
+      <updated>1388613333189</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1143,7 +1154,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="AÑADIDO SOPORTE AL PAIS VASCO" />
     <MESSAGE value="Probando SharedPreferences para MainFavoritos" />
     <MESSAGE value="Solucionado Bug MainFavoritos&#10;Mejorada la comprobacion de provincia/matricula" />
     <MESSAGE value="2.0 FINAL" />
@@ -1168,7 +1178,8 @@
     <MESSAGE value="2.8&#10;- Añadido botón de Feedback&#10;- Añadida posibilidad de debuggear incidencias individuales mediante la referencia&#10;- Arregladas chapuzas causadas por la DGT:&#10;+ Gerona -&gt; Girona&#10;+ &quot;null&quot; como texto&#10;" />
     <MESSAGE value="2.9&#10;- Corrige error de nulls en Favoritos" />
     <MESSAGE value="3.0&#10;+ Integrado Crashlytics&#10;+ Integrado ActionBarSherlock&#10;+ Compatible con 2.3&#10;+ Añadida CARD de &quot;No hay incidencias a mostrar&quot; en Favoritos" />
-    <option name="LAST_COMMIT_MESSAGE" value="3.0&#10;+ Integrado Crashlytics&#10;+ Integrado ActionBarSherlock&#10;+ Compatible con 2.3&#10;+ Añadida CARD de &quot;No hay incidencias a mostrar&quot; en Favoritos" />
+    <MESSAGE value="3.1&#10;+ Solucionado ParseIntError al no introducir numeros en los Favoritos&#10;+ Corregido problema de color en Feedback" />
+    <option name="LAST_COMMIT_MESSAGE" value="3.1&#10;+ Solucionado ParseIntError al no introducir numeros en los Favoritos&#10;+ Corregido problema de color en Feedback" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1246,37 +1257,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="337" selection-end="533" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/StartAlarmManagerReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="13" selection-start="438" selection-end="438" vertical-scroll-proportion="-0.37696335" vertical-offset="288" max-vertical-offset="864">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="892" column="20" selection-start="32922" selection-end="32922" vertical-scroll-proportion="0.0" vertical-offset="15910" max-vertical-offset="19206">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="0" selection-start="3062" selection-end="3062" vertical-scroll-proportion="0.0" vertical-offset="385" max-vertical-offset="5652">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2994#7777#0" expanded="true" />
-            <element signature="e#7766#7767#0" expanded="true" />
-            <element signature="e#7823#7941#0" expanded="true" />
-            <element signature="e#7930#7931#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1299,7 +1283,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/about.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="68" selection-start="1348" selection-end="1348" vertical-scroll-proportion="0.47521865" vertical-offset="143" max-vertical-offset="486">
+        <state line="17" column="68" selection-start="1348" selection-end="1348" vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="486">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/AddFavoritos2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="0" selection-start="3062" selection-end="3062" vertical-scroll-proportion="0.0" vertical-offset="1681" max-vertical-offset="5652">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2994#7777#0" expanded="true" />
+            <element signature="e#7766#7767#0" expanded="true" />
+            <element signature="e#7823#7941#0" expanded="true" />
+            <element signature="e#7930#7931#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="55" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dexafree/incidencias/MainFavoritos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="0" selection-start="4736" selection-end="4736" vertical-scroll-proportion="0.9056604" vertical-offset="1224" max-vertical-offset="19116">
           <folding />
         </state>
       </provider>

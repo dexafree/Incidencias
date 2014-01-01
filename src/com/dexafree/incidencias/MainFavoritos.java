@@ -94,13 +94,9 @@ public class MainFavoritos extends SherlockActivity {
         firstTime2();
 
 
-
-
-
         Favoritos.FavoritosList.clear();
 
-        try
-        {
+        try{
             BufferedReader fin =
                     new BufferedReader(
                             new InputStreamReader(
@@ -117,9 +113,7 @@ public class MainFavoritos extends SherlockActivity {
                 axa.parseXML(texto);
             }
             fin.close();
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             Log.e("Ficheros", "Error al leer fichero desde memoria interna");
             Log.e("Ficheros", "Creando uno");
 
@@ -129,20 +123,26 @@ public class MainFavoritos extends SherlockActivity {
                                 openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
                 fcrear.close();
                 Log.e("", "Creado XML");
-            }
-            catch (Exception exc)
-            {
+            } catch (Exception exc) {
                 Log.e("","Ni siquiera se puede crear");
             }
         }
-
-        //Log.d("MainFavoritos", "FavoritosList.size() = " + Favoritos.FavoritosList.size());
 
         if (Favoritos.FavoritosList.size() > 0){
             //TAREA DE CARGA DE XML Y PARSEO
             ShowProgress2 = ProgressDialog.show(MainFavoritos.this, "", "Cargando. Espere por favor...", true);
             ShowProgress2.setCancelable(true);
             new loadingTask2().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
+        } else {
+
+            final String PREFS_NAME = "MyPrefsFile2";
+
+            SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+            if (!(settings.getBoolean("my_first_time2", true))) {
+                mCardView2.addCard(new MyCard("No tienes ningun favorito añadido", "Entra al menú de Administrar y añade las carreteras y provincias que te interesen","Luego pulsa Actualizar", "Asegúrate de seleccionar también cada cuanto quieres que caduquen tus favoritos!"));
+                mCardView2.refresh();
+            }
         }
     }
 
@@ -236,6 +236,7 @@ public class MainFavoritos extends SherlockActivity {
         }
 
         protected void onPostExecute(String s) {
+            Log.d("SIZE", IncidenciaList2.size() + "");
             if(IncidenciaList2.size() == 0){
                 mCardView2.addCard(new MyCard("No hay incidencias a mostrar!", "Circule con cuidado","No olvide abrocharse el cinturón", "No utilice la aplicación mientras conduce", "Pare a descansar cada 2 horas de conducción"));
             }
@@ -253,8 +254,7 @@ public class MainFavoritos extends SherlockActivity {
         mCardView2.clearCards();
 
 
-        try
-        {
+        try {
             BufferedReader fin =
                     new BufferedReader(
                             new InputStreamReader(
@@ -271,9 +271,7 @@ public class MainFavoritos extends SherlockActivity {
                 axa.parseXML(texto);
             }
             fin.close();
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             Log.e("Ficheros", "Error al leer fichero desde memoria interna");
             Log.e("Ficheros", "Creando uno");
 
@@ -283,9 +281,7 @@ public class MainFavoritos extends SherlockActivity {
                                 openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
                 fcrear.close();
                 Log.e("", "Creado XML");
-            }
-            catch (Exception exc)
-            {
+            } catch (Exception exc) {
                 Log.e("","Ni siquiera se puede crear");
             }
         }
@@ -299,8 +295,7 @@ public class MainFavoritos extends SherlockActivity {
         mCardView2.refresh();
     }
 
-    public int load2() throws IOException
-    {
+    public int load2() throws IOException {
 
         StringBuilder text = new StringBuilder();
 

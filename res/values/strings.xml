@@ -7,16 +7,17 @@
     <string name="provincias">Provincias</string>
     <string name="acerca_de">Acerca de...</string>
     <string name="whatsnew">
+
+        3.1\n
+        - Arreglado fallo de campo en el apartado de Feedback\n
+        Recordad que podéis enviar cualquier sugerencia/duda/fallo a través de esa opción!\n
+        - Arreglada notificación de "No hay incidencias a mostrar" en los Favoritos\n
+        - Corregido error a la hora de añadir Favoritos\n\n
+
         3.0\n
         - Compatible con versiones anteriores a 4.0\n
         - Integrada gestión de fallos de la aplicación\n
-        - Añadida notificacion de "No hay incidencias" en Favoritos\n\n
-        2.9\n
-        - Corregido bug en favoritos\n\n
-        2.8\n
-        - Implementada la posibilidad de feedback\n\n
-        - Arreglados fallos varios provocados por un organismo cesor de los datos\n\n
-        - Arreglado fallo si se seleccionaba la provincia de Girona (hay que seleccionarla de nuevo)
+        - Añadida notificacion de "No hay incidencias" en Favoritos
     </string>
 
 </resources>

@@ -15,7 +15,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="App">
         <Preference android:title="Feedback" android:summary="Pulsa aquí para enviar cualquier mensaje, sugerencia o petición al desarrollador de la aplicación" android:key="feedback"/>
-        <Preference android:title="App version" android:summary="3.0" android:key="dev_menu"/>
+        <Preference android:title="App version" android:summary="3.1" android:key="dev_menu"/>
         <Preference android:title="Copyright" android:summary="Dexafree"/>
     </PreferenceCategory>
 

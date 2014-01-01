@@ -12,7 +12,7 @@
             android:text="TU NOMBRE:"
             android:id="@+id/textView"
             android:layout_gravity="left|center_vertical"
-            android:textColor="@color/abs__primary_text_holo_dark"
+            android:textColor="#ff33b5e5"
             android:textStyle="bold"
             style="@style/TextAppearance.Sherlock"/>
 

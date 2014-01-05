@@ -8,6 +8,9 @@
     <string name="acerca_de">Acerca de...</string>
     <string name="whatsnew">
 
+        3.2\n
+        - Corregido fallo en Favoritos que no mostraba favoritos entre las 12 y las 6 AM\n
+
         3.1\n
         - Arreglado fallo de campo en el apartado de Feedback\n
         Recordad que podéis enviar cualquier sugerencia/duda/fallo a través de esa opción!\n

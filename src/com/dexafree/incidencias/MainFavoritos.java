@@ -18,6 +18,7 @@ import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -107,24 +108,24 @@ public class MainFavoritos extends SherlockActivity {
             int lines = load2();
             for(int i=0; i<lines; i++){
                 String texto = fin.readLine();
-                Log.d("", "XML: " + texto);
+//                Log.d("", "XML: " + texto);
                 AndroidParseXMLActivity3 axa = new AndroidParseXMLActivity3();
-                Log.d("","Vamos a parsear");
+//                Log.d("","Vamos a parsear");
                 axa.parseXML(texto);
             }
             fin.close();
         } catch (Exception ex) {
-            Log.e("Ficheros", "Error al leer fichero desde memoria interna");
-            Log.e("Ficheros", "Creando uno");
+//            Log.e("Ficheros", "Error al leer fichero desde memoria interna");
+//            Log.e("Ficheros", "Creando uno");
 
             try{
                 OutputStreamWriter fcrear =
                         new OutputStreamWriter(
                                 openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
                 fcrear.close();
-                Log.e("", "Creado XML");
+//                Log.e("", "Creado XML");
             } catch (Exception exc) {
-                Log.e("","Ni siquiera se puede crear");
+//                Log.e("","Ni siquiera se puede crear");
             }
         }
 
@@ -135,14 +136,15 @@ public class MainFavoritos extends SherlockActivity {
             new loadingTask2().execute("http://www.dexa-dev.es/incidencias/InciDGT.xml", "http://www.dexa-dev.es/incidencias/InciVascP.xml");
         } else {
 
-            final String PREFS_NAME = "MyPrefsFile2";
+            //final String PREFS_NAME = "MyPrefsFile2";
 
-            SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+            SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainFavoritos.this);
 
-            if (!(settings.getBoolean("my_first_time2", true))) {
-                mCardView2.addCard(new MyCard("No tienes ningun favorito añadido", "Entra al menú de Administrar y añade las carreteras y provincias que te interesen","Luego pulsa Actualizar", "Asegúrate de seleccionar también cada cuanto quieres que caduquen tus favoritos!"));
-                mCardView2.refresh();
-            }
+            mCardView2.clearCards();
+
+            mCardView2.addCard(new MyCard("No tienes ningun favorito añadido", "Entra al menú de Administrar y añade las carreteras y provincias que te interesen","Luego pulsa Actualizar", "Asegúrate de seleccionar también cada cuanto quieres que caduquen tus favoritos!"));
+            mCardView2.refresh();
+
         }
     }
 
@@ -150,7 +152,7 @@ public class MainFavoritos extends SherlockActivity {
     public void onDestroy(){
         super.onDestroy();
 
-        Log.d("DEX", "SE HA EJECUTADO");
+//        Log.d("DEX", "SE HA EJECUTADO");
     }
 
 
@@ -189,13 +191,13 @@ public class MainFavoritos extends SherlockActivity {
 
 
     public void firstTime2() {
-        final String PREFS_NAME = "MyPrefsFile2";
+        //final String PREFS_NAME = "MyPrefsFile2";
 
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainFavoritos.this);
 
         if (settings.getBoolean("my_first_time2", true)) {
             //the app is being launched for first time, do something
-            Log.d("Comments", "First time");
+//            Log.d("Comments", "First time");
 
             mCardView2.addCard(new MyCard("No tienes ningun favorito añadido", "Entra al menú de Administrar y añade las carreteras y provincias que te interesen","Luego pulsa Actualizar", "Asegúrate de seleccionar también cada cuanto quieres que caduquen tus favoritos!"));
             mCardView2.addCard(new MyCard("Notificaciones", "En el menú de ajustes de la pantalla anterior podrás configurar las comprobaciones automáticas del estado del tráfico de tus lugares favoritos", "Si la aplicación detecta que hay una incidencia en algún lugar que has marcado como favorito, recibirás una notificación si lo deseas"));
@@ -236,7 +238,7 @@ public class MainFavoritos extends SherlockActivity {
         }
 
         protected void onPostExecute(String s) {
-            Log.d("SIZE", IncidenciaList2.size() + "");
+//            Log.d("SIZE", IncidenciaList2.size() + "");
             if(IncidenciaList2.size() == 0){
                 mCardView2.addCard(new MyCard("No hay incidencias a mostrar!", "Circule con cuidado","No olvide abrocharse el cinturón", "No utilice la aplicación mientras conduce", "Pare a descansar cada 2 horas de conducción"));
             }
@@ -265,14 +267,14 @@ public class MainFavoritos extends SherlockActivity {
             int lines = load2();
             for(int i=0; i<lines; i++){
                 String texto = fin.readLine();
-                Log.d("", "XML: " + texto);
+//                Log.d("", "XML: " + texto);
                 AndroidParseXMLActivity3 axa = new AndroidParseXMLActivity3();
-                Log.d("","Vamos a parsear");
+//                Log.d("","Vamos a parsear");
                 axa.parseXML(texto);
             }
             fin.close();
         } catch (Exception ex) {
-            Log.e("Ficheros", "Error al leer fichero desde memoria interna");
+//            Log.e("Ficheros", "Error al leer fichero desde memoria interna");
             Log.e("Ficheros", "Creando uno");
 
             try{
@@ -280,9 +282,9 @@ public class MainFavoritos extends SherlockActivity {
                         new OutputStreamWriter(
                                 openFileOutput("Favoritos.xml", Context.MODE_PRIVATE));
                 fcrear.close();
-                Log.e("", "Creado XML");
+//                Log.e("", "Creado XML");
             } catch (Exception exc) {
-                Log.e("","Ni siquiera se puede crear");
+//                Log.e("","Ni siquiera se puede crear");
             }
         }
 
@@ -308,13 +310,13 @@ public class MainFavoritos extends SherlockActivity {
                 text.append('\n');
                 lineCount++;
             }
-            Log.d("", "Lines: " + lineCount);
+//            Log.d("", "Lines: " + lineCount);
 
             return lineCount;
 
         }
         catch (IOException e) {
-            Log.d("", "Ha saltado la excepcion de load");
+//            Log.d("", "Ha saltado la excepcion de load");
             return 0;
         }
 
@@ -364,49 +366,6 @@ public class MainFavoritos extends SherlockActivity {
 
 
 
-    public boolean comparaFecha(String fechahora){
-
-        Date cDate = new Date();
-        String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
-
-        //CREAMOS EL STRING YEAR, MONTH... PARA SACAR SOLO LOS PRIMEROS DIGITOS PARA INICIAR LA COMPARACION
-        String year = new SimpleDateFormat("yyyy").format(cDate);
-        String month = new SimpleDateFormat("MM").format(cDate);
-        String day = new SimpleDateFormat("dd").format(cDate);
-
-        //   Log.i("", "year month day: " + year + " " + month + " " + day);
-
-        String yearpas = fechahora.substring(0,4);
-        String monthpas = fechahora.substring(5,7);
-        String daypas = fechahora.substring(8,10);
-
-        //  Log.i("", "yearpas monthpas daypas: " + yearpas + " " + monthpas + " " + daypas);
-
-        if (year.equals(yearpas)) {
-
-            //  Log.i("", "COINCIDE YEAR");
-
-            if (month.equals(monthpas)) {
-                //  Log.i("", "COINCIDE MONTH");
-                if (day.equals(daypas)) {
-                    //    Log.i("", "COINCIDE DAY");
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
-            else {
-                return false;
-            }
-        }
-        else {
-            //   Log.i("", "No coincide year");
-            return false;
-        }
-
-
-    }
 
     public boolean comparaPKs(Favoritos favActual, Incidencia incidenciaActual){
 
@@ -423,7 +382,6 @@ public class MainFavoritos extends SherlockActivity {
             if (inicialFavorito <= finalFavorito){
 
                 if (inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito){
-                    Log.d("PK", "Caso 1");
                     return false;
                 }
                 else if (inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito && finalIncidencia >= inicialFavorito && finalIncidencia <= finalFavorito){
@@ -439,7 +397,6 @@ public class MainFavoritos extends SherlockActivity {
                     return true;
                 }
                 else if (inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito){
-                    Log.d("PK", "Caso 2");
                     return false;
                 }
             }
@@ -447,7 +404,6 @@ public class MainFavoritos extends SherlockActivity {
             else if (inicialFavorito >= finalFavorito){
 
                 if (inicialIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito){
-                    Log.d("PK", "Caso 3");
                     return false;
                 }
                 else if (inicialIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia <= inicialFavorito){
@@ -463,7 +419,6 @@ public class MainFavoritos extends SherlockActivity {
                     return true;
                 }
                 else if (inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito){
-                    Log.d("PK", "Caso 4");
                     return false;
                 }
             }
@@ -474,7 +429,6 @@ public class MainFavoritos extends SherlockActivity {
             if (inicialFavorito <= finalFavorito){
 
                 if(finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia <= inicialFavorito && inicialIncidencia <= finalFavorito){
-                    Log.d("PK", "Caso 5");
                     return false;
                 }
                 else if (finalIncidencia <= inicialFavorito && finalIncidencia <= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia <= finalFavorito){
@@ -490,7 +444,6 @@ public class MainFavoritos extends SherlockActivity {
                     return true;
                 }
                 else if (finalIncidencia >= inicialFavorito && finalIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito && inicialIncidencia >= finalFavorito){
-                    Log.d("PK", "Caso 6");
                     return false;
                 }
             }
@@ -498,7 +451,6 @@ public class MainFavoritos extends SherlockActivity {
             else if (inicialFavorito >= finalFavorito){
 
                 if (finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia < finalFavorito && inicialIncidencia < inicialFavorito){
-                    Log.d("PK", "Caso 7");
                     return false;
                 }
                 else if (finalIncidencia <= finalFavorito && finalIncidencia <= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia <= inicialFavorito){
@@ -514,75 +466,9 @@ public class MainFavoritos extends SherlockActivity {
                     return true;
                 }
                 else if (finalIncidencia >= finalFavorito && finalIncidencia >= inicialFavorito && inicialIncidencia >= finalFavorito && inicialIncidencia >= inicialFavorito){
-                    Log.d("PK", "Caso 8");
                     return false;
                 }
             }
-        }
-
-        return false;
-    }
-
-
-    public boolean checkHora(String hora){
-
-        Log.i("", "Hora: " + hora);
-
-        Calendar c = Calendar.getInstance();
-        int minutes = c.get(Calendar.MINUTE);
-        int hours = c.get(Calendar.HOUR_OF_DAY);
-
-        Log.i("", "hora minuto: " + hours + "  " + minutes);
-
-        String horatr = hora.trim();
-        String hourpas = horatr.substring(11,13);
-        String minutepas = horatr.substring(14,16);
-        Log.i("", "hp: " + hourpas);
-        Log.i("", "mp: " + minutepas);
-
-        int hourInc = Integer.parseInt(hourpas);
-        int minuteInc= Integer.parseInt(minutepas);
-
-        if (hours >= hourInc) {
-            SharedPreferences sphora = PreferenceManager.getDefaultSharedPreferences(this);
-            String interv = sphora.getString("hora_selecc", "-1");
-
-            Log.i("", "interv: " + interv);
-
-            int intervInt = Integer.parseInt(interv);
-            int dif = hours-hourInc;
-            Log.i("", "dif: " + dif);
-
-            if (dif <= intervInt ) {
-
-                if ((dif == intervInt ) && ((minutes - minuteInc) >= 0)) {
-                    // Log.i("", "Es true");
-                    return true;
-                }
-
-                else if (dif != intervInt ) {
-                    return true;
-                }
-
-                else {
-                    return false;
-                }
-            }
-
-            else {
-                return false;
-            }
-        }
-
-        else {
-            return false;
-        }
-    }
-
-    public boolean checkFiltrado(){
-        SharedPreferences cFilt = PreferenceManager.getDefaultSharedPreferences(this);
-        if (cFilt.getBoolean("filtrado_horario", false)) {
-            return true;
         }
         return false;
     }
@@ -591,123 +477,51 @@ public class MainFavoritos extends SherlockActivity {
 
 
         String checker = fechahora.substring(11,12);
-        //Log.d("Checker", checker);
+
         if (checker.equals("-")){
-            //Log.d("COMPARADORFECHA", "FALSE");
             return false;
         }
 
-        //Log.d("", "Se ha disparado");
-        //Obtenemos la fecha actual
-        Date cDate = new Date();
-        String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
-
-        //Obtenemos la hora actual
         Calendar c = Calendar.getInstance();
-        int minutes = c.get(Calendar.MINUTE);
-        int hours = c.get(Calendar.HOUR_OF_DAY);
-
-        //CREAMOS EL STRING YEAR, MONTH... PARA SACAR SOLO LOS PRIMEROS DIGITOS PARA INICIAR LA COMPARACION
-        String year = new SimpleDateFormat("yyyy").format(cDate);
-        String month = new SimpleDateFormat("MM").format(cDate);
-        String day = new SimpleDateFormat("dd").format(cDate);
 
         //Obtener datos del argumento fechahora
-        String yearpas = fechahora.substring(0,4); //A�o
+        String yearpas = fechahora.substring(0,4); //A?o
         String monthpas = fechahora.substring(5,7); //Mes
         String daypas = fechahora.substring(8,10); //Dia
         String fhs = fechahora.trim(); //Variable temporal para eliminar espacios al inicio y al final
         String horapas = fhs.substring(11,13); //Hora
         String minutospas = fhs.substring(14,16); //Minutos
 
-
-        //Convertimos cada uno de los Strings a Ints
-
-        int yearInt = Integer.parseInt(year);
-        int monthInt = Integer.parseInt(month);
-        int dayInt = Integer.parseInt(day);
-
         int horaInt = Integer.parseInt(horapas);
         int minutosInt = Integer.parseInt(minutospas);
 
         int yearpasInt = Integer.parseInt(yearpas);
-        int monthpasInt = Integer.parseInt(monthpas);
+        int monthpasInt = Integer.parseInt(monthpas)-1;
         int daypasInt = Integer.parseInt(daypas);
 
-        //Log.d("Fecha/hora actual", hours + ":" + minutes + "  " + dayInt + "-" + monthInt + "-" + yearInt);
-        //Log.d("Fecha/hora incidencia", horaInt + ":" + minutosInt + "  " + daypasInt + "-" + monthpasInt + "-" + yearpasInt);
+        SharedPreferences sphora = PreferenceManager.getDefaultSharedPreferences(this);
+        String interv = sphora.getString("caduc_fav", "2");
+        int intervInt = Integer.parseInt(interv);
+
+        Date actual = c.getTime();
+        c.add(Calendar.HOUR_OF_DAY, 0-intervInt);
+        Date inicial = c.getTime();
+
+        c.set(yearpasInt,monthpasInt,daypasInt,horaInt,minutosInt);
+
+        Date dateInc = c.getTime();
 
 
+//        Log.d("ACTUAL", actual.toString());
+//        Log.d("INICIAL", inicial.toString());
+//        Log.d("INCIDENCIA", dateInc.toString());
 
-        //Si la hora actual es entre las 00 y las 06, restaremos un dia y sumaremos 24 a las horas
-        if (hours < 6){
-            hours = hours+ 24;
-            dayInt = dayInt -1;
+        if(actual.after(dateInc) && inicial.before(dateInc)){
+            return true;
+        } else {
+            return false;
         }
 
-        //Log.d("Fecha/hora actual post-if", hours + ":" + minutes + "  " + dayInt + "-" + monthInt + "-" + yearInt);
-        //Log.d("Fecha/hora incidencia post-if", horaInt + ":" + minutosInt + "  " + daypasInt + "-" + monthpasInt + "-" + yearpasInt);
-
-        //Empezamos comparacion de fecha
-
-        //Comprobamos si coincide el a�o
-        if (yearInt == yearpasInt){
-
-            //Comprobamos si coincide el mes
-            if (monthInt == monthpasInt){
-
-                //Comprobamos si coincide el dia
-                if (dayInt == daypasInt){
-
-                    //Comprobamos si el filtrado horario esta habilitado
-
-                    // SharedPreferences cadu = PreferenceManager.getDefaultSharedPreferences(this);
-
-                    //En caso de que lo este
-                    // if (cadu.getBoolean("caduc_fav", false)) {
-
-                        if (hours >= horaInt){
-
-                            //Obtenemos la preferencia de hora_selec, que es el intervalo maximo deseado.
-                            SharedPreferences sphora = PreferenceManager.getDefaultSharedPreferences(this);
-                            String interv = sphora.getString("caduc_fav", "2");
-                            int intervInt = Integer.parseInt(interv);
-
-                            //Log.d("intervInt", ""+intervInt);
-
-                            //Obtenemos la diferencia entre la hora atual y la de la incidencia
-                            int dif = hours-horaInt;
-                            //Log.d("dif", ""+dif);
-                            //Comparamos la diferencia con el intervalo maximo deseado
-                            if (dif <= intervInt ) {
-
-                                //Si la diferencia coincide con el intervalo, significa que la hora es la misma
-                                //con lo que comprobaremos los minutos
-                                if ((dif == intervInt ) && ((minutosInt - minutes) >= 0)) {
-                                    // Log.i("", "Es true");
-                                    return true;
-                                }
-
-                                //Si la diferencia no coincide, significa que han pasado menos horas que las que
-                                //marca el intervalo, con lo que los minutos son indiferentes
-                                else if (dif != intervInt ) {
-                                    return true;
-                                }
-
-                                else {
-                                    return false;
-                                }
-
-                            }
-
-                        }
-
-                    // }
-                    //return true;
-                }
-            }
-        }
-        return false;
     }
 
 
@@ -832,11 +646,9 @@ public class MainFavoritos extends SherlockActivity {
                         MainFavoritos.this);
 
         if ( pref.getBoolean("testeo", false)) {
-            // Log.i("", "Es true");
             return true;
         }
         else {
-            //Log.i("", "Es false");
             return false;
         }
 
@@ -944,13 +756,11 @@ public class MainFavoritos extends SherlockActivity {
 
             if (localName.equalsIgnoreCase("provincia")
                     && currentIncidencia.getProvincia() == null) {
-                //Log.d("PROVINCIA", chars.toString().trim());
                 currentIncidencia.setProvincia(chars.toString().trim());
             }
 
             if (localName.equalsIgnoreCase("matricula")
                     && currentIncidencia.getMatricula() == null) {
-                //Log.d("MATRICULA", chars.toString().trim());
                 currentIncidencia.setMatricula(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("causa")
@@ -963,8 +773,6 @@ public class MainFavoritos extends SherlockActivity {
             }
             if (localName.equalsIgnoreCase("fechahora_ini")
                     && currentIncidencia.getFechahora() == null) {
-                //Log.d("FECHAHORA", chars.toString().trim());
-                //Log.d(" ", "***************");
                 currentIncidencia.setFechahora(chars.toString().trim());
             }
             if (localName.equalsIgnoreCase("nivel")
@@ -1008,56 +816,34 @@ public class MainFavoritos extends SherlockActivity {
                     currentIncidencia.setY(y);
                 }
             }
+            if(localName.equalsIgnoreCase("ref_incidencia") && currentIncidencia.getRefIncidencia() == null){
+                currentIncidencia.setRefIncidencia(chars.toString());
+            }
 
             if (localName.equalsIgnoreCase("incidencia")) {
-                // Log.i("", "Funciona: " + currentIncidencia.getProvincia());
-
-
                 if (checkProvincia(currentIncidencia) == true) {
-
                     if (comparador(currentIncidencia.getFechahora())) {
-
                         for (int i=0; i<favList.size();i++){
-
                             if (currentIncidencia.getCarretera().equalsIgnoreCase(favList.get(i).getCarretera())){
-
-                                    //Log.d("1 INFO", "Al menos no ha petado \n --------------------------------");
-                                    //     Log.i("", "A�adida la provincia: " + currentIncidencia.getProvincia());
-                                    IncidenciaList2.add(currentIncidencia);
+                                IncidenciaList2.add(currentIncidencia);
                                 creaCard(currentIncidencia);
 
                             }
                         }
                     }
-                }
-
-                else {
-
+                } else {
                     if(comparador(currentIncidencia.getFechahora())){
-
                         for(int i=0; i<favList.size(); i++){
-
                             if(currentIncidencia.getCarretera().equalsIgnoreCase(favList.get(i).getCarretera())){
-
                                 if(comparaPKs(favList.get(i), currentIncidencia)){
-
                                     IncidenciaList2.add(currentIncidencia);
                                     creaCard(currentIncidencia);
-
-
                                 }
-
                             }
-
                         }
-
-
                     }
-
                 }
-
                 currentIncidencia = new Incidencia();
-
             }
         }
 
@@ -1065,18 +851,11 @@ public class MainFavoritos extends SherlockActivity {
         public void characters(char ch[], int start, int length) {
             chars.append(new String(ch, start, length));
         }
-
     }
-
-
-
-
 
     public class AndroidParseXMLActivity3 {
 
         private void parseXML(String contenido) {
-
-
             try {
 
                 Log.w("AndroidParseXMLActivity", "Start");
@@ -1104,7 +883,7 @@ public class MainFavoritos extends SherlockActivity {
                 int i = favList.size();
                 for (int j = 0; j<i ; j++){
                     String prov = favList.get(j).getProvincia().toString();
-                    Log.d("PROV", prov);
+//                    Log.d("PROV", prov);
                     SharedPreferences settings = getSharedPreferences("MyPref", 0);
                     settings.edit().putBoolean(prov, true).commit();
                 }
